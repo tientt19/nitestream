@@ -105,13 +105,13 @@ extension APIService {
         }
     }
     
-    func testPost() {
-        AF.request("https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo", method: .post, parameters: testPara,encoding: JSONEncoding.default, headers: HTTPAdditionalHeaders).responseJSON { response in
-            if let result = response.value as? [String:Any] {
-               dLogDebug(response)
-            }
-        }
-    }
+//    func testPost() {
+//        AF.request("https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo", method: .post, parameters: testPara,encoding: JSONEncoding.default, headers: HTTPAdditionalHeaders).responseJSON { response in
+//            if let result = response.value as? [String:Any] {
+//               dLogDebug(response)
+//            }
+//        }
+//    }
 }
 
 

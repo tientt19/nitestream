@@ -131,6 +131,7 @@ extension MovieDetailVC {
             intro.text = temp
         } else { intro.text = "" }
         
+        //MARK: - Get Movie Subfile
         self.subRemoteURL = movieDetailPresent.getLinkSub(0)
         
         //MARK: - Get Link Media
