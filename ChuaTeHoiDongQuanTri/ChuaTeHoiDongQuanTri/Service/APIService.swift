@@ -11,15 +11,15 @@ import Alamofire
 let HTTPAdditionalHeaders : HTTPHeaders = [
     "lang" : "en",
     "versioncode" : "11",
-    "clienttype" : "ios_jike_default"
+    "clienttype" : "ios_jike_default",
+    "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
 ]
 
-let testPara : [String : Any] = [
+let testPara : Parameters = [
     "category": 2,
     "contentId": "5959",
     "episodeId": 29804,
     "definition": "GROOT_LD"
-    
 ]
 
 class APIService:NSObject {
@@ -105,37 +105,38 @@ extension APIService {
         }
     }
     
-//    func testPost() {
-//        AF.request("https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo", method: .post, parameters: testPara,encoding: JSONEncoding.default, headers: HTTPAdditionalHeaders).responseJSON { response in
-//            if let result = response.value as? [String:Any] {
-//               dLogDebug(response)
-//            }
-//        }
-//    }
-}
+    func testPost() {
 
-
-//MARK: - Extension
-
-extension String {
-    func addingPercentEncodingForURLQueryValue() -> String? {
-        let allowedCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
-        return self.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
-    }
-}
-
-extension Dictionary {
-    func stringFromHttpParameters() -> String {
-        let parameterArray = self.map { (key, value) -> String in
-            let percentEscapedKey = (key as! String).addingPercentEncodingForURLQueryValue()!
-            if value is String {
-                let percentEscapedValue = (value as! String).addingPercentEncodingForURLQueryValue()!
-                return "\(percentEscapedKey)=\(percentEscapedValue)"
-            }
-            else {
-                return "\(percentEscapedKey)=\(value)"
+        AF.request("https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo", method: .post, parameters: testPara ,encoding: URLEncoding.default,headers: HTTPAdditionalHeaders).responseJSON { response in
+            if let _ = response.value as? [String:Any] {
+               dLogDebug(response)
             }
         }
-        return parameterArray.joined(separator: "&")
     }
 }
+
+
+////MARK: - Extension
+//
+//extension String {
+//    func addingPercentEncodingForURLQueryValue() -> String? {
+//        let allowedCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
+//        return self.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
+//    }
+//}
+//
+//extension Dictionary {
+//    func stringFromHttpParameters() -> String {
+//        let parameterArray = self.map { (key, value) -> String in
+//            let percentEscapedKey = (key as! String).addingPercentEncodingForURLQueryValue()!
+//            if value is String {
+//                let percentEscapedValue = (value as! String).addingPercentEncodingForURLQueryValue()!
+//                return "\(percentEscapedKey)=\(percentEscapedValue)"
+//            }
+//            else {
+//                return "\(percentEscapedKey)=\(value)"
+//            }
+//        }
+//        return parameterArray.joined(separator: "&")
+//    }
+//}

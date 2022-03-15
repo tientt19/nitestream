@@ -11,6 +11,7 @@ class CategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var posterImage : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var blurImageView : UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,8 @@ class CategoryCell: UICollectionViewCell {
     
     func configure(_ imageURL: String,_ title: String) {
         posterImage.setImage(targetImageView: posterImage, with: imageURL)
+        blurImageView.setImage(targetImageView: blurImageView, with: imageURL)
+        blurImageView.makeBlurImage(targetImageView: blurImageView)
         titleLabel.text = title
     }
 }

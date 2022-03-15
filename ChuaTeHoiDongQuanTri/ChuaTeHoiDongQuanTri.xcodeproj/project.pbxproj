@@ -21,6 +21,7 @@
 		522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */; };
 		522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CA27C0FE1900E4900A /* APIService.swift */; };
 		522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CC27C0FF7300E4900A /* MainModel.swift */; };
+		5266EF6627D4B8E9000A14C7 /* HandlingPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */; };
 		5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287BEF327CF83500030A534 /* HorizontallyCell.swift */; };
 		5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287BEF427CF83500030A534 /* HorizontallyCell.xib */; };
 		528C704F27CE0F3D00850478 /* StreamingTienPro.h in Headers */ = {isa = PBXBuildFile; fileRef = 528C704E27CE0F3D00850478 /* StreamingTienPro.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,8 @@
 		5296332127C91254007F3335 /* ChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5296331F27C91253007F3335 /* ChildCell.xib */; };
 		5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5296332A27C94357007F3335 /* TopSearchCell.swift */; };
 		5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5296332B27C94357007F3335 /* TopSearchCell.xib */; };
+		52A1508727E0F3290050BD12 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508627E0F3290050BD12 /* Section.swift */; };
+		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
 		52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61C27C20ADE00CD80D0 /* UIView.swift */; };
@@ -111,6 +114,7 @@
 		522CF3C427C0FD0B00E4900A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522CF3CA27C0FE1900E4900A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		522CF3CC27C0FF7300E4900A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingPostRequest.swift; sourceTree = "<group>"; };
 		5287BEF327CF83500030A534 /* HorizontallyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyCell.swift; sourceTree = "<group>"; };
 		5287BEF427CF83500030A534 /* HorizontallyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontallyCell.xib; sourceTree = "<group>"; };
 		528C704C27CE0F3D00850478 /* StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,8 @@
 		5296331F27C91253007F3335 /* ChildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildCell.xib; sourceTree = "<group>"; };
 		5296332A27C94357007F3335 /* TopSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchCell.swift; sourceTree = "<group>"; };
 		5296332B27C94357007F3335 /* TopSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSearchCell.xib; sourceTree = "<group>"; };
+		52A1508627E0F3290050BD12 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		52E6E61C27C20ADE00CD80D0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -301,6 +307,15 @@
 			path = TopSearchCell;
 			sourceTree = "<group>";
 		};
+		52A1508527E0F3160050BD12 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				52A1508627E0F3290050BD12 /* Section.swift */,
+				52A1508827E0F3480050BD12 /* DataModel.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
 		52D8ECE427C6179A001B8A2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +347,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52A1508527E0F3160050BD12 /* Section */,
 				522184CB27CC986B00CDFDDA /* LinkMedia */,
 				528CBF7F27CA51B300541EF7 /* MovieDetail */,
 				5296332227C93EE5007F3335 /* TopSearch */,
@@ -355,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				522CF3CA27C0FE1900E4900A /* APIService.swift */,
+				5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -549,6 +566,7 @@
 				TargetAttributes = {
 					522CF3B227C0FD0900E4900A = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 					528C704B27CE0F3D00850478 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -652,9 +670,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A1508927E0F3480050BD12 /* DataModel.swift in Sources */,
 				52FEE78827C8850200B7588E /* CategoryCell.swift in Sources */,
 				52E6E62527C20B6500CD80D0 /* UICollectionView.swift in Sources */,
 				522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */,
+				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
 				52F9A2A227C781A400EC01A0 /* HomePagePresenter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
 				52E6E63027C20E7500CD80D0 /* MainCell.swift in Sources */,
@@ -665,6 +685,7 @@
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
 				522CF3BB27C0FD0900E4900A /* ViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
+				5266EF6627D4B8E9000A14C7 /* HandlingPostRequest.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
@@ -858,6 +879,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChuaTeHoiDongQuanTri/ChuaTeHoiDongQuanTri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -873,11 +895,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.ChuaTeHoiDongQuanTri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "2,6";
 			};
@@ -890,6 +918,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChuaTeHoiDongQuanTri/ChuaTeHoiDongQuanTri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -905,11 +934,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.ChuaTeHoiDongQuanTri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "2,6";
 			};

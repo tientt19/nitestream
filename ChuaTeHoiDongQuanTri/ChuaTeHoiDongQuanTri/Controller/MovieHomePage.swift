@@ -24,7 +24,8 @@ class MovieHomePage: BaseViewController {
         
         homePagePresentor = HomePagePresenter(view: self)
         homePagePresentor.getHomePageData(page: index)
-        
+        APIService.shared.testPost()
+//        HandlingPostRequest.shared.postRequest()
         //CELL
         HomePageCLV.registerCell(nibName: BannerCell.self)
         HomePageCLV.registerCell(nibName: CategoryCell.self)
@@ -158,6 +159,22 @@ extension MovieHomePage: UICollectionViewDelegateFlowLayout {
             return CGSize(width: HomePageCLV.frame.width, height: HomePageCLV.frame.height / 2)
         }
         return CGSize(width: (HomePageCLV.frame.width - 40) / 4, height: HomePageCLV.frame.height / 3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.4) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
+                cell.posterImage.transform = .init(scaleX: 0.75, y: 0.75)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
+                cell.posterImage.transform = .identity
+            }
+        }
     }
 }
 

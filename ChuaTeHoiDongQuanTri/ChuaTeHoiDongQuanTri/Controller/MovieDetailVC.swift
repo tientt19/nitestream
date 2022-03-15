@@ -10,49 +10,6 @@ import Kingfisher
 import Foundation
 import AVKit
 import StreamingTienPro
-import SwiftUI
-
-class Section : Hashable {
-    var id = UUID()
-    
-    var title: String
-    var data: [DataModel]
-    
-    init(data: [DataModel], title: String) {
-        self.data = data
-        self.title = title
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: Section, rhs: Section) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-class DataModel : Hashable {
-    var id : String!
-    var name : String!
-    var category : Int!
-    var coverHorizontalUrl : String!
-    
-    init(id : String, category : Int, name : String, coverHorizontalUrl : String){
-        self.category = category
-        self.coverHorizontalUrl = coverHorizontalUrl
-        self.id = id
-        self.name = name
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: DataModel, rhs: DataModel) -> Bool {
-        lhs.id == rhs.id
-    }
-}
 
 class MovieDetailVC: BaseViewController {
     
