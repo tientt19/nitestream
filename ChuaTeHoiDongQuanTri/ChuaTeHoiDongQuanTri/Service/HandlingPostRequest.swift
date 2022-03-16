@@ -20,33 +20,35 @@ class HandlingPostRequest {
         request.headers = HTTPAdditionalHeaders
         
         // HTTP Request Parameters which will be sent in HTTP Request Body
-        let postString : [String : Any] = [
-            "category": 2,
-            "contentId": "5959",
-            "episodeId": 29804,
-            "definition": "GROOT_LD"
+        
+        let postString : [[String : Any]] = [
+            [
+                "category": 2,
+                "contentId": "5959",
+                "episodeId": 29804,
+                "definition": "GROOT_LD"
+            ]
         ]
         
         // Set HTTP Request Body
-        let jsonData = try! JSONSerialization.data(withJSONObject: postString, options: [])
-        let decoded = String(data: jsonData, encoding: .utf8)!
-        request.httpBody = decoded.data(using: String.Encoding.utf8)
-        
+        request.httpBody = Data(json(from: postString)!.utf8)
+        request.timeoutInterval = 20
+
         // Perform HTTP Request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            // Check for Error
-            if let error = error {
-                dLogDebug("Error took place \(error)")
-                return
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
             }
-            
-            // Convert HTTP Response Data to a String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                dLogDebug(data)
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
             }
-        }
-        task.resume()
+        }.resume()
     }
     
     func postRequest() {
@@ -81,5 +83,13 @@ class HandlingPostRequest {
                 }
             }
         }.resume()
+    }
+    
+    func json(from object: [[String:Any]]) -> String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: object) else {
+            return nil
+        }
+        
+        return String(data: data, encoding: String.Encoding.utf8)
     }
 }

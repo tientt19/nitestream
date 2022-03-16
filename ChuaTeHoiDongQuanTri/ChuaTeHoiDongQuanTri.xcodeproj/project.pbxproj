@@ -21,6 +21,7 @@
 		522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */; };
 		522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CA27C0FE1900E4900A /* APIService.swift */; };
 		522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CC27C0FF7300E4900A /* MainModel.swift */; };
+		5240933527E198B80089923E /* RawBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240933427E198B80089923E /* RawBody.swift */; };
 		5266EF6627D4B8E9000A14C7 /* HandlingPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */; };
 		5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287BEF327CF83500030A534 /* HorizontallyCell.swift */; };
 		5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287BEF427CF83500030A534 /* HorizontallyCell.xib */; };
@@ -60,6 +61,7 @@
 		52E6E63727C2109400CD80D0 /* MainHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6E63527C2109400CD80D0 /* MainHeader.xib */; };
 		52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E63927C2119500CD80D0 /* MainFooter.swift */; };
 		52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6E63A27C2119500CD80D0 /* MainFooter.xib */; };
+		52ED05DB27E1A05400FC8E2D /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED05DA27E1A05400FC8E2D /* Api.swift */; };
 		52F9A2A227C781A400EC01A0 /* HomePagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9A2A127C781A400EC01A0 /* HomePagePresenter.swift */; };
 		52F9A2AC27C7C7BF00EC01A0 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9A2AA27C7C7BF00EC01A0 /* BannerCell.swift */; };
 		52F9A2AD27C7C7BF00EC01A0 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F9A2AB27C7C7BF00EC01A0 /* BannerCell.xib */; };
@@ -114,6 +116,7 @@
 		522CF3C427C0FD0B00E4900A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522CF3CA27C0FE1900E4900A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		522CF3CC27C0FF7300E4900A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		5240933427E198B80089923E /* RawBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBody.swift; sourceTree = "<group>"; };
 		5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingPostRequest.swift; sourceTree = "<group>"; };
 		5287BEF327CF83500030A534 /* HorizontallyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyCell.swift; sourceTree = "<group>"; };
 		5287BEF427CF83500030A534 /* HorizontallyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontallyCell.xib; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		52E6E63527C2109400CD80D0 /* MainHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeader.xib; sourceTree = "<group>"; };
 		52E6E63927C2119500CD80D0 /* MainFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooter.swift; sourceTree = "<group>"; };
 		52E6E63A27C2119500CD80D0 /* MainFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFooter.xib; sourceTree = "<group>"; };
+		52ED05DA27E1A05400FC8E2D /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		52F9A2A127C781A400EC01A0 /* HomePagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePagePresenter.swift; sourceTree = "<group>"; };
 		52F9A2A327C7C54300EC01A0 /* ChuaTeHoiDongQuanTri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuaTeHoiDongQuanTri.entitlements; sourceTree = "<group>"; };
 		52F9A2AA27C7C7BF00EC01A0 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 			children = (
 				522CF3CA27C0FE1900E4900A /* APIService.swift */,
 				5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */,
+				5240933427E198B80089923E /* RawBody.swift */,
+				52ED05DA27E1A05400FC8E2D /* Api.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -686,7 +692,9 @@
 				522CF3BB27C0FD0900E4900A /* ViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
 				5266EF6627D4B8E9000A14C7 /* HandlingPostRequest.swift in Sources */,
+				5240933527E198B80089923E /* RawBody.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
+				52ED05DB27E1A05400FC8E2D /* Api.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */,
@@ -900,7 +908,7 @@
 					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.ChuaTeHoiDongQuanTri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.MovieStreaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -939,7 +947,7 @@
 					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.ChuaTeHoiDongQuanTri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.MovieStreaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -24,8 +24,7 @@ class MovieHomePage: BaseViewController {
         
         homePagePresentor = HomePagePresenter(view: self)
         homePagePresentor.getHomePageData(page: index)
-        APIService.shared.testPost()
-//        HandlingPostRequest.shared.postRequest()
+        HandlingPostRequest.shared.callPostRequest()
         //CELL
         HomePageCLV.registerCell(nibName: BannerCell.self)
         HomePageCLV.registerCell(nibName: CategoryCell.self)
