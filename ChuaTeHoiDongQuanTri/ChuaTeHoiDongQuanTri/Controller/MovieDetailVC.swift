@@ -200,8 +200,8 @@ extension MovieDetailVC : updateMovieDetail {
     
     func updateUI() {
         DispatchQueue.main.async {
+            self.moviePlayer.configure(in: self.mediaPlayerView)
             if let linkMedia = URL(string: self.movieDetailPresent.getLinkMedia().mediaUrl) {
-                self.moviePlayer.configure(in: self.mediaPlayerView)
                 self.moviePlayer.streaming(with: linkMedia, subRemote: self.subRemoteURL)
             }
         }

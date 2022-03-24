@@ -15,6 +15,14 @@ public class MovieStreaming {
     
     private let avPlayer = AVPlayer()
     
+    private lazy var activityIndicatorView : UIActivityIndicatorView = {
+        let loading = UIActivityIndicatorView()
+        loading.hidesWhenStopped = true
+        loading.style = .large
+        loading.color = .white
+        return loading
+    }()
+    
     private lazy var playerView : UIView = {
         let view = playVideoViewController.view!
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -27,12 +35,19 @@ public class MovieStreaming {
     
     public func configure(in view : UIView) {
         view.addSubview(playerView)
+        playerView.addSubview(activityIndicatorView)
         NSLayoutConstraint.activate([
             playerView.topAnchor.constraint(equalTo: view.topAnchor),
             playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
+
         ])
+        
+        activityIndicatorView.startAnimating()
     }
     
     public func streaming(with movieURL : URL, subRemote : String) {
@@ -46,6 +61,7 @@ public class MovieStreaming {
         
         playVideoViewController.player = avPlayer
         playVideoViewController.player?.play()
+        activityIndicatorView.stopAnimating()
     }
     
     public func pause() {
