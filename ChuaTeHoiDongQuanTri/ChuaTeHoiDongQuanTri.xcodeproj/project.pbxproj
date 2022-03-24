@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE627EC497C00D411EB /* ReviewMedia.swift */; };
+		521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE827EC49B800D411EB /* MediaInfo.swift */; };
 		5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */; };
 		5221292927CB8ACB00C9FFB2 /* MovieDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */; };
 		5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292B27CB949300C9FFB2 /* ListInfoCell.swift */; };
@@ -100,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		1F5C7EE126A1C383AFDDD43D /* Pods-ChuaTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuaTeHoiDongQuanTri/Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
+		521B0FE627EC497C00D411EB /* ReviewMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMedia.swift; sourceTree = "<group>"; };
+		521B0FE827EC49B800D411EB /* MediaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
 		5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailVC.xib; sourceTree = "<group>"; };
 		5221292B27CB949300C9FFB2 /* ListInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCell.swift; sourceTree = "<group>"; };
@@ -191,6 +195,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521B0FE527EC496300D411EB /* ReviewMedia */ = {
+			isa = PBXGroup;
+			children = (
+				521B0FE827EC49B800D411EB /* MediaInfo.swift */,
+				521B0FE627EC497C00D411EB /* ReviewMedia.swift */,
+			);
+			path = ReviewMedia;
+			sourceTree = "<group>";
+		};
 		5221292A27CB946D00C9FFB2 /* ListInfoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +364,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				521B0FE527EC496300D411EB /* ReviewMedia */,
 				52A1508527E0F3160050BD12 /* Section */,
 				522184CB27CC986B00CDFDDA /* LinkMedia */,
 				528CBF7F27CA51B300541EF7 /* MovieDetail */,
@@ -678,6 +692,7 @@
 			files = (
 				52A1508927E0F3480050BD12 /* DataModel.swift in Sources */,
 				52FEE78827C8850200B7588E /* CategoryCell.swift in Sources */,
+				521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */,
 				52E6E62527C20B6500CD80D0 /* UICollectionView.swift in Sources */,
 				522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */,
 				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
@@ -705,6 +720,7 @@
 				52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */,
 				52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
+				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,

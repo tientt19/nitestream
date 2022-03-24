@@ -24,7 +24,13 @@ class MovieHomePage: BaseViewController {
         
         homePagePresentor = HomePagePresenter(view: self)
         homePagePresentor.getHomePageData(page: index)
-        HandlingPostRequest.shared.callPostRequest()
+        
+        APIService.shared.getReviewMedia(by: 0) { response, error in
+            if let response = response {
+                dLogDebug(response)
+            }
+        }
+    
         //CELL
         HomePageCLV.registerCell(nibName: BannerCell.self)
         HomePageCLV.registerCell(nibName: CategoryCell.self)

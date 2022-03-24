@@ -9,7 +9,7 @@ import Foundation
 import AVKit
 
 
-protocol updateMovieDetail {
+protocol updateMovieDetail : AnyObject {
     func updateUI()
     func loadDetail()
 }

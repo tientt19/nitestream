@@ -8,7 +8,7 @@
 import Foundation
 
 
-protocol UpdateMainDelegate {
+protocol UpdateMainDelegate : AnyObject {
     func updateUI()
 }
 

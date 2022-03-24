@@ -31,4 +31,12 @@ struct Contants {
     static func getEpisode(_ id : String, _ category : String) -> String {
         return "https://ga-mobile-api.loklok.tv/cms/app/movieDrama/get?id=\(id)&category=\(category)"
     }
+    
+    static func getReviewMedia(with page : Int) -> String {
+        return "https://ga-mobile-api.loklok.tv/cms/app/recommendPool/getVideoFromRecommondPool?page=\(page)"
+    }
+    
+    static func getReviewMedia() -> String {
+        return "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo"
+    }
 }

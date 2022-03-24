@@ -68,5 +68,4 @@ class DefinitionList : NSObject, NSCoding{
 		}
 
 	}
-
 }

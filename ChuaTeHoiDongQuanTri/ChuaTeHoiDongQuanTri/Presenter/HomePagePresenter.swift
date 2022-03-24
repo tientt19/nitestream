@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UpdateHomePageDelegate {
+protocol UpdateHomePageDelegate : AnyObject {
     func updateUI()
     func responseMovieDetail()
 }
