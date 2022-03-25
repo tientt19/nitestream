@@ -12,10 +12,10 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var posterImage : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var blurImageView : UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func configure(_ imageURL: String,_ title: String) {

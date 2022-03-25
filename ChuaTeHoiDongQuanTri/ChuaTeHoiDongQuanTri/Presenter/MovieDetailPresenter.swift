@@ -24,7 +24,6 @@ class MovieDetailPresenter {
     private var movieDetail = MovieDetail(fromDictionary: ["" : ""])
     
     var sections = [Section]()
-    var heightScrollView = Int()
     var episodeVo = [EpisodeVo]()
     var subRemoteURL = String()
 
@@ -74,7 +73,6 @@ class MovieDetailPresenter {
     func getMovieDetail(_ id: Int,_ category: Int) {
         
         sections = []
-        heightScrollView = 300
         
         // khi người dùng ấn call resquest liên tục
         workItemGetHomePageData?.cancel()
@@ -154,7 +152,6 @@ class MovieDetailPresenter {
             if episodeList.count > 1 {
                 self.episodeVo = episodeList
                 sections.append(Section(data: [DataModel](), title: "Episodes"))
-                heightScrollView = sections.count * 200
             }
         }
         
@@ -165,11 +162,10 @@ class MovieDetailPresenter {
                     let dataItems = DataModel(id: data.id,
                                               category: data.category,
                                               name: data.name,
-                                              coverHorizontalUrl: data.coverVerticalUrl)
+                                              coverHorizontalUrl: data.coverHorizontalUrl)
                     refLists.append(dataItems)
                 }
                 sections.append(Section(data: refLists, title: "In this series"))
-                heightScrollView = sections.count * 300
             }
         }
         
@@ -180,21 +176,16 @@ class MovieDetailPresenter {
                     let dataItems = DataModel(id: data.id,
                                               category: data.category,
                                               name: data.name,
-                                              coverHorizontalUrl: data.coverVerticalUrl)
+                                              coverHorizontalUrl: data.coverHorizontalUrl)
                     likeLists.append(dataItems)
                 }
                 sections.append(Section(data: likeLists, title: "Similar to this"))
-                heightScrollView = sections.count * 300
             }
         }
     }
     
     func getSectionData() -> [Section] {
         return sections
-    }
-    
-    func getHeightOfContent() -> CGFloat {
-        return CGFloat(heightScrollView)
     }
     
     func getEpisodeList() -> [EpisodeVo] {

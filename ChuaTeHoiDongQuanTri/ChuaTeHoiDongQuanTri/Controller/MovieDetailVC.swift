@@ -19,7 +19,6 @@ class MovieDetailVC: BaseViewController {
     @IBOutlet weak var intro : UILabel!
     @IBOutlet weak var likeList : UICollectionView!
     @IBOutlet weak var mediaPlayerView : UIView!
-    @IBOutlet weak var heightScrollView : NSLayoutConstraint!
     
     var movieDetail = MovieDetail(fromDictionary: ["" : ""])
     var movieDetailPresent : MovieDetailPresenter!
@@ -54,7 +53,7 @@ class MovieDetailVC: BaseViewController {
 
 extension MovieDetailVC {
     private func registerCell() {
-        likeList.registerCell(nibName: HorizontallyCell.self)
+        likeList.registerCell(nibName: TopSearchCell.self)
         likeList.registerCell(nibName: ListInfoCell.self)
         likeList.registerCellForHeader(nibName: MainHeader.self)
         likeList.registerCellForFooter(nibName: MainFooter.self)
@@ -73,8 +72,6 @@ extension MovieDetailVC {
         }
         
         movieDetailPresent.configureToSection()
-        heightScrollView.constant = movieDetailPresent.getHeightOfContent()
-        
         
         //MARK: - Configure Base UI
         bannerImageView.setImage(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
@@ -130,9 +127,9 @@ extension MovieDetailVC: UICollectionViewDataSource {
         if movieDetailPresent.getEpisodeList().count > 1 {
             if section == 0 {
                 return movieDetailPresent.getEpisodeList().count
-            } else { return 1 }
+            } else { return movieDetailPresent.getSectionData()[section].data.count }
         }
-        return 1
+        return movieDetailPresent.getSectionData()[section].data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -143,9 +140,10 @@ extension MovieDetailVC: UICollectionViewDataSource {
                 return cell
             }
         }
-        let cell = collectionView.dequeue(cellClass: HorizontallyCell.self, forIndexPath: indexPath)
-        cell.configure(data: movieDetailPresent.getSectionData()[indexPath.section].data)
-        cell.delegate = self
+        let cell = collectionView.dequeue(cellClass: TopSearchCell.self, forIndexPath: indexPath)
+        let imageurl = movieDetailPresent.getSectionData()[indexPath.section].data[indexPath.row].coverHorizontalUrl ?? ""
+        let name = movieDetailPresent.getSectionData()[indexPath.section].data[indexPath.row].name ?? ""
+        cell.configure(imageurl,name)
         return cell
     }
     
@@ -170,15 +168,13 @@ extension MovieDetailVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let contentHeight = (movieDetailPresent.getHeightOfContent() / CGFloat(movieDetailPresent.getSectionData().count)) - 60
         
         if movieDetailPresent.getEpisodeList().count > 1 {
             if indexPath.section == 0 {
                 return CGSize(width: 50, height: 50)
             }
         }
-        
-        return CGSize(width: likeList.frame.width, height: contentHeight)
+        return CGSize(width: likeList.frame.width, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

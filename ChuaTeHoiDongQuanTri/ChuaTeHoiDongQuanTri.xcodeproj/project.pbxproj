@@ -954,6 +954,8 @@
 				DEVELOPMENT_TEAM = CY4CXRJ4H3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UltraMovie;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -994,6 +996,8 @@
 				DEVELOPMENT_TEAM = CY4CXRJ4H3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UltraMovie;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

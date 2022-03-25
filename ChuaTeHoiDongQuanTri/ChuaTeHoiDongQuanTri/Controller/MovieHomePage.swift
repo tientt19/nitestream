@@ -39,10 +39,6 @@ extension MovieHomePage: UICollectionViewDelegate {
         if indexPath.section == 0 {
             // handle item in section = 0
         }
-            if let id = homePagePresentor.listResponseData.recommendItems[indexPath.section].recommendContentVOList[indexPath.row].id,
-               let category = homePagePresentor.listResponseData.recommendItems[indexPath.section].recommendContentVOList[indexPath.row].category {
-                homePagePresentor.getMovieDetail(id, category)
-            }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -72,6 +68,7 @@ extension MovieHomePage: UICollectionViewDataSource {
         }
         
         let cell = collectionView.dequeue(cellClass: CategoryCell.self, forIndexPath: indexPath)
+        cell.sendDelegate = self
         cell.configure(data: homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList)
         return cell
     }
@@ -130,6 +127,14 @@ extension MovieHomePage : UpdateHomePageDelegate {
             guard let _self = self else { return }
             _self.stopLoadingAnimate()
             _self.HomePageCLV.reloadData()
+        }
+    }
+}
+
+extension MovieHomePage : passDataPickDelegate {
+    func openDetailView(_ data: RecommendContentVOList) {
+        if let id = data.id, let category = data.category {
+            homePagePresentor.getMovieDetail(id, category)
         }
     }
 }

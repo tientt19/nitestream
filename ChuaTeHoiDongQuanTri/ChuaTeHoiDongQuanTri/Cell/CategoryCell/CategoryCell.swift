@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol passDataPickDelegate: AnyObject {
+    func openDetailView(_ data: RecommendContentVOList)
+}
+
 class CategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var CategoryCollectionView : UICollectionView!
     var listDataCall = [RecommendContentVOList]()
+    
+    var sendDelegate : passDataPickDelegate!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +28,12 @@ class CategoryCell: UICollectionViewCell {
     func configure(data : [RecommendContentVOList]) {
         listDataCall = data
         CategoryCollectionView.reloadData()
+    }
+}
+
+extension CategoryCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sendDelegate.openDetailView(listDataCall[indexPath.item])
     }
 }
 
