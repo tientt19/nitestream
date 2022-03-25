@@ -11,7 +11,6 @@ import Foundation
 class MovieHomePage: BaseViewController {
     
     @IBOutlet weak var HomePageCLV: UICollectionView!
-    @IBOutlet weak var TopSearchCLV : UICollectionView!
     
     var dataResponse = HomePageModel(fromDictionary: ["" : ""])
     
@@ -24,12 +23,6 @@ class MovieHomePage: BaseViewController {
         
         homePagePresentor = HomePagePresenter(view: self)
         homePagePresentor.getHomePageData(page: index)
-        
-        APIService.shared.getReviewMedia(by: 0) { response, error in
-            if let response = response {
-                dLogDebug(response)
-            }
-        }
     
         //CELL
         HomePageCLV.registerCell(nibName: BannerCell.self)
@@ -37,8 +30,6 @@ class MovieHomePage: BaseViewController {
         HomePageCLV.registerCellForHeader(nibName: MainHeader.self)
         HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
         
-        TopSearchCLV.registerCell(nibName: TopSearchCell.self)
-        TopSearchCLV.registerCellForHeader(nibName: MainHeader.self)
     }
 }
 
@@ -48,18 +39,10 @@ extension MovieHomePage: UICollectionViewDelegate {
         if indexPath.section == 0 {
             // handle item in section = 0
         }
-        
-        if collectionView == TopSearchCLV {
-            if let id = Int(homePagePresentor.getTopSearchData()[indexPath.row].id),
-               let category = homePagePresentor.getTopSearchData()[indexPath.row].domainType {
-                homePagePresentor.getMovieDetail(id, category)
-            }
-        } else {
             if let id = homePagePresentor.listResponseData.recommendItems[indexPath.section].recommendContentVOList[indexPath.row].id,
                let category = homePagePresentor.listResponseData.recommendItems[indexPath.section].recommendContentVOList[indexPath.row].category {
                 homePagePresentor.getMovieDetail(id, category)
             }
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -74,33 +57,14 @@ extension MovieHomePage: UICollectionViewDelegate {
 extension MovieHomePage: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if collectionView == TopSearchCLV {
-            return 1
-        }
         return homePagePresentor.getData().recommendItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == TopSearchCLV {
-            return homePagePresentor.getTopSearchData().count
-        }
-        
-        if section == 0 {
-            return 1
-        }
-        return homePagePresentor.getData().recommendItems[section].recommendContentVOList.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == TopSearchCLV {
-            let cell = collectionView.dequeue(cellClass: TopSearchCell.self, forIndexPath: indexPath)
-            cell.configure(homePagePresentor.getTopSearchData()[indexPath.row].cover, homePagePresentor.getTopSearchData()[indexPath.row].title)
-            return cell
-        }
-        
-        let imageURL = homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList[indexPath.row].imageUrl ?? ""
-        let title = homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList[indexPath.row].title ?? ""
-        
         if homePagePresentor.getData().recommendItems[indexPath.section].homeSectionType == "BANNER" {
             let cell = collectionView.dequeue(cellClass: BannerCell.self, forIndexPath: indexPath)
             cell.configure(data: homePagePresentor.getData().recommendItems[0].recommendContentVOList)
@@ -108,18 +72,13 @@ extension MovieHomePage: UICollectionViewDataSource {
         }
         
         let cell = collectionView.dequeue(cellClass: CategoryCell.self, forIndexPath: indexPath)
-        cell.configure(imageURL, title)
+        cell.configure(data: homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            if collectionView == TopSearchCLV {
-                let header = collectionView.dequeueHeader(cellClass: MainHeader.self, OfKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
-                header.configure("Top Searches")
-                return header
-            }
             let header = collectionView.dequeueHeader(cellClass: MainHeader.self, OfKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
             header.configure(homePagePresentor.getData().recommendItems[indexPath.section].homeSectionName)
             return header
@@ -142,44 +101,18 @@ extension MovieHomePage: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if collectionView == TopSearchCLV {
-            return CGSize(width: TopSearchCLV.frame.width, height: 70)
-        } else if homePagePresentor.getData().recommendItems[section].homeSectionType == "BANNER" {
+        if homePagePresentor.getData().recommendItems[section].homeSectionType == "BANNER" {
             return CGSize(width: HomePageCLV.frame.width, height: 0)
         }
-        return CGSize(width: HomePageCLV.frame.width, height: 70)
+        return CGSize(width: HomePageCLV.frame.width, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if collectionView == TopSearchCLV {
-            return CGSize(width: TopSearchCLV.frame.width, height: 0)
-        }
-        return CGSize(width: HomePageCLV.frame.width, height: 10)
+        return CGSize(width: HomePageCLV.frame.width, height: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == TopSearchCLV {
-            return CGSize(width: TopSearchCLV.frame.width, height: 70)
-        } else if homePagePresentor.getData().recommendItems[indexPath.section].homeSectionType == "BANNER" {
-            return CGSize(width: HomePageCLV.frame.width, height: HomePageCLV.frame.height / 2)
-        }
-        return CGSize(width: (HomePageCLV.frame.width - 40) / 4, height: HomePageCLV.frame.height / 3)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.4) {
-            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
-                cell.posterImage.transform = .init(scaleX: 0.75, y: 0.75)
-            }
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.5) {
-            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
-                cell.posterImage.transform = .identity
-            }
-        }
+        return CGSize(width: HomePageCLV.frame.width, height: (HomePageCLV.frame.width * 9) / 16)
     }
 }
 
@@ -197,7 +130,6 @@ extension MovieHomePage : UpdateHomePageDelegate {
             guard let _self = self else { return }
             _self.stopLoadingAnimate()
             _self.HomePageCLV.reloadData()
-            _self.TopSearchCLV.reloadData()
         }
     }
 }

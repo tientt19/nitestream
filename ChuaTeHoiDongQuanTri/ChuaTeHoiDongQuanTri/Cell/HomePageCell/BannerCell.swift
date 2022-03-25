@@ -13,7 +13,6 @@ class BannerCell: UICollectionViewCell {
     @IBOutlet weak var bannerCLV: UICollectionView!
     
     var listDataCall = [RecommendContentVOList]()
-    var indexPageController = 0
   
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,34 +24,6 @@ class BannerCell: UICollectionViewCell {
     func configure(data : [RecommendContentVOList]) {
         listDataCall = data
         bannerCLV.reloadData()
-    }
-}
-
-extension BannerCell {
-    @IBAction func next(_ sender : UIButton) {
-        if indexPageController >= 0 && indexPageController <= listDataCall.count - 1 {
-            indexPageController += 1
-            dLogDebug(indexPageController)
-            let indexPath = IndexPath(item: indexPageController, section: 0)
-            bannerCLV.scrollToItem(at: indexPath, at: .right, animated: true)
-        } else {
-            indexPageController = 0
-            let indexPath = IndexPath(item: indexPageController, section: 0)
-            bannerCLV.scrollToItem(at: indexPath, at: .right, animated: true)
-        }
-    }
-    
-    @IBAction func back(_ sender : UIButton) {
-        if indexPageController < 0 { indexPageController = 0 }
-        if indexPageController >= 0 && indexPageController <= listDataCall.count - 1 {
-            indexPageController -= 1
-            let indexPath = IndexPath(item: indexPageController, section: 0)
-            bannerCLV.scrollToItem(at: indexPath, at: .right, animated: true)
-        } else {
-            indexPageController = 0
-            let indexPath = IndexPath(item: indexPageController, section: 0)
-            bannerCLV.scrollToItem(at: indexPath, at: .right, animated: true)
-        }
     }
 }
 
