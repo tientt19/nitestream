@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,11 +11,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailVC" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target">
             <connections>
                 <outlet property="bannerImageView" destination="Nia-pj-fcf" id="ear-58-GAJ"/>
+                <outlet property="contentHeight" destination="VyR-27-PpJ" id="sgt-Pe-LC5"/>
                 <outlet property="intro" destination="7aW-NW-91o" id="lM7-Fo-fTs"/>
                 <outlet property="likeList" destination="LvD-Qk-9WG" id="Kba-hi-1Jj"/>
                 <outlet property="mediaPlayerView" destination="xEM-ej-Ybg" id="Lx1-61-K2v"/>
                 <outlet property="movieName" destination="HRY-f1-5Cz" id="yVX-2q-ySF"/>
+                <outlet property="movieNamelb" destination="HRY-f1-5Cz" id="7xX-U6-W9N"/>
                 <outlet property="rankingMovie" destination="L8N-z7-h1a" id="Pno-bD-57C"/>
+                <outlet property="rateLabel" destination="L8N-z7-h1a" id="plu-14-WBP"/>
+                <outlet property="shortContent" destination="7aW-NW-91o" id="DuA-Dy-v6l"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,7 +36,7 @@
                     <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urn-4j-mt6">
-                            <rect key="frame" x="0.0" y="0.0" width="428" height="2000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="1000"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEM-ej-Ybg">
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="240.66666666666666"/>
@@ -45,7 +50,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aW-NW-91o">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aW-NW-91o">
                                     <rect key="frame" x="10" y="298.66666666666669" width="408" height="182"/>
                                     <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
@@ -53,7 +58,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LvD-Qk-9WG">
-                                    <rect key="frame" x="10" y="485.66666666666663" width="408" height="1503.666666666667"/>
+                                    <rect key="frame" x="10" y="485.66666666666663" width="408" height="503.66666666666663"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8VD-WB-gPb">
                                         <size key="itemSize" width="128" height="128"/>
@@ -89,7 +94,7 @@
                                 <constraint firstAttribute="trailing" secondItem="xEM-ej-Ybg" secondAttribute="trailing" id="LtT-d5-ZD8"/>
                                 <constraint firstItem="LvD-Qk-9WG" firstAttribute="top" secondItem="7aW-NW-91o" secondAttribute="bottom" constant="5" id="NLL-lh-Iah"/>
                                 <constraint firstAttribute="trailing" secondItem="LvD-Qk-9WG" secondAttribute="trailing" constant="10" id="PP6-Gc-c6e"/>
-                                <constraint firstAttribute="height" priority="999" constant="2000" id="VyR-27-PpJ"/>
+                                <constraint firstAttribute="height" constant="1000" id="VyR-27-PpJ"/>
                                 <constraint firstItem="LvD-Qk-9WG" firstAttribute="trailing" secondItem="Urn-4j-mt6" secondAttribute="trailing" constant="-10" id="bLy-uE-gMg"/>
                                 <constraint firstItem="xEM-ej-Ybg" firstAttribute="top" secondItem="Urn-4j-mt6" secondAttribute="top" id="dND-IP-z60"/>
                                 <constraint firstItem="7aW-NW-91o" firstAttribute="top" secondItem="L8N-z7-h1a" secondAttribute="bottom" constant="5" id="hNS-oB-oBY"/>
@@ -107,7 +112,6 @@
                     <constraints>
                         <constraint firstItem="nv6-iq-zg6" firstAttribute="top" secondItem="Urn-4j-mt6" secondAttribute="top" id="9Lb-js-YSE"/>
                         <constraint firstItem="Urn-4j-mt6" firstAttribute="width" secondItem="HNl-3x-pMK" secondAttribute="width" id="9O2-I8-KzR"/>
-                        <constraint firstAttribute="height" priority="999" constant="2000" id="Hj7-yt-FAy"/>
                         <constraint firstItem="Urn-4j-mt6" firstAttribute="trailing" secondItem="nv6-iq-zg6" secondAttribute="trailing" id="VXT-dt-lHx"/>
                         <constraint firstItem="nv6-iq-zg6" firstAttribute="leading" secondItem="Urn-4j-mt6" secondAttribute="leading" id="luY-0s-dOC"/>
                         <constraint firstItem="Urn-4j-mt6" firstAttribute="bottom" secondItem="nv6-iq-zg6" secondAttribute="bottom" id="zsY-ez-oO6"/>

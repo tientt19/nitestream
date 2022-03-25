@@ -19,6 +19,10 @@ class MovieDetailVC: BaseViewController {
     @IBOutlet weak var intro : UILabel!
     @IBOutlet weak var likeList : UICollectionView!
     @IBOutlet weak var mediaPlayerView : UIView!
+    @IBOutlet weak var contentHeight : NSLayoutConstraint!
+    @IBOutlet weak var movieNamelb: UILabel!
+    @IBOutlet weak var shortContent : UILabel!
+    @IBOutlet weak var rateLabel : UILabel!
     
     var movieDetail = MovieDetail(fromDictionary: ["" : ""])
     var movieDetailPresent : MovieDetailPresenter!
@@ -29,6 +33,10 @@ class MovieDetailVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         HandlingView()
     }
     
@@ -72,7 +80,8 @@ extension MovieDetailVC {
         }
         
         movieDetailPresent.configureToSection()
-        
+        contentHeight.constant = movieNamelb.frame.height + rateLabel.frame.height + shortContent.frame.height + movieDetailPresent.getContentHeigt() + mediaPlayerView.frame.height - 100
+
         //MARK: - Configure Base UI
         bannerImageView.setImage(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
         movieName.text = movieDetail.name
@@ -165,6 +174,10 @@ extension MovieDetailVC: UICollectionViewDataSource {
 extension MovieDetailVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

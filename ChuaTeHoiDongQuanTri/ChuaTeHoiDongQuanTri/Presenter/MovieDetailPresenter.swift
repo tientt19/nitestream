@@ -26,6 +26,8 @@ class MovieDetailPresenter {
     var sections = [Section]()
     var episodeVo = [EpisodeVo]()
     var subRemoteURL = String()
+    
+    var contentHeight = Int()
 
     init(view : updateMovieDetail) {
         delegate = view
@@ -122,6 +124,10 @@ class MovieDetailPresenter {
         return linkMediaResponse
     }
     
+    func getContentHeigt() -> CGFloat {
+        return CGFloat(contentHeight)
+    }
+    
     //MARK: - get Episode
     func defaultVatlue(data : MovieDetail) -> MovieDetail {
         movieDetail = data
@@ -152,6 +158,14 @@ class MovieDetailPresenter {
             if episodeList.count > 1 {
                 self.episodeVo = episodeList
                 sections.append(Section(data: [DataModel](), title: "Episodes"))
+                let parentWidth = UIScreen.main.bounds.width - 10*2
+                let x = (episodeList.count * 50)
+                if x > Int(parentWidth) {
+                    let lines = (x / Int(parentWidth)) + 1
+                    contentHeight += (lines * 50) + 70
+                } else {
+                    contentHeight += 120
+                }
             }
         }
         
@@ -166,6 +180,7 @@ class MovieDetailPresenter {
                     refLists.append(dataItems)
                 }
                 sections.append(Section(data: refLists, title: "In this series"))
+                contentHeight += 70 + (((reflist.count)*80) + (reflist.count - 1)*5)
             }
         }
         
@@ -180,6 +195,7 @@ class MovieDetailPresenter {
                     likeLists.append(dataItems)
                 }
                 sections.append(Section(data: likeLists, title: "Similar to this"))
+                contentHeight += 70 + (((likelist.count)*80) + (likelist.count - 1)*5)
             }
         }
     }
