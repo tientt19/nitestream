@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52064A6827EF02E0007E48A6 /* ExpandViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52064A6627EF02E0007E48A6 /* ExpandViewControler.swift */; };
+		52064A6927EF02E0007E48A6 /* ExpandViewControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52064A6727EF02E0007E48A6 /* ExpandViewControler.xib */; };
 		521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE627EC497C00D411EB /* ReviewMedia.swift */; };
 		521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE827EC49B800D411EB /* MediaInfo.swift */; };
 		5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */; };
@@ -49,7 +51,6 @@
 		5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5296332B27C94357007F3335 /* TopSearchCell.xib */; };
 		52A1508727E0F3290050BD12 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508627E0F3290050BD12 /* Section.swift */; };
 		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
-		52A7A7BE27ED8C5E006F79DC /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7BD27ED8C5E006F79DC /* BaseNavigationController.swift */; };
 		52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */; };
 		52A7A7DF27ED9FA9006F79DC /* TikTokViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DE27ED9FA9006F79DC /* TikTokViewController.swift */; };
 		52A7A7E127ED9FBE006F79DC /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E027ED9FBE006F79DC /* DiscoverViewController.swift */; };
@@ -109,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		1F5C7EE126A1C383AFDDD43D /* Pods-ChuaTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuaTeHoiDongQuanTri/Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
+		52064A6627EF02E0007E48A6 /* ExpandViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandViewControler.swift; sourceTree = "<group>"; };
+		52064A6727EF02E0007E48A6 /* ExpandViewControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandViewControler.xib; sourceTree = "<group>"; };
 		521B0FE627EC497C00D411EB /* ReviewMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMedia.swift; sourceTree = "<group>"; };
 		521B0FE827EC49B800D411EB /* MediaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
 		5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
@@ -152,7 +155,6 @@
 		5296332B27C94357007F3335 /* TopSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSearchCell.xib; sourceTree = "<group>"; };
 		52A1508627E0F3290050BD12 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		52A7A7BD27ED8C5E006F79DC /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		52A7A7DE27ED9FA9006F79DC /* TikTokViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokViewController.swift; sourceTree = "<group>"; };
 		52A7A7E027ED9FBE006F79DC /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52064A6527EF028D007E48A6 /* ExpandView */ = {
+			isa = PBXGroup;
+			children = (
+				52064A6627EF02E0007E48A6 /* ExpandViewControler.swift */,
+				52064A6727EF02E0007E48A6 /* ExpandViewControler.xib */,
+			);
+			path = ExpandView;
+			sourceTree = "<group>";
+		};
 		521B0FE527EC496300D411EB /* ReviewMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +362,7 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52064A6527EF028D007E48A6 /* ExpandView */,
 				52A7A7DE27ED9FA9006F79DC /* TikTokViewController.swift */,
 				52A7A7E027ED9FBE006F79DC /* DiscoverViewController.swift */,
 				52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */,
@@ -371,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				52D8ECE527C617B1001B8A2B /* BaseViewController.swift */,
-				52A7A7BD27ED8C5E006F79DC /* BaseNavigationController.swift */,
 				52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */,
 			);
 			path = Base;
@@ -658,6 +669,7 @@
 				5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */,
 				522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */,
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
+				52064A6927EF02E0007E48A6 /* ExpandViewControler.xib in Resources */,
 				5221292927CB8ACB00C9FFB2 /* MovieDetailVC.xib in Resources */,
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
@@ -736,7 +748,6 @@
 				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
 				52F9A2A227C781A400EC01A0 /* HomePagePresenter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
-				52A7A7BE27ED8C5E006F79DC /* BaseNavigationController.swift in Sources */,
 				52E6E63027C20E7500CD80D0 /* MainCell.swift in Sources */,
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
@@ -773,6 +784,7 @@
 				52E6E62D27C20CB000CD80D0 /* MainPresenter.swift in Sources */,
 				522184CF27CC9B9B00CDFDDA /* MovieDetailPresenter.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
+				52064A6827EF02E0007E48A6 /* ExpandViewControler.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				52A7A7E127ED9FBE006F79DC /* DiscoverViewController.swift in Sources */,

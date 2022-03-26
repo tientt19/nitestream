@@ -16,6 +16,7 @@ class MainHeader: UICollectionReusableView {
     }
     
     func configure(_ title: String) {
+        mainTitle.textColor = .black
         mainTitle.text = title
     }
 }

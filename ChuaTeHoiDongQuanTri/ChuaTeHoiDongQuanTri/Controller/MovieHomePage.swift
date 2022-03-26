@@ -7,12 +7,14 @@
 
 import UIKit
 import Foundation
+import CoreMedia
 
 class MovieHomePage: BaseViewController {
     
     @IBOutlet weak var HomePageCLV: UICollectionView!
     
     var dataResponse = HomePageModel(fromDictionary: ["" : ""])
+    var sendDataToExpand = RecommendItem(fromDictionary: ["" :  ""])
     
     var homePagePresentor : HomePagePresenter!
     var index = 0
@@ -30,6 +32,12 @@ class MovieHomePage: BaseViewController {
         HomePageCLV.registerCellForHeader(nibName: MainHeader.self)
         HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
         
+    }
+    
+    @objc func handleTapGuesture() {
+        let expandVC = ExpandViewControler(data: sendDataToExpand)
+        expandVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(expandVC, animated: true)
     }
 }
 
@@ -78,6 +86,9 @@ extension MovieHomePage: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueHeader(cellClass: MainHeader.self, OfKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
             header.configure(homePagePresentor.getData().recommendItems[indexPath.section].homeSectionName)
+            sendDataToExpand = homePagePresentor.getData().recommendItems[indexPath.section]
+            let tap = UITapGestureRecognizer(target: self,action: #selector(self.handleTapGuesture))
+            header.addGestureRecognizer(tap)
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueFooter(cellClass: MainFooter.self, OfKind: UICollectionView.elementKindSectionFooter, forIndexPath: indexPath)
@@ -101,7 +112,7 @@ extension MovieHomePage: UICollectionViewDelegateFlowLayout {
         if homePagePresentor.getData().recommendItems[section].homeSectionType == "BANNER" {
             return CGSize(width: HomePageCLV.frame.width, height: 0)
         }
-        return CGSize(width: HomePageCLV.frame.width, height: 30)
+        return CGSize(width: HomePageCLV.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -118,6 +129,7 @@ extension MovieHomePage : UpdateHomePageDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let _self = self else { return }
             let detailVC = MovieDetailVC(_self.homePagePresentor.getMovieDetail())
+            detailVC.hidesBottomBarWhenPushed = true
             _self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }

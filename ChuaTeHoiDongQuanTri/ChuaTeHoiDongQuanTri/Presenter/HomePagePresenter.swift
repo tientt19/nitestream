@@ -62,15 +62,15 @@ class HomePagePresenter {
                 dispatchGroup.leave()
                 return
             }
-            
+        
             if let data = response {
                 if page > 0 {
-                    let dataRespone = data.recommendItems.filter { $0.homeSectionType != "BLOCK_GROUP" }
+                    let dataRespone = data.recommendItems.filter { $0.recommendContentVOList.count > 1 }
                     data.recommendItems = dataRespone
                     _self.listResponseData.recommendItems += data.recommendItems
                 } else {
                     data.recommendItems.remove(at: 0)
-                    let dataRespone = data.recommendItems.filter { $0.homeSectionType != "BLOCK_GROUP" }
+                    let dataRespone = data.recommendItems.filter { $0.recommendContentVOList.count > 1 }
                     data.recommendItems = dataRespone
                     _self.listResponseData.recommendItems += data.recommendItems
                 }

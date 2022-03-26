@@ -15,18 +15,29 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdv-b1-mJa">
-                    <rect key="frame" x="0.0" y="11" width="300" height="28.5"/>
+                    <rect key="frame" x="0.0" y="11" width="270" height="28.5"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clx-p2-Whf">
+                    <rect key="frame" x="290" y="14" width="30" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="XiH-wJ-U3f"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="greaterthan.circle" catalog="system"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rdv-b1-mJa" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="22O-cW-Zir"/>
                 <constraint firstItem="rdv-b1-mJa" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="RzG-20-mB6"/>
-                <constraint firstAttribute="trailing" secondItem="rdv-b1-mJa" secondAttribute="trailing" constant="20" id="d6W-hS-80T"/>
+                <constraint firstAttribute="trailing" secondItem="clx-p2-Whf" secondAttribute="trailing" id="Tcj-OD-ddA"/>
+                <constraint firstItem="clx-p2-Whf" firstAttribute="leading" secondItem="rdv-b1-mJa" secondAttribute="trailing" constant="20" id="d6W-hS-80T"/>
+                <constraint firstItem="clx-p2-Whf" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="k8Y-VX-buO"/>
             </constraints>
             <connections>
                 <outlet property="mainTitle" destination="rdv-b1-mJa" id="gRY-BM-t0K"/>
@@ -34,4 +45,7 @@
             <point key="canvasLocation" x="132" y="77"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="greaterthan.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

@@ -153,6 +153,7 @@ class MovieDetailPresenter {
         return self.subRemoteURL
     }
     
+    //MARK: - convert data to created model
     func configureToSection() {
         if let episodeList = movieDetail.episodeVo {
             if episodeList.count > 1 {
@@ -200,6 +201,7 @@ class MovieDetailPresenter {
         }
     }
     
+    //MARK: - get data
     func getSectionData() -> [Section] {
         return sections
     }

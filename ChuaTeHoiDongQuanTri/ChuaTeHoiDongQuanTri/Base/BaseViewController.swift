@@ -27,7 +27,6 @@ class BaseViewController: UIViewController {
     }
     
     func setUpBaseView() {
-        view.backgroundColor = .lightGray
         view.addSubview(activityIndicatorView)
         activityIndicatorView.setDimensions(width: 50, height: 50)
         activityIndicatorView.center(inView: view)

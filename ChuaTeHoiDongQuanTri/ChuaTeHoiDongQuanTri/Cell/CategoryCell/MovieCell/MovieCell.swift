@@ -16,12 +16,23 @@ class MovieCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        blurImageView.makeBlurImage(targetImageView: blurImageView)
     }
 
     func configure(_ imageURL: String,_ title: String) {
         posterImage.setImage(targetImageView: posterImage, with: imageURL)
         blurImageView.setImage(targetImageView: blurImageView, with: imageURL)
-        blurImageView.makeBlurImage(targetImageView: blurImageView)
         titleLabel.text = title
+    }
+    
+    func imageDimenssions(url: String) -> String{
+        if let imageSource = CGImageSourceCreateWithURL(URL(string: url)! as CFURL, nil) {
+            if let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+                let pixelWidth = imageProperties[kCGImagePropertyPixelWidth] as! Int
+                let pixelHeight = imageProperties[kCGImagePropertyPixelHeight] as! Int
+                return "Width: \(pixelWidth), Height: \(pixelHeight)"
+            }
+        }
+        return "None"
     }
 }

@@ -39,7 +39,9 @@ extension CategoryCell: UICollectionViewDelegate {
 
 extension CategoryCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CategoryCollectionView.frame.width / 3, height: CategoryCollectionView.frame.height)
+        let widther = CategoryCollectionView.frame.width / 3
+        let heigher = widther * 7 / 5
+        return CGSize(width: widther, height: heigher + 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

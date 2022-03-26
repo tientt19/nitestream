@@ -44,11 +44,6 @@ class MovieDetailVC: BaseViewController {
         super.viewDidAppear(animated)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        moviePlayer.pause()
-    }
-    
     init(_ movieDetailData : MovieDetail) {
         super.init(nibName: nil, bundle: nil)
         self.movieDetail = movieDetailData
@@ -73,18 +68,19 @@ extension MovieDetailVC {
     func HandlingView() {
         setUpBaseView()
         stopLoadingAnimate()
-    
+        
         //MARK: - Configure Default Data
         if movieDetailPresent.getSectionData().isEmpty {
             let _ = movieDetailPresent.defaultVatlue(data: self.movieDetail)
         }
         
         movieDetailPresent.configureToSection()
-        contentHeight.constant = movieNamelb.frame.height + rateLabel.frame.height + shortContent.frame.height + movieDetailPresent.getContentHeigt() + mediaPlayerView.frame.height - 100
+        contentHeight.constant = movieNamelb.frame.height + rateLabel.frame.height + shortContent.frame.height + movieDetailPresent.getContentHeigt() + mediaPlayerView.frame.height 
 
         //MARK: - Configure Base UI
         bannerImageView.setImage(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
         movieName.text = movieDetail.name
+        navigationItem.title = movieDetail.name
         
         if let scored = movieDetail.score , let year = movieDetail.year {
             rankingMovie.text = "Scored : \(String(describing: scored)) |  Year : \(year)"
