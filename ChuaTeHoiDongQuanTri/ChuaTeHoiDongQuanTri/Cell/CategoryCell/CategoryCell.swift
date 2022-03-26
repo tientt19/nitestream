@@ -37,6 +37,7 @@ extension CategoryCell: UICollectionViewDelegate {
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension CategoryCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widther = CategoryCollectionView.frame.width / 3
@@ -49,6 +50,7 @@ extension CategoryCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension CategoryCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listDataCall.count

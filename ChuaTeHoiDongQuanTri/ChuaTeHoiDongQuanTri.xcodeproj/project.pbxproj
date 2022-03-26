@@ -220,6 +220,46 @@
 			path = ExpandView;
 			sourceTree = "<group>";
 		};
+		52064A6C27EF5E96007E48A6 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				52FA99CD27C73DAD0093FC14 /* MovieHomePage.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		52064A6D27EF5E9D007E48A6 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		52064A6E27EF5ECB007E48A6 /* TikTokView */ = {
+			isa = PBXGroup;
+			children = (
+				52A7A7DE27ED9FA9006F79DC /* TikTokViewController.swift */,
+			);
+			path = TikTokView;
+			sourceTree = "<group>";
+		};
+		52064A6F27EF5ED3007E48A6 /* DiscoverScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52A7A7E027ED9FBE006F79DC /* DiscoverViewController.swift */,
+			);
+			path = DiscoverScreen;
+			sourceTree = "<group>";
+		};
+		52064A7027EF5EDE007E48A6 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		521B0FE527EC496300D411EB /* ReviewMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,10 +402,12 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52064A6C27EF5E96007E48A6 /* HomePage */,
+				52064A6D27EF5E9D007E48A6 /* MovieDetail */,
 				52064A6527EF028D007E48A6 /* ExpandView */,
-				52A7A7DE27ED9FA9006F79DC /* TikTokViewController.swift */,
-				52A7A7E027ED9FBE006F79DC /* DiscoverViewController.swift */,
-				52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */,
+				52064A6E27EF5ECB007E48A6 /* TikTokView */,
+				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
+				52064A7027EF5EDE007E48A6 /* ProfileView */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -426,8 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				522CF3BA27C0FD0900E4900A /* ViewController.swift */,
-				52FA99CD27C73DAD0093FC14 /* MovieHomePage.swift */,
-				5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

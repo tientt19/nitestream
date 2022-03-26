@@ -58,6 +58,7 @@ extension MovieHomePage: UICollectionViewDelegate {
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension MovieHomePage: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -99,6 +100,7 @@ extension MovieHomePage: UICollectionViewDataSource {
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension MovieHomePage: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
@@ -124,6 +126,7 @@ extension MovieHomePage: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - UpdateHomePageDelegate
 extension MovieHomePage : UpdateHomePageDelegate {
     func responseMovieDetail() {
         DispatchQueue.main.async { [weak self] in
@@ -143,6 +146,7 @@ extension MovieHomePage : UpdateHomePageDelegate {
     }
 }
 
+//MARK: - passDataPickDelegate
 extension MovieHomePage : passDataPickDelegate {
     func openDetailView(_ data: RecommendContentVOList) {
         if let id = data.id, let category = data.category {
