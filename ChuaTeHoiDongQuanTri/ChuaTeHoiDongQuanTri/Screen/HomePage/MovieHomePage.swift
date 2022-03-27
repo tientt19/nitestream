@@ -34,10 +34,19 @@ class MovieHomePage: BaseViewController {
         
     }
     
-    @objc func handleTapGuesture() {
-        let expandVC = ExpandViewControler(data: sendDataToExpand)
-        expandVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(expandVC, animated: true)
+    
+    //MARK: - Handle when tap collecion view header
+    @objc func didSelectSection(gesture: UITapGestureRecognizer) {
+        let indexPaths = self.HomePageCLV?.indexPathsForVisibleSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader)
+        for indexPath in indexPaths! {
+            if (gesture.view as! MainHeader) == HomePageCLV?.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: indexPath){
+                sendDataToExpand = homePagePresentor.getData().recommendItems[indexPath.section]
+                let expandVC = ExpandViewControler(data: sendDataToExpand)
+                expandVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(expandVC, animated: true)
+                break
+            }
+        }
     }
 }
 
@@ -79,6 +88,7 @@ extension MovieHomePage: UICollectionViewDataSource {
         let cell = collectionView.dequeue(cellClass: CategoryCell.self, forIndexPath: indexPath)
         cell.sendDelegate = self
         cell.configure(data: homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList)
+        if homePagePresentor.getData().recommendItems[indexPath.section].homeSectionType == "BLOCK_GROUP" { cell.isGroupBlock = true }
         return cell
     }
     
@@ -86,10 +96,16 @@ extension MovieHomePage: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueHeader(cellClass: MainHeader.self, OfKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
-            header.configure(homePagePresentor.getData().recommendItems[indexPath.section].homeSectionName)
-            sendDataToExpand = homePagePresentor.getData().recommendItems[indexPath.section]
-            let tap = UITapGestureRecognizer(target: self,action: #selector(self.handleTapGuesture))
-            header.addGestureRecognizer(tap)
+            let sectionName = homePagePresentor.getData().recommendItems[indexPath.section].homeSectionName
+            let sectionType = homePagePresentor.getData().recommendItems[indexPath.section].homeSectionType
+            header.configure(sectionName ?? "")
+            if sectionType == "BLOCK_GROUP" {
+                header.disableExpandButton()
+            } else {
+                header.expandButton.isHidden = false
+                let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didSelectSection(gesture:)))
+                header.addGestureRecognizer(gestureRecognizer)
+            }
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueFooter(cellClass: MainFooter.self, OfKind: UICollectionView.elementKindSectionFooter, forIndexPath: indexPath)

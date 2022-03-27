@@ -15,6 +15,7 @@ class CategoryCell: UICollectionViewCell {
     
     @IBOutlet weak var CategoryCollectionView : UICollectionView!
     var listDataCall = [RecommendContentVOList]()
+    var isGroupBlock = false
     
     var sendDelegate : passDataPickDelegate!
 
@@ -60,6 +61,7 @@ extension CategoryCell: UICollectionViewDataSource {
         if let imageUrl = listDataCall[indexPath.row].imageUrl, let titleLabel = listDataCall[indexPath.row].title {
             let cell = collectionView.dequeue(cellClass: MovieCell.self, forIndexPath: indexPath)
             cell.configure(imageUrl, titleLabel)
+            if isGroupBlock { cell.configureForGroupBlock() }
             return cell
         }
         return UICollectionViewCell()

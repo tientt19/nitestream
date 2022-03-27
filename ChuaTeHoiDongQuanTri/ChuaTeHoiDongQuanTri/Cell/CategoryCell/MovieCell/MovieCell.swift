@@ -18,8 +18,13 @@ class MovieCell: UICollectionViewCell {
         super.awakeFromNib()
         blurImageView.makeBlurImage(targetImageView: blurImageView)
     }
+    
+    func configureForGroupBlock() {
+        blurImageView.isHidden = true
+    }
 
     func configure(_ imageURL: String,_ title: String) {
+        blurImageView.isHidden = false
         posterImage.setImage(targetImageView: posterImage, with: imageURL)
         blurImageView.setImage(targetImageView: blurImageView, with: imageURL)
         titleLabel.text = title

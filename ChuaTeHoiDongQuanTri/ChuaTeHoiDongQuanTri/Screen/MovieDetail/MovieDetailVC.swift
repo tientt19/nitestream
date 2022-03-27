@@ -123,6 +123,7 @@ extension MovieDetailVC: UICollectionViewDelegate {
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension MovieDetailVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return movieDetailPresent.getSectionData().count
@@ -157,6 +158,7 @@ extension MovieDetailVC: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueHeader(cellClass: MainHeader.self, OfKind: UICollectionView.elementKindSectionHeader, forIndexPath: indexPath)
             header.configure(movieDetailPresent.getSectionData()[indexPath.section].title)
+            header.disableExpandButton()
             return header
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueFooter(cellClass: MainFooter.self, OfKind: UICollectionView.elementKindSectionFooter, forIndexPath: indexPath)
@@ -166,6 +168,7 @@ extension MovieDetailVC: UICollectionViewDataSource {
         }
     }
 }
+//MARK: - UICollectionViewDelegateFlowLayout
 
 extension MovieDetailVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -194,6 +197,7 @@ extension MovieDetailVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: likeList.frame.width, height: 10)
     }
 }
+//MARK: - updateMovieDetail
 
 extension MovieDetailVC : updateMovieDetail {
     func loadDetail() {

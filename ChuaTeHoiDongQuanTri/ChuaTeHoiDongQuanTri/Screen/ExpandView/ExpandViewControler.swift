@@ -32,17 +32,33 @@ class ExpandViewControler: UIViewController {
 }
 
 extension ExpandViewControler {
+    
+    //MARK: - set up view
     func setupView() {
         navigationItem.title = listMoviePassed.homeSectionName
         expandCollectionView.registerCell(nibName: MovieCell.self)
         expandCollectionView.reloadData()
+        expandCollectionView.prefetchDataSource = self
     }
 }
 
+//MARK: - UICollectionViewDataSourcePrefetching
+extension ExpandViewControler : UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if let imageUrl = listMoviePassed.recommendContentVOList[indexPath.row].imageUrl, let titleLabel = listMoviePassed.recommendContentVOList[indexPath.row].title {
+                let cell = collectionView.cellForItem(at: indexPath) as? MovieCell
+                cell?.configure(imageUrl, titleLabel)
+            }
+        }
+    }
+}
+
+//MARK: - UICollectionViewDelegate
 extension ExpandViewControler: UICollectionViewDelegate {
     
 }
-
+//MARK: - UICollectionViewDataSource
 extension ExpandViewControler: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listMoviePassed.recommendContentVOList.count
@@ -57,7 +73,7 @@ extension ExpandViewControler: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
 }
-
+//MARK: - UICollectionViewDelegateFlowLayout
 extension ExpandViewControler: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
