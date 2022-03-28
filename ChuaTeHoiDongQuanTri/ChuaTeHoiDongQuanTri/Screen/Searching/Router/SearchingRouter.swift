@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SearchingRouter : SearchingRouterProtocols {
-    
+
     static var storyboard: UIStoryboard {
           return UIStoryboard(name: "Main", bundle: Bundle.main)
       }
@@ -29,5 +29,12 @@ class SearchingRouter : SearchingRouterProtocols {
         
         return searchingViewController
     }
+    
+    func openDetailMovie(from view: SearchingViewProtocols, for data: MovieDetail) {
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
         
+        viewVC.navigationController?.pushViewController(MovieDetailVC(data), animated: true)
+    }
 }

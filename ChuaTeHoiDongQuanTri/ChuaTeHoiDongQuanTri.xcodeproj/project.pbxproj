@@ -17,6 +17,8 @@
 		5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292C27CB949300C9FFB2 /* ListInfoCell.xib */; };
 		522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CC27CC989A00CDFDDA /* LinkMedia.swift */; };
 		522184CF27CC9B9B00CDFDDA /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CE27CC9B9B00CDFDDA /* MovieDetailPresenter.swift */; };
+		5225C62027F1FE790063FE3E /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225C61E27F1FE790063FE3E /* TopSearchTableViewCell.swift */; };
+		5225C62127F1FE790063FE3E /* TopSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5225C61F27F1FE790063FE3E /* TopSearchTableViewCell.xib */; };
 		522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3B627C0FD0900E4900A /* AppDelegate.swift */; };
 		522CF3B927C0FD0900E4900A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3B827C0FD0900E4900A /* SceneDelegate.swift */; };
 		522CF3BB27C0FD0900E4900A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3BA27C0FD0900E4900A /* ViewController.swift */; };
@@ -126,6 +128,8 @@
 		5221292C27CB949300C9FFB2 /* ListInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoCell.xib; sourceTree = "<group>"; };
 		522184CC27CC989A00CDFDDA /* LinkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkMedia.swift; sourceTree = "<group>"; };
 		522184CE27CC9B9B00CDFDDA /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
+		5225C61E27F1FE790063FE3E /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
+		5225C61F27F1FE790063FE3E /* TopSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSearchTableViewCell.xib; sourceTree = "<group>"; };
 		522CF3B327C0FD0900E4900A /* ChuaTeHoiDongQuanTri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuaTeHoiDongQuanTri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522CF3B627C0FD0900E4900A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		522CF3B827C0FD0900E4900A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +302,29 @@
 			path = LinkMedia;
 			sourceTree = "<group>";
 		};
+		5225C61D27F1FE140063FE3E /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5225C61E27F1FE790063FE3E /* TopSearchTableViewCell.swift */,
+				5225C61F27F1FE790063FE3E /* TopSearchTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		5225C62227F200420063FE3E /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		5225C62327F2004D0063FE3E /* TableViewFooter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewFooter;
+			sourceTree = "<group>";
+		};
 		522CF3AA27C0FD0800E4900A = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +370,9 @@
 		525DC16827F1C0BC003EEF58 /* Searching */ = {
 			isa = PBXGroup;
 			children = (
+				5225C62327F2004D0063FE3E /* TableViewFooter */,
+				5225C62227F200420063FE3E /* TableViewHeader */,
+				5225C61D27F1FE140063FE3E /* TableViewCell */,
 				525DC17127F1C139003EEF58 /* Protocols */,
 				525DC17027F1C131003EEF58 /* Presenter */,
 				525DC16F27F1C12B003EEF58 /* Interactor */,
@@ -783,6 +813,7 @@
 				5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */,
 				522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */,
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
+				5225C62127F1FE790063FE3E /* TopSearchTableViewCell.xib in Resources */,
 				52064A6927EF02E0007E48A6 /* ExpandViewControler.xib in Resources */,
 				5221292927CB8ACB00C9FFB2 /* MovieDetailVC.xib in Resources */,
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
@@ -900,6 +931,7 @@
 				525DC16B27F1C0F1003EEF58 /* SearchingViewController.swift in Sources */,
 				528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */,
 				528CBF8A27CA56B200541EF7 /* RefList.swift in Sources */,
+				5225C62027F1FE790063FE3E /* TopSearchTableViewCell.swift in Sources */,
 				52E6E62D27C20CB000CD80D0 /* MainPresenter.swift in Sources */,
 				522184CF27CC9B9B00CDFDDA /* MovieDetailPresenter.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
