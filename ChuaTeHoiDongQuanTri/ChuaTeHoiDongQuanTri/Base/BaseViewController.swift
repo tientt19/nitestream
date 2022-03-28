@@ -28,6 +28,7 @@ class BaseViewController: UIViewController {
     
     func setUpBaseView() {
         view.addSubview(activityIndicatorView)
+        hideKeyboardWhenTappedAround()
         activityIndicatorView.setDimensions(width: 50, height: 50)
         activityIndicatorView.center(inView: view)
         activityIndicatorView.startAnimating()

@@ -26,6 +26,12 @@
 		522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CA27C0FE1900E4900A /* APIService.swift */; };
 		522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CC27C0FF7300E4900A /* MainModel.swift */; };
 		5240933527E198B80089923E /* RawBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240933427E198B80089923E /* RawBody.swift */; };
+		525DC16B27F1C0F1003EEF58 /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */; };
+		525DC16C27F1C0F1003EEF58 /* SearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */; };
+		525DC17427F1C159003EEF58 /* SearchingViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */; };
+		525DC17627F1C2FD003EEF58 /* SearchingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */; };
+		525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC17727F1C351003EEF58 /* SearchingInterator.swift */; };
+		525DC17A27F1C3B8003EEF58 /* SearchingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC17927F1C3B8003EEF58 /* SearchingRouter.swift */; };
 		5266EF6627D4B8E9000A14C7 /* HandlingPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */; };
 		5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287BEF327CF83500030A534 /* HorizontallyCell.swift */; };
 		5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287BEF427CF83500030A534 /* HorizontallyCell.xib */; };
@@ -131,6 +137,12 @@
 		522CF3CA27C0FE1900E4900A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		522CF3CC27C0FF7300E4900A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		5240933427E198B80089923E /* RawBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBody.swift; sourceTree = "<group>"; };
+		525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; };
+		525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingViewController.xib; sourceTree = "<group>"; };
+		525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewProtocols.swift; sourceTree = "<group>"; };
+		525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingPresenter.swift; sourceTree = "<group>"; };
+		525DC17727F1C351003EEF58 /* SearchingInterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingInterator.swift; sourceTree = "<group>"; };
+		525DC17927F1C3B8003EEF58 /* SearchingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingRouter.swift; sourceTree = "<group>"; };
 		5266EF6527D4B8E9000A14C7 /* HandlingPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingPostRequest.swift; sourceTree = "<group>"; };
 		5287BEF327CF83500030A534 /* HorizontallyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyCell.swift; sourceTree = "<group>"; };
 		5287BEF427CF83500030A534 /* HorizontallyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontallyCell.xib; sourceTree = "<group>"; };
@@ -328,6 +340,67 @@
 			path = ChuaTeHoiDongQuanTri;
 			sourceTree = "<group>";
 		};
+		525DC16827F1C0BC003EEF58 /* Searching */ = {
+			isa = PBXGroup;
+			children = (
+				525DC17127F1C139003EEF58 /* Protocols */,
+				525DC17027F1C131003EEF58 /* Presenter */,
+				525DC16F27F1C12B003EEF58 /* Interactor */,
+				525DC16E27F1C123003EEF58 /* Router */,
+				525DC16D27F1C11B003EEF58 /* Controller */,
+				525DC17227F1C142003EEF58 /* View */,
+			);
+			path = Searching;
+			sourceTree = "<group>";
+		};
+		525DC16D27F1C11B003EEF58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		525DC16E27F1C123003EEF58 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				525DC17927F1C3B8003EEF58 /* SearchingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		525DC16F27F1C12B003EEF58 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				525DC17727F1C351003EEF58 /* SearchingInterator.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		525DC17027F1C131003EEF58 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		525DC17127F1C139003EEF58 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		525DC17227F1C142003EEF58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5287BEF227CF83210030A534 /* HorizontallyCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +475,7 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				525DC16827F1C0BC003EEF58 /* Searching */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6D27EF5E9D007E48A6 /* MovieDetail */,
 				52064A6527EF028D007E48A6 /* ExpandView */,
@@ -721,6 +795,7 @@
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
 				522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */,
 				52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */,
+				525DC16C27F1C0F1003EEF58 /* SearchingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,12 +878,14 @@
 				52ED05DB27E1A05400FC8E2D /* Api.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
+				525DC17627F1C2FD003EEF58 /* SearchingPresenter.swift in Sources */,
 				5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */,
 				528CBF8E27CA56B200541EF7 /* DefinitionList.swift in Sources */,
 				528CBF8D27CA56B200541EF7 /* DrameTypeVo.swift in Sources */,
 				528CBF8C27CA56B200541EF7 /* AreaList.swift in Sources */,
 				52E6E63627C2109400CD80D0 /* MainHeader.swift in Sources */,
 				52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */,
+				525DC17427F1C159003EEF58 /* SearchingViewProtocols.swift in Sources */,
 				52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */,
 				52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */,
 				52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */,
@@ -816,9 +893,11 @@
 				52A7A7DF27ED9FA9006F79DC /* TikTokViewController.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */,
+				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
 				5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */,
+				525DC16B27F1C0F1003EEF58 /* SearchingViewController.swift in Sources */,
 				528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */,
 				528CBF8A27CA56B200541EF7 /* RefList.swift in Sources */,
 				52E6E62D27C20CB000CD80D0 /* MainPresenter.swift in Sources */,
@@ -827,6 +906,7 @@
 				52064A6827EF02E0007E48A6 /* ExpandViewControler.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
+				525DC17A27F1C3B8003EEF58 /* SearchingRouter.swift in Sources */,
 				52A7A7E127ED9FBE006F79DC /* DiscoverViewController.swift in Sources */,
 				52FA99CE27C73DAD0093FC14 /* MovieHomePage.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,

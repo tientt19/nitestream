@@ -16,6 +16,13 @@ class MovieHomePage: BaseViewController {
     var dataResponse = HomePageModel(fromDictionary: ["" : ""])
     var sendDataToExpand = RecommendItem(fromDictionary: ["" :  ""])
     
+    lazy var textFieldView : UITextField = {
+        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
+        textfield.borderStyle = .roundedRect
+        textfield.placeholder = "Thách chúng mày search"
+        return textfield
+    }()
+    
     var homePagePresentor : HomePagePresenter!
     var index = 0
     
@@ -25,14 +32,23 @@ class MovieHomePage: BaseViewController {
         
         homePagePresentor = HomePagePresenter(view: self)
         homePagePresentor.getHomePageData(page: index)
-    
+        navigationItem.titleView = textFieldView
+        textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
+        
         //CELL
         HomePageCLV.registerCell(nibName: BannerCell.self)
         HomePageCLV.registerCell(nibName: CategoryCell.self)
         HomePageCLV.registerCellForHeader(nibName: MainHeader.self)
         HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
-        
+        HomePageCLV.prefetchDataSource = self
     }
+    
+    @objc func textFieldTap() {
+        let searchingVC = SearchingRouter.createSearchingModule()
+        searchingVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(searchingVC, animated: true)
+    }
+    
     
     
     //MARK: - Handle when tap collecion view header
@@ -50,6 +66,19 @@ class MovieHomePage: BaseViewController {
     }
 }
 
+//MARK: - UICollectionViewDataSourcePrefetching
+extension MovieHomePage : UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if let refetchingCell = collectionView.cellForItem(at: indexPath) as? CategoryCell {
+                refetchingCell.configure(data: homePagePresentor.getData().recommendItems[indexPath.section].recommendContentVOList)
+                if homePagePresentor.getData().recommendItems[indexPath.section].homeSectionType == "BLOCK_GROUP" { refetchingCell.isGroupBlock = true }
+            }
+        }
+    }
+}
+
+//MARK: - UICollectionViewDelegate
 extension MovieHomePage: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -60,7 +89,6 @@ extension MovieHomePage: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.section == homePagePresentor.getData().recommendItems.count - 2 {
-            activityIndicatorView.startAnimating()
             index += 1
             homePagePresentor.loadMore(page: index)
         }

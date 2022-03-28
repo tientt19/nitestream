@@ -39,9 +39,10 @@ class MovieDetailVC: BaseViewController {
         super.viewWillAppear(animated)
         HandlingView()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        moviePlayer.pause()
     }
     
     init(_ movieDetailData : MovieDetail) {
@@ -60,6 +61,7 @@ extension MovieDetailVC {
         likeList.registerCell(nibName: ListInfoCell.self)
         likeList.registerCellForHeader(nibName: MainHeader.self)
         likeList.registerCellForFooter(nibName: MainFooter.self)
+        likeList.prefetchDataSource = self
         bannerImageView.makeBlurImage(targetImageView: bannerImageView)
         
         movieDetailPresent = MovieDetailPresenter(view: self)
@@ -104,6 +106,19 @@ extension MovieDetailVC {
     }
 }
 
+extension MovieDetailVC : UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if let cell = collectionView.cellForItem(at: indexPath) as? TopSearchCell {
+                let imageurl = movieDetailPresent.getSectionData()[indexPath.section].data[indexPath.row].coverHorizontalUrl ?? ""
+                let name = movieDetailPresent.getSectionData()[indexPath.section].data[indexPath.row].name ?? ""
+                cell.configure(imageurl,name)
+            }
+        }
+    }
+}
+
+//MARK: - UICollectionViewDelegate
 extension MovieDetailVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

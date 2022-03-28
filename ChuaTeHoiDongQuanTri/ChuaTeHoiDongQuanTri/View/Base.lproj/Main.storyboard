@@ -147,7 +147,9 @@
                             <constraint firstItem="jzw-g9-YKe" firstAttribute="trailing" secondItem="Jtg-FB-GMy" secondAttribute="trailing" constant="20" id="hiD-Kl-1zd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="51B-YC-0t4"/>
+                    <navigationItem key="navigationItem" id="51B-YC-0t4">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="HomePageCLV" destination="Jtg-FB-GMy" id="VKZ-mK-P4R"/>
                     </connections>
