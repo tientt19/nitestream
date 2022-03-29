@@ -350,4 +350,16 @@ extension UIImageView {
         let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         targetImageView.kf.setImage(with: url)
     }
+    
+    func setImageCaching(targetImageView : UIImageView ,with imageURL : String) {
+        let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        let processor = DownsamplingImageProcessor(size: targetImageView.bounds.size)
+
+        targetImageView.kf.setImage(with: url, options: [
+            .processor(processor),
+            .loadDiskFileSynchronously,
+            .cacheOriginalImage,
+            .transition(.fade(0.25))
+        ])
+    }
 }
