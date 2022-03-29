@@ -57,7 +57,7 @@ class MovieHomePage: BaseViewController {
         for indexPath in indexPaths! {
             if (gesture.view as! MainHeader) == HomePageCLV?.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: indexPath){
                 sendDataToExpand = homePagePresentor.getData().recommendItems[indexPath.section]
-                let expandVC = ExpandViewControler(data: sendDataToExpand)
+                let expandVC = ExpandScreenRouter.createModule(with: sendDataToExpand)
                 expandVC.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(expandVC, animated: true)
                 break
