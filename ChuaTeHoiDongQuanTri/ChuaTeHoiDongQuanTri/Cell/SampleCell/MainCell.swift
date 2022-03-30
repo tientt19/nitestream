@@ -20,7 +20,7 @@ class MainCell: UICollectionViewCell {
     }
     
     func configure(_ data : MainModel) {
-        self.imageView.kf.setImage(with: URL(string: data.url))
+        self.imageView.setImageCaching(targetImageView: self.imageView, with: data.url)
         self.titleOfPhoto.text = data.title
     }
 }

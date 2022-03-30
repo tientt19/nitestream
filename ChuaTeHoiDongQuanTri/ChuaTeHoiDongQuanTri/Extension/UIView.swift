@@ -294,34 +294,6 @@ extension UIViewController {
     }
 }
 
-extension Collection {
-    func choose(_ n: Int) -> ArraySlice<Element> { shuffled().prefix(n) }
-}
-
-// Put this piece of code anywhere you like
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-extension UIImageView {
-    public func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
-        let maskPath = UIBezierPath(roundedRect: bounds,
-                                    byRoundingCorners: corners,
-                                    cornerRadii: CGSize(width: radius, height: radius))
-        let shape = CAShapeLayer()
-        shape.path = maskPath.cgPath
-        layer.mask = shape
-    }
-}
-
 extension UIView {
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self
@@ -335,31 +307,4 @@ extension UIView {
     }
 }
 
-extension UIImageView {
-    func makeBlurImage(targetImageView:UIImageView?) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = targetImageView!.bounds
-        
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
-        targetImageView?.addSubview(blurEffectView)
-    }
-    
-    //set image
-    func setImage(targetImageView : UIImageView ,with imageURL : String) {
-        let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-        targetImageView.kf.setImage(with: url)
-    }
-    
-    func setImageCaching(targetImageView : UIImageView ,with imageURL : String) {
-        let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-        let processor = DownsamplingImageProcessor(size: targetImageView.bounds.size)
 
-        targetImageView.kf.setImage(with: url, options: [
-            .processor(processor),
-            .loadDiskFileSynchronously,
-            .cacheOriginalImage,
-            .transition(.fade(0.25))
-        ])
-    }
-}

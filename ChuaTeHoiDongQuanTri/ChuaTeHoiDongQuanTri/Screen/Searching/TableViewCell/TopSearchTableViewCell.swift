@@ -24,7 +24,7 @@ class TopSearchTableViewCell: UITableViewCell {
     }
     
     func configure(_ imageURL : String,_ movieName : String) {
-        posterImage.setImage(targetImageView: posterImage, with: imageURL)
+        posterImage.setImageCaching(targetImageView: posterImage, with: imageURL)
         name.text = movieName
     }
     

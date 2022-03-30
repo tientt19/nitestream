@@ -80,7 +80,7 @@ extension MovieDetailVC {
         contentHeight.constant = movieNamelb.frame.height + rateLabel.frame.height + shortContent.frame.height + movieDetailPresent.getContentHeigt() + mediaPlayerView.frame.height 
 
         //MARK: - Configure Base UI
-        bannerImageView.setImage(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
+        bannerImageView.setImageCaching(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
         movieName.text = movieDetail.name
         navigationItem.title = movieDetail.name
         
