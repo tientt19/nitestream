@@ -13,7 +13,7 @@ protocol SearchingViewProtocols : AnyObject {
     var presenter : SearchingPresenterProtocols? { get set }
     
     // PRESENTER -> VIEW
-    func reloadTableView(with data : [TopSearchData])
+    func reloadTableView(tableViewDataSource : TableViewDataSource)
 }
 
 protocol SearchingPresenterProtocols : AnyObject {
@@ -46,4 +46,10 @@ protocol SearchingRouterProtocols : AnyObject {
     // PRESENTER -> ROUTER
     
     func openDetailMovie(from view : SearchingViewProtocols, for data : MovieDetail )
+}
+
+protocol TableViewDataSource : AnyObject {
+    var numberOfItems: Int { get }
+    func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
+    func didSelect(tableView: UITableView, indexPath: IndexPath)
 }

@@ -25,8 +25,8 @@ extension UIImageView {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = targetImageView!.bounds
-        
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // for supporting device rotation
         targetImageView?.addSubview(blurEffectView)
     }
     
@@ -40,7 +40,7 @@ extension UIImageView {
         let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         let processor = DownsamplingImageProcessor(size: targetImageView.bounds.size)
 
-        targetImageView.kf.setImage(with: url,placeholder: UIImage(systemName: "photo"), options: [
+        targetImageView.kf.setImage(with: url, options: [
             .processor(processor),
             .loadDiskFileSynchronously,
             .cacheOriginalImage,

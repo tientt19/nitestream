@@ -13,6 +13,7 @@ class SearchingViewController: BaseViewController {
     
     var topSearchData = [TopSearchData]()
     var presenter : SearchingPresenterProtocols?
+    internal var tableViewDataSource : TableViewDataSource?
     
     lazy var textFieldView : UITextField = {
         let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
@@ -40,8 +41,7 @@ extension SearchingViewController {
 extension SearchingViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        presenter?.openDetailView(id: topSearchData[indexPath.row].id, category: topSearchData[indexPath.row].domainType)
+        tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
     }
 
 }
@@ -53,15 +53,11 @@ extension SearchingViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topSearchData.count
+        return tableViewDataSource?.numberOfItems ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: TopSearchTableViewCell.self, forIndexPath: indexPath)
-        let imageURL = topSearchData[indexPath.row].cover ?? ""
-        let name = topSearchData[indexPath.row].title ?? ""
-        cell.configure(imageURL, name)
-        return cell
+        return tableViewDataSource?.itemCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -75,8 +71,8 @@ extension SearchingViewController : UITableViewDataSource {
 
 //MARK: - SearchingViewProtocols
 extension SearchingViewController : SearchingViewProtocols {
-    func reloadTableView(with data : [TopSearchData]) {
-        self.topSearchData = data
+    func reloadTableView(tableViewDataSource: TableViewDataSource) {
+        self.tableViewDataSource = tableViewDataSource
         stopLoadingAnimate()
         topSearchTableView.reloadData()
     }

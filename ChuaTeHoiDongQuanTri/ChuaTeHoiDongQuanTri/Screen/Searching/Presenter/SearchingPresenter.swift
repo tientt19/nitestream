@@ -32,7 +32,7 @@ extension SearchingPresenter : SearchingInteractorOutputProtocols {
     
     func didGetData(_ data: [TopSearchData]) {
         DispatchQueue.main.async {
-            self.view?.reloadTableView(with: data)
+            self.view?.reloadTableView(tableViewDataSource: SearchTableViewDataSource(entities: data, with: self))
         }
     }
 }
