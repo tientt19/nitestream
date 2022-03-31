@@ -34,10 +34,13 @@ class ExpandScreenRouter: ExpandScreenRouterProtocol {
     }
     
     func openDetailMovie(from view: ExpandScreenViewProtocol, for data: MovieDetail) {
+        
+        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")
         }
         
-        viewVC.navigationController?.pushViewController(MovieDetailVC(data), animated: true)
+        viewVC.navigationController?.pushViewController(detailScreen, animated: true)
     }
 }

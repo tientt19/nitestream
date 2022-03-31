@@ -12,7 +12,7 @@
         <!--Movie Detail Screen View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="MovieDetailScreenViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetailScreenViewController" id="Y6W-OH-hqX" customClass="MovieDetailScreenViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-Wt-bfL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USu-1Z-LWA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -114,13 +114,14 @@
                             <constraint firstItem="kcn-cp-g61" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="14v-6x-uc9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Gzr-Wt-bfL" secondAttribute="bottom" id="2x3-Es-Vfj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kcn-cp-g61" secondAttribute="trailing" id="3YM-QZ-3cW"/>
-                            <constraint firstItem="Gzr-Wt-bfL" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BHM-rM-mQd"/>
+                            <constraint firstItem="Gzr-Wt-bfL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BHM-rM-mQd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gzr-Wt-bfL" secondAttribute="trailing" id="D1g-iJ-Z3F"/>
                             <constraint firstItem="Gzr-Wt-bfL" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="jtu-t7-7qA"/>
                             <constraint firstItem="kcn-cp-g61" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="rte-k2-pZj"/>
                             <constraint firstAttribute="bottom" secondItem="kcn-cp-g61" secondAttribute="bottom" id="yNC-I6-Npc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FBR-qA-eQU"/>
                     <connections>
                         <outlet property="bannerImageView" destination="kcn-cp-g61" id="FPg-dh-Kbn"/>
                         <outlet property="contentHeight" destination="ZPu-o2-9wD" id="Pb2-AC-vJX"/>
@@ -133,7 +134,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="105"/>
+            <point key="canvasLocation" x="788" y="104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N45-3P-rsb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dzZ-tT-Otc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nmO-pG-FZl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="baC-KA-5jy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7Y-qv-BsQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="104.46428571428571"/>
         </scene>
     </scenes>
     <resources>

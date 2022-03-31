@@ -15,9 +15,7 @@ protocol ExpandScreenViewProtocol : AnyObject {
     var presenter : ExpandScreenPresenterProtocol? { get set }
 
     // PRESENTER -> VIEW
-
 }
-
 
 // MARK: -View Input (View -> Presenter)
 protocol ExpandScreenPresenterProtocol : AnyObject  {
@@ -55,3 +53,14 @@ protocol ExpandScreenRouterProtocol : AnyObject  {
     // PRESENTER -> ROUTER
     func openDetailMovie(from view : ExpandScreenViewProtocol, for data : MovieDetail )
 }
+
+//MARK: - Collectionview Datasource
+protocol CollectionviewDataSource : AnyObject {
+    var numberOfItems: Int { get }
+    
+    func itemCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
+    func didSelect(collectionView: UICollectionView, indexPath: IndexPath)
+    func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    func prefetchingData(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath])
+}
+

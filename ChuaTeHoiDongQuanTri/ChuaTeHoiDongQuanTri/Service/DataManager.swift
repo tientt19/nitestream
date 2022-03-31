@@ -22,8 +22,9 @@ extension DataManager {
     /// - Parameter page: page
     /// - Parameter completion: respone value
     func getData(page : Int, completion : @escaping (_ response: [MainModel]?) -> Void) {
-        var mainModelDAO = [MainModel]()
         workItemFetchData?.cancel()
+
+        var mainModelDAO = [MainModel]()
         let dispatchGroup = DispatchGroup()
         
         var newWorkItemFetchData: DispatchWorkItem? = nil
@@ -68,6 +69,8 @@ extension DataManager {
     /// get searching data
     /// - Parameter completion: respone value
     func getSearchingData(completion : @escaping (_ response: [TopSearchData]?) -> Void) {
+        workItemFetchData?.cancel()
+
         var searchingModelDAO = [TopSearchData]()
         let dispatchGroup = DispatchGroup()
         var newWorkItemFetchData: DispatchWorkItem? = nil
@@ -110,6 +113,8 @@ extension DataManager {
     ///   - completion: respone data
     func getDetailMovieData( _ id : Int, _ category : Int ,completion : @escaping (_ response: MovieDetail?) -> Void) {
         // khi người dùng ấn call resquest liên tục
+        workItemFetchData?.cancel()
+
         var searchingModelDAO = MovieDetail(fromDictionary: ["":""])
         let dispatchGroup = DispatchGroup()
         var newWorkItemFetchData: DispatchWorkItem? = nil
@@ -148,50 +153,44 @@ extension DataManager {
 
 //MARK: - Movie Detail
 extension DataManager {
-//    func configureToSection(_ data : MovieDetail) {
-//        if let episodeList = data.episodeVo {
-//            if episodeList.count > 1 {
-//                self.episodeVo = episodeList
-//                sections.append(Section(data: [DataModel](), title: "Episodes"))
-//                let parentWidth = UIScreen.main.bounds.width - 10*2
-//                let x = (episodeList.count * 50)
-//                if x > Int(parentWidth) {
-//                    let lines = (x / Int(parentWidth)) + 1
-//                    contentHeight += (lines * 50) + 70
-//                } else {
-//                    contentHeight += 120
-//                }
-//            }
-//        }
-//        
-//        if let reflist = data.refList {
-//            if reflist.count != 0 {
-//                var refLists = [DataModel]()
-//                reflist.forEach { data in
-//                    let dataItems = DataModel(id: data.id,
-//                                              category: data.category,
-//                                              name: data.name,
-//                                              coverHorizontalUrl: data.coverHorizontalUrl)
-//                    refLists.append(dataItems)
-//                }
-//                sections.append(Section(data: refLists, title: "In this series"))
-//                contentHeight += 70 + (((reflist.count)*80) + (reflist.count - 1)*5)
-//            }
-//        }
-//        
-//        if let likelist = data.likeList {
-//            if likelist.count != 0 {
-//                var likeLists = [DataModel]()
-//                likelist.forEach { data in
-//                    let dataItems = DataModel(id: data.id,
-//                                              category: data.category,
-//                                              name: data.name,
-//                                              coverHorizontalUrl: data.coverHorizontalUrl)
-//                    likeLists.append(dataItems)
-//                }
-//                sections.append(Section(data: likeLists, title: "Similar to this"))
-//                contentHeight += 70 + (((likelist.count)*80) + (likelist.count - 1)*5)
-//            }
-//        }
-//    }
+    // MARK: - get link media
+    func loadLinkMedia(_ contentID : String, _ category : Int, _ episodeID : Int, _ definition : String, completion : @escaping (_ response: LinkMedia?) -> Void) {
+        
+        workItemFetchData?.cancel()
+        
+        let dispatchGroup = DispatchGroup()
+        var linkMediaDAO = LinkMedia(fromDictionary: ["" : ""])
+        
+        var newWorkItemGetHomePageData: DispatchWorkItem? = nil
+        
+        newWorkItemGetHomePageData = DispatchWorkItem {
+            if newWorkItemGetHomePageData?.isCancelled == true {
+                completion(nil)
+                dLogDebug("work item cancel!")
+                return
+            }
+        }
+        
+        ///enter to get place data
+        dispatchGroup.enter()
+        
+        APIService.shared.getLinkMedia(contentId: contentID, categoty: category, episodeId: episodeID, definition: definition, closure: {response, error in
+            
+            if let data = response {
+                linkMediaDAO = data
+                dispatchGroup.leave()
+            }
+            completion(nil)
+        })
+        
+        /// notify when work item done
+        newWorkItemGetHomePageData?.notify(queue: queue) {
+            dispatchGroup.wait()
+            completion(linkMediaDAO)
+        }
+        
+        /// execute work item at background
+        queue.async(execute: newWorkItemGetHomePageData!)
+        workItemFetchData = newWorkItemGetHomePageData
+    }
 }

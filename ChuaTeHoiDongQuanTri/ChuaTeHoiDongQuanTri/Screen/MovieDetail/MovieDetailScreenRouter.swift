@@ -11,12 +11,13 @@ import UIKit
 
 class MovieDetailScreenRouter: MovieDetailScreenRouterProtocol {
     static var storyboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
+        return UIStoryboard(name: "MovieDetailScreen", bundle: Bundle.main)
     }
     // MARK: Static methods
-    static func createModule() -> UIViewController {
+    static func createModule(_ data : MovieDetail) -> UIViewController {
         
-        let viewController = MovieDetailScreenViewController()
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MovieDetailScreenViewController") as! MovieDetailScreenViewController
+        viewController.movieDetail = data
                 
         let presenter: MovieDetailScreenPresenterProtocol & MovieDetailScreenPresenterOutputProtocol = MovieDetailScreenPresenter()
         let interactor: MovieDetailScreenInteractorInputProtocol = MovieDetailScreenInteractor()

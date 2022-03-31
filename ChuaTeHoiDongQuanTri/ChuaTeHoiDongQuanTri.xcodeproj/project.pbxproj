@@ -26,6 +26,8 @@
 		522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CA27C0FE1900E4900A /* APIService.swift */; };
 		522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CC27C0FF7300E4900A /* MainModel.swift */; };
 		52358A1427F4BC20002C883F /* SearchingTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52358A1327F4BC20002C883F /* SearchingTableViewDatasource.swift */; };
+		52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */; };
+		52358A1827F54ED6002C883F /* MovieDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */; };
 		5240933527E198B80089923E /* RawBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240933427E198B80089923E /* RawBody.swift */; };
 		52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */; };
 		52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */; };
@@ -154,6 +156,8 @@
 		522CF3CA27C0FE1900E4900A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		522CF3CC27C0FF7300E4900A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		52358A1327F4BC20002C883F /* SearchingTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTableViewDatasource.swift; sourceTree = "<group>"; };
+		52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDataSource.swift; sourceTree = "<group>"; };
 		5240933427E198B80089923E /* RawBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBody.swift; sourceTree = "<group>"; };
 		52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenPresenter.swift; sourceTree = "<group>"; };
 		52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenRouter.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		52064A6527EF028D007E48A6 /* ExpandView */ = {
 			isa = PBXGroup;
 			children = (
+				52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */,
 				52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */,
 				52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */,
 				52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */,
@@ -287,6 +292,7 @@
 				52B4F29A27F407CA00B0CFEB /* MovieDetailScreenViewController.swift */,
 				52B4F29B27F407CA00B0CFEB /* MovieDetailScreenProtocols.swift */,
 				52B4F29C27F407CA00B0CFEB /* MovieDetailScreenInteractor.swift */,
+				52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */,
 				52B4F2A227F4118E00B0CFEB /* MovieDetailScreen.storyboard */,
 				5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */,
 			);
@@ -939,6 +945,7 @@
 				52E6E62527C20B6500CD80D0 /* UICollectionView.swift in Sources */,
 				522CF3CD27C0FF7300E4900A /* MainModel.swift in Sources */,
 				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
+				52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */,
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
 				52F9A2A227C781A400EC01A0 /* HomePagePresenter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
@@ -977,6 +984,7 @@
 				52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
 				52A7A7DF27ED9FA9006F79DC /* TikTokViewController.swift in Sources */,
+				52358A1827F54ED6002C883F /* MovieDetailDataSource.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */,
 				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,

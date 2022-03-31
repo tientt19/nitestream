@@ -39,7 +39,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="psr-RH-Lbd"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="er1-8u-JyJ"/>
-                                    <outlet property="dragDelegate" destination="Y6W-OH-hqX" id="bvf-hy-QRr"/>
+                                    <outlet property="prefetchDataSource" destination="Y6W-OH-hqX" id="gGM-Fl-amD"/>
                                 </connections>
                             </collectionView>
                         </subviews>
