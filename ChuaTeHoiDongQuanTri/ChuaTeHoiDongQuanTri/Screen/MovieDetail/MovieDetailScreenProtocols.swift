@@ -16,6 +16,7 @@ protocol MovieDetailScreenViewProtocol : AnyObject {
 
     // PRESENTER -> VIEW
     func playMedia(link : LinkMedia)
+    func configureNewData(_ data : MovieDetail)
 }
 
 
@@ -28,6 +29,7 @@ protocol MovieDetailScreenPresenterProtocol : AnyObject  {
     
     // VIEW -> PRESENTER
     func loadLinkMedia(_ contentID : String, _ category : Int, _ episodeID : Int, _ definition : String)
+    func getMovieDetail(_ id: String, _ category : Int)
 }
 
 // MARK: -Interactor Input (Presenter -> Interactor)
@@ -37,6 +39,7 @@ protocol MovieDetailScreenInteractorInputProtocol : AnyObject  {
     
     // PRESENTER -> INTERACTOR
     func loadMedia(_ contentID : String, _ category : Int, _ episodeID : Int, _ definition : String)
+    func getData(_ id: String, _ category : Int)
 }
 
 
@@ -44,6 +47,7 @@ protocol MovieDetailScreenInteractorInputProtocol : AnyObject  {
 protocol MovieDetailScreenPresenterOutputProtocol : AnyObject  {
     // INTERACTOR -> PRESENTER
     func didGetLinkMedia(link : LinkMedia)
+    func didGetMovieDetail(_ data : MovieDetail)
 }
 
 
@@ -55,7 +59,6 @@ protocol MovieDetailScreenRouterProtocol : AnyObject  {
 }
 
 //MARK: - Movie detail datasource
-
 protocol DetailDataSource : AnyObject {
     var sections : [Section] { get }
     var episodeVo : [EpisodeVo] { get }

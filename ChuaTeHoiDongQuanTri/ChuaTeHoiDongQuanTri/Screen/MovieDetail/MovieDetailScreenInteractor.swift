@@ -9,7 +9,7 @@
 import Foundation
 
 class MovieDetailScreenInteractor: MovieDetailScreenInteractorInputProtocol {
-    
+
     // MARK: Properties
     var presenter: MovieDetailScreenPresenterOutputProtocol?
     
@@ -18,6 +18,15 @@ class MovieDetailScreenInteractor: MovieDetailScreenInteractorInputProtocol {
             guard let `self` = self else { return }
             if let data = response {
                 self.presenter?.didGetLinkMedia(link: data)
+            }
+        }
+    }
+    
+    func getData(_ id: String, _ category: Int) {
+        DataManager.shared.getDetailMovieData(Int(id)!, category) { [weak self]  response in
+            guard let `self` = self else { return }
+            if let data = response {
+                self.presenter?.didGetMovieDetail(data)
             }
         }
     }

@@ -19,7 +19,7 @@ class MovieDetailDataSource : DetailDataSource {
     var contentHeight = Int()
     var numberOfItems = Int()
     
-    init(entities: MovieDetail,with  presenter: MovieDetailScreenPresenterProtocol) {
+    init(entities: MovieDetail , with  presenter: MovieDetailScreenPresenterProtocol) {
         self.entities = entities
         self.presenter = presenter
         configureSection()
@@ -50,7 +50,17 @@ class MovieDetailDataSource : DetailDataSource {
     }
     
     func didSelect(collectionView: UICollectionView, indexPath: IndexPath) {
-
+        if let selectedCell = collectionView.cellForItem(at: indexPath) as? ListInfoCell {
+            if let episodeID = selectedCell.dataPassed.id,
+               let definition = entities.episodeVo[selectedCell.dataPassed.seriesNo - 1].definitionList[0].code {
+                self.subRemoteURL = getLinkSub(selectedCell.dataPassed.seriesNo - 1)
+                presenter?.loadLinkMedia(entities.id, entities.category, episodeID, definition)
+            }
+        } else {
+            if let id = sections[indexPath.section].data[indexPath.row].id, let category = sections[indexPath.section].data[indexPath.row].category {
+                presenter?.getMovieDetail(id, category)
+            }
+        }
     }
     
     func configureHeader(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -175,7 +175,7 @@ extension MovieHomePage : UpdateHomePageDelegate {
     func responseMovieDetail() {
         DispatchQueue.main.async { [weak self] in
             guard let _self = self else { return }
-            let detailVC = MovieDetailVC(_self.homePagePresentor.getMovieDetail())
+            let detailVC = MovieDetailScreenRouter.createModule(_self.homePagePresentor.getMovieDetail())
             detailVC.hidesBottomBarWhenPushed = true
             _self.navigationController?.pushViewController(detailVC, animated: true)
         }

@@ -38,6 +38,11 @@ class MovieDetailScreenViewController: BaseViewController {
         dataSource = MovieDetailDataSource(entities: movieDetail, with: presenter!)
         configureUI()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        moviePlayer.pause()
+    }
 }
 
 //MARK: - Hanle View
@@ -45,9 +50,8 @@ extension MovieDetailScreenViewController {
     func configureUI() {
         setUpBaseView()
         stopLoadingAnimate()
-        contentHeight.constant = movieName.frame.height + rankingMovie.frame.height + shortContent.frame.height + (dataSource?.getContentHeight())! + mediaPlayerView.frame.height
         
-        //MARK: - Configure Base UI
+        ///  Configure Base UI
         bannerImageView.setImageCaching(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
         movieName.text = movieDetail.name
         navigationItem.title = movieDetail.name
@@ -60,7 +64,10 @@ extension MovieDetailScreenViewController {
             shortContent.text = temp
         } else { shortContent.text = "" }
         
-        //MARK: - Get Movie Subfile
+        /// - calculate height of scroll view
+        contentHeight.constant = movieName.frame.height + rankingMovie.frame.height + shortContent.frame.height + (dataSource?.getContentHeight())! + mediaPlayerView.frame.height
+        
+        /// Get Movie Subfile
         self.subRemoteURL = (dataSource?.getLinkSub(0))!
         // reload
         likeList.reloadData()
@@ -75,7 +82,11 @@ extension MovieDetailScreenViewController {
     }
 }
 
-extension MovieDetailScreenViewController : UICollectionViewDelegate { }
+extension MovieDetailScreenViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        dataSource?.didSelect(collectionView: collectionView, indexPath: indexPath)
+    }
+}
 
 //MARK: - UICollectionViewDataSource
 extension MovieDetailScreenViewController : UICollectionViewDataSource {
@@ -122,12 +133,19 @@ extension MovieDetailScreenViewController : UICollectionViewDelegateFlowLayout {
 
 //MARK: - MovieDetailScreenViewProtocol
 extension MovieDetailScreenViewController: MovieDetailScreenViewProtocol{
-
+ 
     // TODO: Implement View Output Methods
     func playMedia(link: LinkMedia) {
         self.moviePlayer.configure(in: self.mediaPlayerView)
         if let linkMedia = URL(string: link.mediaUrl) {
             self.moviePlayer.streaming(with: linkMedia, subRemote: self.subRemoteURL)
         }
+    }
+    
+    func configureNewData(_ data: MovieDetail) {
+        moviePlayer.pause()
+        self.movieDetail = data
+        dataSource = MovieDetailDataSource(entities: data, with: presenter!)
+        configureUI()
     }
 }

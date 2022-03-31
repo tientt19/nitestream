@@ -31,10 +31,13 @@ class SearchingRouter : SearchingRouterProtocols {
     }
     
     func openDetailMovie(from view: SearchingViewProtocols, for data: MovieDetail) {
+        
+        let detailVC = MovieDetailScreenRouter.createModule(data)
+        
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")
         }
         
-        viewVC.navigationController?.pushViewController(MovieDetailVC(data), animated: true)
+        viewVC.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

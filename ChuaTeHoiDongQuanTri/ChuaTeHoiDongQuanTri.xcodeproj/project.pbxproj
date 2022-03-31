@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE627EC497C00D411EB /* ReviewMedia.swift */; };
 		521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE827EC49B800D411EB /* MediaInfo.swift */; };
-		5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */; };
-		5221292927CB8ACB00C9FFB2 /* MovieDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */; };
 		5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292B27CB949300C9FFB2 /* ListInfoCell.swift */; };
 		5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292C27CB949300C9FFB2 /* ListInfoCell.xib */; };
 		522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CC27CC989A00CDFDDA /* LinkMedia.swift */; };
@@ -137,8 +135,6 @@
 		1F5C7EE126A1C383AFDDD43D /* Pods-ChuaTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuaTeHoiDongQuanTri/Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
 		521B0FE627EC497C00D411EB /* ReviewMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMedia.swift; sourceTree = "<group>"; };
 		521B0FE827EC49B800D411EB /* MediaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
-		5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
-		5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailVC.xib; sourceTree = "<group>"; };
 		5221292B27CB949300C9FFB2 /* ListInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCell.swift; sourceTree = "<group>"; };
 		5221292C27CB949300C9FFB2 /* ListInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoCell.xib; sourceTree = "<group>"; };
 		522184CC27CC989A00CDFDDA /* LinkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkMedia.swift; sourceTree = "<group>"; };
@@ -286,7 +282,6 @@
 		52064A6D27EF5E9D007E48A6 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
-				5221292627CB8ACB00C9FFB2 /* MovieDetailVC.swift */,
 				52B4F29827F407CA00B0CFEB /* MovieDetailScreenPresenter.swift */,
 				52B4F29927F407CA00B0CFEB /* MovieDetailScreenRouter.swift */,
 				52B4F29A27F407CA00B0CFEB /* MovieDetailScreenViewController.swift */,
@@ -294,7 +289,6 @@
 				52B4F29C27F407CA00B0CFEB /* MovieDetailScreenInteractor.swift */,
 				52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */,
 				52B4F2A227F4118E00B0CFEB /* MovieDetailScreen.storyboard */,
-				5221292727CB8ACB00C9FFB2 /* MovieDetailVC.xib */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -867,7 +861,6 @@
 				52412C9727F2FF3C00896AF0 /* ExpandScreen.storyboard in Resources */,
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
 				5225C62127F1FE790063FE3E /* TopSearchTableViewCell.xib in Resources */,
-				5221292927CB8ACB00C9FFB2 /* MovieDetailVC.xib in Resources */,
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
 				5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */,
@@ -986,7 +979,6 @@
 				52A7A7DF27ED9FA9006F79DC /* TikTokViewController.swift in Sources */,
 				52358A1827F54ED6002C883F /* MovieDetailDataSource.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
-				5221292827CB8ACB00C9FFB2 /* MovieDetailVC.swift in Sources */,
 				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,
 				52358A1427F4BC20002C883F /* SearchingTableViewDatasource.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
