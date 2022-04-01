@@ -22,7 +22,6 @@ class ExpandScreenInteractor: ExpandScreenInteractorInputProtocol {
     
     func handleGetDetailMovie(id: Int, category: Int) {
         // khi người dùng ấn call resquest liên tục
-        
         DataManager.shared.getDetailMovieData(id, category) { response in
             if let data = response {
                 self.presenter?.didGetMovieDetail(data)

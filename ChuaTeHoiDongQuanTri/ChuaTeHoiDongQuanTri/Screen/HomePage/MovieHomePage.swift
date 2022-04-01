@@ -13,7 +13,6 @@ class MovieHomePage: BaseViewController {
     
     @IBOutlet weak var HomePageCLV: UICollectionView!
     
-    var dataResponse = HomePageModel(fromDictionary: ["" : ""])
     var sendDataToExpand = RecommendItem(fromDictionary: ["" :  ""])
     
     lazy var textFieldView : UITextField = {

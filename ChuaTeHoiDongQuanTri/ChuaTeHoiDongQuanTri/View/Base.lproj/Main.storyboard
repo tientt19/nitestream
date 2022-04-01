@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yww-45-xWd">
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="jeq-0j-sAF" customClass="PinterestLayout" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="jeq-0j-sAF" customClass="PinterestLayout" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3fU-SG-DJK">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -60,7 +60,7 @@
         <!--Wow-->
         <scene sceneID="cA2-Ey-oTy">
             <objects>
-                <viewController id="WoH-o9-Lhb" customClass="TikTokViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WoH-o9-Lhb" customClass="TikTokViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uX3-ND-cB5">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
         <!--Của tôi-->
         <scene sceneID="8U8-hf-PUq">
             <objects>
-                <viewController id="buu-qC-ZZb" customClass="ProfileViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="buu-qC-ZZb" customClass="ProfileViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d1n-bS-opW">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Khám phá-->
         <scene sceneID="c18-7S-nrC">
             <objects>
-                <viewController id="3EI-SZ-7yK" customClass="DiscoverViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3EI-SZ-7yK" customClass="DiscoverViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QR-zm-4LS">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="255" y="816"/>
         </scene>
-        <!--Movie Home Page-->
+        <!--Home Page View View Controller-->
         <scene sceneID="gdE-iu-6sX">
             <objects>
-                <viewController id="Je2-oj-TwW" customClass="MovieHomePage" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewViewController" id="Je2-oj-TwW" customClass="HomePageViewViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Voq-LV-21u">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,8 +133,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Je2-oj-TwW" id="ZQw-6d-lTY"/>
-                                    <outlet property="delegate" destination="Je2-oj-TwW" id="tlz-ca-QT7"/>
+                                    <outlet property="dataSource" destination="Je2-oj-TwW" id="JSN-2w-zKO"/>
+                                    <outlet property="delegate" destination="Je2-oj-TwW" id="avC-s8-AXR"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -151,7 +151,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="HomePageCLV" destination="Jtg-FB-GMy" id="VKZ-mK-P4R"/>
+                        <outlet property="HomePageCLV" destination="Jtg-FB-GMy" id="yfK-KZ-hlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2j-2L-K6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,7 +183,7 @@
         <!--Trang chủ-->
         <scene sceneID="DZy-hR-Reo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u3d-LS-pe6" customClass="BaseNavigationViewController" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u3d-LS-pe6" customClass="BaseNavigationViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trang chủ" image="house.fill" catalog="system" id="kPI-Oq-Pj3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sS5-Q6-AgB">

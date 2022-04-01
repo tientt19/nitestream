@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-               BuildableName = "ChuaTeHoiDongQuanTri.app"
-               BlueprintName = "ChuaTeHoiDongQuanTri"
+               BuildableName = "ChuTeHoiDongQuanTri.app"
+               BlueprintName = "ChuTeHoiDongQuanTri"
                ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-            BuildableName = "ChuaTeHoiDongQuanTri.app"
-            BlueprintName = "ChuaTeHoiDongQuanTri"
+            BuildableName = "ChuTeHoiDongQuanTri.app"
+            BlueprintName = "ChuTeHoiDongQuanTri"
             ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-            BuildableName = "ChuaTeHoiDongQuanTri.app"
-            BlueprintName = "ChuaTeHoiDongQuanTri"
+            BuildableName = "ChuTeHoiDongQuanTri.app"
+            BlueprintName = "ChuTeHoiDongQuanTri"
             ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

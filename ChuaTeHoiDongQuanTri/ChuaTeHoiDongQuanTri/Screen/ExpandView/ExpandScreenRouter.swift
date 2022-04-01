@@ -36,6 +36,7 @@ class ExpandScreenRouter: ExpandScreenRouterProtocol {
     func openDetailMovie(from view: ExpandScreenViewProtocol, for data: MovieDetail) {
         
         let detailScreen = MovieDetailScreenRouter.createModule(data)
+        detailScreen.hidesBottomBarWhenPushed = true
         
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")

@@ -21,10 +21,10 @@ extension DataManager {
     /// get data home page
     /// - Parameter page: page
     /// - Parameter completion: respone value
-    func getData(page : Int, completion : @escaping (_ response: [MainModel]?) -> Void) {
+    func getHomeData(page : Int, completion : @escaping (_ response: HomePageModel?) -> Void) {
         workItemFetchData?.cancel()
 
-        var mainModelDAO = [MainModel]()
+        var mainModelDAO = HomePageModel(fromDictionary: ["":""])
         let dispatchGroup = DispatchGroup()
         
         var newWorkItemFetchData: DispatchWorkItem? = nil
@@ -39,7 +39,7 @@ extension DataManager {
         ///enter to get place data
         dispatchGroup.enter()
         
-        APIService.shared.getPlaceData(numberOfPage: page) { response, error in
+        APIService.shared.getHomeData(numberOfPage: page) { response, error in
             if newWorkItemFetchData?.isCancelled == true {
                 dLogDebug("internal new work item cancel!")
                 dispatchGroup.leave()

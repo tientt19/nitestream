@@ -22,7 +22,6 @@ class ExpandScreenPresenter: ExpandScreenPresenterProtocol {
     func openDetailView(id: Int, category: Int) {
         interactor?.handleGetDetailMovie(id: id, category: category)
     }
-
 }
 
 extension ExpandScreenPresenter : ExpandScreenPresenterOutputProtocol {

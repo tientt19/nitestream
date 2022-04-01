@@ -52,7 +52,7 @@ extension MovieDetailScreenViewController {
         stopLoadingAnimate()
         
         ///  Configure Base UI
-        bannerImageView.setImageCaching(targetImageView: bannerImageView, with: movieDetail.coverHorizontalUrl)
+        bannerImageView.setImageCaching(targetImageView: bannerImageView, with: movieDetail.coverVerticalUrl)
         movieName.text = movieDetail.name
         navigationItem.title = movieDetail.name
         

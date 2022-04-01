@@ -80,6 +80,12 @@
 		52B4F2A027F407CA00B0CFEB /* MovieDetailScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4F29B27F407CA00B0CFEB /* MovieDetailScreenProtocols.swift */; };
 		52B4F2A127F407CA00B0CFEB /* MovieDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4F29C27F407CA00B0CFEB /* MovieDetailScreenInteractor.swift */; };
 		52B4F2A327F4118E00B0CFEB /* MovieDetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B4F2A227F4118E00B0CFEB /* MovieDetailScreen.storyboard */; };
+		52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */; };
+		52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */; };
+		52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */; };
+		52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */; };
+		52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */; };
+		52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */; };
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
 		52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61C27C20ADE00CD80D0 /* UIView.swift */; };
@@ -141,7 +147,7 @@
 		522184CE27CC9B9B00CDFDDA /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		5225C61E27F1FE790063FE3E /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
 		5225C61F27F1FE790063FE3E /* TopSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSearchTableViewCell.xib; sourceTree = "<group>"; };
-		522CF3B327C0FD0900E4900A /* ChuaTeHoiDongQuanTri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuaTeHoiDongQuanTri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		522CF3B327C0FD0900E4900A /* ChuTeHoiDongQuanTri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuTeHoiDongQuanTri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522CF3B627C0FD0900E4900A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		522CF3B827C0FD0900E4900A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		522CF3BA27C0FD0900E4900A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +213,12 @@
 		52B4F29B27F407CA00B0CFEB /* MovieDetailScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenProtocols.swift; sourceTree = "<group>"; };
 		52B4F29C27F407CA00B0CFEB /* MovieDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenInteractor.swift; sourceTree = "<group>"; };
 		52B4F2A227F4118E00B0CFEB /* MovieDetailScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailScreen.storyboard; sourceTree = "<group>"; };
+		52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewPresenter.swift; sourceTree = "<group>"; };
+		52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewRouter.swift; sourceTree = "<group>"; };
+		52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewViewController.swift; sourceTree = "<group>"; };
+		52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewProtocols.swift; sourceTree = "<group>"; };
+		52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewInteractor.swift; sourceTree = "<group>"; };
+		52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewDataSource.swift; sourceTree = "<group>"; };
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		52E6E61C27C20ADE00CD80D0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -275,6 +287,12 @@
 			isa = PBXGroup;
 			children = (
 				52FA99CD27C73DAD0093FC14 /* MovieHomePage.swift */,
+				52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */,
+				52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */,
+				52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */,
+				52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */,
+				52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */,
+				52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -380,7 +398,7 @@
 		522CF3B427C0FD0900E4900A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				522CF3B327C0FD0900E4900A /* ChuaTeHoiDongQuanTri.app */,
+				522CF3B327C0FD0900E4900A /* ChuTeHoiDongQuanTri.app */,
 				528C704C27CE0F3D00850478 /* StreamingTienPro.framework */,
 			);
 			name = Products;
@@ -772,9 +790,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		522CF3B227C0FD0900E4900A /* ChuaTeHoiDongQuanTri */ = {
+		522CF3B227C0FD0900E4900A /* ChuTeHoiDongQuanTri */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 522CF3C727C0FD0B00E4900A /* Build configuration list for PBXNativeTarget "ChuaTeHoiDongQuanTri" */;
+			buildConfigurationList = 522CF3C727C0FD0B00E4900A /* Build configuration list for PBXNativeTarget "ChuTeHoiDongQuanTri" */;
 			buildPhases = (
 				829E931C67D1221E006AD6FE /* [CP] Check Pods Manifest.lock */,
 				522CF3AF27C0FD0900E4900A /* Sources */,
@@ -788,9 +806,9 @@
 			dependencies = (
 				528C705127CE0F3D00850478 /* PBXTargetDependency */,
 			);
-			name = ChuaTeHoiDongQuanTri;
+			name = ChuTeHoiDongQuanTri;
 			productName = ChuaTeHoiDongQuanTri;
-			productReference = 522CF3B327C0FD0900E4900A /* ChuaTeHoiDongQuanTri.app */;
+			productReference = 522CF3B327C0FD0900E4900A /* ChuTeHoiDongQuanTri.app */;
 			productType = "com.apple.product-type.application";
 		};
 		528C704B27CE0F3D00850478 /* StreamingTienPro */ = {
@@ -831,7 +849,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 522CF3AE27C0FD0800E4900A /* Build configuration list for PBXProject "ChuaTeHoiDongQuanTri" */;
+			buildConfigurationList = 522CF3AE27C0FD0800E4900A /* Build configuration list for PBXProject "ChuTeHoiDongQuanTri" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -844,7 +862,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				522CF3B227C0FD0900E4900A /* ChuaTeHoiDongQuanTri */,
+				522CF3B227C0FD0900E4900A /* ChuTeHoiDongQuanTri */,
 				528C704B27CE0F3D00850478 /* StreamingTienPro */,
 			);
 		};
@@ -945,6 +963,7 @@
 				527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */,
 				52E6E63027C20E7500CD80D0 /* MainCell.swift in Sources */,
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
+				52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
 				528CBF9027CA56B200541EF7 /* UpInfo.swift in Sources */,
 				527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */,
@@ -953,6 +972,7 @@
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
+				52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */,
 				522CF3BB27C0FD0900E4900A /* ViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
@@ -967,6 +987,7 @@
 				52412C9427F2FF2500896AF0 /* ExpandScreenProtocols.swift in Sources */,
 				528CBF8E27CA56B200541EF7 /* DefinitionList.swift in Sources */,
 				52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */,
+				52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */,
 				528CBF8D27CA56B200541EF7 /* DrameTypeVo.swift in Sources */,
 				528CBF8C27CA56B200541EF7 /* AreaList.swift in Sources */,
 				52E6E63627C2109400CD80D0 /* MainHeader.swift in Sources */,
@@ -980,6 +1001,7 @@
 				52358A1827F54ED6002C883F /* MovieDetailDataSource.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,
+				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				52358A1427F4BC20002C883F /* SearchingTableViewDatasource.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
@@ -992,7 +1014,9 @@
 				528CBF8A27CA56B200541EF7 /* RefList.swift in Sources */,
 				52B4F29E27F407CA00B0CFEB /* MovieDetailScreenRouter.swift in Sources */,
 				5225C62027F1FE790063FE3E /* TopSearchTableViewCell.swift in Sources */,
+				52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */,
 				52E6E62D27C20CB000CD80D0 /* MainPresenter.swift in Sources */,
+				52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */,
 				522184CF27CC9B9B00CDFDDA /* MovieDetailPresenter.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
@@ -1321,7 +1345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		522CF3AE27C0FD0800E4900A /* Build configuration list for PBXProject "ChuaTeHoiDongQuanTri" */ = {
+		522CF3AE27C0FD0800E4900A /* Build configuration list for PBXProject "ChuTeHoiDongQuanTri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522CF3C527C0FD0B00E4900A /* Debug */,
@@ -1330,7 +1354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		522CF3C727C0FD0B00E4900A /* Build configuration list for PBXNativeTarget "ChuaTeHoiDongQuanTri" */ = {
+		522CF3C727C0FD0B00E4900A /* Build configuration list for PBXNativeTarget "ChuTeHoiDongQuanTri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				522CF3C827C0FD0B00E4900A /* Debug */,

@@ -18,7 +18,7 @@ class SearchingViewController: BaseViewController {
     lazy var textFieldView : UITextField = {
         let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
         textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Thách chúng mày search"
+        textfield.placeholder = "Searching"
         return textfield
     }()
     
