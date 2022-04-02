@@ -12,7 +12,9 @@ let HTTPAdditionalHeaders : HTTPHeaders = [
     "lang" : "en",
     "versioncode" : "11",
     "clienttype" : "ios_jike_default",
-    "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+    "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8",
+    "Content-Type" : "application/json",
+    "Accept" : "application/json"
 ]
 
 let HTTPAdditionalHeadersReviewMedia : HTTPHeaders = [
@@ -21,6 +23,13 @@ let HTTPAdditionalHeadersReviewMedia : HTTPHeaders = [
     "clienttype" : "ios_jike_default",
     "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8",
     "deviceid" : ""
+]
+
+let parameter : Parameters = [
+    "category": 2,
+    "contentId": "8550",
+    "episodeId": 39173,
+    "definition": "GROOT_LD"
 ]
 
 class APIService:NSObject {
@@ -125,4 +134,34 @@ extension APIService {
             }
         }
     }
+}
+
+extension APIService {
+    func getTikTokMedia() {
+        var semaphore = DispatchSemaphore (value: 0)
+
+        let parameters = "[\n  {\n    \"category\": 2,\n    \"contentId\": \"8550\",\n    \"episodeId\": 39173,\n    \"definition\": \"GROOT_LD\"\n  },\n  {\n    \"category\": 2,\n    \"contentId\": \"8551\",\n    \"episodeId\": 39177,\n    \"definition\": \"GROOT_LD\"\n  },\n  {\n    \"category\": 2,\n    \"contentId\": \"8552\",\n    \"episodeId\": 39181,\n    \"definition\": \"GROOT_LD\"\n  }\n]"
+        
+        let postData = parameters.data(using: .utf8)
+
+        var request = URLRequest(url: URL(string: "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo")!,timeoutInterval: Double.infinity)
+        
+        request.headers = HTTPAdditionalHeaders
+        request.httpMethod = "POST"
+        request.httpBody = postData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            semaphore.signal()
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
+          semaphore.signal()
+        }
+
+        task.resume()
+        semaphore.wait()
+    }
+    
 }

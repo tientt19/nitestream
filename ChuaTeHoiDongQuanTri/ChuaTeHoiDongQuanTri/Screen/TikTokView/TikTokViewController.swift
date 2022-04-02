@@ -12,11 +12,7 @@ class TikTokViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        APIService.shared.getReviewMedia(by: 0) { response, error in
-            if let response = response {
-                dLogDebug(response)
-            }
-        }
+        APIService.shared.getTikTokMedia()
         
     }
 
