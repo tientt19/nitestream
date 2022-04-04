@@ -17,17 +17,7 @@ class TikTokScreenViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let presenter: TikTokScreenPresenterProtocol & TikTokScreenPresenterOutputProtocol = TikTokScreenPresenter()
-        let interactor: TikTokScreenInteractorInputProtocol = TikTokScreenInteractor()
-        let router = TikTokScreenRouter()
-        
-        self.presenter = presenter
-        presenter.view = self
-        presenter.interactor = interactor
-        presenter.router = router
-        interactor.presenter = presenter
-        
-        presenter.fetchData(with: 0)
+        presenter?.fetchData(with: 0)
         tiktokTableView.registerCell(nibName: tiktokTableViewCell.self)
     }
 }

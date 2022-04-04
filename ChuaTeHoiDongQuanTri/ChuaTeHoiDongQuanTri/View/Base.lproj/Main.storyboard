@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fRT-cp-Nn9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light">
         <simulatedSceneSize key="mac" width="902" height="841"/>
     </device>
@@ -60,14 +60,14 @@
         <!--Wow-->
         <scene sceneID="cA2-Ey-oTy">
             <objects>
-                <viewController id="WoH-o9-Lhb" customClass="TikTokScreenViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TikTokScreenViewController" id="WoH-o9-Lhb" customClass="TikTokScreenViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uX3-ND-cB5">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-Ib-pYd">
-                                <rect key="frame" x="0.0" y="44" width="428" height="799"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="WoH-o9-Lhb" id="NHn-1L-HzJ"/>
                                     <outlet property="delegate" destination="WoH-o9-Lhb" id="Oz8-4F-ykt"/>
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUR-a2-7Bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="32"/>
+            <point key="canvasLocation" x="-144" y="-408"/>
         </scene>
         <!--Của tôi-->
         <scene sceneID="8U8-hf-PUq">
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-FB-GMy">
-                                <rect key="frame" x="20" y="98" width="388" height="745"/>
+                                <rect key="frame" x="20" y="54" width="388" height="838"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G7m-FF-R5a">
                                     <size key="itemSize" width="128" height="128"/>
@@ -177,62 +177,13 @@
             </objects>
             <point key="canvasLocation" x="-607" y="816"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Pag-x7-VcM">
-            <objects>
-                <tabBarController id="fRT-cp-Nn9" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KxU-xs-HJc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" systemColor="systemIndigoColor"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="u3d-LS-pe6" kind="relationship" relationship="viewControllers" id="ye7-kz-3nh"/>
-                        <segue destination="WoH-o9-Lhb" kind="relationship" relationship="viewControllers" id="QWG-DN-pR4"/>
-                        <segue destination="3EI-SZ-7yK" kind="relationship" relationship="viewControllers" id="EDU-ix-eWy"/>
-                        <segue destination="buu-qC-ZZb" kind="relationship" relationship="viewControllers" id="8m5-So-1gt"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9wX-3G-aTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1260" y="32"/>
-        </scene>
-        <!--Trang chủ-->
-        <scene sceneID="DZy-hR-Reo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u3d-LS-pe6" customClass="BaseNavigationViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trang chủ" image="house.fill" catalog="system" id="kPI-Oq-Pj3"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sS5-Q6-AgB">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Je2-oj-TwW" kind="relationship" relationship="rootViewController" id="p7O-Qx-mNH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Tr-Ly-Jh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1321.9626168224299" y="815.76673866090721"/>
-        </scene>
     </scenes>
     <resources>
         <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="infinity" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

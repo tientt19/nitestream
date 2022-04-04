@@ -41,16 +41,6 @@ class HomePageViewViewController: BaseViewController {
         HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
         
         textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
-        
-        let presenter: HomePageViewPresenterProtocol & HomePageViewPresenterOutputProtocol = HomePageViewPresenter()
-        let interactor: HomePageViewInteractorInputProtocol = HomePageViewInteractor()
-        let router = HomePageViewRouter()
-        
-        self.presenter = presenter
-        presenter.view = self
-        presenter.interactor = interactor
-        presenter.router = router
-        interactor.presenter = presenter
     }
     
     @objc func textFieldTap() {

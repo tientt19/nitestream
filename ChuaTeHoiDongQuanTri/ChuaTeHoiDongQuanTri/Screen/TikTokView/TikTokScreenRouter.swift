@@ -16,19 +16,19 @@ class TikTokScreenRouter: TikTokScreenRouterProtocol {
     // MARK: Static methods
     static func createModule() -> UIViewController {
         
-        let viewController = TikTokScreenViewController()
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TikTokScreenViewController") as? TikTokScreenViewController
                 
         let presenter: TikTokScreenPresenterProtocol & TikTokScreenPresenterOutputProtocol = TikTokScreenPresenter()
         let interactor: TikTokScreenInteractorInputProtocol = TikTokScreenInteractor()
         let router = TikTokScreenRouter()
         
-        viewController.presenter = presenter
+        viewController!.presenter = presenter
         presenter.view = viewController
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
             
-        return viewController
+        return viewController!
     }
     
 }

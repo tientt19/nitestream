@@ -22,18 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="302" height="510"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ni0-e6-mYv">
-                                <rect key="frame" x="50.5" y="198.5" width="201" height="113"/>
+                                <rect key="frame" x="0.0" y="50" width="302" height="410"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ni0-e6-mYv" secondAttribute="height" multiplier="16 : 9" id="G0M-GZ-gXk"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ni0-e6-mYv" firstAttribute="centerY" secondItem="6S1-5K-B3P" secondAttribute="centerY" id="IN3-Cg-nZA"/>
-                            <constraint firstItem="Ni0-e6-mYv" firstAttribute="width" secondItem="6S1-5K-B3P" secondAttribute="width" multiplier="2:3" id="hSo-a4-sSv"/>
-                            <constraint firstItem="Ni0-e6-mYv" firstAttribute="centerX" secondItem="6S1-5K-B3P" secondAttribute="centerX" id="pP0-5N-Bfp"/>
+                            <constraint firstItem="Ni0-e6-mYv" firstAttribute="top" secondItem="6S1-5K-B3P" secondAttribute="top" constant="50" id="JmM-Kp-ci0"/>
+                            <constraint firstAttribute="trailing" secondItem="Ni0-e6-mYv" secondAttribute="trailing" id="iep-ID-EVB"/>
+                            <constraint firstItem="Ni0-e6-mYv" firstAttribute="leading" secondItem="6S1-5K-B3P" secondAttribute="leading" id="mtv-r9-rGT"/>
+                            <constraint firstAttribute="bottom" secondItem="Ni0-e6-mYv" secondAttribute="bottom" constant="50" id="tUA-Rb-vXW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,7 +46,7 @@
             <connections>
                 <outlet property="mediaPlayerView" destination="Ni0-e6-mYv" id="gjf-bf-7N7"/>
             </connections>
-            <point key="canvasLocation" x="-199" y="95"/>
+            <point key="canvasLocation" x="172" y="89"/>
         </tableViewCell>
     </objects>
     <resources>
