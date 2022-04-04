@@ -120,14 +120,13 @@ extension APIService {
 //MARK: -- Get Review Media
 
 extension APIService {
-    func getReviewMedia(by page: Int, closure: @escaping (_ response: [MediaInfo]?, _ error: Error?) -> Void) {
-        var mediaInfo = [MediaInfo]()
+    func getReviewMedia(by page: Int, closure: @escaping (_ response: [ReviewMedia]?, _ error: Error?) -> Void) {
+        var mediaInfo = [ReviewMedia]()
         AF.request(Contants.getReviewMedia(with: page), method: .get, headers: HTTPAdditionalHeadersReviewMedia).responseJSON { response in
             if let result = response.value as? [String:Any] {
-                dLogDebug(result)
                 if let dataItem = result["data"] as? [[String:Any]] {
                     for item in dataItem {
-                        mediaInfo.append(MediaInfo(fromDictionary: item))
+                        mediaInfo.append(ReviewMedia(fromDictionary: item))
                     }
                 }
                 closure(mediaInfo,nil)
@@ -137,31 +136,49 @@ extension APIService {
 }
 
 extension APIService {
-    func getTikTokMedia() {
+    func getTikTokMedia(with rawBody : String, completion: @escaping (_ response: [TikTokModel]?, _ error: Error?) -> Void) {
         var semaphore = DispatchSemaphore (value: 0)
-
-        let parameters = "[\n  {\n    \"category\": 2,\n    \"contentId\": \"8550\",\n    \"episodeId\": 39173,\n    \"definition\": \"GROOT_LD\"\n  },\n  {\n    \"category\": 2,\n    \"contentId\": \"8551\",\n    \"episodeId\": 39177,\n    \"definition\": \"GROOT_LD\"\n  },\n  {\n    \"category\": 2,\n    \"contentId\": \"8552\",\n    \"episodeId\": 39181,\n    \"definition\": \"GROOT_LD\"\n  }\n]"
+        var tikTokModelDAO = [TikTokModel]()
+        let parameters = rawBody
         
         let postData = parameters.data(using: .utf8)
-
+        
         var request = URLRequest(url: URL(string: "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo")!,timeoutInterval: Double.infinity)
         
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
         request.httpBody = postData
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            semaphore.signal()
-            return
-          }
-          print(String(data: data, encoding: .utf8)!)
-          semaphore.signal()
+        
+        let task = URLSession.shared.dataTask(with: request) { [self] data, response, error in
+            guard let data = data else {
+                semaphore.signal()
+                completion(nil, error)
+                return
+            }
+            
+            let itemData = String(data: data, encoding: .utf8)!
+            if let output = convertToDictionary(text: itemData) {
+                if let dataItem = output["data"] as? [[String:Any]] {
+                    for item in dataItem {
+                        tikTokModelDAO.append(TikTokModel(fromDictionary: item))
+                    }
+                    semaphore.signal()
+                }
+            }
         }
-
         task.resume()
         semaphore.wait()
+        completion(tikTokModelDAO, nil)
     }
     
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
 }
