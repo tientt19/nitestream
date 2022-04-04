@@ -20,13 +20,13 @@ class ChildCell: UICollectionViewCell {
     }
     
     func configure(_ imageURL : String, _ title: String) {
-        bannerImageView.setImageCaching(targetImageView: bannerImageView, with: imageURL)
+        bannerImageView.setImageCachingv2(targetImageView: bannerImageView, with: imageURL)
         titleLabel.text = title
     }
     
     func configure(data: DataModel) {
         self.dataPassed = data
-        bannerImageView.setImageCaching(targetImageView: bannerImageView, with: data.coverHorizontalUrl)
+        bannerImageView.setImageCachingv2(targetImageView: bannerImageView, with: data.coverHorizontalUrl)
         titleLabel.text = data.name
     }
 }

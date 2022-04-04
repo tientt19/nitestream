@@ -19,7 +19,6 @@ class BannerCell: UICollectionViewCell {
         bannerCLV.registerCell(nibName: ChildCell.self)
         bannerCLV.delegate = self
         bannerCLV.dataSource = self
-        bannerCLV.prefetchDataSource = self
     }
     
     func configure(data : [RecommendContentVOList]) {
@@ -31,19 +30,6 @@ class BannerCell: UICollectionViewCell {
 extension BannerCell : UICollectionViewDelegate {
     
 }
-
-extension BannerCell: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let prefetchingCell = collectionView.cellForItem(at: indexPath) as? ChildCell {
-                let imageUrl = listDataCall[indexPath.row].imageUrl ?? ""
-                let titleLabel = listDataCall[indexPath.row].title ?? ""
-                prefetchingCell.configure(imageUrl, titleLabel)
-            }
-        }
-    }
-}
-
 
 extension BannerCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

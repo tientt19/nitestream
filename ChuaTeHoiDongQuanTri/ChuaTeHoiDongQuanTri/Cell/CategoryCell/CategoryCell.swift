@@ -24,26 +24,11 @@ class CategoryCell: UICollectionViewCell {
         CategoryCollectionView.registerCell(nibName: MovieCell.self)
         CategoryCollectionView.delegate = self
         CategoryCollectionView.dataSource = self
-        CategoryCollectionView.prefetchDataSource = self
     }
     
     func configure(data : [RecommendContentVOList]) {
         listDataCall = data
         CategoryCollectionView.reloadData()
-    }
-}
-
-//MARK: - UICollectionViewDataSourcePrefetching
-extension CategoryCell: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let prefetchingCell = collectionView.cellForItem(at: indexPath) as? MovieCell {
-                if let imageUrl = listDataCall[indexPath.row].imageUrl, let titleLabel = listDataCall[indexPath.row].title {
-                    prefetchingCell.configure(imageUrl, titleLabel)
-                    if isGroupBlock { prefetchingCell.configureForGroupBlock() }
-                }
-            }
-        }
     }
 }
 

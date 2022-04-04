@@ -25,8 +25,8 @@ class MovieCell: UICollectionViewCell {
 
     func configure(_ imageURL: String,_ title: String) {
         blurImageView.isHidden = false
-        posterImage.setImageCaching(targetImageView: posterImage, with: imageURL)
-        blurImageView.setImageCaching(targetImageView: blurImageView, with: imageURL)
+        posterImage.setImageCachingv2(targetImageView: posterImage, with: imageURL)
+        blurImageView.setImageCachingv2(targetImageView: blurImageView, with: imageURL)
         titleLabel.text = title
     }
     

@@ -47,4 +47,17 @@ extension UIImageView {
             .transition(.fade(0.2))
         ])
     }
+    
+    func setImageCachingv2(targetImageView : UIImageView ,with imageURL : String) {
+        let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        let processor = DownsamplingImageProcessor(size: targetImageView.bounds.size)
+        
+        targetImageView.kf.indicatorType = .activity
+        targetImageView.kf.setImage(with: url, options: [
+            .processor(processor),
+            .scaleFactor(UIScreen.main.scale),
+            .transition(.fade(1)),
+            .cacheOriginalImage
+        ])
+    }
 }

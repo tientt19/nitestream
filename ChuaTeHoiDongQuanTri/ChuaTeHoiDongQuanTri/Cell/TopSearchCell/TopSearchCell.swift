@@ -18,7 +18,7 @@ class TopSearchCell: UICollectionViewCell {
     }
     
     func configure(_ imageURL : String,_ name : String) {
-        imageView.setImageCaching(targetImageView: imageView, with: imageURL)
+        imageView.setImageCachingv2(targetImageView: imageView, with: imageURL)
         movieName.text = name
     }
 

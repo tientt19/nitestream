@@ -43,11 +43,5 @@ class ExpandCollectionViewDataSource : CollectionviewDataSource {
     }
     
     func prefetchingData(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if let imageUrl = entities.recommendContentVOList[indexPath.row].imageUrl, let titleLabel = entities.recommendContentVOList[indexPath.row].title {
-                let cell = collectionView.cellForItem(at: indexPath) as? MovieCell
-                cell?.configure(imageUrl, titleLabel)
-            }
-        }
     }
 }
