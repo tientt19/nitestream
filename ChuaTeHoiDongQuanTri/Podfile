@@ -6,7 +6,7 @@ target 'ChuTeHoiDongQuanTri' do
   use_frameworks!
 
   # Pods for ChuTeHoiDongQuanTri
-pod 'Kingfisher'
+  pod 'Kingfisher'
 	pod 'Alamofire'
 
 end

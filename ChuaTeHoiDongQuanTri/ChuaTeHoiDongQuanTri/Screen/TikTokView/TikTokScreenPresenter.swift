@@ -40,4 +40,10 @@ extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {
     func didFetch(data: [TikTokModel]) {
         view?.showStreaming(data: data)
     }
+    
+    func didGetMovieDetail(_ data : MovieDetail) {
+        DispatchQueue.main.async {
+            self.router?.openDetailView(view: self.view!, data: data)
+        }
+    }
 }

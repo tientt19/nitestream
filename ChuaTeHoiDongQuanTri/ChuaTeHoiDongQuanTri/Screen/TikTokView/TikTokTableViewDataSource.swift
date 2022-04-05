@@ -35,6 +35,12 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
         entities += tiktokModel
         self.reviewData += reviewData
     }
+    
+    func endDisplayCell(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let endCellDisplay = tableView.cellForRow(at: indexPath) as? tiktokTableViewCell {
+            endCellDisplay.moviePlayer.pause()
+        }
+    }
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) { }
     

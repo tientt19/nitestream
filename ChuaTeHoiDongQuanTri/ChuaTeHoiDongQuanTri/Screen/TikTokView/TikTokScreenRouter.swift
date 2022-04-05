@@ -31,4 +31,16 @@ class TikTokScreenRouter: TikTokScreenRouterProtocol {
         return viewController!
     }
     
+    func openDetailView(view: TikTokScreenViewProtocol, data: MovieDetail) {
+        
+        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        detailScreen.hidesBottomBarWhenPushed = true
+
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
+        
+        viewVC.navigationController?.pushViewController(detailScreen, animated: true)
+    }
+    
 }

@@ -55,6 +55,10 @@ extension TikTokScreenViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tiktokTableView.frame.height
     }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        dataSource?.endDisplayCell(tableView, didEndDisplaying: cell, forRowAt: indexPath)
+    }
 }
 
 //MARK: - TikTokScreenViewProtocol

@@ -29,6 +29,11 @@ class TikTokScreenInteractor: TikTokScreenInteractorInputProtocol {
     }
     
     func openDetail(with id: String, and category: Int) {
-        
+        DataManager.shared.getDetailMovieData(Int(id)!, category) {[weak self] response in
+            guard let `self` = self else { return }
+            if let data = response {
+                self.presenter?.didGetMovieDetail(data)
+            }
+        }
     }
 }
