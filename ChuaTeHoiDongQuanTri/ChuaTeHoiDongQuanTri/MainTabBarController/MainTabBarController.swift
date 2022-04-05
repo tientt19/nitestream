@@ -48,8 +48,8 @@ class MainTabBarController: UITabBarController {
         homeController.tabBarItem.title  = "Trang chủ"
         homeController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
         homeController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        homeController.tabBarItem.image = UIImage(systemName: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        homeController.tabBarItem.selectedImage = UIImage(named: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).withTintColor(.systemIndigo)
+        homeController.tabBarItem.image = UIImage(systemName: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        homeController.tabBarItem.selectedImage = UIImage(named: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
         let homeNavController = BaseNavigationViewController(rootViewController: homeController)
         homeNavController.setHiddenNavigationBarViewControllers([])
         
@@ -60,8 +60,8 @@ class MainTabBarController: UITabBarController {
         tiktokController.tabBarItem.title  = "Wow"
         tiktokController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
         tiktokController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        tiktokController.tabBarItem.image = UIImage(systemName: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        tiktokController.tabBarItem.selectedImage = UIImage(named: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal).withTintColor(.systemIndigo)
+        tiktokController.tabBarItem.image = UIImage(systemName: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        tiktokController.tabBarItem.selectedImage = UIImage(named: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
         let tiktokNavController = BaseNavigationViewController(rootViewController: tiktokController)
         tiktokNavController.setHiddenNavigationBarViewControllers([])
         
