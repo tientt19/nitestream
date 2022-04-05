@@ -23,6 +23,10 @@ class TikTokScreenPresenter: TikTokScreenPresenterProtocol {
 }
 
 extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {
+    func didGetListReview(data: [ReviewMedia]) {
+        view?.configureView(data: data)
+    }
+    
     func didFetch(data: [TikTokModel]) {
         view?.showStreaming(data: data)
     }

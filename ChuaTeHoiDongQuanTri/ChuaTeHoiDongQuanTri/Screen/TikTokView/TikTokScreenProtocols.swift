@@ -17,6 +17,7 @@ protocol TikTokScreenViewProtocol : AnyObject {
 
     // PRESENTER -> VIEW
     func showStreaming(data : [TikTokModel])
+    func configureView(data : [ReviewMedia])
 }
 
 
@@ -48,6 +49,7 @@ protocol TikTokScreenPresenterOutputProtocol : AnyObject  {
     
     // INTERACTOR -> PRESENTER
     func didFetch(data : [TikTokModel])
+    func didGetListReview(data : [ReviewMedia])
 }
 
 
@@ -58,3 +60,5 @@ protocol TikTokScreenRouterProtocol : AnyObject  {
 
     // PRESENTER -> ROUTER
 }
+
+

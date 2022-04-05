@@ -14,7 +14,8 @@ class RefList : NSObject, NSCoding{
 	var id : String!
 	var name : String!
 	var seriesNo : Int!
-
+    var score : Float!
+    var tagList : [AreaList]!
 
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
@@ -27,6 +28,14 @@ class RefList : NSObject, NSCoding{
 		id = dictionary["id"] as? String
 		name = dictionary["name"] as? String
 		seriesNo = dictionary["seriesNo"] as? Int
+        score = dictionary["score"] as? Float
+        tagList = [AreaList]()
+        if let tagListArray = dictionary["tagList"] as? [[String:Any]]{
+            for dic in tagListArray{
+                let value = AreaList(fromDictionary: dic)
+                tagList.append(value)
+            }
+        }
 	}
 
 	/**

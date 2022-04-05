@@ -14,9 +14,10 @@ class TikTokScreenInteractor: TikTokScreenInteractorInputProtocol {
     var presenter: TikTokScreenPresenterOutputProtocol?
     
     func fetching(with page : Int) {
-        DataManager.shared.getTikTokMedia(with: page) { [weak self] response in
+        DataManager.shared.getTikTokMedia(with: page) { [weak self] response, listReview  in
             guard let `self` = self else { return  }
             self.presenter?.didFetch(data: response!)
+            self.presenter?.didGetListReview(data: listReview!)
         }
     }
 }

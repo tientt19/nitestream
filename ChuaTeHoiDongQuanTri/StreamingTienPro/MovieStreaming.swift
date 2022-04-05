@@ -58,7 +58,7 @@ public class MovieStreaming {
         if subRemote != "" {
             addSubIfNeeded(subRemote: subRemote)
         }
-        
+        playVideoViewController.showsPlaybackControls = false
         playVideoViewController.player = avPlayer
         playVideoViewController.player?.play()
         activityIndicatorView.stopAnimating()
