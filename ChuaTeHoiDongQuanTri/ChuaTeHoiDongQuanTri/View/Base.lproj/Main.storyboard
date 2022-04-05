@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,38 +91,6 @@
             </objects>
             <point key="canvasLocation" x="-144" y="-408"/>
         </scene>
-        <!--Của tôi-->
-        <scene sceneID="8U8-hf-PUq">
-            <objects>
-                <viewController id="buu-qC-ZZb" customClass="ProfileViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d1n-bS-opW">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Evn-g0-Nnx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Của tôi" image="person.circle" catalog="system" id="hqv-vc-pS1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fXT-2X-3zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1906.5420560747662" y="377.75377969762422"/>
-        </scene>
-        <!--Khám phá-->
-        <scene sceneID="c18-7S-nrC">
-            <objects>
-                <viewController id="3EI-SZ-7yK" customClass="DiscoverViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5QR-zm-4LS">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3Ud-WR-Q47"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Khám phá" image="circle.grid.hex" catalog="system" id="Z8u-jm-OQW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XYO-D4-Fcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="255" y="816"/>
-        </scene>
         <!--Home Page View View Controller-->
         <scene sceneID="gdE-iu-6sX">
             <objects>
@@ -179,11 +146,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
         <image name="infinity" catalog="system" width="128" height="61"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
