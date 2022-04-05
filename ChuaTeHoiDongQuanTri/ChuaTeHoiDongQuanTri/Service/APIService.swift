@@ -37,22 +37,6 @@ class APIService:NSObject {
     
     //Handle requestJSON task
     
-    //MARK: -  get Data alamonfire
-    /// get place datas
-    /// - Parameter closure: closure to respone place data results
-    func getPlaceData(numberOfPage : Int, closure: @escaping (_ response: [MainModel]?, _ error: Error?) -> Void) {
-        var listUsers : [MainModel] = [MainModel]()
-        AF.request(Contants.getAPIHttps(numberOfPage), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
-            if let result = response.value as? [[String:Any]] {
-                for item in result {
-                    let itemUsers = MainModel()
-                    listUsers.append(itemUsers.initLoad(item))
-                }
-                closure(listUsers,nil)
-            }
-        }
-    }
-    
     func getHomeData(numberOfPage : Int, closure: @escaping (_ response: HomePageModel?, _ error: Error?) -> Void) {
         var listDataHome : HomePageModel = HomePageModel(fromDictionary: ["" : ""])
         AF.request(Contants.getDataHomeHTTPs(numberOfPage), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in

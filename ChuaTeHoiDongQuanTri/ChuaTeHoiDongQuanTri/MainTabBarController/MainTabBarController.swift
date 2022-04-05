@@ -63,7 +63,7 @@ class MainTabBarController: UITabBarController {
         tiktokController.tabBarItem.image = UIImage(systemName: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         tiktokController.tabBarItem.selectedImage = UIImage(named: "infinity")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
         let tiktokNavController = BaseNavigationViewController(rootViewController: tiktokController)
-        tiktokNavController.setHiddenNavigationBarViewControllers([])
+        tiktokNavController.setHiddenNavigationBarViewControllers([TikTokScreenViewController.self])
         
         //Discorver
         let discoveryController = DiscoveryScreenRouter.setupModule()

@@ -8,19 +8,35 @@
 import UIKit
 import StreamingTienPro
 
+protocol openDetailMovieProtocol : AnyObject {
+    func getMovieDetail(index : Int)
+}
+
 class tiktokTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mediaPlayerView : UIView!
+    @IBOutlet weak var posterImamge : UIImageView!
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var scoreLabel : UILabel!
+    @IBOutlet weak var likeCount : UILabel!
+    @IBOutlet weak var tagListView : TagListView!
+    @IBOutlet weak var tiktokInfo : UIView!
+    
     var moviePlayer = MovieStreaming()
-
+    var delegate : openDetailMovieProtocol?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        tiktokInfo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openDetail)))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+    }
+    
+    @objc func openDetail() {
+        delegate?.getMovieDetail(index: self.indexPath!.row)
     }
     
     func playMedia(link: String) {
@@ -28,5 +44,14 @@ class tiktokTableViewCell: UITableViewCell {
         if let linkMedia = URL(string: link) {
             self.moviePlayer.streaming(with: linkMedia, subRemote: "okokok")
         }
+    }
+    
+    func configure(data : ReviewMedia) {
+        posterImamge.setImageCachingv2(targetImageView: posterImamge, with: data.refList[0].coverVerticalUrl ?? "")
+        likeCount.text = "\(data.likeCount ?? 0)"
+        titleLabel.text = data.introduction
+        scoreLabel.text = "\(String(describing: data.refList[0].score ?? 0))"
+        tagListView.textFont = UIFont.systemFont(ofSize: 12)
+        tagListView.addTags(data.refList[0].tagList.map { $0.name })
     }
 }

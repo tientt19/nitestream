@@ -58,7 +58,9 @@ public class MovieStreaming {
         if subRemote != "" {
             addSubIfNeeded(subRemote: subRemote)
         }
-        
+        if subRemote == "okokok" {
+            playVideoViewController.showsPlaybackControls = false
+        }
         playVideoViewController.player = avPlayer
         playVideoViewController.player?.play()
         activityIndicatorView.stopAnimating()
