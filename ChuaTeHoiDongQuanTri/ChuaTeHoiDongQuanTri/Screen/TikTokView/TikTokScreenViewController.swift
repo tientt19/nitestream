@@ -11,24 +11,21 @@ import UIKit
 class TikTokScreenViewController: UIViewController {
     // MARK: - Properties
     var presenter: TikTokScreenPresenterProtocol?
-    var dataSource : TableViewDataSource?
-    
+    var dataSource : TikTokTableViewDataSource?
+    var index = 0
     @IBOutlet weak var tiktokTableView : UITableView!
-    @IBOutlet weak var posterImamge : UIImageView!
-    @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var scoreLabel : UILabel!
-    @IBOutlet weak var tagListView : TagListView!
     
     var reviewData = [ReviewMedia]()
-
+    var tempData = [TikTokModel]()
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter?.fetchData(with: 0)
+        presenter?.fetchData(with: index)
     }
     
     func setupView() {
+        dataSource = TikTokTableViewDataSource(entities: tempData, with: presenter!)
         tiktokTableView.registerCell(nibName: tiktokTableViewCell.self)
     }
 }
@@ -41,8 +38,14 @@ extension TikTokScreenViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dataSource?.itemCell(tableView: tableView, indexPath: indexPath)
-        configure(data: reviewData[indexPath.row])
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == dataSource!.numberOfItems - 1 {
+            index += 1
+            dataSource?.loadMore(with: index)
+        }
     }
 }
 
@@ -55,23 +58,18 @@ extension TikTokScreenViewController : UITableViewDelegate {
 
 //MARK: - TikTokScreenViewProtocol
 extension TikTokScreenViewController: TikTokScreenViewProtocol{
-
     // TODO: Implement View Output Methods
     func showStreaming(data: [TikTokModel]) {
         dataSource = TikTokTableViewDataSource(entities: data, with: presenter!)
-        tiktokTableView.reloadData()
     }
     
     func configureView(data: [ReviewMedia]) {
-        reviewData = data
+        dataSource?.reviewData = data
+        tiktokTableView.reloadData()
     }
     
-    func configure(data : ReviewMedia) {
-        posterImamge.setImageCachingv2(targetImageView: posterImamge, with: data.refList[0].coverVerticalUrl)
-        titleLabel.text = data.introduction
-        scoreLabel.text = "\(String(describing: data.refList[0].score ?? 0))"
-        tagListView.textFont = UIFont.systemFont(ofSize: 12)
-        tagListView.addTags(data.refList[0].tagList.map { $0.name })
+    func configureDataWhenLoadMore(_ tiktokModel: [TikTokModel], _ reviewData: [ReviewMedia]) {
+        dataSource?.configureWhenLoadMore(tiktokModel: tiktokModel, reviewData: reviewData)
+        tiktokTableView.reloadData()
     }
-
 }

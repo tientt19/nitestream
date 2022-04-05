@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
-class TikTokTableViewDataSource : TableViewDataSource {
-    
+class TikTokTableViewDataSource : TikTokDataSourceProtocols {
+
     var entities = [TikTokModel]()
+    var reviewData = [ReviewMedia]()
     private weak var presenter: TikTokScreenPresenterProtocol?
     
     init(entities: [TikTokModel],with  presenter: TikTokScreenPresenterProtocol) {
@@ -25,10 +26,18 @@ class TikTokTableViewDataSource : TableViewDataSource {
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: tiktokTableViewCell.self, forIndexPath: indexPath)
         cell.playMedia(link: entities[indexPath.row].mediaUrl)
+        cell.configure(data: reviewData[indexPath.row])
         return cell
     }
     
-    func didSelect(tableView: UITableView, indexPath: IndexPath) {
-        
+    func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
+        entities += tiktokModel
+        self.reviewData += reviewData
+    }
+
+    func didSelect(tableView: UITableView, indexPath: IndexPath) { }
+    
+    func loadMore(with page: Int) {
+        presenter?.loadMore(with: page)
     }
 }

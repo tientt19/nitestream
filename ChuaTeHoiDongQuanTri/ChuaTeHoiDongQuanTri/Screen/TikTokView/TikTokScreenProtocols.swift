@@ -18,6 +18,7 @@ protocol TikTokScreenViewProtocol : AnyObject {
     // PRESENTER -> VIEW
     func showStreaming(data : [TikTokModel])
     func configureView(data : [ReviewMedia])
+    func configureDataWhenLoadMore(_ tiktokModel : [TikTokModel],_ reviewData : [ReviewMedia])
 }
 
 
@@ -31,7 +32,7 @@ protocol TikTokScreenPresenterProtocol : AnyObject  {
     // VIEW -> PRESENTER
     
     func fetchData(with page : Int)
-
+    func loadMore(with page : Int)
 }
 
 // MARK: -Interactor Input (Presenter -> Interactor)
@@ -41,6 +42,7 @@ protocol TikTokScreenInteractorInputProtocol : AnyObject  {
     
     // PRESENTER -> INTERACTOR
     func fetching(with page : Int)
+    func loadMore(with page : Int)
 }
 
 
@@ -50,6 +52,7 @@ protocol TikTokScreenPresenterOutputProtocol : AnyObject  {
     // INTERACTOR -> PRESENTER
     func didFetch(data : [TikTokModel])
     func didGetListReview(data : [ReviewMedia])
+    func didLoadMore(tiktokModel : [TikTokModel], reviewData : [ReviewMedia])
 }
 
 
@@ -61,4 +64,10 @@ protocol TikTokScreenRouterProtocol : AnyObject  {
     // PRESENTER -> ROUTER
 }
 
+//MARK: - TikTokDataSoure
+protocol TikTokDataSourceProtocols : TableViewDataSource {
+    var reviewData: [ReviewMedia] { get }
+    func loadMore(with page : Int)
+    func configureWhenLoadMore(tiktokModel : [TikTokModel], reviewData : [ReviewMedia])
+}
 

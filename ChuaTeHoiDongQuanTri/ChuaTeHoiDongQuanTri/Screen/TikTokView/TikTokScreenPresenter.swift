@@ -10,7 +10,6 @@ import Foundation
 
 class TikTokScreenPresenter: TikTokScreenPresenterProtocol {
 
-
     // MARK: Properties
     var view: TikTokScreenViewProtocol?
     var interactor: TikTokScreenInteractorInputProtocol?
@@ -20,9 +19,16 @@ class TikTokScreenPresenter: TikTokScreenPresenterProtocol {
         interactor?.fetching(with: page)
     }
     
+    func loadMore(with page: Int) {
+        interactor?.loadMore(with: page)
+    }
 }
 
 extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {
+    func didLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
+        view?.configureDataWhenLoadMore(tiktokModel, reviewData)
+    }
+    
     func didGetListReview(data: [ReviewMedia]) {
         view?.configureView(data: data)
     }
