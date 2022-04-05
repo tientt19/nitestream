@@ -20,7 +20,7 @@ class BaseNavigationViewController: UINavigationController {
         self.navigationBar.layer.masksToBounds = false
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.update(backroundColor: UIColor(hex: "00C2C5"), titleColor: .white)
+        self.navigationBar.update(backroundColor: .white, titleColor: .white)
         
         self.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white

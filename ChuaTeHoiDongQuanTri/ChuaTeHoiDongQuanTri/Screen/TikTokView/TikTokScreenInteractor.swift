@@ -27,4 +27,8 @@ class TikTokScreenInteractor: TikTokScreenInteractorInputProtocol {
             self.presenter?.didLoadMore(tiktokModel: response!, reviewData: listReview!)
         }
     }
+    
+    func openDetail(with id: String, and category: Int) {
+        
+    }
 }

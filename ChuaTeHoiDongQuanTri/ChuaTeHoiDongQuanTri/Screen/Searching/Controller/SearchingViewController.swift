@@ -60,8 +60,18 @@ extension SearchingViewController : UITableViewDataSource {
         return tableViewDataSource?.itemCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Tìm Kiếm Hàng Đầu"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 24))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 0, y: 0, width: headerView.frame.width, height: 24)
+        label.text = "Tìm kiếm hàng đầu"
+        label.font = .systemFont(ofSize: 16)
+        label.textColor = .black
+        
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

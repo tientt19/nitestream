@@ -22,6 +22,10 @@ class TikTokScreenPresenter: TikTokScreenPresenterProtocol {
     func loadMore(with page: Int) {
         interactor?.loadMore(with: page)
     }
+    
+    func openDetail(with id: String, and category: Int) {
+        interactor?.openDetail(with: id, and: category)
+    }
 }
 
 extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {

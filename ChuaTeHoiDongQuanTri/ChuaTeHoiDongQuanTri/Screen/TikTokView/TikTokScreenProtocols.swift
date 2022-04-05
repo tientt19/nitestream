@@ -33,6 +33,7 @@ protocol TikTokScreenPresenterProtocol : AnyObject  {
     
     func fetchData(with page : Int)
     func loadMore(with page : Int)
+    func openDetail(with id : String ,and category : Int)
 }
 
 // MARK: -Interactor Input (Presenter -> Interactor)
@@ -43,6 +44,7 @@ protocol TikTokScreenInteractorInputProtocol : AnyObject  {
     // PRESENTER -> INTERACTOR
     func fetching(with page : Int)
     func loadMore(with page : Int)
+    func openDetail(with id : String ,and category : Int)
 }
 
 

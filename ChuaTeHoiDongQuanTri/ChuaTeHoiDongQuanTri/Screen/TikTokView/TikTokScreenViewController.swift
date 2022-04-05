@@ -10,13 +10,14 @@ import UIKit
 
 class TikTokScreenViewController: UIViewController {
     // MARK: - Properties
-    var presenter: TikTokScreenPresenterProtocol?
-    var dataSource : TikTokTableViewDataSource?
-    var index = 0
     @IBOutlet weak var tiktokTableView : UITableView!
     
+    var presenter: TikTokScreenPresenterProtocol?
+    var dataSource : TikTokTableViewDataSource?
     var reviewData = [ReviewMedia]()
     var tempData = [TikTokModel]()
+    var index = 0
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
