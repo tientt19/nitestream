@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 import StreamingTienPro
 
 protocol openDetailMovieProtocol : AnyObject {
     func getMovieDetail(index : Int)
 }
 
-class tiktokTableViewCell: UITableViewCell {
+class tiktokTableViewCell: UITableViewCell, ASAutoPlayVideoLayerContainer {
     
     @IBOutlet weak var mediaPlayerView : UIView!
     @IBOutlet weak var posterImamge : UIImageView!
@@ -22,12 +23,35 @@ class tiktokTableViewCell: UITableViewCell {
     @IBOutlet weak var tagListView : TagListView!
     @IBOutlet weak var tiktokInfo : UIView!
     
-    var moviePlayer = MovieStreaming()
     var delegate : openDetailMovieProtocol?
+    var playerController: ASVideoPlayerController?
+    var videoLayer: AVPlayerLayer = AVPlayerLayer()
+    var videoURL: String? {
+        didSet {
+            if let videoURL = videoURL {
+                ASVideoPlayerController.sharedVideoPlayer.setupVideoFor(url: videoURL)
+            }
+            videoLayer.isHidden = videoURL == nil
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         tiktokInfo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openDetail)))
+        mediaPlayerView.clipsToBounds = true
+        videoLayer.backgroundColor = UIColor.clear.cgColor
+        videoLayer.videoGravity = AVLayerVideoGravity.resize
+        mediaPlayerView.layer.addSublayer(videoLayer)
+        selectionStyle = .none
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        videoLayer.frame = mediaPlayerView.bounds
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,18 +64,29 @@ class tiktokTableViewCell: UITableViewCell {
     }
     
     func playMedia(link: String) {
-        self.moviePlayer.configure(in: self.mediaPlayerView)
-        if let linkMedia = URL(string: link) {
-            self.moviePlayer.streaming(with: linkMedia, subRemote: "okokok")
-        }
+        self.videoURL = link
     }
     
     func configure(data : ReviewMedia) {
-        posterImamge.setImageCachingv2(targetImageView: posterImamge, with: data.refList[0].coverVerticalUrl ?? "")
+        
+        if let imageURL = data.refList[0].coverVerticalUrl {
+            posterImamge.setImageCachingv2(targetImageView: posterImamge, with: imageURL)
+        }
+        
         likeCount.text = "\(data.likeCount ?? 0)"
         titleLabel.text = data.introduction
         scoreLabel.text = "\(String(describing: data.refList[0].score ?? 0))"
         tagListView.textFont = UIFont.systemFont(ofSize: 12)
         tagListView.addTags(data.refList[0].tagList.map { $0.name })
+    }
+    
+    func visibleVideoHeight() -> CGFloat {
+        let videoFrameInParentSuperView: CGRect? = self.superview?.superview?.convert(mediaPlayerView.frame, from: mediaPlayerView)
+        guard let videoFrame = videoFrameInParentSuperView,
+            let superViewFrame = superview?.frame else {
+             return 0
+        }
+        let visibleVideoFrame = videoFrame.intersection(superViewFrame)
+        return visibleVideoFrame.size.height
     }
 }

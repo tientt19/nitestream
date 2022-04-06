@@ -23,11 +23,19 @@ class TikTokScreenViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         presenter?.fetchData(with: index)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.appEnteredFromBackground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     func setupView() {
         dataSource = TikTokTableViewDataSource(entities: tempData, with: presenter!)
         tiktokTableView.registerCell(nibName: tiktokTableViewCell.self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pausePlayeVideos()
     }
 }
 
@@ -57,7 +65,19 @@ extension TikTokScreenViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        dataSource?.endDisplayCell(tableView, didEndDisplaying: cell, forRowAt: indexPath)
+        if let videoCell = cell as? ASAutoPlayVideoLayerContainer, let _ = videoCell.videoURL {
+            ASVideoPlayerController.sharedVideoPlayer.removeLayerFor(cell: videoCell)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pausePlayeVideos()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            pausePlayeVideos()
+        }
     }
 }
 
@@ -76,5 +96,16 @@ extension TikTokScreenViewController: TikTokScreenViewProtocol{
     func configureDataWhenLoadMore(_ tiktokModel: [TikTokModel], _ reviewData: [ReviewMedia]) {
         dataSource?.configureWhenLoadMore(tiktokModel: tiktokModel, reviewData: reviewData)
         tiktokTableView.reloadData()
+    }
+}
+
+//MARK: -  auto play video
+extension TikTokScreenViewController {
+    func pausePlayeVideos(){
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tiktokTableView)
+    }
+    
+    @objc func appEnteredFromBackground() {
+        ASVideoPlayerController.sharedVideoPlayer.pausePlayeVideosFor(tableView: tiktokTableView, appEnteredFromBackground: true)
     }
 }

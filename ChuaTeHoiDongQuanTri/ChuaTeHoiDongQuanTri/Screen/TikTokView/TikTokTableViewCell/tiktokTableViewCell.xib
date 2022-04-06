@@ -21,11 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="302" height="510"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ni0-e6-mYv">
-                                <rect key="frame" x="0.0" y="50" width="302" height="410"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="50" width="302" height="380"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLh-Un-FbN">
-                                <rect key="frame" x="0.0" y="360" width="302" height="100"/>
+                                <rect key="frame" x="0.0" y="330" width="302" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tuu-Kj-ZXv">
                                         <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
@@ -162,7 +162,7 @@
                             <constraint firstItem="hLL-bH-Jy1" firstAttribute="centerY" secondItem="6S1-5K-B3P" secondAttribute="centerY" id="jUC-sz-6Ie"/>
                             <constraint firstItem="Ni0-e6-mYv" firstAttribute="leading" secondItem="6S1-5K-B3P" secondAttribute="leading" id="mtv-r9-rGT"/>
                             <constraint firstItem="hLL-bH-Jy1" firstAttribute="bottom" secondItem="esi-PB-h5I" secondAttribute="top" constant="-5" id="pgp-SM-AfX"/>
-                            <constraint firstAttribute="bottom" secondItem="Ni0-e6-mYv" secondAttribute="bottom" constant="50" id="tUA-Rb-vXW"/>
+                            <constraint firstAttribute="bottom" secondItem="Ni0-e6-mYv" secondAttribute="bottom" constant="80" id="tUA-Rb-vXW"/>
                             <constraint firstItem="esi-PB-h5I" firstAttribute="centerX" secondItem="hLL-bH-Jy1" secondAttribute="centerX" id="uzi-zW-9yf"/>
                         </constraints>
                     </view>

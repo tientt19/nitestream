@@ -37,9 +37,9 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
     }
     
     func endDisplayCell(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let endCellDisplay = tableView.cellForRow(at: indexPath) as? tiktokTableViewCell {
-            endCellDisplay.moviePlayer.pause()
-        }
+//        if let endCellDisplay = tableView.cellForRow(at: indexPath) as? tiktokTableViewCell {
+//            endCellDisplay.moviePlayer.pause()
+//        }
     }
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) { }
