@@ -33,12 +33,9 @@ extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {
         view?.configureDataWhenLoadMore(tiktokModel, reviewData)
     }
     
-    func didGetListReview(data: [ReviewMedia]) {
-        view?.configureView(data: data)
-    }
-    
-    func didFetch(data: [TikTokModel]) {
+    func didFetch(data: [TikTokModel], reviewData : [ReviewMedia]) {
         view?.showStreaming(data: data)
+        view?.configureView(data: reviewData)
     }
     
     func didGetMovieDetail(_ data : MovieDetail) {

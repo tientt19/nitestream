@@ -25,8 +25,7 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
     
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: tiktokTableViewCell.self, forIndexPath: indexPath)
-        cell.playMedia(link: entities[indexPath.row].mediaUrl)
-        cell.configure(data: reviewData[indexPath.row])
+        cell.configure(link: entities[indexPath.row].mediaUrl, data: reviewData[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -34,12 +33,6 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
     func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
         entities += tiktokModel
         self.reviewData += reviewData
-    }
-    
-    func endDisplayCell(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if let endCellDisplay = tableView.cellForRow(at: indexPath) as? tiktokTableViewCell {
-//            endCellDisplay.moviePlayer.pause()
-//        }
     }
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) { }

@@ -52,8 +52,7 @@ protocol TikTokScreenInteractorInputProtocol : AnyObject  {
 protocol TikTokScreenPresenterOutputProtocol : AnyObject  {
     
     // INTERACTOR -> PRESENTER
-    func didFetch(data : [TikTokModel])
-    func didGetListReview(data : [ReviewMedia])
+    func didFetch(data : [TikTokModel],reviewData : [ReviewMedia])
     func didLoadMore(tiktokModel : [TikTokModel], reviewData : [ReviewMedia])
     func didGetMovieDetail(_ data : MovieDetail)
 }
@@ -73,6 +72,5 @@ protocol TikTokDataSourceProtocols : TableViewDataSource {
     var reviewData: [ReviewMedia] { get }
     func loadMore(with page : Int)
     func configureWhenLoadMore(tiktokModel : [TikTokModel], reviewData : [ReviewMedia])
-    func endDisplayCell(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath)
 }
 

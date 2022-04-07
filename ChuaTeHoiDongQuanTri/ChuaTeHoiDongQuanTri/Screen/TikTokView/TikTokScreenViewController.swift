@@ -33,6 +33,15 @@ class TikTokScreenViewController: UIViewController {
         tiktokTableView.registerCell(nibName: tiktokTableViewCell.self)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         pausePlayeVideos()
@@ -41,6 +50,10 @@ class TikTokScreenViewController: UIViewController {
 
 //MARK: - UITableViewDataSource
 extension TikTokScreenViewController : UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource?.numberOfItems ?? 0
     }
