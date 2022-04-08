@@ -36,7 +36,7 @@
                 <constraint firstItem="Njs-s4-4sT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qYh-w3-sT3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Njs-s4-4sT" secondAttribute="bottom" id="wHg-cd-zkl"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="67"/>
+            <point key="canvasLocation" x="-10" y="-31"/>
         </view>
     </objects>
 </document>

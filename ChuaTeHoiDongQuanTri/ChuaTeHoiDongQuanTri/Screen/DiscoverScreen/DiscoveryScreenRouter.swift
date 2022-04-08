@@ -11,6 +11,7 @@ import UIKit
 
 class DiscoveryScreenRouter {
     weak var viewController: DiscoveryScreenViewController?
+    
     static func setupModule() -> DiscoveryScreenViewController {
         let viewController = DiscoveryScreenViewController()
         let router = DiscoveryScreenRouter()

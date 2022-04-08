@@ -513,66 +513,18 @@
 		525DC16827F1C0BC003EEF58 /* Searching */ = {
 			isa = PBXGroup;
 			children = (
+				525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */,
+				525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */,
+				525DC17727F1C351003EEF58 /* SearchingInterator.swift */,
+				525DC17927F1C3B8003EEF58 /* SearchingRouter.swift */,
+				525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */,
+				52358A1327F4BC20002C883F /* SearchingTableViewDatasource.swift */,
+				525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */,
 				5225C62327F2004D0063FE3E /* TableViewFooter */,
 				5225C62227F200420063FE3E /* TableViewHeader */,
 				5225C61D27F1FE140063FE3E /* TableViewCell */,
-				525DC17127F1C139003EEF58 /* Protocols */,
-				525DC17027F1C131003EEF58 /* Presenter */,
-				525DC16F27F1C12B003EEF58 /* Interactor */,
-				525DC16E27F1C123003EEF58 /* Router */,
-				525DC16D27F1C11B003EEF58 /* Controller */,
-				525DC17227F1C142003EEF58 /* View */,
-				52358A1327F4BC20002C883F /* SearchingTableViewDatasource.swift */,
 			);
 			path = Searching;
-			sourceTree = "<group>";
-		};
-		525DC16D27F1C11B003EEF58 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		525DC16E27F1C123003EEF58 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				525DC17927F1C3B8003EEF58 /* SearchingRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		525DC16F27F1C12B003EEF58 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				525DC17727F1C351003EEF58 /* SearchingInterator.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		525DC17027F1C131003EEF58 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		525DC17127F1C139003EEF58 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		525DC17227F1C142003EEF58 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		52754E7627FB3EF700968694 /* MainTabBarController */ = {
