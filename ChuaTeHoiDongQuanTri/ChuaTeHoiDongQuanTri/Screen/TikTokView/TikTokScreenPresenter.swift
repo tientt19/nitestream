@@ -29,18 +29,16 @@ class TikTokScreenPresenter: TikTokScreenPresenterProtocol {
 }
 
 extension TikTokScreenPresenter : TikTokScreenPresenterOutputProtocol {
-    func didLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
-        view?.configureDataWhenLoadMore(tiktokModel, reviewData)
-    }
-    
-    func didGetListReview(data: [ReviewMedia]) {
-        view?.configureView(data: data)
-    }
-    
-    func didFetch(data: [TikTokModel]) {
+    func didFetch(data: [TikTokModel], reviewData: ReviewMedia) {
         view?.showStreaming(data: data)
+        view?.configureView(data: reviewData)
     }
     
+    func didLoadMore(tiktokModel: [TikTokModel], reviewData: ReviewMedia) {
+        view?.configureDataWhenLoadMore(tiktokModel, reviewData)
+
+    }
+
     func didGetMovieDetail(_ data : MovieDetail) {
         DispatchQueue.main.async {
             self.router?.openDetailView(view: self.view!, data: data)

@@ -25,21 +25,14 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
     
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: tiktokTableViewCell.self, forIndexPath: indexPath)
-        cell.playMedia(link: entities[indexPath.row].mediaUrl)
-        cell.configure(data: reviewData[indexPath.row])
+        cell.configure(link: entities[indexPath.row].mediaUrl, data: reviewData[indexPath.row])
         cell.delegate = self
         return cell
     }
     
-    func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
+    func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: ReviewMedia) {
         entities += tiktokModel
-        self.reviewData += reviewData
-    }
-    
-    func endDisplayCell(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let endCellDisplay = tableView.cellForRow(at: indexPath) as? tiktokTableViewCell {
-            endCellDisplay.moviePlayer.pause()
-        }
+        self.reviewData.append(reviewData)
     }
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) { }

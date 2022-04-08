@@ -239,10 +239,10 @@ extension DataManager {
     }
     
     func rawBody(with data : [ReviewMedia]) -> String {
-        return "[\n  {\n    \"category\": \(String(describing: data[0].category ?? 0)),\n    \"contentId\": \"\(String(describing: data[0].id ?? ""))\",\n    \"episodeId\": \(String(describing: data[0].mediaInfo.id ?? 0)),\n    \"definition\": \"\(String(describing: data[0].mediaInfo.definitionList[0].code ?? ""))\"\n  },\n  {\n    \"category\": \(String(describing: data[1].category ?? 0)),\n    \"contentId\": \"\(String(describing: data[1].id ?? ""))\",\n    \"episodeId\": \(String(describing: data[1].mediaInfo.id ?? 0)),\n    \"definition\": \"\(String(describing: data[1].mediaInfo.definitionList[0].code ?? ""))\"\n  },\n  {\n    \"category\": \(String(describing: data[2].category ?? 0)),\n    \"contentId\": \"\(String(describing: data[2].id ?? ""))\",\n    \"episodeId\": \(String(describing: data[2].mediaInfo.id ?? 0)),\n    \"definition\": \"\(String(describing: data[2].mediaInfo.definitionList[0].code ?? ""))\"\n  }\n]"
+        return "[\n  {\n    \"category\": \(String(describing: data.first?.category ?? 0)),\n    \"contentId\": \"\(String(describing: data.first?.id ?? ""))\",\n    \"episodeId\": \(String(describing: data.first?.mediaInfo.id ?? 0)),\n    \"definition\": \"\(String(describing: data.first?.mediaInfo.definitionList.first?.code ?? ""))\"\n  }\n]"
     }
     
-    func getTikTokMedia(with page : Int, completion : @escaping (_ response: [TikTokModel]?, _ listReview : [ReviewMedia]?) -> Void) {
+    func getTikTokMedia(with page : Int, completion : @escaping (_ response: [TikTokModel]?, _ listReview : ReviewMedia?) -> Void) {
         APIService.shared.getReviewMedia(by: page) { response, error in
             if let data = response {
                 let listReview = self.getReviewList(data)
@@ -255,7 +255,7 @@ extension DataManager {
         }
     }
     
-    func getReviewList(_ data : [ReviewMedia]) -> [ReviewMedia] {
-        return data
+    func getReviewList(_ data : [ReviewMedia]) -> ReviewMedia {
+        return data.first!
     }
 }
