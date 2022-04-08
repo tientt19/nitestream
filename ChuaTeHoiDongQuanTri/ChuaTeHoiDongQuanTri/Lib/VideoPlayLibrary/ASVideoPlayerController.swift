@@ -130,6 +130,22 @@ class ASVideoPlayerController: NSObject, NSCacheDelegate {
         }
     }
     
+    func removePlayer(tableView: UITableView){
+        let visisbleCells = tableView.visibleCells
+        var maxHeight: CGFloat = 0.0
+        for cellView in visisbleCells {
+            guard let containerCell = cellView as? ASAutoPlayVideoLayerContainer,
+                let videoCellURL = containerCell.videoURL else {
+                    continue
+            }
+            let height = containerCell.visibleVideoHeight()
+            if maxHeight < height {
+                maxHeight = height
+            }
+            pauseRemoveLayer(layer: containerCell.videoLayer, url: videoCellURL, layerHeight: height)
+        }
+    }
+    
     private func removeFromSuperLayer(layer: AVPlayerLayer, url: String) {
         videoURL = nil
         currentLayer = nil

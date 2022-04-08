@@ -65,12 +65,16 @@ class tiktokTableViewCell: UITableViewCell, ASAutoPlayVideoLayerContainer {
     
     func configure(link: String, data : ReviewMedia) {
         self.videoURL = link
+        tagListView.removeAllTags()
         posterImamge.setImageCachingv2(targetImageView: posterImamge, with: data.refList.first?.coverVerticalUrl ?? "")
         likeCount.text = "\(data.likeCount ?? 0)"
         titleLabel.text = data.name
         scoreLabel.text = "\(String(describing: data.refList.first?.score ?? 0))"
         tagListView.textFont = UIFont.systemFont(ofSize: 12)
-        tagListView.addTags(data.refList.first?.tagList.map { $0.name } ?? [""])
+        
+        if let _ = data.refList.first?.tagList.map({ $0.name }) {
+            tagListView.addTags((data.refList.first?.tagList.map({ $0.name }))!)
+        }
     }
     
     func visibleVideoHeight() -> CGFloat {

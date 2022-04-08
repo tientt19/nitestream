@@ -35,16 +35,15 @@ class TikTokScreenViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        ASVideoPlayerController.sharedVideoPlayer.removePlayer(tableView: tiktokTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        pausePlayeVideos()
     }
 }
 
@@ -96,7 +95,6 @@ extension TikTokScreenViewController : UITableViewDelegate {
 
 //MARK: - TikTokScreenViewProtocol
 extension TikTokScreenViewController: TikTokScreenViewProtocol{
-
     
     // TODO: Implement View Output Methods
     func showStreaming(data: [TikTokModel]) {
