@@ -30,9 +30,9 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
         return cell
     }
     
-    func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: [ReviewMedia]) {
+    func configureWhenLoadMore(tiktokModel: [TikTokModel], reviewData: ReviewMedia) {
         entities += tiktokModel
-        self.reviewData += reviewData
+        self.reviewData.append(reviewData)
     }
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) { }

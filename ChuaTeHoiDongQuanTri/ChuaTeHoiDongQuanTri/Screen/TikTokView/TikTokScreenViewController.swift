@@ -96,17 +96,19 @@ extension TikTokScreenViewController : UITableViewDelegate {
 
 //MARK: - TikTokScreenViewProtocol
 extension TikTokScreenViewController: TikTokScreenViewProtocol{
+
+    
     // TODO: Implement View Output Methods
     func showStreaming(data: [TikTokModel]) {
         dataSource = TikTokTableViewDataSource(entities: data, with: presenter!)
     }
     
-    func configureView(data: [ReviewMedia]) {
-        dataSource?.reviewData = data
+    func configureView(data: ReviewMedia) {
+        dataSource?.reviewData.append(data)
         tiktokTableView.reloadData()
     }
     
-    func configureDataWhenLoadMore(_ tiktokModel: [TikTokModel], _ reviewData: [ReviewMedia]) {
+    func configureDataWhenLoadMore(_ tiktokModel: [TikTokModel], _ reviewData: ReviewMedia) {
         dataSource?.configureWhenLoadMore(tiktokModel: tiktokModel, reviewData: reviewData)
         tiktokTableView.reloadData()
     }
