@@ -259,3 +259,15 @@ extension DataManager {
         return data.first!
     }
 }
+
+//MARK: - getSearching Data
+
+extension DataManager {
+    func getSearchingData(with keyword : String) {
+        APIService.shared.getSearchingResult(with: keyword) { response, error in
+            if let data = response {
+                dLogDebug(data)
+            }
+        }
+    }
+}

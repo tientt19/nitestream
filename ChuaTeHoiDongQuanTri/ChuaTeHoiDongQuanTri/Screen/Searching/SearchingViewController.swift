@@ -26,6 +26,7 @@ class SearchingViewController: BaseViewController {
         super.viewDidLoad()
         setUPView()
         presenter?.callToGetTopSearchingData()
+        DataManager.shared.getSearchingData(with: "T")
     }
 }
 

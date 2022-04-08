@@ -9,6 +9,7 @@ import Foundation
 
 struct Contants {
     static let discoverySearch = "https://ga-mobile-api.loklok.tv/cms/app/search/list"
+    
     static func getAPIHttps(_ numberOfPage: Int) -> String {
         return "https://jsonplaceholder.typicode.com/albums/\(numberOfPage)/photos"
     }
@@ -39,5 +40,9 @@ struct Contants {
     
     static func getReviewMedia() -> String {
         return "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo"
+    }
+    
+    static func getSearchingData() -> String {
+        return "https://ga-mobile-api.loklok.tv/cms/app/search/v1/searchWithKeyWord"
     }
 }
