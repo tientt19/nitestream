@@ -39,7 +39,11 @@ class DiscoveryScreenViewController: BaseViewController {
 
 // MARK: - DiscoveryScreenViewProtocol
 extension DiscoveryScreenViewController: DiscoveryScreenViewProtocol {
-    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.atabileView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -62,6 +66,7 @@ extension DiscoveryScreenViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: DiscoveryTableViewCell.self, forIndexPath: indexPath)
+        cell.model = presenter.itemForRow(at: indexPath)
         return cell
     }
 }

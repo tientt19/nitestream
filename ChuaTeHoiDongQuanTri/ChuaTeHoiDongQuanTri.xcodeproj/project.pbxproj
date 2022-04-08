@@ -676,8 +676,8 @@
 			isa = PBXGroup;
 			children = (
 				525DC16827F1C0BC003EEF58 /* Searching */,
-				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6D27EF5E9D007E48A6 /* MovieDetail */,
+				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6527EF028D007E48A6 /* ExpandView */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,

@@ -11,6 +11,7 @@ class DiscoveryItem {
     var name: String?
     var params: String?
     var screeningType: String?
+    var isSelected: Bool = false
     
     init(_ dict: [String: Any]) {
         name = dict["name"] as? String
