@@ -17,6 +17,9 @@ protocol DiscoveryScreenViewProtocol: AnyObject {
 // MARK: - Presenter
 protocol DiscoveryScreenPresenterProtocol {
     func onViewDidLoad()
+    
+    var numberOfCell: Int { get }
+    var numberOfSection: Int { get }
 }
 
 // MARK: - Interactor Input

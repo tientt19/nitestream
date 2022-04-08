@@ -25,6 +25,14 @@ class DiscoveryScreenPresenter {
 
 // MARK: - DiscoveryScreenPresenterProtocol
 extension DiscoveryScreenPresenter: DiscoveryScreenPresenterProtocol {
+    var numberOfCell: Int {
+        return 1
+    }
+    
+    var numberOfSection: Int {
+        return 5
+    }
+    
     func onViewDidLoad() {
         
     }
