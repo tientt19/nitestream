@@ -49,7 +49,7 @@ class MainTabBarController: UITabBarController {
         homeController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
         homeController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         homeController.tabBarItem.image = UIImage(systemName: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        homeController.tabBarItem.selectedImage = UIImage(named: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
+        homeController.tabBarItem.selectedImage = UIImage(named:        "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
         let homeNavController = BaseNavigationViewController(rootViewController: homeController)
         homeNavController.setHiddenNavigationBarViewControllers([])
         

@@ -166,3 +166,22 @@ extension APIService {
         return nil
     }
 }
+
+// MARK: - Get Discovery
+extension APIService {
+    func getDiscoveryItem(closure: @escaping (_ response: [DiscoveryModel]?, _ error: Error?) -> Void) {
+        var discoveryData = [DiscoveryModel]()
+        AF.request(Contants.discoverySearch, method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+            if let result = response.value as? [String:Any] {
+                if let dataItem = result["data"] as? [[String:Any]] {
+                    for item in dataItem {
+                        let dataTemp = DiscoveryModel(item)
+                        discoveryData.append(dataTemp)
+                    }
+                }
+            }
+            closure(discoveryData,nil)
+        }
+    }
+    
+}
