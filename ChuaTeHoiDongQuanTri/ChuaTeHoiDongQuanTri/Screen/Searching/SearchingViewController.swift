@@ -36,6 +36,8 @@ extension SearchingViewController {
         topSearchTableView.registerCell(nibName: TopSearchTableViewCell.self)
         searchingTableView.registerCell(nibName: SearchingCell.self)
         navigationItem.titleView = textFieldView
+        searchingTableView.keyboardDismissMode = .onDrag
+        topSearchTableView.keyboardDismissMode = .onDrag
         textFieldView.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -44,6 +46,7 @@ extension SearchingViewController {
             activityIndicatorView.startAnimating()
             presenter?.callToGetTopSearchingData()
         }
+        
         if let searchKey = textField.text {
             presenter?.handleSearchWithKeywork(searchKey)
         }

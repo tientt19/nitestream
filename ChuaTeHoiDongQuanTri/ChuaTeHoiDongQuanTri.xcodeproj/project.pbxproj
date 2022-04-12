@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EA0B5DE8B397F05820D4AA1 /* Pods_StreamingTienPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92479105F1717CD5A86F957F /* Pods_StreamingTienPro.framework */; };
+		4FE3D9DE4B0C4DB0CE5D8FAF /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9680A62DA3FAEA01FD8A15FF /* Pods_ChuTeHoiDongQuanTri.framework */; };
 		5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */; };
 		5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */; };
 		521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE627EC497C00D411EB /* ReviewMedia.swift */; };
@@ -130,7 +130,7 @@
 		52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA99C927C73B120093FC14 /* RecommendItem.swift */; };
 		52FEE78827C8850200B7588E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE78627C8850200B7588E /* CategoryCell.swift */; };
 		52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEE78727C8850200B7588E /* CategoryCell.xib */; };
-		7E24F4000C0DD1EC822F125C /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5C9124398B61B1BDBD2286 /* Pods_ChuTeHoiDongQuanTri.framework */; };
+		75D324EA82F6F45DC5FA9355 /* Pods_StreamingTienPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232507EA6244813B19C17336 /* Pods_StreamingTienPro.framework */; };
 		843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */; };
 		843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */; };
 		843DD6A727FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */; };
@@ -171,8 +171,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F5C7EE126A1C383AFDDD43D /* Pods-ChuaTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuaTeHoiDongQuanTri/Pods-ChuaTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
-		3F5C9124398B61B1BDBD2286 /* Pods_ChuTeHoiDongQuanTri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuTeHoiDongQuanTri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA4D31AF5DF0FB67B8A18F0 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.debug.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.debug.xcconfig"; sourceTree = "<group>"; };
+		232507EA6244813B19C17336 /* Pods_StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F25AEC8C617853370A24946 /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
+		4FF90E0C21CF98154C8D7BD6 /* Pods-StreamingTienPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingTienPro.release.xcconfig"; path = "Target Support Files/Pods-StreamingTienPro/Pods-StreamingTienPro.release.xcconfig"; sourceTree = "<group>"; };
 		5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		521B0FE627EC497C00D411EB /* ReviewMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMedia.swift; sourceTree = "<group>"; };
@@ -298,7 +300,6 @@
 		52FA99C927C73B120093FC14 /* RecommendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendItem.swift; sourceTree = "<group>"; };
 		52FEE78627C8850200B7588E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		52FEE78727C8850200B7588E /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		5C8AA56197822F8179156D6C /* Pods-StreamingTienPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingTienPro.release.xcconfig"; path = "Target Support Files/Pods-StreamingTienPro/Pods-StreamingTienPro.release.xcconfig"; sourceTree = "<group>"; };
 		843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenPresenter.swift; sourceTree = "<group>"; };
 		843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenRouter.swift; sourceTree = "<group>"; };
 		843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenInteractorInput.swift; sourceTree = "<group>"; };
@@ -312,11 +313,8 @@
 		8495609D27FFE507004A8A74 /* DiscoveryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryModel.swift; sourceTree = "<group>"; };
 		8495609F27FFE565004A8A74 /* ScreeningItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreeningItems.swift; sourceTree = "<group>"; };
 		849560A127FFE58C004A8A74 /* DiscoveryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryItem.swift; sourceTree = "<group>"; };
-		85CEB6B23712D5C889913B9F /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
-		8C11A34E76BBC4012147E319 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.debug.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.debug.xcconfig"; sourceTree = "<group>"; };
-		92479105F1717CD5A86F957F /* Pods_StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9A6A0912725A96486A2CFD7 /* Pods-StreamingTienPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingTienPro.debug.xcconfig"; path = "Target Support Files/Pods-StreamingTienPro/Pods-StreamingTienPro.debug.xcconfig"; sourceTree = "<group>"; };
-		F9A57429D0DC336A89F92B50 /* Pods-ChuaTeHoiDongQuanTri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuaTeHoiDongQuanTri.debug.xcconfig"; path = "Target Support Files/Pods-ChuaTeHoiDongQuanTri/Pods-ChuaTeHoiDongQuanTri.debug.xcconfig"; sourceTree = "<group>"; };
+		9680A62DA3FAEA01FD8A15FF /* Pods_ChuTeHoiDongQuanTri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuTeHoiDongQuanTri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE03E6F49197EBB020849BD /* Pods-StreamingTienPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingTienPro.debug.xcconfig"; path = "Target Support Files/Pods-StreamingTienPro/Pods-StreamingTienPro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528C705227CE0F3D00850478 /* StreamingTienPro.framework in Frameworks */,
-				7E24F4000C0DD1EC822F125C /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */,
+				4FE3D9DE4B0C4DB0CE5D8FAF /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +331,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EA0B5DE8B397F05820D4AA1 /* Pods_StreamingTienPro.framework in Frameworks */,
+				75D324EA82F6F45DC5FA9355 /* Pods_StreamingTienPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +491,7 @@
 				528C704D27CE0F3D00850478 /* StreamingTienPro */,
 				522CF3B427C0FD0900E4900A /* Products */,
 				D67C76DD48BD1789F9002550 /* Pods */,
-				562347EA0CA5F1E3AE6122EE /* Frameworks */,
+				52F2BF01F7D0562E2A3AC766 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -819,6 +817,15 @@
 			path = Footer;
 			sourceTree = "<group>";
 		};
+		52F2BF01F7D0562E2A3AC766 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9680A62DA3FAEA01FD8A15FF /* Pods_ChuTeHoiDongQuanTri.framework */,
+				232507EA6244813B19C17336 /* Pods_StreamingTienPro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52F9A2A427C7C76B00EC01A0 /* HomePageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,15 +855,6 @@
 				52FEE78727C8850200B7588E /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
-			sourceTree = "<group>";
-		};
-		562347EA0CA5F1E3AE6122EE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3F5C9124398B61B1BDBD2286 /* Pods_ChuTeHoiDongQuanTri.framework */,
-				92479105F1717CD5A86F957F /* Pods_StreamingTienPro.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8495609027FFD78B004A8A74 /* DiscoveryTableViewCell */ = {
@@ -891,12 +889,10 @@
 		D67C76DD48BD1789F9002550 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F9A57429D0DC336A89F92B50 /* Pods-ChuaTeHoiDongQuanTri.debug.xcconfig */,
-				1F5C7EE126A1C383AFDDD43D /* Pods-ChuaTeHoiDongQuanTri.release.xcconfig */,
-				8C11A34E76BBC4012147E319 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */,
-				85CEB6B23712D5C889913B9F /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */,
-				D9A6A0912725A96486A2CFD7 /* Pods-StreamingTienPro.debug.xcconfig */,
-				5C8AA56197822F8179156D6C /* Pods-StreamingTienPro.release.xcconfig */,
+				1AA4D31AF5DF0FB67B8A18F0 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */,
+				3F25AEC8C617853370A24946 /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */,
+				DDE03E6F49197EBB020849BD /* Pods-StreamingTienPro.debug.xcconfig */,
+				4FF90E0C21CF98154C8D7BD6 /* Pods-StreamingTienPro.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -919,12 +915,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 522CF3C727C0FD0B00E4900A /* Build configuration list for PBXNativeTarget "ChuTeHoiDongQuanTri" */;
 			buildPhases = (
-				829E931C67D1221E006AD6FE /* [CP] Check Pods Manifest.lock */,
+				4984E1218EF9159ADE23678B /* [CP] Check Pods Manifest.lock */,
 				522CF3AF27C0FD0900E4900A /* Sources */,
 				522CF3B027C0FD0900E4900A /* Frameworks */,
 				522CF3B127C0FD0900E4900A /* Resources */,
-				9BF9DC6E782A10C284F065CA /* [CP] Embed Pods Frameworks */,
 				528C705427CE0F3D00850478 /* Embed Frameworks */,
+				1DA28FFF4FC32A4F19A6CC23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -940,7 +936,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 528C705727CE0F3D00850478 /* Build configuration list for PBXNativeTarget "StreamingTienPro" */;
 			buildPhases = (
-				6B57111F57D5D70D614151A3 /* [CP] Check Pods Manifest.lock */,
+				6E7F86A60207F4260EDC80DE /* [CP] Check Pods Manifest.lock */,
 				528C704727CE0F3D00850478 /* Headers */,
 				528C704827CE0F3D00850478 /* Sources */,
 				528C704927CE0F3D00850478 /* Frameworks */,
@@ -1034,29 +1030,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6B57111F57D5D70D614151A3 /* [CP] Check Pods Manifest.lock */ = {
+		1DA28FFF4FC32A4F19A6CC23 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StreamingTienPro-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		829E931C67D1221E006AD6FE /* [CP] Check Pods Manifest.lock */ = {
+		4984E1218EF9159ADE23678B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1078,21 +1069,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BF9DC6E782A10C284F065CA /* [CP] Embed Pods Frameworks */ = {
+		6E7F86A60207F4260EDC80DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamingTienPro-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1370,7 +1366,7 @@
 		};
 		522CF3C827C0FD0B00E4900A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C11A34E76BBC4012147E319 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */;
+			baseConfigurationReference = 1AA4D31AF5DF0FB67B8A18F0 /* Pods-ChuTeHoiDongQuanTri.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1380,7 +1376,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 97MV55V5HU;
+				DEVELOPMENT_TEAM = CY4CXRJ4H3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Do An ";
@@ -1403,7 +1399,7 @@
 					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ngnahtn.MovieStreaming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.MovieStreaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
@@ -1417,7 +1413,7 @@
 		};
 		522CF3C927C0FD0B00E4900A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85CEB6B23712D5C889913B9F /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */;
+			baseConfigurationReference = 3F25AEC8C617853370A24946 /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1461,13 +1457,13 @@
 		};
 		528C705527CE0F3D00850478 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9A6A0912725A96486A2CFD7 /* Pods-StreamingTienPro.debug.xcconfig */;
+			baseConfigurationReference = DDE03E6F49197EBB020849BD /* Pods-StreamingTienPro.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 97MV55V5HU;
+				DEVELOPMENT_TEAM = CY4CXRJ4H3;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1481,7 +1477,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ngnahtn.StreamingTienPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran..StreamingTienPro;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1495,7 +1491,7 @@
 		};
 		528C705627CE0F3D00850478 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C8AA56197822F8179156D6C /* Pods-StreamingTienPro.release.xcconfig */;
+			baseConfigurationReference = 4FF90E0C21CF98154C8D7BD6 /* Pods-StreamingTienPro.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

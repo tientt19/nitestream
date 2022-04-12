@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BannerCell" customModule="ChuaTeHoiDongQuanTri" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BannerCell" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="373" height="189"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -31,11 +31,20 @@
                             <outlet property="delegate" destination="-1" id="1MB-zw-K4N"/>
                         </connections>
                     </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="IbJ-wQ-Ago">
+                        <rect key="frame" x="193" y="163" width="180" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="xtr-Xo-iFp"/>
+                        </constraints>
+                        <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </pageControl>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="IbJ-wQ-Ago" secondAttribute="trailing" id="6xa-1n-ik7"/>
+                <constraint firstAttribute="bottom" secondItem="IbJ-wQ-Ago" secondAttribute="bottom" id="9mh-lf-3DT"/>
                 <constraint firstItem="XcK-xp-UAE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LBn-Kb-Ybj"/>
                 <constraint firstAttribute="trailing" secondItem="XcK-xp-UAE" secondAttribute="trailing" id="NIE-4x-KHA"/>
                 <constraint firstItem="XcK-xp-UAE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XEg-kA-2Dn"/>
@@ -49,6 +58,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bannerCLV" destination="XcK-xp-UAE" id="rE1-wa-ejO"/>
+                <outlet property="pageView" destination="IbJ-wQ-Ago" id="xeW-aR-fQU"/>
             </connections>
             <point key="canvasLocation" x="203.62318840579712" y="37.834821428571423"/>
         </collectionViewCell>

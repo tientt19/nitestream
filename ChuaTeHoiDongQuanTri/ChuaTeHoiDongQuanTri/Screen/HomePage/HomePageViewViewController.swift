@@ -20,15 +20,6 @@ class HomePageViewViewController: BaseViewController {
     var presenter: HomePageViewPresenterProtocol?
     var dataSource : HomePageViewDataSourceProtocol?
     var index = 0
-
-//    lazy var textFieldView : UITextField = {
-//        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: ((self.navigationController?.navigationBar.frame.size.width)! * 2/3 ), height: 30))
-//        textfield.borderStyle = .none
-//        textfield.backgroundColor = .lightText
-//        textfield.placeholder = "  Searching"
-//        textfield.layer.cornerRadius = 10
-//        return textfield
-//    }()
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -63,6 +54,7 @@ class HomePageViewViewController: BaseViewController {
     @objc func textFieldTap() {
         let searchingVC = SearchingRouter.createSearchingModule()
         searchingVC.hidesBottomBarWhenPushed = true
+        searchingVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(searchingVC, animated: true)
     }
     
@@ -84,12 +76,10 @@ class HomePageViewViewController: BaseViewController {
         }
         
         gesture.setTranslation(.zero, in: self.limitView)
-        print("x: \( self.trailingViewConMoveConstraint.constant)")
-        print("y: \(self.bottomViewConMoveConstraint.constant)")
-        print("----------")
+//        print("x: \( self.trailingViewConMoveConstraint.constant)")
+//        print("y: \(self.bottomViewConMoveConstraint.constant)")
+//        print("----------")
         self.view.layoutIfNeeded()
-        
-        
     }
     
     //MARK: - Handle when tap collecion view header
@@ -185,4 +175,3 @@ extension HomePageViewViewController: HomePageViewViewProtocol{
         presentLockScreen()
     }
 }
-

@@ -103,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-FB-GMy">
-                                        <rect key="frame" x="20" y="0.0" width="388" height="848"/>
+                                        <rect key="frame" x="20" y="20" width="388" height="828"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G7m-FF-R5a">
                                             <size key="itemSize" width="128" height="128"/>
@@ -131,7 +131,7 @@
                                 <constraints>
                                     <constraint firstItem="Jtg-FB-GMy" firstAttribute="leading" secondItem="2A5-i1-OtI" secondAttribute="leading" constant="20" id="20B-zw-QVI"/>
                                     <constraint firstAttribute="trailing" secondItem="Jtg-FB-GMy" secondAttribute="trailing" constant="20" id="hQA-dK-rGZ"/>
-                                    <constraint firstItem="Jtg-FB-GMy" firstAttribute="top" secondItem="2A5-i1-OtI" secondAttribute="top" id="rRe-ig-UoR"/>
+                                    <constraint firstItem="Jtg-FB-GMy" firstAttribute="top" secondItem="2A5-i1-OtI" secondAttribute="top" constant="20" id="rRe-ig-UoR"/>
                                     <constraint firstAttribute="bottom" secondItem="Jtg-FB-GMy" secondAttribute="bottom" id="zDQ-Wc-kQS"/>
                                 </constraints>
                             </view>

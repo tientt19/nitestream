@@ -11,18 +11,24 @@ import Kingfisher
 class BannerCell: UICollectionViewCell {
     
     @IBOutlet weak var bannerCLV: UICollectionView!
+    @IBOutlet weak var pageView : UIPageControl!
     
     var listDataCall = [RecommendContentVOList]()
-  
+    var timer = Timer()
+    var counter = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         bannerCLV.registerCell(nibName: ChildCell.self)
         bannerCLV.delegate = self
         bannerCLV.dataSource = self
+        configAutoscrollTimer()
     }
     
     func configure(data : [RecommendContentVOList]) {
         listDataCall = data
+        pageView.numberOfPages = listDataCall.count
+        pageView.currentPage = 0
         bannerCLV.reloadData()
     }
 }
@@ -52,5 +58,28 @@ extension BannerCell: UICollectionViewDataSource {
         let cell = collectionView.dequeue(cellClass: ChildCell.self, forIndexPath: indexPath)
         cell.configure(imageUrl, titleLabel)
         return cell
+    }
+}
+
+extension BannerCell {
+    func configAutoscrollTimer() {
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func changeImage() {
+        if counter < listDataCall.count {
+            let index = IndexPath.init(item: counter, section: 0)
+            self.bannerCLV.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageView.currentPage = counter
+            counter += 1
+        } else {
+            counter = 0
+            let index = IndexPath.init(item: counter, section: 0)
+            self.bannerCLV.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+            pageView.currentPage = counter
+            counter = 1
+        }
     }
 }
