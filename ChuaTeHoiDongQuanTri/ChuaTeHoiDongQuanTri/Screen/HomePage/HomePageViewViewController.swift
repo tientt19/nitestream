@@ -11,6 +11,11 @@ import UIKit
 class HomePageViewViewController: BaseViewController {
     // MARK: - Properties
     @IBOutlet weak var HomePageCLV: UICollectionView!
+    @IBOutlet weak var viewCanMove: UIView!
+    @IBOutlet weak var limitView: UIView!
+    
+    @IBOutlet weak var bottomViewConMoveConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingViewConMoveConstraint: NSLayoutConstraint!
     
     var presenter: HomePageViewPresenterProtocol?
     var dataSource : HomePageViewDataSourceProtocol?
@@ -41,12 +46,43 @@ class HomePageViewViewController: BaseViewController {
         HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
         
         textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
+        viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
+        
     }
     
+    @IBAction func handleCloseViewCanMove(_ sender: UIButton) {
+        self.viewCanMove.isHidden = true
+    }
     @objc func textFieldTap() {
         let searchingVC = SearchingRouter.createSearchingModule()
         searchingVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(searchingVC, animated: true)
+    }
+    
+    @objc func handleViewCanMove(gesture : UIPanGestureRecognizer) {
+        //
+        guard gesture.view != nil else {return}
+        //
+        let translation = gesture.translation(in: self.limitView)
+
+        let bounds = UIScreen.main.bounds
+        
+        // 50 = viewWidth / 2
+        if self.trailingViewConMoveConstraint.constant + translation.x <= -50 && self.trailingViewConMoveConstraint.constant + translation.x >=  0 - bounds.size.width + 50 {
+            self.trailingViewConMoveConstraint.constant += translation.x
+        }
+        
+        if self.bottomViewConMoveConstraint.constant + translation.y <= -50 && self.bottomViewConMoveConstraint.constant + translation.y >= 0 - bounds.size.height + 50 + 170 {
+            self.bottomViewConMoveConstraint.constant += translation.y
+        }
+        
+        gesture.setTranslation(.zero, in: self.limitView)
+        print("x: \( self.trailingViewConMoveConstraint.constant)")
+        print("y: \(self.bottomViewConMoveConstraint.constant)")
+        print("----------")
+        self.view.layoutIfNeeded()
+        
+        
     }
     
     //MARK: - Handle when tap collecion view header
