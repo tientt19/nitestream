@@ -51,6 +51,7 @@ class MainTabBarController: UITabBarController {
         homeController.tabBarItem.image = UIImage(systemName: "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         homeController.tabBarItem.selectedImage = UIImage(named:        "house.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
         let homeNavController = BaseNavigationViewController(rootViewController: homeController)
+        homeController.navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
         homeNavController.setHiddenNavigationBarViewControllers([])
         
         //MESSAGES

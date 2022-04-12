@@ -16,17 +16,15 @@ class SearchingViewController: BaseViewController {
     var presenter : SearchingPresenterProtocols?
     internal var tableViewDataSource : TableViewDataSource?
     
-    lazy var textFieldView : UITextField = {
-        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
-        textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Searching"
-        return textfield
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPView()
         presenter?.callToGetTopSearchingData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unlockScreen()
     }
 }
 
@@ -38,6 +36,8 @@ extension SearchingViewController {
         topSearchTableView.registerCell(nibName: TopSearchTableViewCell.self)
         searchingTableView.registerCell(nibName: SearchingCell.self)
         navigationItem.titleView = textFieldView
+        searchingTableView.keyboardDismissMode = .onDrag
+        topSearchTableView.keyboardDismissMode = .onDrag
         textFieldView.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -46,6 +46,7 @@ extension SearchingViewController {
             activityIndicatorView.startAnimating()
             presenter?.callToGetTopSearchingData()
         }
+        
         if let searchKey = textField.text {
             presenter?.handleSearchWithKeywork(searchKey)
         }
@@ -56,8 +57,10 @@ extension SearchingViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case topSearchTableView:
+            presentLockScreen()
             tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
         case searchingTableView:
+            presentLockScreen()
             textFieldView.text = searchingData[indexPath.row].htmlToString
             presenter?.getListSearch(searchingData[indexPath.row])
         default:
@@ -129,6 +132,7 @@ extension SearchingViewController : UITableViewDataSource {
 //MARK: - SearchingViewProtocols
 extension SearchingViewController : SearchingViewProtocols {
     func reloadSearchingTableView(_ data: [String]) {
+        self.unlockScreen()
         if data.isEmpty {
             stopLoadingAnimate()
             searchingTableView.isHidden = true
@@ -141,9 +145,10 @@ extension SearchingViewController : SearchingViewProtocols {
     }
     
     func reloadTableView(tableViewDataSource: TableViewDataSource) {
+        stopLoadingAnimate()
+        self.unlockScreen()
         self.tableViewDataSource = tableViewDataSource
         searchingTableView.isHidden = true
-        stopLoadingAnimate()
         topSearchTableView.reloadData()
     }
 }

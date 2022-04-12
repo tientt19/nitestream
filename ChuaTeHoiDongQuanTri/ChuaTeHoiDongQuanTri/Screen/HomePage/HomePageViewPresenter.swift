@@ -54,6 +54,7 @@ extension HomePageViewPresenter : HomePageViewPresenterOutputProtocol {
 extension HomePageViewPresenter : passDataPickDelegate {
     //MARK: - passDataPickDelegate
     func openDetailView(_ data: RecommendContentVOList) {
+        view?.lockView()
         if let id = data.id, let category = data.category {
             interactor?.getMovieDetail(id, category)
         }
