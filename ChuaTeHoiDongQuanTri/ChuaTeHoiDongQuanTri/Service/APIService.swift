@@ -25,13 +25,6 @@ let HTTPAdditionalHeadersReviewMedia : HTTPHeaders = [
     "deviceid" : ""
 ]
 
-let parameter : Parameters = [
-    "category": 2,
-    "contentId": "8550",
-    "episodeId": 39173,
-    "definition": "GROOT_LD"
-]
-
 class APIService:NSObject {
     static let shared: APIService = APIService()
     
@@ -127,7 +120,7 @@ extension APIService {
         
         let postData = parameters.data(using: .utf8)
         
-        var request = URLRequest(url: URL(string: "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: Contants.getReviewMedia())!,timeoutInterval: Double.infinity)
         
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
@@ -179,9 +172,86 @@ extension APIService {
                         discoveryData.append(dataTemp)
                     }
                 }
+                closure(discoveryData,nil)
             }
-            closure(discoveryData,nil)
         }
     }
-    
 }
+
+//MARK: - Get search data
+extension APIService {
+    func searchLenovo(with keyWord : String, closure: @escaping (_ response: [String]?, _ error: Error?) -> Void) {
+        var searchingResultDAO = [String]()
+        var semaphore = DispatchSemaphore (value: 0)
+
+        let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 20\n}"
+        let postData = parameters.data(using: .utf8)
+        
+        var request = URLRequest(url: URL(string: Contants.searchlenovo)!,timeoutInterval: Double.infinity)
+        request.headers = HTTPAdditionalHeaders
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                semaphore.signal()
+                closure(nil,error)
+                return
+            }
+            
+            let itemData = String(data: data, encoding: .utf8)!
+            if let output = self.convertToDictionary(text: itemData) {
+                if let dataItem = output["data"] as? [String:Any] {
+                    if let data = dataItem["searchResults"] as? [String] {
+                        for item in data {
+                            searchingResultDAO.append(item)
+                        }
+                        semaphore.signal()
+                    }
+                }
+            }
+        }
+        task.resume()
+        semaphore.wait()
+        closure(searchingResultDAO, nil)
+    }
+    
+    func getSearchingResult(with keyWord : String, closure: @escaping (_ response: [SearchResult]?, _ error: Error?) -> Void) {
+        var searchingResultDAO = [SearchResult]()
+        var semaphore = DispatchSemaphore (value: 0)
+
+        let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 50,\n    \"sort\": \"\",\n    \"searchType\": \"\"\n}"
+        let postData = parameters.data(using: .utf8)
+        
+        var request = URLRequest(url: URL(string: Contants.getSearchingData())!,timeoutInterval: Double.infinity)
+        request.headers = HTTPAdditionalHeaders
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                semaphore.signal()
+                closure(nil,error)
+                return
+            }
+            
+            let itemData = String(data: data, encoding: .utf8)!
+            if let output = self.convertToDictionary(text: itemData) {
+                if let dataItem = output["data"] as? [String:Any] {
+                    if let data = dataItem["searchResults"] as? [[String:Any]] {
+                        for item in data {
+                            let dataTemp = SearchResult(fromDictionary: item)
+                            searchingResultDAO.append(dataTemp)
+                        }
+                        semaphore.signal()
+                    }
+                }
+            }
+        }
+        task.resume()
+        semaphore.wait()
+        closure(searchingResultDAO, nil)
+    }
+}
+
+

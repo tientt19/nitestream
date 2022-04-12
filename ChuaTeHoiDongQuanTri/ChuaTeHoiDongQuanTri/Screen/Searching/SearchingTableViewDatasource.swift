@@ -10,9 +10,10 @@ import UIKit
 
 
 final class SearchTableViewDataSource : TableViewDataSource {
-    
+ 
     private var entities: [TopSearchData]!
     private weak var presenter: SearchingPresenterProtocols?
+    var searchingData = [SearchResult]()
 
     init(entities: [TopSearchData],with  presenter: SearchingPresenterProtocols) {
         self.entities = entities
