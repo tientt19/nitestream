@@ -16,6 +16,15 @@ class BaseViewController: UIViewController {
         return loading
     }()
     
+    lazy var textFieldView : UITextField = {
+        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: ((self.navigationController?.navigationBar.frame.size.width)! * 2/3 ), height: 30))
+        textfield.borderStyle = .none
+        textfield.backgroundColor = .lightText
+        textfield.placeholder = "  Searching"
+        textfield.layer.cornerRadius = 10
+        return textfield
+    }()
+    
     lazy var loadingView : UIView = {
         let view = UIView()
         view.backgroundColor = .clear

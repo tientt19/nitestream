@@ -21,12 +21,14 @@ class HomePageViewViewController: BaseViewController {
     var dataSource : HomePageViewDataSourceProtocol?
     var index = 0
 
-    lazy var textFieldView : UITextField = {
-        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
-        textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Searching"
-        return textfield
-    }()
+//    lazy var textFieldView : UITextField = {
+//        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: ((self.navigationController?.navigationBar.frame.size.width)! * 2/3 ), height: 30))
+//        textfield.borderStyle = .none
+//        textfield.backgroundColor = .lightText
+//        textfield.placeholder = "  Searching"
+//        textfield.layer.cornerRadius = 10
+//        return textfield
+//    }()
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {

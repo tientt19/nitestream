@@ -16,13 +16,6 @@ class SearchingViewController: BaseViewController {
     var presenter : SearchingPresenterProtocols?
     internal var tableViewDataSource : TableViewDataSource?
     
-    lazy var textFieldView : UITextField = {
-        let textfield = UITextField(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)!, height: 30))
-        textfield.borderStyle = .roundedRect
-        textfield.placeholder = "Searching"
-        return textfield
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPView()

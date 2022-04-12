@@ -16,19 +16,13 @@ class BaseNavigationViewController: UINavigationController {
     }
     
     func setupUI() {
-        self.navigationBar.isTranslucent = false
-        self.navigationBar.layer.masksToBounds = false
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.update(backroundColor: .white, titleColor: .white)
-        
+        self.delegate = self
+        self.changeTintColor(to: .white)
+        self.navigationBar.update(backroundColor: .systemIndigo, titleColor: .white)
         self.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        
-        self.navigationItem.backBarButtonItem?.title = ""
         self.changeTitleColor(to: .white)
-        self.delegate = self
     }
     
     func setHiddenNavigationBarViewControllers(_ viewControllers: [UIViewController.Type]) {
@@ -66,7 +60,6 @@ extension UINavigationBar {
             
             self.standardAppearance = appearance
             self.scrollEdgeAppearance = appearance
-            
         }
     }
 }
