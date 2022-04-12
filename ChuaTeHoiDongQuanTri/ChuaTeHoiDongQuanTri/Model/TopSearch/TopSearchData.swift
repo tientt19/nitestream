@@ -22,6 +22,13 @@ class TopSearchData{
 		id = dictionary["id"] as? String
 		title = dictionary["title"] as? String
 	}
+    
+    required init(fromSearchingData dictionary: SearchResult) {
+        cover = dictionary.coverHorizontalUrl
+        domainType = dictionary.domainType
+        id = dictionary.id
+        title = dictionary.name
+    }
 
 	/**
 	 * Returns all the available property values in the form of [String:Any] object where the key is the approperiate json key and the value is the value of the corresponding property

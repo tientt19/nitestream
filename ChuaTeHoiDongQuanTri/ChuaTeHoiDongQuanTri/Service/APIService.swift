@@ -180,6 +180,42 @@ extension APIService {
 
 //MARK: - Get search data
 extension APIService {
+    func searchLenovo(with keyWord : String, closure: @escaping (_ response: [String]?, _ error: Error?) -> Void) {
+        var searchingResultDAO = [String]()
+        var semaphore = DispatchSemaphore (value: 0)
+
+        let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 20\n}"
+        let postData = parameters.data(using: .utf8)
+        
+        var request = URLRequest(url: URL(string: Contants.searchlenovo)!,timeoutInterval: Double.infinity)
+        request.headers = HTTPAdditionalHeaders
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                semaphore.signal()
+                closure(nil,error)
+                return
+            }
+            
+            let itemData = String(data: data, encoding: .utf8)!
+            if let output = self.convertToDictionary(text: itemData) {
+                if let dataItem = output["data"] as? [String:Any] {
+                    if let data = dataItem["searchResults"] as? [String] {
+                        for item in data {
+                            searchingResultDAO.append(item)
+                        }
+                        semaphore.signal()
+                    }
+                }
+            }
+        }
+        task.resume()
+        semaphore.wait()
+        closure(searchingResultDAO, nil)
+    }
+    
     func getSearchingResult(with keyWord : String, closure: @escaping (_ response: [SearchResult]?, _ error: Error?) -> Void) {
         var searchingResultDAO = [SearchResult]()
         var semaphore = DispatchSemaphore (value: 0)
@@ -217,3 +253,5 @@ extension APIService {
         closure(searchingResultDAO, nil)
     }
 }
+
+

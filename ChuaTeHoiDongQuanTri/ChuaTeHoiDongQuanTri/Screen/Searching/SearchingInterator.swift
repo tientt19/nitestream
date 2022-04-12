@@ -34,7 +34,7 @@ class SearchingInterator : SearchingInteratorInputProtocols {
         // Wrap our request in a work item
         let requestWorkItem = DispatchWorkItem { [weak self] in
             guard let `self` = self else { return }
-            APIService.shared.getSearchingResult(with: keyword) { response, error in
+            APIService.shared.searchLenovo(with: keyword) { response, error in
                 if let data = response {
                     self.presenter?.didGetDataSearch(data)
                 }
@@ -46,6 +46,18 @@ class SearchingInterator : SearchingInteratorInputProtocols {
                                       execute: requestWorkItem)
     }
     
+    func handleGetListSearch(_ keyword: String) {
+        var listSearch = [TopSearchData]()
+        APIService.shared.getSearchingResult(with: keyword) { [weak self] response, error in
+            guard let `self` = self else { return }
+            if let data = response {
+                for item in data {
+                    listSearch.append(TopSearchData(fromSearchingData: item))
+                }
+                self.presenter?.didGetListSearch(listSearch)
+            }
+        }
+    }
     //MARK: - Get Detail Movie
     func handleGetDetailMovie(id: String, category: Int) {
         DataManager.shared.getDetailMovieData(Int(id)!, category) { response in

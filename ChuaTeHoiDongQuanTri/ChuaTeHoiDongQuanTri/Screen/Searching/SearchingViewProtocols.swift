@@ -14,7 +14,7 @@ protocol SearchingViewProtocols : AnyObject {
     
     // PRESENTER -> VIEW
     func reloadTableView(tableViewDataSource : TableViewDataSource)
-    func reloadSearchingTableView(_ data :  [SearchResult])
+    func reloadSearchingTableView(_ data : [String])
 }
 
 protocol SearchingPresenterProtocols : AnyObject {
@@ -25,6 +25,7 @@ protocol SearchingPresenterProtocols : AnyObject {
     // VIEW -> PRESENTER
     func callToGetTopSearchingData()
     func handleSearchWithKeywork(_ keyword : String)
+    func getListSearch(_ keyword : String)
     func openDetailView(id : String, category : Int)
 }
 
@@ -33,6 +34,7 @@ protocol SearchingInteratorInputProtocols : AnyObject {
     
     // PRESENTER -> INTERACTOR
     func handleGetData()
+    func handleGetListSearch(_ keyword : String)
     func handleGetDetailMovie(id : String, category : Int)
     func handleSearchWithKeyword(keyword : String)
 }
@@ -42,7 +44,8 @@ protocol SearchingInteractorOutputProtocols : AnyObject {
     
     func didGetData(_ data : [TopSearchData])
     func didGetMovieDetail(_ data : MovieDetail)
-    func didGetDataSearch(_ data :  [SearchResult])
+    func didGetDataSearch(_ data :  [String])
+    func didGetListSearch(_ data : [TopSearchData])
 }
 
 protocol SearchingRouterProtocols : AnyObject {

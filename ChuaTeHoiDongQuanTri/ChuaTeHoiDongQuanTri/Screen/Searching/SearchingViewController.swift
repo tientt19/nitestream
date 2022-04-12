@@ -12,7 +12,7 @@ class SearchingViewController: BaseViewController {
     @IBOutlet weak var topSearchTableView : UITableView!
     @IBOutlet weak var searchingTableView : UITableView!
     
-    var searchingData = [SearchResult]()
+    var searchingData = [String]()
     var presenter : SearchingPresenterProtocols?
     internal var tableViewDataSource : TableViewDataSource?
     
@@ -34,6 +34,7 @@ extension SearchingViewController {
     func setUPView() {
         setUpBaseView()
         hideKeyboardWhenTappedAround()
+        searchingTableView.estimatedRowHeight = 50
         topSearchTableView.registerCell(nibName: TopSearchTableViewCell.self)
         searchingTableView.registerCell(nibName: SearchingCell.self)
         navigationItem.titleView = textFieldView
@@ -41,8 +42,11 @@ extension SearchingViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if let searchKey = textField.text {
+        if textField.text == "" {
             activityIndicatorView.startAnimating()
+            presenter?.callToGetTopSearchingData()
+        }
+        if let searchKey = textField.text {
             presenter?.handleSearchWithKeywork(searchKey)
         }
     }
@@ -54,7 +58,8 @@ extension SearchingViewController : UITableViewDelegate {
         case topSearchTableView:
             tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
         case searchingTableView:
-            dLogDebug("search task")
+            textFieldView.text = searchingData[indexPath.row].htmlToString
+            presenter?.getListSearch(searchingData[indexPath.row])
         default:
             break
         }
@@ -84,7 +89,7 @@ extension SearchingViewController : UITableViewDataSource {
             return tableViewDataSource?.itemCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
         case searchingTableView:
             let cell = tableView.dequeue(cellClass: SearchingCell.self, forIndexPath: indexPath)
-            cell.textLabel?.text = searchingData[indexPath.row].name
+            cell.searchResultLabel.text = searchingData[indexPath.row].htmlToString
             return cell
         default:
             return UITableViewCell()
@@ -114,7 +119,7 @@ extension SearchingViewController : UITableViewDataSource {
         case topSearchTableView:
             return topSearchTableView.frame.height / 8
         case searchingTableView:
-            return 50
+            return UITableView.automaticDimension
         default:
             return 0
         }
@@ -123,7 +128,7 @@ extension SearchingViewController : UITableViewDataSource {
 
 //MARK: - SearchingViewProtocols
 extension SearchingViewController : SearchingViewProtocols {
-    func reloadSearchingTableView(_ data: [SearchResult]) {
+    func reloadSearchingTableView(_ data: [String]) {
         if data.isEmpty {
             stopLoadingAnimate()
             searchingTableView.isHidden = true
@@ -137,6 +142,7 @@ extension SearchingViewController : SearchingViewProtocols {
     
     func reloadTableView(tableViewDataSource: TableViewDataSource) {
         self.tableViewDataSource = tableViewDataSource
+        searchingTableView.isHidden = true
         stopLoadingAnimate()
         topSearchTableView.reloadData()
     }

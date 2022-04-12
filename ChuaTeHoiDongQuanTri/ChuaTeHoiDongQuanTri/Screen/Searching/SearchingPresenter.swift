@@ -9,7 +9,7 @@ import Foundation
 
 
 class SearchingPresenter : SearchingPresenterProtocols {
- 
+
     weak var view: SearchingViewProtocols?
     var interactor: SearchingInteratorInputProtocols?
     var router: SearchingRouterProtocols?
@@ -25,11 +25,19 @@ class SearchingPresenter : SearchingPresenterProtocols {
     func handleSearchWithKeywork(_ keyword: String) {
         interactor?.handleSearchWithKeyword(keyword: keyword)
     }
+    
+    func getListSearch(_ keyword: String) {
+        interactor?.handleGetListSearch(keyword)
+    }
 }
 
 //MARK: - SearchingInteractorOutputProtocols
 extension SearchingPresenter : SearchingInteractorOutputProtocols {
-    func didGetDataSearch(_ data: [SearchResult]) {
+    func didGetListSearch(_ data: [TopSearchData]) {
+        self.view?.reloadTableView(tableViewDataSource: SearchTableViewDataSource(entities: data, with: self))
+    }
+    
+    func didGetDataSearch(_ data: [String]) {
         DispatchQueue.main.async {
             self.view?.reloadSearchingTableView(data)
         }
