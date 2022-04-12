@@ -23,6 +23,10 @@ class TikTokTableViewDataSource : TikTokDataSourceProtocols {
         return entities.count 
     }
     
+    var listSearchingData: [SearchResult] {
+        return [SearchResult]()
+    }
+    
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: tiktokTableViewCell.self, forIndexPath: indexPath)
         cell.configure(link: entities[indexPath.row].mediaUrl, data: reviewData[indexPath.row])

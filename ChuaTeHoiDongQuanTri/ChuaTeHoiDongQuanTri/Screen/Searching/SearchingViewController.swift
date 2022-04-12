@@ -10,8 +10,9 @@ import UIKit
 class SearchingViewController: BaseViewController {
     
     @IBOutlet weak var topSearchTableView : UITableView!
+    @IBOutlet weak var searchingTableView : UITableView!
     
-    var topSearchData = [TopSearchData]()
+    var searchingData = [SearchResult]()
     var presenter : SearchingPresenterProtocols?
     internal var tableViewDataSource : TableViewDataSource?
     
@@ -26,7 +27,6 @@ class SearchingViewController: BaseViewController {
         super.viewDidLoad()
         setUPView()
         presenter?.callToGetTopSearchingData()
-        DataManager.shared.getSearchingData(with: "T")
     }
 }
 
@@ -34,17 +34,31 @@ extension SearchingViewController {
     func setUPView() {
         setUpBaseView()
         hideKeyboardWhenTappedAround()
-        navigationItem.titleView = textFieldView
         topSearchTableView.registerCell(nibName: TopSearchTableViewCell.self)
+        searchingTableView.registerCell(nibName: SearchingCell.self)
+        navigationItem.titleView = textFieldView
+        textFieldView.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let searchKey = textField.text {
+            activityIndicatorView.startAnimating()
+            presenter?.handleSearchWithKeywork(searchKey)
+        }
     }
 }
 //MARK: - UITableViewDelegate
 extension SearchingViewController : UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
+        switch tableView {
+        case topSearchTableView:
+            tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
+        case searchingTableView:
+            dLogDebug("search task")
+        default:
+            break
+        }
     }
-
 }
 //MARK: - UITableViewDataSource
 extension SearchingViewController : UITableViewDataSource {
@@ -54,34 +68,73 @@ extension SearchingViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewDataSource?.numberOfItems ?? 0
+        switch tableView {
+        case topSearchTableView:
+            return tableViewDataSource?.numberOfItems ?? 0
+        case searchingTableView:
+            return self.searchingData.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableViewDataSource?.itemCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
+        switch tableView {
+        case topSearchTableView:
+            return tableViewDataSource?.itemCell(tableView: tableView, indexPath: indexPath) ?? UITableViewCell()
+        case searchingTableView:
+            let cell = tableView.dequeue(cellClass: SearchingCell.self, forIndexPath: indexPath)
+            cell.textLabel?.text = searchingData[indexPath.row].name
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 24))
-        
-        let label = UILabel()
-        label.frame = CGRect.init(x: 0, y: 0, width: headerView.frame.width, height: 24)
-        label.text = "Tìm kiếm hàng đầu"
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        
-        headerView.addSubview(label)
-        
-        return headerView
+        if tableView == topSearchTableView {
+            let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 24))
+            
+            let label = UILabel()
+            label.frame = CGRect.init(x: 0, y: 0, width: headerView.frame.width, height: 24)
+            label.text = "Tìm kiếm hàng đầu"
+            label.font = .systemFont(ofSize: 16)
+            label.textColor = .black
+            
+            headerView.addSubview(label)
+            
+            return headerView
+        } else {
+            return nil
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return topSearchTableView.frame.height / 8
+        switch tableView {
+        case topSearchTableView:
+            return topSearchTableView.frame.height / 8
+        case searchingTableView:
+            return 50
+        default:
+            return 0
+        }
     }
 }
 
 //MARK: - SearchingViewProtocols
 extension SearchingViewController : SearchingViewProtocols {
+    func reloadSearchingTableView(_ data: [SearchResult]) {
+        if data.isEmpty {
+            stopLoadingAnimate()
+            searchingTableView.isHidden = true
+        } else {
+            self.searchingData = data
+            stopLoadingAnimate()
+            searchingTableView.isHidden = false
+            searchingTableView.reloadData()
+        }
+    }
+    
     func reloadTableView(tableViewDataSource: TableViewDataSource) {
         self.tableViewDataSource = tableViewDataSource
         stopLoadingAnimate()

@@ -111,6 +111,8 @@
 		52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */; };
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
+		52DAD607280521A300E27111 /* SearchingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAD605280521A300E27111 /* SearchingCell.swift */; };
+		52DAD608280521A300E27111 /* SearchingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DAD606280521A300E27111 /* SearchingCell.xib */; };
 		52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61C27C20ADE00CD80D0 /* UIView.swift */; };
 		52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61D27C20ADE00CD80D0 /* Dlog.swift */; };
 		52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61E27C20ADE00CD80D0 /* UITableView.swift */; };
@@ -274,6 +276,8 @@
 		52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewDataSource.swift; sourceTree = "<group>"; };
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		52DAD605280521A300E27111 /* SearchingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingCell.swift; sourceTree = "<group>"; };
+		52DAD606280521A300E27111 /* SearchingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingCell.xib; sourceTree = "<group>"; };
 		52E6E61C27C20ADE00CD80D0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		52E6E61D27C20ADE00CD80D0 /* Dlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dlog.swift; sourceTree = "<group>"; };
 		52E6E61E27C20ADE00CD80D0 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -525,6 +529,7 @@
 		525DC16827F1C0BC003EEF58 /* Searching */ = {
 			isa = PBXGroup;
 			children = (
+				52DAD6042805218400E27111 /* SearchingCell */,
 				525DC17327F1C159003EEF58 /* SearchingViewProtocols.swift */,
 				525DC17527F1C2FD003EEF58 /* SearchingPresenter.swift */,
 				525DC17727F1C351003EEF58 /* SearchingInterator.swift */,
@@ -707,6 +712,15 @@
 				52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */,
 			);
 			path = CalculateToDynamicCell;
+			sourceTree = "<group>";
+		};
+		52DAD6042805218400E27111 /* SearchingCell */ = {
+			isa = PBXGroup;
+			children = (
+				52DAD605280521A300E27111 /* SearchingCell.swift */,
+				52DAD606280521A300E27111 /* SearchingCell.xib */,
+			);
+			path = SearchingCell;
 			sourceTree = "<group>";
 		};
 		52E6E61B27C20ADE00CD80D0 /* Extension */ = {
@@ -998,6 +1012,7 @@
 				52E6E63727C2109400CD80D0 /* MainHeader.xib in Resources */,
 				52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */,
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
+				52DAD608280521A300E27111 /* SearchingCell.xib in Resources */,
 				843DD6A927FC47E4000C3554 /* DiscoveryScreenViewController.xib in Resources */,
 				52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */,
 				522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */,
@@ -1174,6 +1189,7 @@
 				52754E7C27FB483C00968694 /* UIImage.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
 				52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */,
+				52DAD607280521A300E27111 /* SearchingCell.swift in Sources */,
 				52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,

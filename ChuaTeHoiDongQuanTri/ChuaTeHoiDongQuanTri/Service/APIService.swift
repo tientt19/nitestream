@@ -172,8 +172,8 @@ extension APIService {
                         discoveryData.append(dataTemp)
                     }
                 }
+                closure(discoveryData,nil)
             }
-            closure(discoveryData,nil)
         }
     }
 }
@@ -182,7 +182,8 @@ extension APIService {
 extension APIService {
     func getSearchingResult(with keyWord : String, closure: @escaping (_ response: [SearchResult]?, _ error: Error?) -> Void) {
         var searchingResultDAO = [SearchResult]()
-        
+        var semaphore = DispatchSemaphore (value: 0)
+
         let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 50,\n    \"sort\": \"\",\n    \"searchType\": \"\"\n}"
         let postData = parameters.data(using: .utf8)
         
@@ -193,6 +194,7 @@ extension APIService {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
+                semaphore.signal()
                 closure(nil,error)
                 return
             }
@@ -205,11 +207,13 @@ extension APIService {
                             let dataTemp = SearchResult(fromDictionary: item)
                             searchingResultDAO.append(dataTemp)
                         }
+                        semaphore.signal()
                     }
                 }
             }
         }
         task.resume()
+        semaphore.wait()
         closure(searchingResultDAO, nil)
     }
 }
