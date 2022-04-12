@@ -17,6 +17,7 @@ protocol HomePageViewViewProtocol : AnyObject {
 
     // PRESENTER -> VIEW
     func reloadData(_ data : HomePageModel)
+    func lockView()
 }
 
 

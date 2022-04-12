@@ -9,7 +9,7 @@
 import UIKit
 import CoreAudio
 
-class ExpandScreenViewController: UIViewController {
+class ExpandScreenViewController: BaseViewController {
     // MARK: - Properties
     var presenter: ExpandScreenPresenterProtocol?
     var listMoviePassed = RecommendItem(fromDictionary: ["" : ""])
@@ -21,6 +21,11 @@ class ExpandScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unlockScreen()
     }
 }
 
@@ -45,6 +50,7 @@ extension ExpandScreenViewController : UICollectionViewDataSourcePrefetching {
 //MARK: - UICollectionViewDelegate
 extension ExpandScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentLockScreen()
         collectionViewDatasource?.didSelect(collectionView: collectionView, indexPath: indexPath)
     }
 }

@@ -18,9 +18,9 @@ class BaseViewController: UIViewController {
     
     lazy var loadingView : UIView = {
         let view = UIView()
+        view.backgroundColor = .clear
         return view
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,5 +36,16 @@ class BaseViewController: UIViewController {
     func stopLoadingAnimate() {
         activityIndicatorView.stopAnimating()
     }
+
+    func presentLockScreen() {
+        view.addSubview(loadingView)
+        activityIndicatorView.startAnimating()
+        loadingView.isHidden = false
+        loadingView.addConstraintsToFillView(view)
+    }
     
+    func unlockScreen() {
+        stopLoadingAnimate()
+        loadingView.isHidden = true
+    }
 }

@@ -28,6 +28,11 @@ class SearchingViewController: BaseViewController {
         setUPView()
         presenter?.callToGetTopSearchingData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unlockScreen()
+    }
 }
 
 extension SearchingViewController {
@@ -56,8 +61,10 @@ extension SearchingViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case topSearchTableView:
+            presentLockScreen()
             tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
         case searchingTableView:
+            presentLockScreen()
             textFieldView.text = searchingData[indexPath.row].htmlToString
             presenter?.getListSearch(searchingData[indexPath.row])
         default:
@@ -129,6 +136,7 @@ extension SearchingViewController : UITableViewDataSource {
 //MARK: - SearchingViewProtocols
 extension SearchingViewController : SearchingViewProtocols {
     func reloadSearchingTableView(_ data: [String]) {
+        self.unlockScreen()
         if data.isEmpty {
             stopLoadingAnimate()
             searchingTableView.isHidden = true
@@ -141,9 +149,10 @@ extension SearchingViewController : SearchingViewProtocols {
     }
     
     func reloadTableView(tableViewDataSource: TableViewDataSource) {
+        stopLoadingAnimate()
+        self.unlockScreen()
         self.tableViewDataSource = tableViewDataSource
         searchingTableView.isHidden = true
-        stopLoadingAnimate()
         topSearchTableView.reloadData()
     }
 }

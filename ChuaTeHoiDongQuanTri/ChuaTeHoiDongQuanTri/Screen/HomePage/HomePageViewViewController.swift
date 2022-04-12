@@ -35,6 +35,11 @@ class HomePageViewViewController: BaseViewController {
         register()
         presenter?.getHomePageData(index)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unlockScreen()
+    }
         
     func register() {
         navigationItem.titleView = textFieldView
@@ -166,11 +171,16 @@ extension HomePageViewViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - HomePageViewViewProtocol
 extension HomePageViewViewController: HomePageViewViewProtocol{
+    
     // TODO: Implement View Output Methods
     func reloadData(_ data: HomePageModel) {
         stopLoadingAnimate()
         dataSource = HomePageViewDataSource(entities: data, with: presenter!)
         HomePageCLV.reloadData()
-    }    
+    }
+    
+    func lockView() {
+        presentLockScreen()
+    }
 }
 
