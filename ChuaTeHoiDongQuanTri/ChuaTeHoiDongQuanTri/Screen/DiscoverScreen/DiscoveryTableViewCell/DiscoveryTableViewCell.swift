@@ -71,8 +71,7 @@ extension DiscoveryTableViewCell: UICollectionViewDataSource {
 extension DiscoveryTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let data = self.model?.items else { return CGSize(width: 0, height: self.frame.height) }
-        let labelCount = data[indexPath.row].name?.count ?? 0
-        let width: CGFloat = CGFloat(10 * labelCount + 8 * 2)
-        return CGSize(width: width, height: self.frame.height)
+        let dynamicWidth = UILabel.textWidth(font: UIFont.systemFont(ofSize: 14), text: data[indexPath.row].name ?? "")
+        return CGSize(width: dynamicWidth + 16, height: self.frame.height)
     }
 }
