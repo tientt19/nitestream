@@ -22,12 +22,12 @@ class PageAnimeViewController: BaseViewController {
     var viewModel: PageAnimeViewModelProtocol!
     
     @IBOutlet weak var pageAnimeTableView : UITableView!
+
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupInit()
-        self.viewModel.onViewDidLoad()
         self.viewModel.onViewDidLoad()
         self.viewModel.getAdvancedSearchResult()
     }
@@ -83,7 +83,6 @@ extension PageAnimeViewController: UITableViewDataSource {
         }
     }
 }
-
 
 // MARK: - PageAnime ViewProtocol
 extension PageAnimeViewController: PageAnimeViewProtocol {

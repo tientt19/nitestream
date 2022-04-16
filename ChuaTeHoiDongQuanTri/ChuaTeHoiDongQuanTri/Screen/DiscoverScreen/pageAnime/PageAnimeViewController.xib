@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageAnimeViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
             <connections>
-                <outlet property="pageAnimeTableView" destination="sqo-IN-cny" id="xNO-fj-dCm"/>
+                <outlet property="pageAnimeTableView" destination="sqo-IN-cny" id="dY6-j1-JAs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
