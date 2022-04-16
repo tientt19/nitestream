@@ -36,7 +36,7 @@ class DiscoveryScreenPresenter {
 // MARK: - DiscoveryScreenPresenterProtocol
 extension DiscoveryScreenPresenter: DiscoveryScreenPresenterProtocol {
     func onViewDidLoad() {
-//        interactor.fetchData()
+
     }
 }
 

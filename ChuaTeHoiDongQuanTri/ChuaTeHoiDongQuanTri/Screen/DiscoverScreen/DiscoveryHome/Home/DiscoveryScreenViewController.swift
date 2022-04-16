@@ -25,6 +25,7 @@ class DiscoveryScreenViewController: BaseViewController {
     
     // MARK: - Setup
     private func setupInit() {
+        self.activityIndicatorView.startAnimating()
         self.setInitPageViewController()
     }
     
@@ -44,17 +45,17 @@ extension DiscoveryScreenViewController {
     private func setInitPageViewController() {
         let barConfig = VXPageBarConfig(height: 48,
                                         selectedColor: UIColor.systemIndigo,
-                                        unSelectedColor: UIColor.lightGray,
-                                        selectedFont: UIFont(name: "roboto", size: 16),
-                                        unSelectedFont: UIFont(name: "roboto", size: 16),
+                                        unSelectedColor: UIColor.darkText,
+                                        selectedFont: UIFont(name: "roboto", size: 12),
+                                        unSelectedFont: UIFont(name: "roboto", size: 12),
                                         underLineHeight: 3,
                                         underLineWidth: 60,
                                         underLineColor: UIColor.systemIndigo,
                                         backgroundColor: .white)
         
-        let pageTVSeries = VXPageItem(viewController: PageTVSeriesRouter.setupModule(), title: "Phim truyền hình")
+        let pageTVSeries = VXPageItem(viewController: PageTVSeriesRouter.setupModule(), title: "TV Series")
         let pageMovie = VXPageItem(viewController: PageMovieRouter.setupModule(), title: "Movie")
-        let pageAnime = VXPageItem(viewController: PageAnimeRouter.setupModule(), title: "Phim hoạt hình")
+        let pageAnime = VXPageItem(viewController: PageAnimeRouter.setupModule(), title: "Anime")
         
         self.pageViewController.setPageItems([pageTVSeries, pageMovie, pageAnime])
         self.pageViewController.setPageBarConfig(barConfig)

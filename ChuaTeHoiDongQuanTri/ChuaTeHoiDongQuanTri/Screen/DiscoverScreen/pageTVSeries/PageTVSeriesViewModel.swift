@@ -12,10 +12,13 @@ import UIKit
 // MARK: - ViewModelProtocol
 protocol PageTVSeriesViewModelProtocol {
     func onViewDidLoad()
+    func getAdvancedSearchResult()
     func itemForRow(at index: IndexPath) -> ScreeningItems
+    func itemForRow(at index: IndexPath) -> [SearchResult]
     func didSelectedItem(at index: IndexPath)
     
     var numberOfCell: Int { get }
+    var numberOListResult: Int { get }
     var numberOfSection: Int { get }
 }
 
@@ -24,16 +27,22 @@ class PageTVSeriesViewModel {
     weak var view: PageTVSeriesViewProtocol?
     private var interactor: PageTVSeriesInteractorInputProtocol
     var screeningItems = [ScreeningItems]()
+    var advancedSearchResult = [SearchResult]()
 
     init(interactor: PageTVSeriesInteractorInputProtocol) {
         self.interactor = interactor
     }
-
 }
 
 // MARK: - PageTVSeries ViewModelProtocol
 extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
-
+    func itemForRow(at index: IndexPath) -> [SearchResult] {
+        if self.advancedSearchResult.isEmpty {
+            return [SearchResult]()
+        }
+        return self.advancedSearchResult
+    }
+    
     func itemForRow(at index: IndexPath) -> ScreeningItems {
         if self.screeningItems.isEmpty {
             return ScreeningItems(id: 0, item: [], name: "", disc: .type)
@@ -41,23 +50,29 @@ extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
         return self.screeningItems[index.row]
     }
     
-    
     func didSelectedItem(at index: IndexPath) {
         
     }
     
+    var numberOListResult: Int {
+        return 1
+    }
+
     var numberOfCell: Int {
         return 5
     }
     
     var numberOfSection: Int {
-        return 1
+        return 2
     }
     
     func onViewDidLoad() {
         interactor.fetchData()
     }
     
+    func getAdvancedSearchResult() {
+        interactor.fetchSearchResults()
+    }
 }
 
 // MARK: - PageTVSeries InteractorOutputProtocol
@@ -66,7 +81,11 @@ extension PageTVSeriesViewModel: PageTVSeriesInteractorOutputProtocol {
         let totalData = data[0]
         if let screeningData = totalData.screeningItems {
             self.screeningItems = screeningData
-            self.view?.reloadData()
         }
+    }
+    
+    func getData(with data : [SearchResult]) {
+        self.advancedSearchResult = data
+        self.view?.reloadData()
     }
 }

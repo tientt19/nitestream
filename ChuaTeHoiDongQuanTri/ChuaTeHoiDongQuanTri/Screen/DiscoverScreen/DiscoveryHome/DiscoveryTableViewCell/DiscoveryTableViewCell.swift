@@ -11,6 +11,7 @@ class DiscoveryTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var acollectionView: UICollectionView!
+    
     var model: ScreeningItems? {
         didSet {
             self.acollectionView.reloadData()
@@ -44,7 +45,6 @@ extension DiscoveryTableViewCell: UICollectionViewDelegate {
             self.acollectionView.reloadData()
         }
     }
-    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -63,8 +63,6 @@ extension DiscoveryTableViewCell: UICollectionViewDataSource {
         cell.item = data[indexPath.row]
         return cell
     }
-    
-    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
