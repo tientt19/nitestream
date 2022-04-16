@@ -10,7 +10,7 @@ import UIKit
 
 struct Contants {
     static let discoverySearch = "https://ga-mobile-api.loklok.tv/cms/app/search/list"
-    
+    static let advancedSearch = "https://ga-mobile-api.loklok.tv/cms/app/search/v1/search"
     static let searchlenovo = "https://ga-mobile-api.loklok.tv/cms/app/search/searchLenovo"
     
     static func getAPIHttps(_ numberOfPage: Int) -> String {

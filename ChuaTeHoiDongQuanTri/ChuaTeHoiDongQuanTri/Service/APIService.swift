@@ -252,6 +252,50 @@ extension APIService {
         semaphore.wait()
         closure(searchingResultDAO, nil)
     }
+    
+    func getAdvancedSearching(params : String,
+                              area : String,
+                              category : String,
+                              year : String,
+                              subtitles : String,
+                              closure: @escaping (_ response: [SearchResult]?, _ error: Error?) -> Void) {
+        
+        var searchingResultDAO = [SearchResult]()
+        var semaphore = DispatchSemaphore (value: 0)
+        
+        let parameters = "{\n    \"size\": 50,\n    \"params\": \"\(params)\",\n    \"area\": \"\(area)\",\n    \"category\": \"\(category)\",\n    \"year\": \"\(year)\",\n    \"subtitles\": \"\(subtitles)\",\n    \"order\": \"up\"\n}"
+        
+        let postData = parameters.data(using: .utf8)
+        
+        var request = URLRequest(url: URL(string: Contants.advancedSearch)!,timeoutInterval: Double.infinity)
+        request.headers = HTTPAdditionalHeaders
+        request.httpMethod = "POST"
+        request.httpBody = postData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                semaphore.signal()
+                closure(nil,error)
+                return
+            }
+            
+            let itemData = String(data: data, encoding: .utf8)!
+            if let output = self.convertToDictionary(text: itemData) {
+                if let dataItem = output["data"] as? [String:Any] {
+                    if let data = dataItem["searchResults"] as? [[String:Any]] {
+                        for item in data {
+                            let dataTemp = SearchResult(fromDictionary: item)
+                            searchingResultDAO.append(dataTemp)
+                        }
+                        semaphore.signal()
+                    }
+                }
+            }
+        }
+        task.resume()
+        semaphore.wait()
+        closure(searchingResultDAO, nil)
+    }
 }
 
 

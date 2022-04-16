@@ -25,6 +25,7 @@ class DiscoveryScreenViewController: BaseViewController {
     
     // MARK: - Setup
     private func setupInit() {
+        self.activityIndicatorView.startAnimating()
         self.setInitPageViewController()
     }
     

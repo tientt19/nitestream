@@ -11,8 +11,6 @@ import UIKit
 
 // MARK: - ViewProtocol
 protocol PageTVSeriesViewProtocol: AnyObject {
-    func showHud()
-    func hideHud()
     func reloadData()
 }
 
@@ -28,25 +26,25 @@ class PageTVSeriesViewController: BaseViewController {
         super.viewDidLoad()
         self.setupInit()
         self.viewModel.onViewDidLoad()
+        self.viewModel.getAdvancedSearchResult()
     }
     
     // MARK: - Init
     private func setupInit() {
         self.atabileView.registerCell(nibName: DiscoveryTableViewCell.self)
+        self.atabileView.registerCell(nibName: ListSearchResultTableViewCell.self)
         self.atabileView.delegate = self
         self.atabileView.dataSource = self
         self.atabileView.separatorStyle = .none
+        self.atabileView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     // MARK: - Action
-    
 }
 
 // MARK: - UITableViewDelegate
 extension PageTVSeriesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
-    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -56,28 +54,37 @@ extension PageTVSeriesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfCell
+        switch section {
+        case 0:
+            return viewModel.numberOfCell
+        case 1:
+            return viewModel.numberOListResult
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: DiscoveryTableViewCell.self, forIndexPath: indexPath)
-        cell.model = viewModel.itemForRow(at: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeue(cellClass: DiscoveryTableViewCell.self, forIndexPath: indexPath)
+            cell.model = viewModel.itemForRow(at: indexPath)
+            return cell
+        case 1:
+            let cell = tableView.dequeue(cellClass: ListSearchResultTableViewCell.self, forIndexPath: indexPath)
+            cell.model = viewModel.itemForRow(at: indexPath)
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }
 
 // MARK: - PageTVSeries ViewProtocol
 extension PageTVSeriesViewController: PageTVSeriesViewProtocol {
-    func showHud() {
-        // show hub
-    }
-    
-    func hideHud() {
-        // hide hub
-    }
-    
     func reloadData() {
         DispatchQueue.main.async {
+            self.stopLoadingAnimate()
             self.atabileView.reloadData()
         }
     }
