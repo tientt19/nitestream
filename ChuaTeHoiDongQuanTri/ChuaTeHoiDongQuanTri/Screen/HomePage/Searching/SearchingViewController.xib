@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchingViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
+            <connections>
+                <outlet property="searchingTableView" destination="8WP-0g-fW5" id="gTj-Vg-n6V"/>
+                <outlet property="topSearchTableView" destination="Njs-s4-4sT" id="cbA-fq-WRS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njs-s4-4sT">
+                    <rect key="frame" x="20" y="54" width="374" height="808"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Y2h-Py-DYk"/>
+                        <outlet property="delegate" destination="-1" id="oH7-Ir-tjr"/>
+                    </connections>
+                </tableView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8WP-0g-fW5">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="XEH-1R-zTP"/>
+                        <outlet property="delegate" destination="-1" id="8yS-6i-loq"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.86531295257360752" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Njs-s4-4sT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="BZX-7h-amP"/>
+                <constraint firstItem="8WP-0g-fW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ecc-Be-Zxg"/>
+                <constraint firstItem="8WP-0g-fW5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NJb-BJ-fRf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Njs-s4-4sT" secondAttribute="trailing" constant="20" id="S8J-xT-OoS"/>
+                <constraint firstAttribute="bottom" secondItem="8WP-0g-fW5" secondAttribute="bottom" id="ZkB-xH-Npu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8WP-0g-fW5" secondAttribute="trailing" id="c2r-4L-K1I"/>
+                <constraint firstItem="Njs-s4-4sT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qYh-w3-sT3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Njs-s4-4sT" secondAttribute="bottom" id="wHg-cd-zkl"/>
+            </constraints>
+            <point key="canvasLocation" x="-10" y="-31"/>
+        </view>
+    </objects>
+</document>
