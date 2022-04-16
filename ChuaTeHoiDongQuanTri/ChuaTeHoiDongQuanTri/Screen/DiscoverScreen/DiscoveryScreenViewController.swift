@@ -16,7 +16,7 @@ class DiscoveryScreenViewController: BaseViewController {
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
         self.setupInit()
         self.presenter.onViewDidLoad()
     }
@@ -69,3 +69,38 @@ extension DiscoveryScreenViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: VX Page Bar
+//extension DiscoveryScreenViewController {
+//    private func setInitPageViewController() {
+//        let barConfig = VXPageBarConfig(height: 48,
+//                                      selectedColor: R.color.darkText(),
+//                                      unSelectedColor: R.color.subTitle(),
+//                                      selectedFont: R.font.robotoMedium(size: 16),
+//                                      unSelectedFont: R.font.robotoRegular(size: 16),
+//                                      underLineHeight: 3,
+//                                      underLineWidth: 60,
+//                                      underLineColor: R.color.mainColor(),
+//                                      backgroundColor: .white)
+//
+//        let pageProgram = VXPageItem(viewController: ProgramFitRouter.setupModule(), title: "Chương trình")
+//        let pageLibrary = VXPageItem(viewController: LibraryFitRouter.setupModule(), title: "Thư viện")
+//        let pagePractice = VXPageItem(viewController: MyWorkoutFitRouter.setupModule(), title: "Bài tập")
+//        let pageAchievement = VXPageItem(viewController: AchievementFitRouter.setupModule(), title: "Thành tích")
+//
+//        //let pageCommunity = VXPageItem(viewController: CommunityFitRouter.setupModule(), title: "Cộng đồng")
+//        //let pagePersonal = VXPageItem(viewController: PersonalFitRouter.setupModule(), title: "Cá nhân")
+//
+//        self.pageViewController.setPageItems([pageProgram, pageLibrary, pagePractice, pageAchievement])
+//        //self.pageViewController.setPageItems([pageLibrary, pageCommunity, pagePersonal])
+//        self.pageViewController.setPageBarConfig(barConfig)
+//
+//        self.addChild(self.pageViewController)
+//
+//        self.view_ContainerPage.addSubview(self.pageViewController.view)
+//        self.pageViewController.view.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//        self.pageViewController.didMove(toParent: self)
+//    }
+//}
