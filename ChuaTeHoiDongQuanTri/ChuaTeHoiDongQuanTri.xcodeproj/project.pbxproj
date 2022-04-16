@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3148D05196615179B03C6BBC /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACF3D299DCF9F78BC48AE9C /* Pods_ChuTeHoiDongQuanTri.framework */; };
+		52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52134BB7280B16A00089D145 /* DiscoveryParams.swift */; };
 		5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */; };
 		5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */; };
 		521B0FE727EC497C00D411EB /* ReviewMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B0FE627EC497C00D411EB /* ReviewMedia.swift */; };
@@ -194,6 +195,7 @@
 /* Begin PBXFileReference section */
 		22E18EB385127F0E380751DA /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
 		3ACF3D299DCF9F78BC48AE9C /* Pods_ChuTeHoiDongQuanTri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuTeHoiDongQuanTri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52134BB7280B16A00089D145 /* DiscoveryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryParams.swift; sourceTree = "<group>"; };
 		5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
 		521B0FE627EC497C00D411EB /* ReviewMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMedia.swift; sourceTree = "<group>"; };
@@ -460,6 +462,27 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		52134BB5280B15510089D145 /* DiscoveryEnum */ = {
+			isa = PBXGroup;
+			children = (
+				52134BB7280B16A00089D145 /* DiscoveryParams.swift */,
+			);
+			path = DiscoveryEnum;
+			sourceTree = "<group>";
+		};
+		52134BB6280B156B0089D145 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */,
+				843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */,
+				843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */,
+				843DD6A227FC47E4000C3554 /* DiscoveryScreenViewController.swift */,
+				843DD6A327FC47E4000C3554 /* DiscoveryScreenViewController.xib */,
+				843DD6A427FC47E4000C3554 /* DiscoveryScreenConstract.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		521B0FE527EC496300D411EB /* ReviewMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,14 +554,10 @@
 		521CD1BF280AA8A000D114A7 /* DiscoveryHome */ = {
 			isa = PBXGroup;
 			children = (
+				52134BB5280B15510089D145 /* DiscoveryEnum */,
 				5295CD85280AE4060064EFBB /* ListSearchResultTableViewCell */,
 				8495609027FFD78B004A8A74 /* DiscoveryTableViewCell */,
-				843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */,
-				843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */,
-				843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */,
-				843DD6A227FC47E4000C3554 /* DiscoveryScreenViewController.swift */,
-				843DD6A327FC47E4000C3554 /* DiscoveryScreenViewController.xib */,
-				843DD6A427FC47E4000C3554 /* DiscoveryScreenConstract.swift */,
+				52134BB6280B156B0089D145 /* Home */,
 			);
 			path = DiscoveryHome;
 			sourceTree = "<group>";
@@ -1246,6 +1265,7 @@
 				5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */,
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */,
+				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,

@@ -33,7 +33,7 @@ class PageTVSeriesInteractorInput {
     }
     
     private func getSearchResult() {
-        APIService.shared.getAdvancedSearching(params: "TV,SETI,MINISERIES,VARIETY,TALK,COMIC,DOCUMENTARY", area: "", category: "", year: "", subtitles: "") { [weak self] response, error in
+        APIService.shared.getAdvancedSearching(params: DiscoveryParams.TVSeries.rawValue, area: "", category: "", year: "", subtitles: "") { [weak self] response, error in
             guard let `self` = self, let unwrappedData = response else { return }
             self.output?.getData(with: unwrappedData)
         }
