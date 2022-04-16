@@ -15,6 +15,21 @@
 		521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD197280A969F00D114A7 /* VXPageBar.swift */; };
 		521CD19B280A969F00D114A7 /* VXPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD198280A969F00D114A7 /* VXPageItem.swift */; };
 		521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD199280A969F00D114A7 /* VXPageViewController.swift */; };
+		521CD1A6280AA1B400D114A7 /* PageAnimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1A1280AA1B400D114A7 /* PageAnimeRouter.swift */; };
+		521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1A2280AA1B400D114A7 /* PageAnimeInteractorInput.swift */; };
+		521CD1A8280AA1B400D114A7 /* PageAnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1A3280AA1B400D114A7 /* PageAnimeViewController.swift */; };
+		521CD1A9280AA1B400D114A7 /* PageAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1A4280AA1B400D114A7 /* PageAnimeViewModel.swift */; };
+		521CD1AA280AA1B400D114A7 /* PageAnimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521CD1A5280AA1B400D114A7 /* PageAnimeViewController.xib */; };
+		521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1AB280AA1CE00D114A7 /* PageMovieRouter.swift */; };
+		521CD1B1280AA1CE00D114A7 /* PageMovieInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1AC280AA1CE00D114A7 /* PageMovieInteractorInput.swift */; };
+		521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1AD280AA1CE00D114A7 /* PageMovieViewController.swift */; };
+		521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1AE280AA1CE00D114A7 /* PageMovieViewModel.swift */; };
+		521CD1B4280AA1CE00D114A7 /* PageMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521CD1AF280AA1CE00D114A7 /* PageMovieViewController.xib */; };
+		521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B5280AA1E300D114A7 /* PageTVSeriesRouter.swift */; };
+		521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B6280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift */; };
+		521CD1BC280AA1E300D114A7 /* PageTVSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B7280AA1E300D114A7 /* PageTVSeriesViewController.swift */; };
+		521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */; };
+		521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */; };
 		521E70D427FD38AE00620DA1 /* ASVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E70D227FD377A00620DA1 /* ASVideoPlayerController.swift */; };
 		521E70D527FD38B100620DA1 /* ASVideoLayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E70D127FD377A00620DA1 /* ASVideoLayerObject.swift */; };
 		521E70D627FD38B300620DA1 /* ASVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E70D327FD377A00620DA1 /* ASVideoContainer.swift */; };
@@ -184,6 +199,21 @@
 		521CD197280A969F00D114A7 /* VXPageBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VXPageBar.swift; sourceTree = "<group>"; };
 		521CD198280A969F00D114A7 /* VXPageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VXPageItem.swift; sourceTree = "<group>"; };
 		521CD199280A969F00D114A7 /* VXPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VXPageViewController.swift; sourceTree = "<group>"; };
+		521CD1A1280AA1B400D114A7 /* PageAnimeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAnimeRouter.swift; sourceTree = "<group>"; };
+		521CD1A2280AA1B400D114A7 /* PageAnimeInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAnimeInteractorInput.swift; sourceTree = "<group>"; };
+		521CD1A3280AA1B400D114A7 /* PageAnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAnimeViewController.swift; sourceTree = "<group>"; };
+		521CD1A4280AA1B400D114A7 /* PageAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAnimeViewModel.swift; sourceTree = "<group>"; };
+		521CD1A5280AA1B400D114A7 /* PageAnimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageAnimeViewController.xib; sourceTree = "<group>"; };
+		521CD1AB280AA1CE00D114A7 /* PageMovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMovieRouter.swift; sourceTree = "<group>"; };
+		521CD1AC280AA1CE00D114A7 /* PageMovieInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMovieInteractorInput.swift; sourceTree = "<group>"; };
+		521CD1AD280AA1CE00D114A7 /* PageMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMovieViewController.swift; sourceTree = "<group>"; };
+		521CD1AE280AA1CE00D114A7 /* PageMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMovieViewModel.swift; sourceTree = "<group>"; };
+		521CD1AF280AA1CE00D114A7 /* PageMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageMovieViewController.xib; sourceTree = "<group>"; };
+		521CD1B5280AA1E300D114A7 /* PageTVSeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesRouter.swift; sourceTree = "<group>"; };
+		521CD1B6280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesInteractorInput.swift; sourceTree = "<group>"; };
+		521CD1B7280AA1E300D114A7 /* PageTVSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesViewController.swift; sourceTree = "<group>"; };
+		521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesViewModel.swift; sourceTree = "<group>"; };
+		521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageTVSeriesViewController.xib; sourceTree = "<group>"; };
 		521E70D127FD377A00620DA1 /* ASVideoLayerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASVideoLayerObject.swift; sourceTree = "<group>"; };
 		521E70D227FD377A00620DA1 /* ASVideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASVideoPlayerController.swift; sourceTree = "<group>"; };
 		521E70D327FD377A00620DA1 /* ASVideoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASVideoContainer.swift; sourceTree = "<group>"; };
@@ -410,13 +440,10 @@
 		52064A6F27EF5ED3007E48A6 /* DiscoverScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8495609027FFD78B004A8A74 /* DiscoveryTableViewCell */,
-				843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */,
-				843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */,
-				843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */,
-				843DD6A227FC47E4000C3554 /* DiscoveryScreenViewController.swift */,
-				843DD6A327FC47E4000C3554 /* DiscoveryScreenViewController.xib */,
-				843DD6A427FC47E4000C3554 /* DiscoveryScreenConstract.swift */,
+				521CD1A0280AA19800D114A7 /* pageAnime */,
+				521CD19F280AA18D00D114A7 /* pageMovie */,
+				521CD19E280AA18300D114A7 /* pageTVSeries */,
+				521CD1BF280AA8A000D114A7 /* DiscoveryHome */,
 			);
 			path = DiscoverScreen;
 			sourceTree = "<group>";
@@ -459,6 +486,56 @@
 				52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		521CD19E280AA18300D114A7 /* pageTVSeries */ = {
+			isa = PBXGroup;
+			children = (
+				521CD1B5280AA1E300D114A7 /* PageTVSeriesRouter.swift */,
+				521CD1B6280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift */,
+				521CD1B7280AA1E300D114A7 /* PageTVSeriesViewController.swift */,
+				521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */,
+				521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */,
+			);
+			path = pageTVSeries;
+			sourceTree = "<group>";
+		};
+		521CD19F280AA18D00D114A7 /* pageMovie */ = {
+			isa = PBXGroup;
+			children = (
+				521CD1AB280AA1CE00D114A7 /* PageMovieRouter.swift */,
+				521CD1AC280AA1CE00D114A7 /* PageMovieInteractorInput.swift */,
+				521CD1AD280AA1CE00D114A7 /* PageMovieViewController.swift */,
+				521CD1AE280AA1CE00D114A7 /* PageMovieViewModel.swift */,
+				521CD1AF280AA1CE00D114A7 /* PageMovieViewController.xib */,
+			);
+			path = pageMovie;
+			sourceTree = "<group>";
+		};
+		521CD1A0280AA19800D114A7 /* pageAnime */ = {
+			isa = PBXGroup;
+			children = (
+				521CD1A1280AA1B400D114A7 /* PageAnimeRouter.swift */,
+				521CD1A2280AA1B400D114A7 /* PageAnimeInteractorInput.swift */,
+				521CD1A3280AA1B400D114A7 /* PageAnimeViewController.swift */,
+				521CD1A4280AA1B400D114A7 /* PageAnimeViewModel.swift */,
+				521CD1A5280AA1B400D114A7 /* PageAnimeViewController.xib */,
+			);
+			path = pageAnime;
+			sourceTree = "<group>";
+		};
+		521CD1BF280AA8A000D114A7 /* DiscoveryHome */ = {
+			isa = PBXGroup;
+			children = (
+				8495609027FFD78B004A8A74 /* DiscoveryTableViewCell */,
+				843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */,
+				843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */,
+				843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */,
+				843DD6A227FC47E4000C3554 /* DiscoveryScreenViewController.swift */,
+				843DD6A327FC47E4000C3554 /* DiscoveryScreenViewController.xib */,
+				843DD6A427FC47E4000C3554 /* DiscoveryScreenConstract.swift */,
+			);
+			path = DiscoveryHome;
 			sourceTree = "<group>";
 		};
 		521E70CF27FD374600620DA1 /* Lib */ = {
@@ -1023,13 +1100,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521CD1B4280AA1CE00D114A7 /* PageMovieViewController.xib in Resources */,
 				5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */,
 				522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */,
 				52B4F2A327F4118E00B0CFEB /* MovieDetailScreen.storyboard in Resources */,
 				52412C9727F2FF3C00896AF0 /* ExpandScreen.storyboard in Resources */,
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
+				521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */,
 				5225C62127F1FE790063FE3E /* TopSearchTableViewCell.xib in Resources */,
 				8495609427FFD7AF004A8A74 /* DiscoveryTableViewCell.xib in Resources */,
+				521CD1AA280AA1B400D114A7 /* PageAnimeViewController.xib in Resources */,
 				8495609927FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.xib in Resources */,
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
@@ -1140,14 +1220,17 @@
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
 				52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
+				521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */,
 				521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */,
 				521E70D527FD38B100620DA1 /* ASVideoLayerObject.swift in Sources */,
+				521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */,
 				528CBF9027CA56B200541EF7 /* UpInfo.swift in Sources */,
 				527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */,
 				5296332027C91254007F3335 /* ChildCell.swift in Sources */,
 				52B4F29F27F407CA00B0CFEB /* MovieDetailScreenViewController.swift in Sources */,
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */,
+				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
@@ -1162,10 +1245,12 @@
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
 				52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */,
+				521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */,
 				52B6C8E328001EDB00F180AB /* DramaType.swift in Sources */,
 				525DC17627F1C2FD003EEF58 /* SearchingPresenter.swift in Sources */,
 				5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */,
 				52412C9427F2FF2500896AF0 /* ExpandScreenProtocols.swift in Sources */,
+				521CD1A6280AA1B400D114A7 /* PageAnimeRouter.swift in Sources */,
 				528CBF8E27CA56B200541EF7 /* DefinitionList.swift in Sources */,
 				843DD6A727FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift in Sources */,
 				5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */,
@@ -1175,14 +1260,18 @@
 				843DD6AA27FC47E4000C3554 /* DiscoveryScreenConstract.swift in Sources */,
 				52DAD60A2805395200E27111 /* String.swift in Sources */,
 				52B6C8E228001EDB00F180AB /* Area.swift in Sources */,
+				521CD1B1280AA1CE00D114A7 /* PageMovieInteractorInput.swift in Sources */,
 				528CBF8D27CA56B200541EF7 /* DrameTypeVo.swift in Sources */,
 				528CBF8C27CA56B200541EF7 /* AreaList.swift in Sources */,
+				521CD1A8280AA1B400D114A7 /* PageAnimeViewController.swift in Sources */,
 				52E6E63627C2109400CD80D0 /* MainHeader.swift in Sources */,
+				521CD1A9280AA1B400D114A7 /* PageAnimeViewModel.swift in Sources */,
 				52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */,
 				521CD19B280A969F00D114A7 /* VXPageItem.swift in Sources */,
 				843DD6A827FC47E4000C3554 /* DiscoveryScreenViewController.swift in Sources */,
 				525DC17427F1C159003EEF58 /* SearchingViewProtocols.swift in Sources */,
 				52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */,
+				521CD1BC280AA1E300D114A7 /* PageTVSeriesViewController.swift in Sources */,
 				521E70D427FD38AE00620DA1 /* ASVideoPlayerController.swift in Sources */,
 				52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */,
 				52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */,
@@ -1197,9 +1286,11 @@
 				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
+				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				52B6C8E128001EDB00F180AB /* SearchingUpInfo.swift in Sources */,
+				521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */,
 				52358A1427F4BC20002C883F /* SearchingTableViewDatasource.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
@@ -1228,6 +1319,7 @@
 				52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
+				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
 				525DC17A27F1C3B8003EEF58 /* SearchingRouter.swift in Sources */,
 				52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,

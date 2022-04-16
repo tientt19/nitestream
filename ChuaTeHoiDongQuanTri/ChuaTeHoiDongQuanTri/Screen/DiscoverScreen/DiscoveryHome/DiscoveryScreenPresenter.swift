@@ -35,39 +35,12 @@ class DiscoveryScreenPresenter {
 
 // MARK: - DiscoveryScreenPresenterProtocol
 extension DiscoveryScreenPresenter: DiscoveryScreenPresenterProtocol {
-    
-    func itemForRow(at index: IndexPath) -> ScreeningItems {
-        if self.screeningItems.isEmpty {
-            return ScreeningItems(id: 0, item: [], name: "", disc: .type)
-        }
-        return self.screeningItems[index.row]
-    }
-    
-    
-    func didSelectedItem(at index: IndexPath) {
-        
-    }
-    
-    var numberOfCell: Int {
-        return 5
-    }
-    
-    var numberOfSection: Int {
-        return 1
-    }
-    
     func onViewDidLoad() {
-        interactor.fetchData()
+//        interactor.fetchData()
     }
 }
 
 // MARK: - DiscoveryScreenInteractorOutput 
 extension DiscoveryScreenPresenter: DiscoveryScreenInteractorOutputProtocol {
-    func onDiscoveryModelDidChange(with data: [DiscoveryModel]) {
-        let totalData = data[0]
-        if let screeningData = totalData.screeningItems {
-            self.screeningItems = screeningData
-            self.view?.reloadData()
-        }
-    }
+
 }
