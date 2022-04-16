@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Contants {
     static let discoverySearch = "https://ga-mobile-api.loklok.tv/cms/app/search/list"
@@ -46,5 +47,17 @@ struct Contants {
     
     static func getSearchingData() -> String {
         return "https://ga-mobile-api.loklok.tv/cms/app/search/v1/searchWithKeyWord"
+    }
+}
+
+extension Contants {
+    struct Number {
+        static let animationTime = 0.3
+        static let roundCornerRadius: CGFloat = 30
+    }
+
+    struct Screen {
+        static var width = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        static var height = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
     }
 }

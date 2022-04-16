@@ -1,32 +1,37 @@
 //
 //  
-//  DiscoveryScreenViewController.swift
+//  PageTVSeriesViewController.swift
 //  ChuTeHoiDongQuanTri
 //
-//  Created by admin on 05/04/2022.
+//  Created by Valerian on 16/04/2022.
 //
 //
 
 import UIKit
 
-class DiscoveryScreenViewController: BaseViewController {
+// MARK: - ViewProtocol
+protocol PageTVSeriesViewProtocol: AnyObject {
+    func showHud()
+    func hideHud()
+    func reloadData()
+}
 
+// MARK: - PageTVSeries ViewController
+class PageTVSeriesViewController: BaseViewController {
+    var router: PageTVSeriesRouterProtocol!
+    var viewModel: PageTVSeriesViewModelProtocol!
+    
     @IBOutlet weak var atabileView: UITableView!
-    var presenter: DiscoveryScreenPresenterProtocol!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupInit()
-        self.presenter.onViewDidLoad()
+        self.viewModel.onViewDidLoad()
     }
     
-    // MARK: - Setup
+    // MARK: - Init
     private func setupInit() {
-        self.registerCell()
-    }
-    
-    private func registerCell() {
         self.atabileView.registerCell(nibName: DiscoveryTableViewCell.self)
         self.atabileView.delegate = self
         self.atabileView.dataSource = self
@@ -37,35 +42,43 @@ class DiscoveryScreenViewController: BaseViewController {
     
 }
 
-// MARK: - DiscoveryScreenViewProtocol
-extension DiscoveryScreenViewController: DiscoveryScreenViewProtocol {
-    func reloadData() {
-        DispatchQueue.main.async {
-            self.atabileView.reloadData()
-        }
-    }
-}
-
 // MARK: - UITableViewDelegate
-extension DiscoveryScreenViewController: UITableViewDelegate {
+extension PageTVSeriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
 }
 
 // MARK: - UITableViewDataSource
-extension DiscoveryScreenViewController: UITableViewDataSource {
+extension PageTVSeriesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.numberOfSection
+        return viewModel.numberOfSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfCell
+        return viewModel.numberOfCell
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: DiscoveryTableViewCell.self, forIndexPath: indexPath)
-        cell.model = presenter.itemForRow(at: indexPath)
+        cell.model = viewModel.itemForRow(at: indexPath)
         return cell
+    }
+}
+
+// MARK: - PageTVSeries ViewProtocol
+extension PageTVSeriesViewController: PageTVSeriesViewProtocol {
+    func showHud() {
+        // show hub
+    }
+    
+    func hideHud() {
+        // hide hub
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.atabileView.reloadData()
+        }
     }
 }

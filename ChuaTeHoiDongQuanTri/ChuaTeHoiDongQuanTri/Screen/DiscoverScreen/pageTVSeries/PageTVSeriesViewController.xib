@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoveryScreenViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PageTVSeriesViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
             <connections>
-                <outlet property="atabileView" destination="Ea1-JO-ZhD" id="xJu-y2-E6i"/>
+                <outlet property="atabileView" destination="eff-ou-cil" id="rHT-df-EN7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +19,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ea1-JO-ZhD">
-                    <rect key="frame" x="20" y="44" width="374" height="852"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eff-ou-cil">
+                    <rect key="frame" x="10" y="0.0" width="394" height="862"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="KlH-tW-6zV"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ea1-JO-ZhD" firstAttribute="leading" secondItem="KlH-tW-6zV" secondAttribute="leading" constant="20" id="3AU-Tp-oKh"/>
-                <constraint firstAttribute="bottom" secondItem="Ea1-JO-ZhD" secondAttribute="bottom" id="FVf-1c-q2c"/>
-                <constraint firstItem="Ea1-JO-ZhD" firstAttribute="top" secondItem="KlH-tW-6zV" secondAttribute="top" id="pSJ-u7-ivx"/>
-                <constraint firstItem="KlH-tW-6zV" firstAttribute="trailing" secondItem="Ea1-JO-ZhD" secondAttribute="trailing" constant="20" id="t1n-fu-Hps"/>
+                <constraint firstItem="eff-ou-cil" firstAttribute="leading" secondItem="KlH-tW-6zV" secondAttribute="leading" constant="10" id="1zX-RL-pJY"/>
+                <constraint firstItem="KlH-tW-6zV" firstAttribute="trailing" secondItem="eff-ou-cil" secondAttribute="trailing" constant="10" id="5GP-wu-KH9"/>
+                <constraint firstItem="KlH-tW-6zV" firstAttribute="bottom" secondItem="eff-ou-cil" secondAttribute="bottom" id="Urk-GD-yvb"/>
+                <constraint firstItem="eff-ou-cil" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iah-JR-tiw"/>
             </constraints>
-            <point key="canvasLocation" x="61" y="-94"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>
