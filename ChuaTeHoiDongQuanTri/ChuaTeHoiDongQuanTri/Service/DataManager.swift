@@ -260,3 +260,9 @@ extension DataManager {
     }
 }
 
+
+//MARK: - Discovery Screen
+
+extension DataManager {
+    
+}

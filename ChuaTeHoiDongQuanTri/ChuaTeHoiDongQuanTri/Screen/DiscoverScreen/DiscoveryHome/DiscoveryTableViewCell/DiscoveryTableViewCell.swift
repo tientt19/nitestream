@@ -7,9 +7,32 @@
 
 import UIKit
 
+protocol DeepSeachingDelegate : AnyObject {
+    func doDeepSearch(area : String,
+                      category : String,
+                      year : String,
+                      subtitles : String,
+                      order : String)
+}
+
+protocol DeepSeachingMoiveDelegate : AnyObject {
+    func doDeepSearch(area : String,
+                      category : String,
+                      year : String,
+                      subtitles : String,
+                      order : String)
+}
+
+protocol DeepSeachingAnimeDelegate : AnyObject {
+    func doDeepSearch(area : String,
+                      category : String,
+                      year : String,
+                      subtitles : String,
+                      order : String)
+}
+
 class DiscoveryTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var acollectionView: UICollectionView!
     
     var model: ScreeningItems? {
@@ -17,6 +40,16 @@ class DiscoveryTableViewCell: UITableViewCell {
             self.acollectionView.reloadData()
         }
     }
+    
+    var searchDelegate : DeepSeachingDelegate?
+    var searchDelegateMovie : DeepSeachingMoiveDelegate?
+    var searchDelegateAnime : DeepSeachingAnimeDelegate?
+
+    var areaParams = ""
+    var categoryParams = ""
+    var yearParams = ""
+    var subParams = ""
+    var orderParams = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,11 +68,46 @@ class DiscoveryTableViewCell: UITableViewCell {
 extension DiscoveryTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let data = self.model?.items else { return }
+        
         for item in data {
             item.isSelected = false
         }
+        
+        switch data[indexPath.row].screeningType {
+        case SearchParams.area.rawValue:
+            areaParams = data[indexPath.row].params ?? ""
+        case SearchParams.category.rawValue:
+            categoryParams = data[indexPath.row].params ?? ""
+        case SearchParams.year.rawValue:
+            yearParams = data[indexPath.row].params ?? ""
+        case SearchParams.subtitles.rawValue:
+            subParams = data[indexPath.row].params ?? ""
+        case SearchParams.order.rawValue:
+            orderParams = data[indexPath.row].params ?? ""
+        default:
+            break
+        }
+        
+        searchDelegate?.doDeepSearch(area: areaParams,
+                                     category: categoryParams,
+                                     year: yearParams,
+                                     subtitles: subParams,
+                                     order: orderParams)
+        
+        searchDelegateMovie?.doDeepSearch(area: areaParams,
+                                     category: categoryParams,
+                                     year: yearParams,
+                                     subtitles: subParams,
+                                     order: orderParams)
+        
+        searchDelegateAnime?.doDeepSearch(area: areaParams,
+                                     category: categoryParams,
+                                     year: yearParams,
+                                     subtitles: subParams,
+                                     order: orderParams)
+        
         data[indexPath.row].isSelected = true
-
+        
         DispatchQueue.main.async {
             self.acollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.acollectionView.reloadData()

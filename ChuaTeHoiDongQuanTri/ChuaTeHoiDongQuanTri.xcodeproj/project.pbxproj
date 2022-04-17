@@ -446,9 +446,9 @@
 		52064A6F27EF5ED3007E48A6 /* DiscoverScreen */ = {
 			isa = PBXGroup;
 			children = (
-				521CD1A0280AA19800D114A7 /* PageAnime */,
-				521CD19F280AA18D00D114A7 /* PageMovie */,
-				521CD19E280AA18300D114A7 /* PageTVSeries */,
+				521CD1A0280AA19800D114A7 /* pageAnime */,
+				521CD19F280AA18D00D114A7 /* pageMovie */,
+				521CD19E280AA18300D114A7 /* pageTVSeries */,
 				521CD1BF280AA8A000D114A7 /* DiscoveryHome */,
 			);
 			path = DiscoverScreen;
@@ -515,7 +515,7 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		521CD19E280AA18300D114A7 /* PageTVSeries */ = {
+		521CD19E280AA18300D114A7 /* pageTVSeries */ = {
 			isa = PBXGroup;
 			children = (
 				521CD1B5280AA1E300D114A7 /* PageTVSeriesRouter.swift */,
@@ -524,10 +524,10 @@
 				521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */,
 				521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */,
 			);
-			path = PageTVSeries;
+			path = pageTVSeries;
 			sourceTree = "<group>";
 		};
-		521CD19F280AA18D00D114A7 /* PageMovie */ = {
+		521CD19F280AA18D00D114A7 /* pageMovie */ = {
 			isa = PBXGroup;
 			children = (
 				521CD1AB280AA1CE00D114A7 /* PageMovieRouter.swift */,
@@ -536,10 +536,10 @@
 				521CD1AE280AA1CE00D114A7 /* PageMovieViewModel.swift */,
 				521CD1AF280AA1CE00D114A7 /* PageMovieViewController.xib */,
 			);
-			path = PageMovie;
+			path = pageMovie;
 			sourceTree = "<group>";
 		};
-		521CD1A0280AA19800D114A7 /* PageAnime */ = {
+		521CD1A0280AA19800D114A7 /* pageAnime */ = {
 			isa = PBXGroup;
 			children = (
 				521CD1A1280AA1B400D114A7 /* PageAnimeRouter.swift */,
@@ -548,7 +548,7 @@
 				521CD1A4280AA1B400D114A7 /* PageAnimeViewModel.swift */,
 				521CD1A5280AA1B400D114A7 /* PageAnimeViewController.xib */,
 			);
-			path = PageAnime;
+			path = pageAnime;
 			sourceTree = "<group>";
 		};
 		521CD1BF280AA8A000D114A7 /* DiscoveryHome */ = {

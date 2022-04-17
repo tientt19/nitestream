@@ -15,7 +15,6 @@ class DiscoveryCatagoryCLVCell: UICollectionViewCell {
         didSet {
             guard let data = item else { return }
             self.config(with: data)
-            
         }
     }
     
@@ -32,5 +31,4 @@ class DiscoveryCatagoryCLVCell: UICollectionViewCell {
             self.chooseView.backgroundColor = .clear
         }
     }
-
 }

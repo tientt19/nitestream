@@ -12,7 +12,11 @@ import UIKit
 // MARK: - Interactor Input Protocol
 protocol PageTVSeriesInteractorInputProtocol {
     func fetchData()
-    func fetchSearchResults()
+    func fetchSearchResults(area : String,
+                            category : String,
+                            year : String,
+                            subtitles : String,
+                            order : String)
 }
 
 // MARK: - Interactor Output Protocol
@@ -32,8 +36,12 @@ class PageTVSeriesInteractorInput {
         }
     }
     
-    private func getSearchResult() {
-        APIService.shared.getAdvancedSearching(params: DiscoveryParams.TVSeries.rawValue, area: "", category: "", year: "", subtitles: "") { [weak self] response, error in
+    private func getSearchResult(area : String,
+                                 category : String,
+                                 year : String,
+                                 subtitles : String,
+                                 order : String) {
+        APIService.shared.getAdvancedSearching(params: DiscoveryParams.TVSeries.rawValue, area: area, category: category, year: year, subtitles: subtitles, order: order) { [weak self] response, error in
             guard let `self` = self, let unwrappedData = response else { return }
             self.output?.getData(with: unwrappedData)
         }
@@ -42,11 +50,11 @@ class PageTVSeriesInteractorInput {
 
 // MARK: - PageTVSeries InteractorInputProtocol
 extension PageTVSeriesInteractorInput: PageTVSeriesInteractorInputProtocol {
-    func fetchData() {
-        self.fetchDiscoveryData()
+    func fetchSearchResults(area: String, category: String, year: String, subtitles: String, order: String) {
+        self.getSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
     }
     
-    func fetchSearchResults() {
-        self.getSearchResult()
+    func fetchData() {
+        self.fetchDiscoveryData()
     }
 }
