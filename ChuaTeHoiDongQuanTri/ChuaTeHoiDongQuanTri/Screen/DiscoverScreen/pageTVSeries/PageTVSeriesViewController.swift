@@ -27,7 +27,6 @@ class PageTVSeriesViewController: BaseViewController {
         super.viewDidLoad()
         self.setupInit()
         self.viewModel.onViewDidLoad()
-        self.viewModel.getAdvancedSearchResult(area: "", category: "", year: "", subtitles: "", order: "")
     }
     
     // MARK: - Init

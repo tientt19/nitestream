@@ -91,11 +91,18 @@ extension PageTVSeriesViewModel: PageTVSeriesInteractorOutputProtocol {
         let totalData = data[0]
         if let screeningData = totalData.screeningItems {
             self.screeningItems = screeningData
+            let area = screeningData[0].items?.first?.name ?? ""
+                        let cate = screeningData[1].items?.first?.name ?? ""
+                        let year = screeningData[2].items?.first?.name ?? ""
+                        let sub = screeningData[3].items?.first?.name ?? ""
+                        let order = screeningData[4].items?.first?.name ?? ""
+            self.interactor.fetchSearchResults(area: area, category: cate, year: year, subtitles: sub, order: order)
         }
     }
     
     func getData(with data : [SearchResult]) {
         self.advancedSearchResult = data
+        print("data nay la: \(data.count)")
         self.view?.reloadData()
     }
 }
