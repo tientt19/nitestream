@@ -11,7 +11,8 @@ import UIKit
 
 // MARK: - ViewProtocol
 protocol PageTVSeriesViewProtocol: AnyObject {
-    func reloadData()
+    func reloadData(with section: Int)
+    func presentLockView()
 }
 
 // MARK: - PageTVSeries ViewController
@@ -83,16 +84,22 @@ extension PageTVSeriesViewController: UITableViewDataSource {
 
 // MARK: - PageTVSeries ViewProtocol
 extension PageTVSeriesViewController: PageTVSeriesViewProtocol {
-    func reloadData() {
+    func presentLockView() {
+        self.presentLockScreen()
+    }
+    
+    func reloadData(with section: Int) {
         DispatchQueue.main.async {
-            self.stopLoadingAnimate()
-            self.atabileView.reloadData()
+            self.atabileView.reloadSections([section], with: .none)
+//            self.stopLoadingAnimate()
+            self.unlockScreen()
         }
     }
 }
 
 extension PageTVSeriesViewController : DeepSeachingDelegate {
     func doDeepSearch(area: String, category: String, year: String, subtitles: String, order: String) {
+        self.presentLockScreen()
         self.viewModel.getAdvancedSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
     }
 }

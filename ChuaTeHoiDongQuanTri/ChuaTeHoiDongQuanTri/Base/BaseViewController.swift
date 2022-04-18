@@ -33,12 +33,14 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.setUpBaseView()
     }
     
     func setUpBaseView() {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.setDimensions(width: 50, height: 50)
         activityIndicatorView.center(inView: view)
+        view.bringSubviewToFront(activityIndicatorView)
         activityIndicatorView.startAnimating()
     }
     
@@ -48,13 +50,17 @@ class BaseViewController: UIViewController {
 
     func presentLockScreen() {
         view.addSubview(loadingView)
-        activityIndicatorView.startAnimating()
-        loadingView.isHidden = false
+        view.bringSubviewToFront(loadingView)
         loadingView.addConstraintsToFillView(view)
+        loadingView.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.setDimensions(width: 50, height: 50)
+        activityIndicatorView.center(inView: loadingView)
+        loadingView.isHidden = false
     }
     
     func unlockScreen() {
         stopLoadingAnimate()
-        loadingView.isHidden = true
+        loadingView.removeFromSuperview()
     }
 }

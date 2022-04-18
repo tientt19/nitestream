@@ -13,7 +13,9 @@ class ListSearchResultTableViewCell: UITableViewCell {
     
     var model: [SearchResult]? {
         didSet {
-            self.clv_tvSeries.reloadData()
+            DispatchQueue.main.async {
+                self.clv_tvSeries.reloadData()
+            }
         }
     }
 

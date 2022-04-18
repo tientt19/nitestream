@@ -30,8 +30,16 @@ protocol PageTVSeriesViewModelProtocol {
 class PageTVSeriesViewModel {
     weak var view: PageTVSeriesViewProtocol?
     private var interactor: PageTVSeriesInteractorInputProtocol
-    var screeningItems = [ScreeningItems]()
-    var advancedSearchResult = [SearchResult]()
+    var screeningItems = [ScreeningItems]() {
+        didSet {
+            self.view?.reloadData(with: 0)
+        }
+    }
+    var advancedSearchResult = [SearchResult]() {
+        didSet {
+            self.view?.reloadData(with: 1)
+        }
+    }
 
     init(interactor: PageTVSeriesInteractorInputProtocol) {
         self.interactor = interactor
@@ -73,6 +81,7 @@ extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
     }
     
     func onViewDidLoad() {
+        self.view?.presentLockView()
         interactor.fetchData()
     }
     
@@ -91,18 +100,12 @@ extension PageTVSeriesViewModel: PageTVSeriesInteractorOutputProtocol {
         let totalData = data[0]
         if let screeningData = totalData.screeningItems {
             self.screeningItems = screeningData
-            let area = screeningData[0].items?.first?.name ?? ""
-                        let cate = screeningData[1].items?.first?.name ?? ""
-                        let year = screeningData[2].items?.first?.name ?? ""
-                        let sub = screeningData[3].items?.first?.name ?? ""
-                        let order = screeningData[4].items?.first?.name ?? ""
-            self.interactor.fetchSearchResults(area: area, category: cate, year: year, subtitles: sub, order: order)
+            self.interactor.fetchSearchResults(area: "", category: "", year: "", subtitles: "", order: "")
         }
     }
     
     func getData(with data : [SearchResult]) {
         self.advancedSearchResult = data
         print("data nay la: \(data.count)")
-        self.view?.reloadData()
     }
 }
