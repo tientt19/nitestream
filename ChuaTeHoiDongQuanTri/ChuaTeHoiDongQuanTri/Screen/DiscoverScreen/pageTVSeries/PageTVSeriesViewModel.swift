@@ -12,7 +12,11 @@ import UIKit
 // MARK: - ViewModelProtocol
 protocol PageTVSeriesViewModelProtocol {
     func onViewDidLoad()
-    func getAdvancedSearchResult()
+    func getAdvancedSearchResult(area : String,
+                                 category : String,
+                                 year : String,
+                                 subtitles : String,
+                                 order : String)
     func itemForRow(at index: IndexPath) -> ScreeningItems
     func itemForRow(at index: IndexPath) -> [SearchResult]
     func didSelectedItem(at index: IndexPath)
@@ -36,6 +40,8 @@ class PageTVSeriesViewModel {
 
 // MARK: - PageTVSeries ViewModelProtocol
 extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
+
+    
     func itemForRow(at index: IndexPath) -> [SearchResult] {
         if self.advancedSearchResult.isEmpty {
             return [SearchResult]()
@@ -70,8 +76,12 @@ extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
         interactor.fetchData()
     }
     
-    func getAdvancedSearchResult() {
-        interactor.fetchSearchResults()
+    func getAdvancedSearchResult(area: String, category: String, year: String, subtitles: String, order: String) {
+        interactor.fetchSearchResults(area : area,
+                                      category : category,
+                                      year : year,
+                                      subtitles : subtitles,
+                                      order : order)
     }
 }
 

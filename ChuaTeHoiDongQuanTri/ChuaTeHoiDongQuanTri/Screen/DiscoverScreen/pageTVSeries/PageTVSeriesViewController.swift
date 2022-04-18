@@ -16,6 +16,7 @@ protocol PageTVSeriesViewProtocol: AnyObject {
 
 // MARK: - PageTVSeries ViewController
 class PageTVSeriesViewController: BaseViewController {
+    
     var router: PageTVSeriesRouterProtocol!
     var viewModel: PageTVSeriesViewModelProtocol!
     
@@ -26,7 +27,7 @@ class PageTVSeriesViewController: BaseViewController {
         super.viewDidLoad()
         self.setupInit()
         self.viewModel.onViewDidLoad()
-        self.viewModel.getAdvancedSearchResult()
+        self.viewModel.getAdvancedSearchResult(area: "", category: "", year: "", subtitles: "", order: "")
     }
     
     // MARK: - Init
@@ -69,6 +70,7 @@ extension PageTVSeriesViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeue(cellClass: DiscoveryTableViewCell.self, forIndexPath: indexPath)
             cell.model = viewModel.itemForRow(at: indexPath)
+            cell.searchDelegate = self
             return cell
         case 1:
             let cell = tableView.dequeue(cellClass: ListSearchResultTableViewCell.self, forIndexPath: indexPath)
@@ -87,5 +89,11 @@ extension PageTVSeriesViewController: PageTVSeriesViewProtocol {
             self.stopLoadingAnimate()
             self.atabileView.reloadData()
         }
+    }
+}
+
+extension PageTVSeriesViewController : DeepSeachingDelegate {
+    func doDeepSearch(area: String, category: String, year: String, subtitles: String, order: String) {
+        self.viewModel.getAdvancedSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
     }
 }

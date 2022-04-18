@@ -6,6 +6,15 @@
 //
 
 import Foundation
+
+enum SearchParams: String {    
+    case area = "area"
+    case category = "category"
+    case year = "year"
+    case subtitles = "subtitles"
+    case order = "order"
+}
+
 enum DiscoveryType {
     case area
     case type
@@ -22,11 +31,13 @@ class ScreeningItems {
     var discoveryType : DiscoveryType
 
     init(_ dict: [String: Any]) {
+        
         id = dict["id"] as? Int
 
         if let itemsDictArray = dict["items"] as? [[String: Any]] {
             items = itemsDictArray.map { DiscoveryItem($0) }
         }
+        
         name = dict["name"] as? String
         items!.first?.isSelected = true
         switch  id {

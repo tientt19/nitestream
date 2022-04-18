@@ -253,17 +253,18 @@ extension APIService {
         closure(searchingResultDAO, nil)
     }
     
-    func getAdvancedSearching(params : String,
-                              area : String,
-                              category : String,
-                              year : String,
-                              subtitles : String,
+    func getAdvancedSearching(params : String? = "",
+                              area : String? = "",
+                              category : String? = "",
+                              year : String? = "",
+                              subtitles : String? = "",
+                              order : String? = "",
                               closure: @escaping (_ response: [SearchResult]?, _ error: Error?) -> Void) {
         
         var searchingResultDAO = [SearchResult]()
         var semaphore = DispatchSemaphore (value: 0)
         
-        let parameters = "{\n    \"size\": 50,\n    \"params\": \"\(params)\",\n    \"area\": \"\(area)\",\n    \"category\": \"\(category)\",\n    \"year\": \"\(year)\",\n    \"subtitles\": \"\(subtitles)\",\n    \"order\": \"up\"\n}"
+        let parameters = "{\n    \"size\": 50,\n    \"params\": \"\(params ?? "")\",\n    \"area\": \"\(area ?? "")\",\n    \"category\": \"\(category ?? "")\",\n    \"year\": \"\(year ?? "")\",\n    \"subtitles\": \"\(subtitles ?? "")\",\n    \"order\": \"\(order ?? "up")\"\n}"
         
         let postData = parameters.data(using: .utf8)
         
