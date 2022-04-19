@@ -263,8 +263,9 @@ extension APIService {
         
         var searchingResultDAO = [SearchResult]()
         var semaphore = DispatchSemaphore (value: 0)
-        
-        let parameters = "{\n    \"size\": 50,\n    \"params\": \"\(params ?? "")\",\n    \"area\": \"\(area ?? "")\",\n    \"category\": \"\(category ?? "")\",\n    \"year\": \"\(year ?? "")\",\n    \"subtitles\": \"\(subtitles ?? "")\",\n    \"order\": \"\(order ?? "up")\"\n}"
+        var checkOrder: String? = ""
+        checkOrder = ((order == "")  ? "up" : order)
+        let parameters = "{\n    \"size\": 50,\n    \"params\": \"\(params ?? "")\",\n    \"area\": \"\(area ?? "")\",\n    \"category\": \"\(category ?? "")\",\n    \"year\": \"\(year ?? "")\",\n    \"subtitles\": \"\(subtitles ?? "")\",\n    \"order\": \"\(checkOrder ?? "up")\"\n}"
         
         let postData = parameters.data(using: .utf8)
         

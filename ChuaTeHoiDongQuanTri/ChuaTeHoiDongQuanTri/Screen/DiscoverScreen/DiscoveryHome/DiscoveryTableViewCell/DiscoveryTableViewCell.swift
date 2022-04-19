@@ -8,11 +8,7 @@
 import UIKit
 
 protocol DeepSeachingDelegate : AnyObject {
-    func doDeepSearch(area : String,
-                      category : String,
-                      year : String,
-                      subtitles : String,
-                      order : String)
+    func doDeepSearch(searchingModel: DiscoverySearchingModel)
 }
 
 protocol DeepSeachingMoiveDelegate : AnyObject {
@@ -62,6 +58,31 @@ class DiscoveryTableViewCell: UITableViewCell {
         self.acollectionView.delegate = self
         self.acollectionView.dataSource = self
     }
+    
+    private func handleAdvanceSearch(with searchingModel: DiscoverySearchingModel) {
+        searchDelegate?.doDeepSearch(searchingModel: searchingModel)
+        print(searchingModel.area)
+        print("---")
+        print(searchingModel.cate)
+        print("---")
+        print(searchingModel.year)
+        print("---")
+        print(searchingModel.sub)
+        print("---")
+        print(searchingModel.order)
+        print("---")
+        
+//        searchDelegateMovie?.doDeepSearch(area: area,
+//                                           category: cate,
+//                                           year: year,
+//                                           subtitles: sub,
+//                                           order: order)
+//        searchDelegateAnime?.doDeepSearch(area: area,
+//                                          category: cate,
+//                                          year: year,
+//                                          subtitles: sub,
+//                                          order: order)
+    }
 }
 
 //MARK: - UICollectionViewDelegate
@@ -73,45 +94,29 @@ extension DiscoveryTableViewCell: UICollectionViewDelegate {
             item.isSelected = false
         }
         
-        switch data[indexPath.row].screeningType {
-        case SearchParams.area.rawValue:
-            areaParams = data[indexPath.row].params ?? ""
-        case SearchParams.category.rawValue:
-            categoryParams = data[indexPath.row].params ?? ""
-        case SearchParams.year.rawValue:
-            yearParams = data[indexPath.row].params ?? ""
-        case SearchParams.subtitles.rawValue:
-            subParams = data[indexPath.row].params ?? ""
-        case SearchParams.order.rawValue:
-            orderParams = data[indexPath.row].params ?? ""
-        default:
-            break
-        }
-        
-        searchDelegate?.doDeepSearch(area: areaParams,
-                                     category: categoryParams,
-                                     year: yearParams,
-                                     subtitles: subParams,
-                                     order: orderParams)
-        
-        searchDelegateMovie?.doDeepSearch(area: areaParams,
-                                     category: categoryParams,
-                                     year: yearParams,
-                                     subtitles: subParams,
-                                     order: orderParams)
-        
-        searchDelegateAnime?.doDeepSearch(area: areaParams,
-                                     category: categoryParams,
-                                     year: yearParams,
-                                     subtitles: subParams,
-                                     order: orderParams)
-        
         data[indexPath.row].isSelected = true
         
         DispatchQueue.main.async {
             self.acollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.acollectionView.reloadData()
         }
+        
+        
+        switch data[indexPath.row].screeningType {
+        case SearchParams.area.rawValue:
+            DiscoverySearchingUtility.share.discoverySearchingModel.area = data[indexPath.row].params ?? ""
+        case SearchParams.category.rawValue:
+            DiscoverySearchingUtility.share.discoverySearchingModel.cate = data[indexPath.row].params ?? ""
+        case SearchParams.year.rawValue:
+            DiscoverySearchingUtility.share.discoverySearchingModel.year = data[indexPath.row].params ?? ""
+        case SearchParams.subtitles.rawValue:
+            DiscoverySearchingUtility.share.discoverySearchingModel.sub = data[indexPath.row].params ?? ""
+        case SearchParams.order.rawValue:
+            DiscoverySearchingUtility.share.discoverySearchingModel.order = data[indexPath.row].params ?? ""
+        default:
+            break
+        }
+        self.handleAdvanceSearch(with: DiscoverySearchingUtility.share.discoverySearchingModel)
     }
 }
 

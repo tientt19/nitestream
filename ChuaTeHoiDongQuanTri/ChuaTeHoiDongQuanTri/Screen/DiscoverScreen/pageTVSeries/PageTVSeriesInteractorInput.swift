@@ -12,11 +12,12 @@ import UIKit
 // MARK: - Interactor Input Protocol
 protocol PageTVSeriesInteractorInputProtocol {
     func fetchData()
-    func fetchSearchResults(area : String,
-                            category : String,
-                            year : String,
-                            subtitles : String,
-                            order : String)
+//    func fetchSearchResults(area : String,
+//                            category : String,
+//                            year : String,
+//                            subtitles : String,
+//                            order : String)
+    func fetchSearchResults(searchingModel: DiscoverySearchingModel)
 }
 
 // MARK: - Interactor Output Protocol
@@ -50,6 +51,11 @@ class PageTVSeriesInteractorInput {
 
 // MARK: - PageTVSeries InteractorInputProtocol
 extension PageTVSeriesInteractorInput: PageTVSeriesInteractorInputProtocol {
+    func fetchSearchResults(searchingModel: DiscoverySearchingModel) {
+        self.getSearchResult(area: searchingModel.area, category: searchingModel.cate, year: searchingModel.year, subtitles: searchingModel.sub, order: searchingModel.order)
+    }
+    
+    
     func fetchSearchResults(area: String, category: String, year: String, subtitles: String, order: String) {
         self.getSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
     }

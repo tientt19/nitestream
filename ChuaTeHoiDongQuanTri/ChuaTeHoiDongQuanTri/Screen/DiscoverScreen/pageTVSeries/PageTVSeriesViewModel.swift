@@ -12,11 +12,12 @@ import UIKit
 // MARK: - ViewModelProtocol
 protocol PageTVSeriesViewModelProtocol {
     func onViewDidLoad()
-    func getAdvancedSearchResult(area : String,
-                                 category : String,
-                                 year : String,
-                                 subtitles : String,
-                                 order : String)
+//    func getAdvancedSearchResult(area : String,
+//                                 category : String,
+//                                 year : String,
+//                                 subtitles : String,
+//                                 order : String)
+    func getAdvancedSearchResult(searchingModel: DiscoverySearchingModel)
     func itemForRow(at index: IndexPath) -> ScreeningItems
     func itemForRow(at index: IndexPath) -> [SearchResult]
     func didSelectedItem(at index: IndexPath)
@@ -48,7 +49,6 @@ class PageTVSeriesViewModel {
 
 // MARK: - PageTVSeries ViewModelProtocol
 extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
-
     
     func itemForRow(at index: IndexPath) -> [SearchResult] {
         if self.advancedSearchResult.isEmpty {
@@ -85,12 +85,11 @@ extension PageTVSeriesViewModel: PageTVSeriesViewModelProtocol {
         interactor.fetchData()
     }
     
-    func getAdvancedSearchResult(area: String, category: String, year: String, subtitles: String, order: String) {
-        interactor.fetchSearchResults(area : area,
-                                      category : category,
-                                      year : year,
-                                      subtitles : subtitles,
-                                      order : order)
+//    func getAdvancedSearchResult(area: String, category: String, year: String, subtitles: String, order: String) {
+//        interactor.fetchSearchResults(searchingModel:
+//    }
+    func getAdvancedSearchResult(searchingModel: DiscoverySearchingModel) {
+        interactor.fetchSearchResults(searchingModel: searchingModel)
     }
 }
 
@@ -100,7 +99,8 @@ extension PageTVSeriesViewModel: PageTVSeriesInteractorOutputProtocol {
         let totalData = data[0]
         if let screeningData = totalData.screeningItems {
             self.screeningItems = screeningData
-            self.interactor.fetchSearchResults(area: "", category: "", year: "", subtitles: "", order: "")
+
+            self.interactor.fetchSearchResults(searchingModel: DiscoverySearchingUtility.share.discoverySearchingModel)
         }
     }
     

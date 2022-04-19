@@ -85,21 +85,26 @@ extension PageTVSeriesViewController: UITableViewDataSource {
 // MARK: - PageTVSeries ViewProtocol
 extension PageTVSeriesViewController: PageTVSeriesViewProtocol {
     func presentLockView() {
-        self.presentLockScreen()
+//        self.baseViewShowHud()
     }
     
     func reloadData(with section: Int) {
         DispatchQueue.main.async {
             self.atabileView.reloadSections([section], with: .none)
 //            self.stopLoadingAnimate()
-            self.unlockScreen()
+//            self.baseViewHideHud()
         }
     }
 }
 
 extension PageTVSeriesViewController : DeepSeachingDelegate {
+    func doDeepSearch(searchingModel: DiscoverySearchingModel) {
+        self.viewModel.getAdvancedSearchResult(searchingModel: searchingModel)
+    }
+    
     func doDeepSearch(area: String, category: String, year: String, subtitles: String, order: String) {
-        self.presentLockScreen()
-        self.viewModel.getAdvancedSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
+//        self.baseViewShowHud()
+//        self.viewModel.getAdvancedSearchResult(area: area, category: category, year: year, subtitles: subtitles, order: order)
+        self.viewModel.getAdvancedSearchResult(searchingModel: DiscoverySearchingUtility.share.discoverySearchingModel)
     }
 }
