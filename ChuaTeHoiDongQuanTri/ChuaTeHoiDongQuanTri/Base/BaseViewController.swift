@@ -33,7 +33,6 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setUpBaseView()
     }
     
     func setUpBaseView() {
@@ -47,8 +46,8 @@ class BaseViewController: UIViewController {
     func stopLoadingAnimate() {
         activityIndicatorView.stopAnimating()
     }
-
-    func presentLockScreen() {
+    
+    func baseViewShowHud() {
         view.addSubview(loadingView)
         view.bringSubviewToFront(loadingView)
         loadingView.addConstraintsToFillView(view)
@@ -58,8 +57,20 @@ class BaseViewController: UIViewController {
         activityIndicatorView.center(inView: loadingView)
         loadingView.isHidden = false
     }
+
+    func presentLockScreen() {
+        view.addSubview(loadingView)
+        activityIndicatorView.startAnimating()
+        loadingView.isHidden = false
+        loadingView.addConstraintsToFillView(view)
+    }
     
     func unlockScreen() {
+        stopLoadingAnimate()
+        loadingView.isHidden = true
+    }
+    
+    func baseViewHideHud() {
         stopLoadingAnimate()
         loadingView.removeFromSuperview()
     }

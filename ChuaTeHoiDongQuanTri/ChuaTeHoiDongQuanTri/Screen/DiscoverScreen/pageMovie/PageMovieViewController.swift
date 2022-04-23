@@ -11,8 +11,6 @@ import UIKit
 
 // MARK: - ViewProtocol
 protocol PageMovieViewProtocol: AnyObject {
-    func showHud()
-    func hideHud()
     func reloadData()
 }
 

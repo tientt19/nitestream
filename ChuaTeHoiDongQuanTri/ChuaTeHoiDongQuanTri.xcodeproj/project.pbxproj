@@ -152,6 +152,7 @@
 		52FEE78827C8850200B7588E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE78627C8850200B7588E /* CategoryCell.swift */; };
 		52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEE78727C8850200B7588E /* CategoryCell.xib */; };
 		74B3B43E35A681E9AE1CBABD /* Pods_ChuTeHoiDongQuanTri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417C61B250B2BB3DF7EA87B9 /* Pods_ChuTeHoiDongQuanTri.framework */; };
+		841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */; };
 		843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */; };
 		843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */; };
 		843DD6A727FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */; };
@@ -344,6 +345,7 @@
 		52FEE78727C8850200B7588E /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		7572E732B825B51C56E63489 /* Pods-StreamingTienPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingTienPro.release.xcconfig"; path = "Target Support Files/Pods-StreamingTienPro/Pods-StreamingTienPro.release.xcconfig"; sourceTree = "<group>"; };
 		77A6FD9A7E5ECAB496FBA7EA /* Pods-ChuTeHoiDongQuanTri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuTeHoiDongQuanTri.release.xcconfig"; path = "Target Support Files/Pods-ChuTeHoiDongQuanTri/Pods-ChuTeHoiDongQuanTri.release.xcconfig"; sourceTree = "<group>"; };
+		841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverySearchingUtility.swift; sourceTree = "<group>"; };
 		843DD69F27FC47E4000C3554 /* DiscoveryScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenPresenter.swift; sourceTree = "<group>"; };
 		843DD6A027FC47E4000C3554 /* DiscoveryScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenRouter.swift; sourceTree = "<group>"; };
 		843DD6A127FC47E4000C3554 /* DiscoveryScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryScreenInteractorInput.swift; sourceTree = "<group>"; };
@@ -1011,6 +1013,7 @@
 				8495609D27FFE507004A8A74 /* DiscoveryModel.swift */,
 				8495609F27FFE565004A8A74 /* ScreeningItems.swift */,
 				849560A127FFE58C004A8A74 /* DiscoveryItem.swift */,
+				841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */,
 			);
 			path = "Discovery Model";
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
+				841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */,
 				52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */,
 				52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
