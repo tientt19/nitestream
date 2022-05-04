@@ -144,6 +144,8 @@
 		52E6E63727C2109400CD80D0 /* MainHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6E63527C2109400CD80D0 /* MainHeader.xib */; };
 		52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E63927C2119500CD80D0 /* MainFooter.swift */; };
 		52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6E63A27C2119500CD80D0 /* MainFooter.xib */; };
+		52EECC4D28222B8200FF0478 /* ExpandDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EECC4C28222B8200FF0478 /* ExpandDataSource.swift */; };
+		52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EECC4E28222D0800FF0478 /* ExpandSectionController.swift */; };
 		52F9A2AC27C7C7BF00EC01A0 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9A2AA27C7C7BF00EC01A0 /* BannerCell.swift */; };
 		52F9A2AD27C7C7BF00EC01A0 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F9A2AB27C7C7BF00EC01A0 /* BannerCell.xib */; };
 		52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA99C827C73B120093FC14 /* HomePageModel.swift */; };
@@ -334,6 +336,8 @@
 		52E6E63527C2109400CD80D0 /* MainHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeader.xib; sourceTree = "<group>"; };
 		52E6E63927C2119500CD80D0 /* MainFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooter.swift; sourceTree = "<group>"; };
 		52E6E63A27C2119500CD80D0 /* MainFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFooter.xib; sourceTree = "<group>"; };
+		52EECC4C28222B8200FF0478 /* ExpandDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandDataSource.swift; sourceTree = "<group>"; };
+		52EECC4E28222D0800FF0478 /* ExpandSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandSectionController.swift; sourceTree = "<group>"; };
 		52F9A2A327C7C54300EC01A0 /* ChuaTeHoiDongQuanTri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuaTeHoiDongQuanTri.entitlements; sourceTree = "<group>"; };
 		52F9A2AA27C7C7BF00EC01A0 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		52F9A2AB27C7C7BF00EC01A0 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 		52064A6527EF028D007E48A6 /* ExpandView */ = {
 			isa = PBXGroup;
 			children = (
+				52EECC4B28222B6200FF0478 /* IGListKit */,
 				52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */,
 				52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */,
 				52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */,
@@ -957,6 +962,15 @@
 			path = Footer;
 			sourceTree = "<group>";
 		};
+		52EECC4B28222B6200FF0478 /* IGListKit */ = {
+			isa = PBXGroup;
+			children = (
+				52EECC4C28222B8200FF0478 /* ExpandDataSource.swift */,
+				52EECC4E28222D0800FF0478 /* ExpandSectionController.swift */,
+			);
+			path = IGListKit;
+			sourceTree = "<group>";
+		};
 		52F9A2A427C7C76B00EC01A0 /* HomePageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1269,7 @@
 				527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */,
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
 				52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */,
+				52EECC4D28222B8200FF0478 /* ExpandDataSource.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
 				521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */,
 				521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */,
@@ -1323,6 +1338,7 @@
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */,
 				525DC17827F1C351003EEF58 /* SearchingInterator.swift in Sources */,
+				52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
 				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
