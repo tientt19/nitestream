@@ -9,22 +9,22 @@ import Foundation
 import IGListKit
 
 class ExpandSectionController: ListSectionController {
-    var currentIem: RecommendContentVOList?
+    var currentIem: RecommendItem?
     
     override init() {
         super.init()
-        self.inset = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 5)
+        self.inset = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
     }
     
     override func didUpdate(to object: Any) {
-        guard let superHero = object as? RecommendContentVOList else {
+        guard let superHero = object as? RecommendItem else {
             return
         }
         currentIem = superHero
     }
     
     override func numberOfItems() -> Int {
-        return 1
+        return currentIem?.recommendContentVOList.count ?? 0
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -41,15 +41,16 @@ class ExpandSectionController: ListSectionController {
             return cell
         }
         
-        superHeroCell.updateWith(item.imageUrl, item.title)
+        superHeroCell.updateWith(item.recommendContentVOList[index].imageUrl, item.recommendContentVOList[index].title)
         
         return cell
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        let widther = (collectionContext?.containerSize.width)! / 3
-        let heigher = widther * 7 / 5
-        return CGSize(width: widther - 10, height: heigher + 30)
+        let collectionViewWidth = collectionContext?.containerSize.width ?? 0
+        let itemWidth = ((collectionViewWidth - 20) / 3)
+        let heigher = itemWidth * 7 / 5
+        return CGSize(width: itemWidth , height: heigher + 30)
     }
 }
 

@@ -21,7 +21,7 @@ class ExpandScreenViewController: BaseViewController {
         let updater = ListAdapterUpdater()
         let adapter = ListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
         adapter.collectionView = expandCollectionView
-        adapter.dataSource = ExpandDataSource(data: listMoviePassed)
+        adapter.dataSource = self
         return adapter
     }()
     
@@ -34,6 +34,20 @@ class ExpandScreenViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         unlockScreen()
+    }
+}
+
+extension ExpandScreenViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return [listMoviePassed]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return ExpandSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
     }
 }
 
@@ -89,5 +103,4 @@ extension ExpandScreenViewController {
 extension ExpandScreenViewController: ExpandScreenViewProtocol{
     // TODO: Implement View Output Methods
 }
-
 
