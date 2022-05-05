@@ -13,6 +13,7 @@ import IGListKit
 // MARK: - ViewProtocol
 protocol SearchingIGListKitScreenViewProtocol: AnyObject {
     func onUpdateData(with data: [TopSearchData])
+    func didGetDetailViewFinish(with data: MovieDetail)
 }
 
 // MARK: - SearchingIGListKitScreen ViewController
@@ -20,6 +21,7 @@ class SearchingIGListKitScreenViewController: BaseViewController {
     var router: SearchingIGListKitScreenRouterProtocol!
     var viewModel: SearchingIGListKitScreenViewModelProtocol!
     var listTopSearchData = [TopSearchData]()
+    
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     lazy var adapter: ListAdapter = {
@@ -32,6 +34,11 @@ class SearchingIGListKitScreenViewController: BaseViewController {
         super.viewDidLoad()
         self.setupInit()
         self.viewModel.onViewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unlockScreen()
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,7 +84,8 @@ extension SearchingIGListKitScreenViewController {
 
 extension SearchingIGListKitScreenViewController: onTapDetailProtocol {
     func didSelect(with data: TopSearchData) {
-        dLogDebug(data.title)
+        presentLockScreen()
+        self.viewModel.openDetailView(id: data.id, category: data.domainType)
     }
 }
 
@@ -98,6 +106,12 @@ extension SearchingIGListKitScreenViewController: ListAdapterDataSource {
 
 // MARK: - SearchingIGListKitScreen ViewProtocol
 extension SearchingIGListKitScreenViewController: SearchingIGListKitScreenViewProtocol {
+    func didGetDetailViewFinish(with data: MovieDetail) {
+        DispatchQueue.main.async {
+            self.router.openDetailMovie(from: self, for: data)
+        }
+    }
+    
     func onUpdateData(with data: [TopSearchData]) {
         self.listTopSearchData.append(contentsOf: data)
         self.adapter.performUpdates(animated: true, completion: nil)

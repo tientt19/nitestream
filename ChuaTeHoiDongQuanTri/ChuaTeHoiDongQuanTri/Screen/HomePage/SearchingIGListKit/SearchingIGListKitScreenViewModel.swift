@@ -12,6 +12,7 @@ import UIKit
 // MARK: - ViewModelProtocol
 protocol SearchingIGListKitScreenViewModelProtocol {
     func onViewDidLoad()
+    func openDetailView(id: String, category: Int)
 }
 
 // MARK: - SearchingIGListKitScreen ViewModel
@@ -30,10 +31,18 @@ extension SearchingIGListKitScreenViewModel: SearchingIGListKitScreenViewModelPr
     func onViewDidLoad() {
         self.interactor.onHandleGetData()
     }
+    
+    func openDetailView(id: String, category: Int) {
+        self.interactor.onGetDetailMovie(id: id, category: category)
+    }
 }
 
 // MARK: - SearchingIGListKitScreen InteractorOutputProtocol
 extension SearchingIGListKitScreenViewModel: SearchingIGListKitScreenInteractorOutputProtocol {
+    func onGetDetailMovieFinish(with data: MovieDetail) {
+        self.view?.didGetDetailViewFinish(with: data)
+    }
+    
     func onHandleGetDataFinish(with data: [TopSearchData]) {
         self.view?.onUpdateData(with: data)
     }

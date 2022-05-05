@@ -12,6 +12,7 @@ class BaseViewController: UIViewController {
     lazy var activityIndicatorView : UIActivityIndicatorView = {
         let loading = UIActivityIndicatorView()
         loading.hidesWhenStopped = true
+        loading.color = UIColor.systemIndigo
         loading.style = .large
         return loading
     }()
@@ -48,30 +49,32 @@ class BaseViewController: UIViewController {
     }
     
     func baseViewShowHud() {
-        view.addSubview(loadingView)
-        view.bringSubviewToFront(loadingView)
-        loadingView.addConstraintsToFillView(view)
-        loadingView.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
-        activityIndicatorView.setDimensions(width: 50, height: 50)
-        activityIndicatorView.center(inView: loadingView)
-        loadingView.isHidden = false
+        self.view.addSubview(loadingView)
+        self.view.bringSubviewToFront(loadingView)
+        self.loadingView.addConstraintsToFillView(view)
+        self.loadingView.addSubview(activityIndicatorView)
+        self.activityIndicatorView.startAnimating()
+        self.activityIndicatorView.setDimensions(width: 50, height: 50)
+        self.activityIndicatorView.center(inView: loadingView)
+        self.loadingView.isHidden = false
     }
 
     func presentLockScreen() {
-        view.addSubview(loadingView)
-        activityIndicatorView.startAnimating()
-        loadingView.isHidden = false
-        loadingView.addConstraintsToFillView(view)
+        self.view.addSubview(loadingView)
+        self.view.bringSubviewToFront(loadingView)
+        self.loadingView.addSubview(activityIndicatorView)
+        self.activityIndicatorView.startAnimating()
+        self.loadingView.isHidden = false
+        self.loadingView.addConstraintsToFillView(view)
     }
     
     func unlockScreen() {
-        stopLoadingAnimate()
-        loadingView.isHidden = true
+        self.stopLoadingAnimate()
+        self.loadingView.isHidden = true
     }
     
     func baseViewHideHud() {
-        stopLoadingAnimate()
-        loadingView.removeFromSuperview()
+        self.stopLoadingAnimate()
+        self.loadingView.removeFromSuperview()
     }
 }

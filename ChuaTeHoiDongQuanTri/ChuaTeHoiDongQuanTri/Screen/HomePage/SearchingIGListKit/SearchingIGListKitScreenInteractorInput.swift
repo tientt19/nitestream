@@ -12,12 +12,13 @@ import UIKit
 // MARK: - Interactor Input Protocol
 protocol SearchingIGListKitScreenInteractorInputProtocol {
     func onHandleGetData()
-
+    func onGetDetailMovie(id: String, category: Int)
 }
 
 // MARK: - Interactor Output Protocol
 protocol SearchingIGListKitScreenInteractorOutputProtocol: AnyObject {
     func onHandleGetDataFinish(with data: [TopSearchData])
+    func onGetDetailMovieFinish(with data: MovieDetail)
 }
 
 // MARK: - SearchingIGListKitScreen InteractorInput
@@ -33,6 +34,15 @@ extension SearchingIGListKitScreenInteractorInput: SearchingIGListKitScreenInter
                 DispatchQueue.main.async {
                     self.output?.onHandleGetDataFinish(with: data)
                 }
+            }
+        }
+    }
+    
+    //MARK: - Get Detail Movie
+    func onGetDetailMovie(id: String, category: Int) {
+        DataManager.shared.getDetailMovieData(Int(id)!, category) { response in
+            if let data = response {
+                self.output?.onGetDetailMovieFinish(with: data)
             }
         }
     }

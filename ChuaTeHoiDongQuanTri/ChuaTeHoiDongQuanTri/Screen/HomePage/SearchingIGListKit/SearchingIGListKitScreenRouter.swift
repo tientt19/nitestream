@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - RouterProtocol
 protocol SearchingIGListKitScreenRouterProtocol {
-
+    func openDetailMovie(from view: SearchingIGListKitScreenViewProtocol, for data: MovieDetail)
 }
 
 // MARK: - SearchingIGListKitScreen Router
@@ -36,5 +36,15 @@ class SearchingIGListKitScreenRouter {
 
 // MARK: - SearchingIGListKitScreen RouterProtocol
 extension SearchingIGListKitScreenRouter: SearchingIGListKitScreenRouterProtocol {
-    
+    func openDetailMovie(from view: SearchingIGListKitScreenViewProtocol, for data: MovieDetail) {
+        
+        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        detailScreen.hidesBottomBarWhenPushed = true
+        
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
+        
+        viewVC.navigationController?.pushViewController(detailScreen, animated: true)
+    }
 }
