@@ -3,9 +3,11 @@
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
+import IGListKit
 
+class TopSearchData: ListDiffable {
 
-class TopSearchData{
+    private var identifier: String = UUID().uuidString
 
 	var cover : String!
 	var domainType : Int!
@@ -84,5 +86,16 @@ class TopSearchData{
 		}
 
 	}
-
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? TopSearchData else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 }
