@@ -37,17 +37,29 @@ class ExpandScreenViewController: BaseViewController {
     }
 }
 
+
+//MARK: - set up IGListKit
 extension ExpandScreenViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return [listMoviePassed]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ExpandSectionController()
+        let sectionController = ExpandSectionController()
+        sectionController.handleTapDelegate = self
+        return sectionController
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return nil
+    }
+}
+
+//MARK: - Handle user tap to go to detail
+extension ExpandScreenViewController: HandleTapProtocol {
+    func didSelect(with index: Int) {
+        self.presentLockScreen()
+        self.collectionViewDatasource?.didSelect(indexPath: index)
     }
 }
 
@@ -57,11 +69,17 @@ extension ExpandScreenViewController {
     func setupView() {
         _ = adapter
         navigationItem.title = listMoviePassed.homeSectionName
-//        collectionViewDatasource = ExpandCollectionViewDataSource(entities: listMoviePassed, with: presenter!)
+        collectionViewDatasource = ExpandCollectionViewDataSource(entities: listMoviePassed, with: presenter!)
 //        expandCollectionView.registerCell(nibName: MovieCell.self)
 //        expandCollectionView.reloadData()
     }
 }
+
+//MARK: - ExpandScreenViewProtocol
+extension ExpandScreenViewController: ExpandScreenViewProtocol{
+    // TODO: Implement View Output Methods
+}
+
 
 ////MARK: - UICollectionViewDataSourcePrefetching
 //extension ExpandScreenViewController : UICollectionViewDataSourcePrefetching {
@@ -99,8 +117,4 @@ extension ExpandScreenViewController {
 //    }
 //}
 
-//MARK: - ExpandScreenViewProtocol
-extension ExpandScreenViewController: ExpandScreenViewProtocol{
-    // TODO: Implement View Output Methods
-}
 

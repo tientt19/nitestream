@@ -8,8 +8,13 @@
 import Foundation
 import IGListKit
 
+protocol HandleTapProtocol: AnyObject {
+    func didSelect(with index: Int)
+}
+
 class ExpandSectionController: ListSectionController {
     var currentIem: RecommendItem?
+    var handleTapDelegate: HandleTapProtocol?
     
     override init() {
         super.init()
@@ -51,6 +56,10 @@ class ExpandSectionController: ListSectionController {
         let itemWidth = ((collectionViewWidth - 20) / 3)
         let heigher = itemWidth * 7 / 5
         return CGSize(width: itemWidth , height: heigher + 30)
+    }
+    
+    override func didSelectItem(at index: Int) {
+        handleTapDelegate?.didSelect(with: index)
     }
 }
 

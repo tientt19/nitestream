@@ -59,7 +59,7 @@ protocol CollectionviewDataSource : AnyObject {
     var numberOfItems: Int { get }
     
     func itemCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
-    func didSelect(collectionView: UICollectionView, indexPath: IndexPath)
+    func didSelect(indexPath: Int)
     func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     func prefetchingData(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath])
 }

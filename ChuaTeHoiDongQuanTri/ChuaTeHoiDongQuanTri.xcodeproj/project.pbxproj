@@ -605,20 +605,6 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		5225C62227F200420063FE3E /* TableViewHeader */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewHeader;
-			sourceTree = "<group>";
-		};
-		5225C62327F2004D0063FE3E /* TableViewFooter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewFooter;
-			sourceTree = "<group>";
-		};
 		522CF3AA27C0FD0800E4900A = {
 			isa = PBXGroup;
 			children = (
@@ -670,8 +656,6 @@
 				525DC16927F1C0F1003EEF58 /* SearchingViewController.swift */,
 				52358A1327F4BC20002C883F /* SearchingTableViewDatasource.swift */,
 				525DC16A27F1C0F1003EEF58 /* SearchingViewController.xib */,
-				5225C62327F2004D0063FE3E /* TableViewFooter */,
-				5225C62227F200420063FE3E /* TableViewHeader */,
 				5225C61D27F1FE140063FE3E /* TableViewCell */,
 			);
 			path = Searching;
