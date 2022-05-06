@@ -13,6 +13,8 @@ import UIKit
 protocol SearchingIGListKitScreenViewModelProtocol {
     func onViewDidLoad()
     func openDetailView(id: String, category: Int)
+    func onSearchWithKeyWork(with key: String)
+    func ongetListSearch(with keyword: String)
 }
 
 // MARK: - SearchingIGListKitScreen ViewModel
@@ -28,6 +30,10 @@ class SearchingIGListKitScreenViewModel {
 
 // MARK: - SearchingIGListKitScreen ViewModelProtocol
 extension SearchingIGListKitScreenViewModel: SearchingIGListKitScreenViewModelProtocol {
+    func ongetListSearch(with keyword: String) {
+        self.interactor.onHandleGetListSearch(with: keyword)
+    }
+    
     func onViewDidLoad() {
         self.interactor.onHandleGetData()
     }
@@ -35,10 +41,22 @@ extension SearchingIGListKitScreenViewModel: SearchingIGListKitScreenViewModelPr
     func openDetailView(id: String, category: Int) {
         self.interactor.onGetDetailMovie(id: id, category: category)
     }
+    
+    func onSearchWithKeyWork(with key: String) {
+        self.interactor.onHandleSearchingWithKey(with: key)
+    }
 }
 
 // MARK: - SearchingIGListKitScreen InteractorOutputProtocol
 extension SearchingIGListKitScreenViewModel: SearchingIGListKitScreenInteractorOutputProtocol {
+    func onGetListSearchingFinish(with data: [TopSearchData]) {
+        self.view?.didGetSearchingListFinish(with: data)
+    }
+    
+    func onGetSearchingListFinish(with data: [SearchingModelIG]) {
+        self.view?.didGetListSearchingFinish(with: data)
+    }
+    
     func onGetDetailMovieFinish(with data: MovieDetail) {
         self.view?.didGetDetailViewFinish(with: data)
     }

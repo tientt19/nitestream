@@ -53,7 +53,6 @@ class HomePageViewViewController: BaseViewController {
     }
     @objc func textFieldTap() {
         let searchingVC = SearchingIGListKitScreenRouter.setupModule()
-//        let searchingVC = SearchingRouter.createSearchingModule()
         searchingVC.hidesBottomBarWhenPushed = true
         searchingVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(searchingVC, animated: true)

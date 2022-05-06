@@ -10,6 +10,7 @@ import UIKit
 
 protocol ConfigureDataPrototcol: AnyObject {
     func update(_ imageURL : String,_ movieName : String)
+    func update(with dataString: String)
 }
 
 class SearchingIGListKitCell: UICollectionViewCell {
@@ -24,6 +25,8 @@ class SearchingIGListKitCell: UICollectionViewCell {
 }
 
 extension SearchingIGListKitCell: ConfigureDataPrototcol {
+    func update(with dataString: String) { }
+    
     func update(_ imageURL: String, _ movieName: String) {
         self.posterImage.setImageCachingv2(targetImageView: self.posterImage, with: imageURL)
         self.name.text = movieName

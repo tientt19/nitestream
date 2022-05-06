@@ -10,6 +10,7 @@ import IGListKit
 
 protocol onTapDetailProtocol: AnyObject {
     func didSelect(with data: TopSearchData)
+    func didSelect(with data: String)
 }
 
 class SearchingIGListKitSectionController: ListSectionController {
@@ -57,7 +58,7 @@ class SearchingIGListKitSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        handleTapDelegate?.didSelect(with: self.currentIem!)
+        self.handleTapDelegate?.didSelect(with: self.currentIem!)
     }
 }
 
@@ -66,6 +67,7 @@ extension SearchingIGListKitSectionController {
         guard let ctx = collectionContext else {
             return UICollectionViewCell()
         }
+        
         let nibName = String(describing: SearchingIGListKitCell.self)
         let cell = ctx.dequeueReusableCell(withNibName: nibName , bundle: nil, for: self, at: index)
         return cell

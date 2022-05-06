@@ -14,18 +14,26 @@ import IGListKit
 protocol SearchingIGListKitScreenViewProtocol: AnyObject {
     func onUpdateData(with data: [TopSearchData])
     func didGetDetailViewFinish(with data: MovieDetail)
+    func didGetListSearchingFinish(with data: [SearchingModelIG])
+    func didGetSearchingListFinish(with data: [TopSearchData])
 }
 
 // MARK: - SearchingIGListKitScreen ViewController
 class SearchingIGListKitScreenViewController: BaseViewController {
     var router: SearchingIGListKitScreenRouterProtocol!
     var viewModel: SearchingIGListKitScreenViewModelProtocol!
-    var listTopSearchData = [TopSearchData]()
+    var objects = [ListDiffable]()
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    }()
+    
+    lazy var emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
     }()
     
     
@@ -51,12 +59,12 @@ class SearchingIGListKitScreenViewController: BaseViewController {
         self.setUPView()
         self.view.addSubview(self.collectionView)
         self.adapter.collectionView = self.collectionView
+        self.collectionView.keyboardDismissMode = .onDrag
         self.adapter.dataSource = self
-        //        self.adapter.scrollViewDelegate = self
+        self.adapter.scrollViewDelegate = self
     }
     
     // MARK: - Action
-    
 }
 
 extension SearchingIGListKitScreenViewController {
@@ -69,43 +77,74 @@ extension SearchingIGListKitScreenViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if textField.text == "" {
-            activityIndicatorView.startAnimating()
-            //            self.viewModel.onViewDidLoad()
-            //            self.viewModel?.callToGetTopSearchingData()
+            self.viewModel.onViewDidLoad()
+        } else if let searchKey = textField.text {
+            self.viewModel.onSearchWithKeyWork(with: searchKey)
         }
-        
-        //        if let searchKey = textField.text {
-        //            self.viewModel?.handleSearchWithKeywork(searchKey)
-        //        }
     }
 }
 
 //MARK: - Hande user tap
-
 extension SearchingIGListKitScreenViewController: onTapDetailProtocol {
+    func didSelect(with data: String) {
+        self.viewModel.ongetListSearch(with: data.htmlToString)
+    }
+    
     func didSelect(with data: TopSearchData) {
         presentLockScreen()
         self.viewModel.openDetailView(id: data.id, category: data.domainType)
     }
 }
 
+// MARK: - UIScrollViewDelegate
+extension SearchingIGListKitScreenViewController: UIScrollViewDelegate {
+    
+}
+
 //MARK: - ListAdapterDataSource
 extension SearchingIGListKitScreenViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return listTopSearchData
+        return objects
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let sectionController = SearchingIGListKitSectionController()
-        sectionController.handleTapDelegate = self
-        return sectionController
+        if object is TopSearchData {
+            let sectionController = SearchingIGListKitSectionController()
+            sectionController.handleTapDelegate = self
+            return sectionController
+        } else {
+            let searchingSectionController = SearchingListSectionController()
+            searchingSectionController.handleTapDelegate = self
+            return searchingSectionController
+        }
     }
     
-    func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
+    func emptyView(for listAdapter: ListAdapter) -> UIView? { return generateEmptyView() }
+    
+    func generateEmptyView() -> UIView? {
+        let emptyLabel = UILabel()
+        emptyLabel.text = "Không tìm thấy kết quả nào!!!"
+        emptyLabel.textColor = UIColor.systemIndigo
+        self.emptyView.addSubview(emptyLabel)
+        emptyLabel.center(inView: self.emptyView)
+        return self.emptyView
+    }
 }
 
 // MARK: - SearchingIGListKitScreen ViewProtocol
 extension SearchingIGListKitScreenViewController: SearchingIGListKitScreenViewProtocol {
+    func didGetSearchingListFinish(with data: [TopSearchData]) {
+        self.objects.removeAll()
+        self.objects.append(contentsOf: data)
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
+    
+    func didGetListSearchingFinish(with data: [SearchingModelIG]) {
+        self.objects.removeAll()
+        self.objects.append(contentsOf: data)
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
+    
     func didGetDetailViewFinish(with data: MovieDetail) {
         DispatchQueue.main.async {
             self.router.openDetailMovie(from: self, for: data)
@@ -113,7 +152,8 @@ extension SearchingIGListKitScreenViewController: SearchingIGListKitScreenViewPr
     }
     
     func onUpdateData(with data: [TopSearchData]) {
-        self.listTopSearchData.append(contentsOf: data)
+        self.objects.removeAll()
+        self.objects.append(contentsOf: data)
         self.adapter.performUpdates(animated: true, completion: nil)
     }
 }
