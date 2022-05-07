@@ -711,25 +711,9 @@
 				523E04E22824FE9E005E55A4 /* SearchingViewProtocols.swift */,
 				523E04E32824FE9E005E55A4 /* TopSearchTableViewCell.swift */,
 				523E04E42824FE9E005E55A4 /* SearchingInterator.swift */,
-				523E04E52824FE9E005E55A4 /* TableViewCell */,
 				523E04E62824FE9E005E55A4 /* SearchingCell.swift */,
-				523E04E72824FE9E005E55A4 /* SearchingCell */,
 			);
 			path = Searching;
-			sourceTree = "<group>";
-		};
-		523E04E52824FE9E005E55A4 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		523E04E72824FE9E005E55A4 /* SearchingCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchingCell;
 			sourceTree = "<group>";
 		};
 		5263515F28237F8800093D80 /* SearchingIGListKit */ = {
