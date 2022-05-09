@@ -44,4 +44,13 @@ class HomePageViewRouter: HomePageViewRouterProtocol {
         viewVC.navigationController?.pushViewController(detailScreen, animated: true)
     }
     
+    func openExpandView(from view: HomePageViewViewProtocol, with data: RecommendItem) {
+        let expandVC = ExpandScreenRouter.createModule(with: data)
+        expandVC.hidesBottomBarWhenPushed = true
+        guard let viewVC = view as? UIViewController else {
+            fatalError("Invalid View Protocol type")
+        }
+        
+        viewVC.navigationController?.pushViewController(expandVC, animated: true)
+    }
 }

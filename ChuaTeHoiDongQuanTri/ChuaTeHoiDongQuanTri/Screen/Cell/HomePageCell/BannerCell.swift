@@ -8,8 +8,12 @@
 import UIKit
 import Kingfisher
 
-class BannerCell: UICollectionViewCell {
-    
+protocol UpdateBannerCellProtocol: AnyObject {
+    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController)
+}
+
+class BannerCell: UICollectionViewCell, UpdateBannerCellProtocol{
+  
     @IBOutlet weak var bannerCLV: UICollectionView!
     @IBOutlet weak var pageView : UIPageControl!
     
@@ -30,6 +34,13 @@ class BannerCell: UICollectionViewCell {
         pageView.numberOfPages = listDataCall.count
         pageView.currentPage = 0
         bannerCLV.reloadData()
+    }
+    
+    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController) {
+        self.listDataCall = data
+        self.pageView.numberOfPages = listDataCall.count
+        self.pageView.currentPage = 0
+        self.bannerCLV.reloadData()
     }
 }
 

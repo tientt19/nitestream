@@ -140,6 +140,7 @@
 		52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0427FBF5BC00EDE659 /* TagView.swift */; };
 		52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */; };
 		52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0627FBF5BC00EDE659 /* TagListView.swift */; };
+		52C424F12828E0BA00CF899A /* BannerSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C424F02828E0BA00CF899A /* BannerSectionController.swift */; };
 		52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */; };
 		52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */; };
 		52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */; };
@@ -344,6 +345,7 @@
 		52B8BC0427FBF5BC00EDE659 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		52B8BC0627FBF5BC00EDE659 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		52C424F02828E0BA00CF899A /* BannerSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerSectionController.swift; sourceTree = "<group>"; };
 		52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewPresenter.swift; sourceTree = "<group>"; };
 		52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewRouter.swift; sourceTree = "<group>"; };
 		52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewViewController.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 		521CD19D280A970100D114A7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				52C424EF2828E0A000CF899A /* Section Controller */,
 				52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */,
 				52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */,
 				52CB4D3027F6BE9300BACAFD /* HomePageViewViewController.swift */,
@@ -899,6 +902,14 @@
 				52B8BC0427FBF5BC00EDE659 /* TagView.swift */,
 			);
 			path = TagListView;
+			sourceTree = "<group>";
+		};
+		52C424EF2828E0A000CF899A /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52C424F02828E0BA00CF899A /* BannerSectionController.swift */,
+			);
+			path = "Section Controller";
 			sourceTree = "<group>";
 		};
 		52D8ECE427C6179A001B8A2B /* Base */ = {
@@ -1339,6 +1350,7 @@
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
+				52C424F12828E0BA00CF899A /* BannerSectionController.swift in Sources */,
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
 				841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */,
 				52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */,

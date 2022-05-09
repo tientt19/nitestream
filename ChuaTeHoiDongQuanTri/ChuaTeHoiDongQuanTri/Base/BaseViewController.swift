@@ -26,6 +26,12 @@ class BaseViewController: UIViewController {
         return textfield
     }()
     
+    lazy var emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     lazy var loadingView : UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -76,5 +82,14 @@ class BaseViewController: UIViewController {
     func baseViewHideHud() {
         self.stopLoadingAnimate()
         self.loadingView.removeFromSuperview()
+    }
+    
+    func generateEmptyView() -> UIView? {
+        let emptyLabel = UILabel()
+        emptyLabel.text = "Không tìm thấy kết quả nào!!!"
+        emptyLabel.textColor = UIColor.systemIndigo
+        self.emptyView.addSubview(emptyLabel)
+        emptyLabel.center(inView: self.emptyView)
+        return self.emptyView
     }
 }

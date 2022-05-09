@@ -30,6 +30,8 @@ protocol HomePageViewPresenterProtocol : AnyObject  {
     
     // VIEW -> PRESENTER
     func getHomePageData(_ page : Int)
+    func onGetMovieDetail(_ id : Int, _ category : Int)
+    func openExpandView(with data: RecommendItem)
     func loadMore(_ page : Int, _ oldDAO : HomePageModel)
 }
 
@@ -59,6 +61,7 @@ protocol HomePageViewRouterProtocol : AnyObject  {
 
     // PRESENTER -> ROUTER
     func openDetailView(view : HomePageViewViewProtocol, data : MovieDetail)
+    func openExpandView(from view: HomePageViewViewProtocol, with data: RecommendItem)
 }
 
 //MARK: - HomePageViewDataSource

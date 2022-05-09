@@ -30,13 +30,6 @@ class SearchingIGListKitScreenViewController: BaseViewController {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
     
-    lazy var emptyView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
-    
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,29 +113,16 @@ extension SearchingIGListKitScreenViewController: ListAdapterDataSource {
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? { return generateEmptyView() }
-    
-    func generateEmptyView() -> UIView? {
-        let emptyLabel = UILabel()
-        emptyLabel.text = "Không tìm thấy kết quả nào!!!"
-        emptyLabel.textColor = UIColor.systemIndigo
-        self.emptyView.addSubview(emptyLabel)
-        emptyLabel.center(inView: self.emptyView)
-        return self.emptyView
-    }
 }
 
 // MARK: - SearchingIGListKitScreen ViewProtocol
 extension SearchingIGListKitScreenViewController: SearchingIGListKitScreenViewProtocol {
     func didGetSearchingListFinish(with data: [TopSearchData]) {
-        self.objects.removeAll()
-        self.objects.append(contentsOf: data)
-        self.adapter.performUpdates(animated: true, completion: nil)
+        self.update(with: data)
     }
     
     func didGetListSearchingFinish(with data: [SearchingModelIG]) {
-        self.objects.removeAll()
-        self.objects.append(contentsOf: data)
-        self.adapter.performUpdates(animated: true, completion: nil)
+        self.update(with: data)
     }
     
     func didGetDetailViewFinish(with data: MovieDetail) {
@@ -152,6 +132,10 @@ extension SearchingIGListKitScreenViewController: SearchingIGListKitScreenViewPr
     }
     
     func onUpdateData(with data: [TopSearchData]) {
+        self.update(with: data)
+    }
+    
+    func update(with data: [ListDiffable]) {
         self.objects.removeAll()
         self.objects.append(contentsOf: data)
         self.adapter.performUpdates(animated: true, completion: nil)

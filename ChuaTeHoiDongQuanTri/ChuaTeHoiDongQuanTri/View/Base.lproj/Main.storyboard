@@ -121,10 +121,6 @@
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
                                         </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="Je2-oj-TwW" id="JSN-2w-zKO"/>
-                                            <outlet property="delegate" destination="Je2-oj-TwW" id="avC-s8-AXR"/>
-                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,7 +222,6 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="HomePageCLV" destination="Jtg-FB-GMy" id="yfK-KZ-hlI"/>
                         <outlet property="bottomViewConMoveConstraint" destination="gvK-sD-gfh" id="X4w-Ft-BtZ"/>
                         <outlet property="limitView" destination="2A5-i1-OtI" id="NVo-3D-A9s"/>
                         <outlet property="trailingViewConMoveConstraint" destination="yOf-OT-76m" id="gmC-2o-Ns5"/>
