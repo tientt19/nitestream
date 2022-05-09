@@ -64,7 +64,7 @@ extension SearchingIGListKitScreenViewController {
     func setUPView() {
         self.setUpBaseView()
         self.hideKeyboardWhenTappedAround()
-        self.navigationItem.titleView = textFieldView
+        self.navigationItem.titleView = self.coverTextFieldView
         self.textFieldView.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     

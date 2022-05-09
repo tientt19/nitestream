@@ -49,10 +49,10 @@ class HomePageViewViewController: BaseViewController {
         
     func register() {
         self.setUpBaseView()
-        navigationItem.titleView = self.textFieldView
+        navigationItem.titleView = self.searchView
         
-        textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
-        viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
+        self.textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
+        self.viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
        
         self.view.addSubview(self.collectionView)
         self.adapter.collectionView = collectionView
