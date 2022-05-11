@@ -38,7 +38,7 @@ class SearchingIGListKitScreenRouter {
 extension SearchingIGListKitScreenRouter: SearchingIGListKitScreenRouterProtocol {
     func openDetailMovie(from view: SearchingIGListKitScreenViewProtocol, for data: MovieDetail) {
         
-        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        let detailScreen = StreamingMovieScreenRouter.setupModule(with: data)
         detailScreen.hidesBottomBarWhenPushed = true
         
         guard let viewVC = view as? UIViewController else {

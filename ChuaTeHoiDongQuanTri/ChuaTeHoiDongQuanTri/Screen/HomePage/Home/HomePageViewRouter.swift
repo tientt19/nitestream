@@ -34,7 +34,7 @@ class HomePageViewRouter: HomePageViewRouterProtocol {
     
     func openDetailView(view: HomePageViewViewProtocol, data: MovieDetail) {
         
-        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        let detailScreen = StreamingMovieScreenRouter.setupModule(with: data)
         detailScreen.hidesBottomBarWhenPushed = true
 
         guard let viewVC = view as? UIViewController else {

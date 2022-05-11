@@ -32,7 +32,7 @@ class SearchingRouter : SearchingRouterProtocols {
     
     func openDetailMovie(from view: SearchingViewProtocols, for data: MovieDetail) {
         
-        let detailVC = MovieDetailScreenRouter.createModule(data)
+        let detailVC = StreamingMovieScreenRouter.setupModule(with: data)
         
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")

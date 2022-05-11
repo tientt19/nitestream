@@ -35,7 +35,7 @@ class ExpandScreenRouter: ExpandScreenRouterProtocol {
     
     func openDetailMovie(from view: ExpandScreenViewProtocol, for data: MovieDetail) {
         
-        let detailScreen = MovieDetailScreenRouter.createModule(data)
+        let detailScreen = StreamingMovieScreenRouter.setupModule(with: data)
         detailScreen.hidesBottomBarWhenPushed = true
         
         guard let viewVC = view as? UIViewController else {

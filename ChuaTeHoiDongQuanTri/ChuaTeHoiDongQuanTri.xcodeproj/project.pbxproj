@@ -84,6 +84,12 @@
 		527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A227F3F22F008A42DC /* UIViewController.swift */; };
 		5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287BEF327CF83500030A534 /* HorizontallyCell.swift */; };
 		5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287BEF427CF83500030A534 /* HorizontallyCell.xib */; };
+		5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5B3282A5650003C6A8A /* StreamingMovieScreenRouter.swift */; };
+		5287C5B9282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5B4282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift */; };
+		5287C5BA282A5650003C6A8A /* StreamingMovieScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5B5282A5650003C6A8A /* StreamingMovieScreenViewController.swift */; };
+		5287C5BB282A5650003C6A8A /* StreamingMovieScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5B6282A5650003C6A8A /* StreamingMovieScreenViewModel.swift */; };
+		5287C5BC282A5650003C6A8A /* StreamingMovieScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287C5B7282A5650003C6A8A /* StreamingMovieScreenViewController.xib */; };
+		5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5BE282A5973003C6A8A /* StreamingSectionController.swift */; };
 		528C704F27CE0F3D00850478 /* StreamingTienPro.h in Headers */ = {isa = PBXBuildFile; fileRef = 528C704E27CE0F3D00850478 /* StreamingTienPro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		528C705227CE0F3D00850478 /* StreamingTienPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528C704C27CE0F3D00850478 /* StreamingTienPro.framework */; };
 		528C705327CE0F3D00850478 /* StreamingTienPro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 528C704C27CE0F3D00850478 /* StreamingTienPro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -121,6 +127,11 @@
 		52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */; };
 		52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E727EDA68C006F79DC /* MovieCell.swift */; };
 		52A7A7EA27EDA68C006F79DC /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A7A7E827EDA68C006F79DC /* MovieCell.xib */; };
+		52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1FEEF282B56CC004DB9E9 /* CellCollectionStreaming.swift */; };
+		52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B1FEF0282B56CC004DB9E9 /* CellCollectionStreaming.xib */; };
+		52B1FEF5282B6EEF004DB9E9 /* StreamingInfoSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1FEF4282B6EEF004DB9E9 /* StreamingInfoSectionController.swift */; };
+		52B1FEF9282B7056004DB9E9 /* CellCollectionMovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1FEF7282B7056004DB9E9 /* CellCollectionMovieInfo.swift */; };
+		52B1FEFA282B7056004DB9E9 /* CellCollectionMovieInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B1FEF8282B7056004DB9E9 /* CellCollectionMovieInfo.xib */; };
 		52B4F29727F3F6D700B0CFEB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4F29627F3F6D700B0CFEB /* DataManager.swift */; };
 		52B4F29D27F407CA00B0CFEB /* MovieDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4F29827F407CA00B0CFEB /* MovieDetailScreenPresenter.swift */; };
 		52B4F29E27F407CA00B0CFEB /* MovieDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4F29927F407CA00B0CFEB /* MovieDetailScreenRouter.swift */; };
@@ -290,6 +301,12 @@
 		527AF9A227F3F22F008A42DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		5287BEF327CF83500030A534 /* HorizontallyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyCell.swift; sourceTree = "<group>"; };
 		5287BEF427CF83500030A534 /* HorizontallyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontallyCell.xib; sourceTree = "<group>"; };
+		5287C5B3282A5650003C6A8A /* StreamingMovieScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingMovieScreenRouter.swift; sourceTree = "<group>"; };
+		5287C5B4282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingMovieScreenInteractorInput.swift; sourceTree = "<group>"; };
+		5287C5B5282A5650003C6A8A /* StreamingMovieScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingMovieScreenViewController.swift; sourceTree = "<group>"; };
+		5287C5B6282A5650003C6A8A /* StreamingMovieScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingMovieScreenViewModel.swift; sourceTree = "<group>"; };
+		5287C5B7282A5650003C6A8A /* StreamingMovieScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamingMovieScreenViewController.xib; sourceTree = "<group>"; };
+		5287C5BE282A5973003C6A8A /* StreamingSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingSectionController.swift; sourceTree = "<group>"; };
 		528C704C27CE0F3D00850478 /* StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528C704E27CE0F3D00850478 /* StreamingTienPro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamingTienPro.h; sourceTree = "<group>"; };
 		528C705827CE0FA000850478 /* MovieStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStreaming.swift; sourceTree = "<group>"; };
@@ -326,6 +343,11 @@
 		52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A7A7E727EDA68C006F79DC /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		52A7A7E827EDA68C006F79DC /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		52B1FEEF282B56CC004DB9E9 /* CellCollectionStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionStreaming.swift; sourceTree = "<group>"; };
+		52B1FEF0282B56CC004DB9E9 /* CellCollectionStreaming.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCollectionStreaming.xib; sourceTree = "<group>"; };
+		52B1FEF4282B6EEF004DB9E9 /* StreamingInfoSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingInfoSectionController.swift; sourceTree = "<group>"; };
+		52B1FEF7282B7056004DB9E9 /* CellCollectionMovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionMovieInfo.swift; sourceTree = "<group>"; };
+		52B1FEF8282B7056004DB9E9 /* CellCollectionMovieInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCollectionMovieInfo.xib; sourceTree = "<group>"; };
 		52B4F29627F3F6D700B0CFEB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		52B4F29827F407CA00B0CFEB /* MovieDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenPresenter.swift; sourceTree = "<group>"; };
 		52B4F29927F407CA00B0CFEB /* MovieDetailScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenRouter.swift; sourceTree = "<group>"; };
@@ -760,6 +782,29 @@
 			path = HorizontallyCell;
 			sourceTree = "<group>";
 		};
+		5287C5A8282A5557003C6A8A /* MovieDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52B1FEEE282B5683004DB9E9 /* Cell CollectionView */,
+				5287C5BD282A5893003C6A8A /* SectionController */,
+				5287C5B3282A5650003C6A8A /* StreamingMovieScreenRouter.swift */,
+				5287C5B4282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift */,
+				5287C5B5282A5650003C6A8A /* StreamingMovieScreenViewController.swift */,
+				5287C5B6282A5650003C6A8A /* StreamingMovieScreenViewModel.swift */,
+				5287C5B7282A5650003C6A8A /* StreamingMovieScreenViewController.xib */,
+			);
+			path = MovieDetailScreen;
+			sourceTree = "<group>";
+		};
+		5287C5BD282A5893003C6A8A /* SectionController */ = {
+			isa = PBXGroup;
+			children = (
+				5287C5BE282A5973003C6A8A /* StreamingSectionController.swift */,
+				52B1FEF4282B6EEF004DB9E9 /* StreamingInfoSectionController.swift */,
+			);
+			path = SectionController;
+			sourceTree = "<group>";
+		};
 		528C704D27CE0F3D00850478 /* StreamingTienPro */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,9 +896,10 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
+				52064A6D27EF5E9D007E48A6 /* MovieDetail */,
 				52E6E63227C20E8400CD80D0 /* Cell */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
-				52064A6D27EF5E9D007E48A6 /* MovieDetail */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
@@ -869,6 +915,33 @@
 				52A7A7E827EDA68C006F79DC /* MovieCell.xib */,
 			);
 			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		52B1FEEE282B5683004DB9E9 /* Cell CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				52B1FEF6282B7042004DB9E9 /* Movie Info */,
+				52B1FEF3282B570A004DB9E9 /* StreamingMovie */,
+			);
+			path = "Cell CollectionView";
+			sourceTree = "<group>";
+		};
+		52B1FEF3282B570A004DB9E9 /* StreamingMovie */ = {
+			isa = PBXGroup;
+			children = (
+				52B1FEEF282B56CC004DB9E9 /* CellCollectionStreaming.swift */,
+				52B1FEF0282B56CC004DB9E9 /* CellCollectionStreaming.xib */,
+			);
+			path = StreamingMovie;
+			sourceTree = "<group>";
+		};
+		52B1FEF6282B7042004DB9E9 /* Movie Info */ = {
+			isa = PBXGroup;
+			children = (
+				52B1FEF7282B7056004DB9E9 /* CellCollectionMovieInfo.swift */,
+				52B1FEF8282B7056004DB9E9 /* CellCollectionMovieInfo.xib */,
+			);
+			path = "Movie Info";
 			sourceTree = "<group>";
 		};
 		52B6C8DA28001EC900F180AB /* Searching Model */ = {
@@ -1215,10 +1288,12 @@
 				52159E7D2824CE3C00081FA9 /* CellSeachingCollectionView.xib in Resources */,
 				521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */,
 				523E04E92824FE9E005E55A4 /* TopSearchTableViewCell.xib in Resources */,
+				52B1FEFA282B7056004DB9E9 /* CellCollectionMovieInfo.xib in Resources */,
 				5263516928237FD600093D80 /* SearchingIGListKitScreenViewController.xib in Resources */,
 				5295CD89280AE46E0064EFBB /* ListSearchResultTableViewCell.xib in Resources */,
 				8495609427FFD7AF004A8A74 /* DiscoveryTableViewCell.xib in Resources */,
 				521CD1AA280AA1B400D114A7 /* PageAnimeViewController.xib in Resources */,
+				5287C5BC282A5650003C6A8A /* StreamingMovieScreenViewController.xib in Resources */,
 				8495609927FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.xib in Resources */,
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
@@ -1230,6 +1305,7 @@
 				52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */,
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
 				523E04EE2824FE9E005E55A4 /* SearchingViewController.xib in Resources */,
+				52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */,
 				843DD6A927FC47E4000C3554 /* DiscoveryScreenViewController.xib in Resources */,
 				52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */,
 				522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */,
@@ -1342,8 +1418,10 @@
 				52B4F29F27F407CA00B0CFEB /* MovieDetailScreenViewController.swift in Sources */,
 				5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */,
 				5263516828237FD600093D80 /* SearchingIGListKitScreenViewModel.swift in Sources */,
+				5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */,
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */,
+				52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */,
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
@@ -1364,6 +1442,7 @@
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
 				52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */,
+				5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */,
 				521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */,
 				52B6C8E328001EDB00F180AB /* DramaType.swift in Sources */,
 				5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */,
@@ -1394,6 +1473,7 @@
 				521E70D427FD38AE00620DA1 /* ASVideoPlayerController.swift in Sources */,
 				52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */,
 				52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */,
+				5287C5BA282A5650003C6A8A /* StreamingMovieScreenViewController.swift in Sources */,
 				528E4C4A2808133B001438BF /* UILabel.swift in Sources */,
 				5263516528237FD600093D80 /* SearchingIGListKitScreenRouter.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
@@ -1403,16 +1483,19 @@
 				5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */,
 				52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
+				52B1FEF9282B7056004DB9E9 /* CellCollectionMovieInfo.swift in Sources */,
 				52159E7C2824CE3C00081FA9 /* CellSeachingCollectionView.swift in Sources */,
 				52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */,
 				52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
+				5287C5BB282A5650003C6A8A /* StreamingMovieScreenViewModel.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
 				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				5263516B282381DB00093D80 /* SearchingIGListKitSectionController.swift in Sources */,
 				52B6C8E128001EDB00F180AB /* SearchingUpInfo.swift in Sources */,
+				52B1FEF5282B6EEF004DB9E9 /* StreamingInfoSectionController.swift in Sources */,
 				521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */,
 				5263516628237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
@@ -1439,6 +1522,7 @@
 				523E04F12824FE9E005E55A4 /* SearchingInterator.swift in Sources */,
 				52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */,
 				5263516F282388B900093D80 /* SearchingIGListKitCell.swift in Sources */,
+				5287C5B9282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
 				52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */,
