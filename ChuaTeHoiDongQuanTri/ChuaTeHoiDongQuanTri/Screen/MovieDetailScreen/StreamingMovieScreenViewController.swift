@@ -17,18 +17,15 @@ protocol StreamingMovieScreenViewProtocol: AnyObject {
 
 // MARK: - StreamingMovieScreen ViewController
 class StreamingMovieScreenViewController: BaseViewController {
+    
+    @IBOutlet weak var coverImageView: UIImageView!
+    
     var router: StreamingMovieScreenRouterProtocol!
     var viewModel: StreamingMovieScreenViewModelProtocol!
     var movieDetail: MovieDetail?
     var objects = [ListDiffable]()
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
-    let blurImageViewCover: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -44,7 +41,6 @@ class StreamingMovieScreenViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.collectionView.frame = self.view.bounds
-        self.blurImageViewCover.frame = self.collectionView.bounds
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -54,11 +50,11 @@ class StreamingMovieScreenViewController: BaseViewController {
     // MARK: - Init
     private func setupInit() {
         self.title = self.movieDetail?.name
-        self.view.addSubview(self.blurImageViewCover)
         self.view.addSubview(self.collectionView)
         self.collectionView.backgroundColor = .clear
         self.adapter.collectionView = self.collectionView
-        self.blurImageViewCover.setImageCachingv2(targetImageView: self.blurImageViewCover, with: (self.movieDetail?.coverVerticalUrl)!)
+        self.coverImageView.makeBlurImage(targetImageView: self.coverImageView)
+        self.coverImageView.setImageCachingv2(targetImageView: self.coverImageView, with: (self.movieDetail?.coverVerticalUrl)!)
         self.adapter.dataSource = self
     }
     

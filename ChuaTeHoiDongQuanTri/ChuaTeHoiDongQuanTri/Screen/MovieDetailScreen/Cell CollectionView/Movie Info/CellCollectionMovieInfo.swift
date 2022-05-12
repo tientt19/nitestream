@@ -19,8 +19,23 @@ class CellCollectionMovieInfo: UICollectionViewCell {
     }
     
     func configure(data: MovieInfo) {
-        self.movieName.text = data.name
-        self.movieScore.text = "Scored : \(String(describing: data.score)) |  Year : \(String(describing: data.year))"
-        self.introduction.text = data.introduction
+        if let score = data.score, let year = data.score {
+            self.movieName.text = data.name
+            self.movieScore.text = "Scored : \(String(describing: score)) |  Year : \(String(describing: year))"
+            self.introduction.text = data.introduction
+            dLogDebug(self.introduction.countLines())
+        } else {
+            self.movieScore.text = ""
+        }
+    }
+    
+    func hideIntroduction() {
+        self.introduction.isHidden = true
+    }
+    
+    func hideInfo() {
+        self.movieName.isHidden = true
+        self.movieScore.isHidden = true
+        self.introduction.isHidden = false
     }
 }

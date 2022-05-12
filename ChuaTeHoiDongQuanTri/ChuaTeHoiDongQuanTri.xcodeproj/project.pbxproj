@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43898E03F03BA45832BDBF99 /* Pods_StreamingTienPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4455466D45655F31A562785B /* Pods_StreamingTienPro.framework */; };
 		5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206FF462824CA93000226FC /* SearchingListSectionController.swift */; };
+		5209F94C282CB1290062982E /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209F94B282CB1290062982E /* LabelCell.swift */; };
 		52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52134BB7280B16A00089D145 /* DiscoveryParams.swift */; };
 		5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */; };
 		5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */; };
@@ -224,6 +225,7 @@
 		417C61B250B2BB3DF7EA87B9 /* Pods_ChuTeHoiDongQuanTri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuTeHoiDongQuanTri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4455466D45655F31A562785B /* Pods_StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5206FF462824CA93000226FC /* SearchingListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingListSectionController.swift; sourceTree = "<group>"; };
+		5209F94B282CB1290062982E /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		52134BB7280B16A00089D145 /* DiscoveryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryParams.swift; sourceTree = "<group>"; };
 		5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
@@ -938,6 +940,7 @@
 		52B1FEF6282B7042004DB9E9 /* Movie Info */ = {
 			isa = PBXGroup;
 			children = (
+				5209F94B282CB1290062982E /* LabelCell.swift */,
 				52B1FEF7282B7056004DB9E9 /* CellCollectionMovieInfo.swift */,
 				52B1FEF8282B7056004DB9E9 /* CellCollectionMovieInfo.xib */,
 			);
@@ -1491,6 +1494,7 @@
 				5287C5BB282A5650003C6A8A /* StreamingMovieScreenViewModel.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
 				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
+				5209F94C282CB1290062982E /* LabelCell.swift in Sources */,
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				5263516B282381DB00093D80 /* SearchingIGListKitSectionController.swift in Sources */,
