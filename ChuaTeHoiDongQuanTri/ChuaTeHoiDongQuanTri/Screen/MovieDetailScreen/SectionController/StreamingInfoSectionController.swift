@@ -58,6 +58,7 @@ class StreamingInfoSectionController: ListSectionController {
         didDeselectItem(at: index)
         if index == 1 {
             self.expanded = !self.expanded
+
             UIView.animate(withDuration: 0.5,
                            delay: 0,
                            usingSpringWithDamping: 0.4,
@@ -69,3 +70,4 @@ class StreamingInfoSectionController: ListSectionController {
         }
     }
 }
+

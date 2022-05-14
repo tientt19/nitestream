@@ -35,9 +35,9 @@ extension StreamingMovieScreenViewModel: StreamingMovieScreenViewModelProtocol {
 
 // MARK: - StreamingMovieScreen InteractorOutputProtocol
 extension StreamingMovieScreenViewModel: StreamingMovieScreenInteractorOutputProtocol {
-    func onLoadLinkMediaFinish(with link: LinkMedia, info: MovieInfo) {
+    func onLoadLinkMediaFinish(with link: LinkMedia, info: MovieInfo, section: ListCollection, episodeVo: EpisodeCollection) {
         DispatchQueue.main.async {
-            self.view?.onDidLoadLinkMedia(link: link, info: info)
+            self.view?.onDidLoadLinkMedia(link: link, info: info, section: section, episodeVo: episodeVo)
         }
     }
 }

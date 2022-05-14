@@ -12,7 +12,7 @@ import IGListKit
 
 // MARK: - ViewProtocol
 protocol StreamingMovieScreenViewProtocol: AnyObject {
-    func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo)
+    func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo, section: ListCollection, episodeVo: EpisodeCollection)
 }
 
 // MARK: - StreamingMovieScreen ViewController
@@ -76,6 +76,10 @@ extension StreamingMovieScreenViewController: ListAdapterDataSource {
             return controller
         case is MovieInfo:
             return StreamingInfoSectionController()
+        case is EpisodeCollection:
+            return StreamingEpisodeSectionController()
+        case is Section:
+            return StreamingListCollectionSectionController()
         default:
             return ListSectionController()
         }
@@ -86,9 +90,13 @@ extension StreamingMovieScreenViewController: ListAdapterDataSource {
 
 // MARK: - StreamingMovieScreen ViewProtocol
 extension StreamingMovieScreenViewController: StreamingMovieScreenViewProtocol {
-    func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo) {
+    func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo, section: ListCollection, episodeVo: EpisodeCollection) {
         self.objects.append(link)
         self.objects.append(info)
+        self.objects.append(episodeVo)
+        for item in section.section {
+            self.objects.append(item)
+        }
         self.adapter.performUpdates(animated: true)
     }
 }

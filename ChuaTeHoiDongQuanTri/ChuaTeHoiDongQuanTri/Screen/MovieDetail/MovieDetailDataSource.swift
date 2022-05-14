@@ -57,9 +57,9 @@ class MovieDetailDataSource : DetailDataSource {
                 presenter?.loadLinkMedia(entities.id, entities.category, episodeID, definition)
             }
         } else {
-            if let id = sections[indexPath.section].data[indexPath.row].id, let category = sections[indexPath.section].data[indexPath.row].category {
-                presenter?.getMovieDetail(id, category)
-            }
+//            if let id = sections[indexPath.section].data[indexPath.row].identifier, let category = sections[indexPath.section].data[indexPath.row].category {
+//                presenter?.getMovieDetail(id, category)
+//            }
         }
     }
     
@@ -112,7 +112,7 @@ class MovieDetailDataSource : DetailDataSource {
             if reflist.count != 0 {
                 var refLists = [DataModel]()
                 reflist.forEach { data in
-                    let dataItems = DataModel(id: data.id,
+                    let dataItems = DataModel(identifier: data.id,
                                               category: data.category,
                                               name: data.name,
                                               coverHorizontalUrl: data.coverHorizontalUrl)
@@ -127,7 +127,7 @@ class MovieDetailDataSource : DetailDataSource {
             if likelist.count != 0 {
                 var likeLists = [DataModel]()
                 likelist.forEach { data in
-                    let dataItems = DataModel(id: data.id,
+                    let dataItems = DataModel(identifier: data.id,
                                               category: data.category,
                                               name: data.name,
                                               coverHorizontalUrl: data.coverHorizontalUrl)

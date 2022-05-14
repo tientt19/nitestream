@@ -12,7 +12,7 @@ class ChildCell: UICollectionViewCell {
     @IBOutlet weak var bannerImageView : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     
-    var dataPassed = DataModel(id: "", category: 0, name: "", coverHorizontalUrl: "")
+    var dataPassed = DataModel(identifier: "", category: 0, name: "", coverHorizontalUrl: "")
 
     override func awakeFromNib() {
         super.awakeFromNib()

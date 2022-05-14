@@ -11,7 +11,7 @@ import IGListKit
 
 class HomePageViewViewController: BaseViewController {
     // MARK: - Properties
-//    @IBOutlet weak var HomePageCLV: UICollectionView!
+    //    @IBOutlet weak var HomePageCLV: UICollectionView!
     @IBOutlet weak var viewCanMove: UIView!
     @IBOutlet weak var limitView: UIView!
     
@@ -41,19 +41,19 @@ class HomePageViewViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         self.collectionView.frame = self.view.bounds
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.unlockScreen()
     }
-        
+    
     func register() {
         self.setUpBaseView()
         navigationItem.titleView = self.searchView
         
         self.textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
         self.viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
-       
+        
         self.view.addSubview(self.collectionView)
         self.adapter.collectionView = collectionView
         self.adapter.dataSource = self
@@ -75,7 +75,7 @@ class HomePageViewViewController: BaseViewController {
         guard gesture.view != nil else {return}
         //
         let translation = gesture.translation(in: self.limitView)
-
+        
         let bounds = UIScreen.main.bounds
         
         // 50 = viewWidth / 2
@@ -88,9 +88,9 @@ class HomePageViewViewController: BaseViewController {
         }
         
         gesture.setTranslation(.zero, in: self.limitView)
-//        print("x: \( self.trailingViewConMoveConstraint.constant)")
-//        print("y: \(self.bottomViewConMoveConstraint.constant)")
-//        print("----------")
+        //        print("x: \( self.trailingViewConMoveConstraint.constant)")
+        //        print("y: \(self.bottomViewConMoveConstraint.constant)")
+        //        print("----------")
         self.view.layoutIfNeeded()
     }
 }

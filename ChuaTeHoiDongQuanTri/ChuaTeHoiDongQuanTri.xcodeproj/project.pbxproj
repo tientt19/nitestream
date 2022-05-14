@@ -10,6 +10,7 @@
 		43898E03F03BA45832BDBF99 /* Pods_StreamingTienPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4455466D45655F31A562785B /* Pods_StreamingTienPro.framework */; };
 		5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206FF462824CA93000226FC /* SearchingListSectionController.swift */; };
 		5209F94C282CB1290062982E /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209F94B282CB1290062982E /* LabelCell.swift */; };
+		5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209F94D282CC3070062982E /* StreamingListCollectionSectionController.swift */; };
 		52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52134BB7280B16A00089D145 /* DiscoveryParams.swift */; };
 		5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */; };
 		5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */; };
@@ -51,6 +52,7 @@
 		522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3CA27C0FE1900E4900A /* APIService.swift */; };
 		52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */; };
 		52358A1827F54ED6002C883F /* MovieDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */; };
+		52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52386492282DF6EA001090BB /* StreamingEpisodeSectionController.swift */; };
 		523E04E82824FE9E005E55A4 /* SearchingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04DB2824FE9E005E55A4 /* SearchingRouter.swift */; };
 		523E04E92824FE9E005E55A4 /* TopSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E04DC2824FE9E005E55A4 /* TopSearchTableViewCell.xib */; };
 		523E04EA2824FE9E005E55A4 /* SearchingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E04DD2824FE9E005E55A4 /* SearchingCell.xib */; };
@@ -226,6 +228,7 @@
 		4455466D45655F31A562785B /* Pods_StreamingTienPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingTienPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5206FF462824CA93000226FC /* SearchingListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingListSectionController.swift; sourceTree = "<group>"; };
 		5209F94B282CB1290062982E /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		5209F94D282CC3070062982E /* StreamingListCollectionSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingListCollectionSectionController.swift; sourceTree = "<group>"; };
 		52134BB7280B16A00089D145 /* DiscoveryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryParams.swift; sourceTree = "<group>"; };
 		5214F1EA27FC3DE000A9E16B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		5214F1EC27FC3E1A00A9E16B /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 		522CF3CA27C0FE1900E4900A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		52358A1527F54218002C883F /* ExpandCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		52358A1727F54ED6002C883F /* MovieDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDataSource.swift; sourceTree = "<group>"; };
+		52386492282DF6EA001090BB /* StreamingEpisodeSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingEpisodeSectionController.swift; sourceTree = "<group>"; };
 		523E04DB2824FE9E005E55A4 /* SearchingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingRouter.swift; sourceTree = "<group>"; };
 		523E04DC2824FE9E005E55A4 /* TopSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopSearchTableViewCell.xib; sourceTree = "<group>"; };
 		523E04DD2824FE9E005E55A4 /* SearchingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchingCell.xib; sourceTree = "<group>"; };
@@ -803,6 +807,8 @@
 			children = (
 				5287C5BE282A5973003C6A8A /* StreamingSectionController.swift */,
 				52B1FEF4282B6EEF004DB9E9 /* StreamingInfoSectionController.swift */,
+				5209F94D282CC3070062982E /* StreamingListCollectionSectionController.swift */,
+				52386492282DF6EA001090BB /* StreamingEpisodeSectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -1405,6 +1411,7 @@
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
+				52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */,
 				527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */,
 				523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */,
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
@@ -1530,6 +1537,7 @@
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
 				52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */,
+				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
@@ -1816,6 +1824,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tientran..StreamingTienPro;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1850,6 +1859,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ngnahtn.StreamingTienPro;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
