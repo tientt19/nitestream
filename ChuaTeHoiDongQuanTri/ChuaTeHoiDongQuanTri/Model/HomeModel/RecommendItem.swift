@@ -1,8 +1,10 @@
 
 import Foundation
+import IGListKit
 
-
-class RecommendItem {
+class RecommendItem: ListDiffable {
+    
+    private var identifier: String = UUID().uuidString
 
 	var bannerProportion : AnyObject!
 	var blockGroupNum : AnyObject!
@@ -75,4 +77,17 @@ class RecommendItem {
 		}
 		return dictionary
 	}
+    
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? RecommendItem else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 }

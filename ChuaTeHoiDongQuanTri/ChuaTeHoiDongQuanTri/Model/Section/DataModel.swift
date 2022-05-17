@@ -6,25 +6,38 @@
 //
 
 import Foundation
+import IGListKit
 
-class DataModel : Hashable {
-    var id : String!
+class DataModel: Hashable, ListDiffable {
+    var identifier = UUID().uuidString
     var name : String!
     var category : Int!
     var coverHorizontalUrl : String!
     
-    init(id : String, category : Int, name : String, coverHorizontalUrl : String){
+    init(identifier : String, category : Int, name : String, coverHorizontalUrl : String){
         self.category = category
         self.coverHorizontalUrl = coverHorizontalUrl
-        self.id = id
+        self.identifier = identifier
         self.name = name
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(identifier)
     }
     
     static func == (lhs: DataModel, rhs: DataModel) -> Bool {
-        lhs.id == rhs.id
+        lhs.identifier == rhs.identifier
+    }
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? DataModel else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
     }
 }

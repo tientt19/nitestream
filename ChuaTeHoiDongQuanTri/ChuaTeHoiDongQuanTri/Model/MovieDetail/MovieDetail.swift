@@ -3,9 +3,12 @@
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
+import IGListKit
 
-class MovieDetail{
+class MovieDetail: ListDiffable{
 
+    private var identifier: String = UUID().uuidString
+    
 	var aliasName : String!
 	var areaList : [AreaList]!
 	var areaNameList : [String]!
@@ -98,4 +101,46 @@ class MovieDetail{
 		year = dictionary["year"] as? Int
 	}
 
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? MovieDetail else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
+}
+
+
+// MARK: - MovieInfo ListDiffable
+class MovieInfo: ListDiffable {
+    private var identifier: String = UUID().uuidString
+    
+    var introduction : String!
+    var score : Float!
+    var year : Int!
+    var name : String!
+
+
+    init(from movieDetail: MovieDetail) {
+        self.introduction = movieDetail.introduction
+        self.score = movieDetail.score
+        self.year = movieDetail.year
+        self.name = movieDetail.name
+    }
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? MovieInfo else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 }

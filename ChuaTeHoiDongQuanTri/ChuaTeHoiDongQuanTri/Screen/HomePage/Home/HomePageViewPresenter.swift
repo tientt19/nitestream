@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HomePageViewPresenter: HomePageViewPresenterProtocol {
-    
+
     // MARK: Properties
     var view: HomePageViewViewProtocol?
     var interactor: HomePageViewInteractorInputProtocol?
@@ -27,6 +27,10 @@ class HomePageViewPresenter: HomePageViewPresenterProtocol {
     
     func loadMore(_ page: Int, _ oldDAO: HomePageModel) {
         interactor?.loadMore(page, oldDAO)
+    }
+    
+    func onGetMovieDetail(_ id: Int, _ category: Int) {
+        self.interactor?.getMovieDetail(id, category)
     }
 }
 
@@ -49,14 +53,9 @@ extension HomePageViewPresenter : HomePageViewPresenterOutputProtocol {
             self.view?.reloadData(data)
         }
     }
-}
-
-extension HomePageViewPresenter : passDataPickDelegate {
-    //MARK: - passDataPickDelegate
-    func openDetailView(_ data: RecommendContentVOList) {
-        view?.lockView()
-        if let id = data.id, let category = data.category {
-            interactor?.getMovieDetail(id, category)
-        }
+    
+    func openExpandView(with data: RecommendItem) {
+        self.router?.openExpandView(from: self.view!, with: data)
     }
 }
+

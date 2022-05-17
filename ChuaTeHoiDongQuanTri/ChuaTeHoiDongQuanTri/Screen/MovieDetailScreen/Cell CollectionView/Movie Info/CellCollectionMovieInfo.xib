@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CellCollectionMovieInfo" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="425" height="283"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="425" height="283"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-jU-5PQ">
+                        <rect key="frame" x="5" y="0.0" width="415" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="5UN-FO-T1N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFQ-iE-9Mm">
+                        <rect key="frame" x="5" y="25" width="415" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="vK6-r4-1C8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-1e-ihn">
+                        <rect key="frame" x="5" y="45" width="415" height="238"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="182" id="hBk-MQ-ibS"/>
+                        </constraints>
+                        <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wFQ-iE-9Mm" secondAttribute="trailing" constant="5" id="2TU-ao-wUf"/>
+                <constraint firstItem="hGe-1e-ihn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="3L1-0R-3Cw"/>
+                <constraint firstAttribute="trailing" secondItem="lLS-jU-5PQ" secondAttribute="trailing" constant="5" id="NKX-ZW-x7R"/>
+                <constraint firstItem="wFQ-iE-9Mm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="S0a-rG-XqU"/>
+                <constraint firstItem="lLS-jU-5PQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="UYQ-zU-EPi"/>
+                <constraint firstAttribute="bottom" secondItem="hGe-1e-ihn" secondAttribute="bottom" id="WRC-6h-JHf"/>
+                <constraint firstItem="wFQ-iE-9Mm" firstAttribute="top" secondItem="lLS-jU-5PQ" secondAttribute="bottom" id="b2I-fA-g3d"/>
+                <constraint firstItem="hGe-1e-ihn" firstAttribute="top" secondItem="wFQ-iE-9Mm" secondAttribute="bottom" id="dWl-pF-Li7"/>
+                <constraint firstItem="lLS-jU-5PQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pH7-FF-GiX"/>
+                <constraint firstAttribute="trailing" secondItem="hGe-1e-ihn" secondAttribute="trailing" constant="5" id="yx2-ZD-7YZ"/>
+            </constraints>
+            <size key="customSize" width="425" height="283"/>
+            <connections>
+                <outlet property="introduction" destination="hGe-1e-ihn" id="Wd6-Qg-hVO"/>
+                <outlet property="movieName" destination="lLS-jU-5PQ" id="chR-gU-Vvg"/>
+                <outlet property="movieScore" destination="wFQ-iE-9Mm" id="tmj-r0-H12"/>
+            </connections>
+            <point key="canvasLocation" x="197.82608695652175" y="93.415178571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>

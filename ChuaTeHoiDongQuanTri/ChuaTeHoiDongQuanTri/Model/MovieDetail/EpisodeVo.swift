@@ -3,9 +3,10 @@
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
+import IGListKit
 
-
-class EpisodeVo : NSObject, NSCoding{
+class EpisodeVo : NSObject, NSCoding, ListDiffable{
+    private var identifier: String = UUID().uuidString
 
 	var definitionList : [DefinitionList]!
 	var id : Int!
@@ -124,5 +125,17 @@ class EpisodeVo : NSObject, NSCoding{
 		}
 
 	}
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? EpisodeVo else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 
 }

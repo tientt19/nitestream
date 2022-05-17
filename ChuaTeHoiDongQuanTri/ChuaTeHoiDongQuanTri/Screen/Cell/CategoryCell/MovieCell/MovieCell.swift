@@ -7,8 +7,13 @@
 
 import UIKit
 
-class MovieCell: UICollectionViewCell {
-    
+
+protocol ExpandModelUpdatable {
+    func updateWith(_ imageURL: String,_ title: String)
+}
+
+class MovieCell: UICollectionViewCell, ExpandModelUpdatable {
+
     @IBOutlet weak var posterImage : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var blurImageView : UIImageView!
@@ -29,6 +34,14 @@ class MovieCell: UICollectionViewCell {
         blurImageView.setImageCachingv2(targetImageView: blurImageView, with: imageURL)
         titleLabel.text = title
     }
+    
+    func updateWith(_ imageURL: String,_ title: String) {
+        blurImageView.isHidden = false
+        posterImage.setImageCachingv2(targetImageView: posterImage, with: imageURL)
+        blurImageView.setImageCachingv2(targetImageView: blurImageView, with: imageURL)
+        titleLabel.text = title
+    }
+
     
     func imageDimenssions(url: String) -> String{
         if let imageSource = CGImageSourceCreateWithURL(URL(string: url)! as CFURL, nil) {
