@@ -11,6 +11,7 @@ import IGListKit
 class StreamingSectionController: ListSectionController {
     var currentIem: LinkMedia?
     var subRemoteURL: String?
+    var mediaIsPlaying = false
     var movieDetail: MovieDetail?
 
     override init() {
@@ -32,7 +33,10 @@ class StreamingSectionController: ListSectionController {
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let nibName = String(describing: CellCollectionStreaming.self)
         let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! CellCollectionStreaming
-        cell.playMedia(link: self.currentIem!, and: self.getLinkSub(0))
+        if self.mediaIsPlaying == false {
+            self.mediaIsPlaying.toggle()
+            cell.playMedia(link: self.currentIem!, and: self.getLinkSub(0))
+        }
         return cell
     }
     
@@ -42,9 +46,7 @@ class StreamingSectionController: ListSectionController {
         return CGSize(width: collectionViewWidth, height: collectionViewHeight)
     }
     
-    override func didSelectItem(at index: Int) {
-        dLogDebug(index)
-    }
+    override func didSelectItem(at index: Int) { }
 }
 
 //MARK: - configure

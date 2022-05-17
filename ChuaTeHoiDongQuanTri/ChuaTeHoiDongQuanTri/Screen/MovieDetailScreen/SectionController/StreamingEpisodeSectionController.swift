@@ -8,8 +8,13 @@
 import Foundation
 import IGListKit
 
+protocol onSelectEpisodeProtocols: AnyObject {
+    func didSelect(with data: EpisodeVo?)
+}
+
 class StreamingEpisodeSectionController: ListSectionController {
     var currentIem: EpisodeCollection?
+    var onHandleDelegate: onSelectEpisodeProtocols?
     
     override init() {
         super.init()
@@ -51,7 +56,7 @@ class StreamingEpisodeSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        dLogDebug(index)
+        self.onHandleDelegate?.didSelect(with: self.currentIem?.listEpisode[index])
     }
 }
 

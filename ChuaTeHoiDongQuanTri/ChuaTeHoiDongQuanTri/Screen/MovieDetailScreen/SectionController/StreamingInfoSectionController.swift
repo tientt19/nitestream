@@ -49,7 +49,7 @@ class StreamingInfoSectionController: ListSectionController {
         if index == 0 {
             return CGSize(width: collectionViewWidth, height: 50)
         } else {
-            let height = expanded ? LabelCell.textHeight(currentIem?.introduction ?? "", width: collectionViewWidth) : 150
+            let height = expanded ? LabelCell.textHeight(currentIem?.introduction ?? "", width: collectionViewWidth) : 40
             return CGSize(width: collectionViewWidth, height: height)
         }
     }

@@ -19,13 +19,12 @@ class CellCollectionMovieInfo: UICollectionViewCell {
     }
     
     func configure(data: MovieInfo) {
-        if let score = data.score, let year = data.score {
-            self.movieName.text = data.name
-            self.movieScore.text = "Scored : \(String(describing: score)) |  Year : \(String(describing: year))"
-            self.introduction.text = data.introduction
-            dLogDebug(self.introduction.countLines())
+        self.movieName.text = data.name
+        self.introduction.text = data.introduction
+        if let score = data.score {
+            self.movieScore.text = "Scored : \(String(describing: score)) |  Year : \(String(describing: data.year!))"
         } else {
-            self.movieScore.text = ""
+            self.movieScore.text = "Year : \(String(describing: data.year!))"
         }
     }
     

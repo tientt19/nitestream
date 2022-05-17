@@ -13,6 +13,7 @@ import IGListKit
 // MARK: - ViewProtocol
 protocol StreamingMovieScreenViewProtocol: AnyObject {
     func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo, section: ListCollection, episodeVo: EpisodeCollection)
+    func onConfigureUI(with data: MovieDetail?)
 }
 
 // MARK: - StreamingMovieScreen ViewController
@@ -24,9 +25,7 @@ class StreamingMovieScreenViewController: BaseViewController {
     var viewModel: StreamingMovieScreenViewModelProtocol!
     var movieDetail: MovieDetail?
     var objects = [ListDiffable]()
-    
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
@@ -42,11 +41,6 @@ class StreamingMovieScreenViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         self.collectionView.frame = self.view.bounds
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
     // MARK: - Init
     private func setupInit() {
         self.title = self.movieDetail?.name
@@ -59,7 +53,6 @@ class StreamingMovieScreenViewController: BaseViewController {
     }
     
     // MARK: - Action
-    
 }
 
 //MARK: - ListAdapterDataSource
@@ -77,9 +70,13 @@ extension StreamingMovieScreenViewController: ListAdapterDataSource {
         case is MovieInfo:
             return StreamingInfoSectionController()
         case is EpisodeCollection:
-            return StreamingEpisodeSectionController()
+            let controller = StreamingEpisodeSectionController()
+            controller.onHandleDelegate = self
+            return controller
         case is Section:
-            return StreamingListCollectionSectionController()
+            let controller = StreamingListCollectionSectionController()
+            controller.onHandleDelegate = self
+            return controller
         default:
             return ListSectionController()
         }
@@ -90,7 +87,15 @@ extension StreamingMovieScreenViewController: ListAdapterDataSource {
 
 // MARK: - StreamingMovieScreen ViewProtocol
 extension StreamingMovieScreenViewController: StreamingMovieScreenViewProtocol {
+    func onConfigureUI(with data: MovieDetail?) {
+        self.movieDetail = data
+        self.title = self.movieDetail?.name
+        self.coverImageView.makeBlurImage(targetImageView: self.coverImageView)
+        self.coverImageView.setImageCachingv2(targetImageView: self.coverImageView, with: (self.movieDetail?.coverVerticalUrl)!)
+    }
+    
     func onDidLoadLinkMedia(link: LinkMedia, info: MovieInfo, section: ListCollection, episodeVo: EpisodeCollection) {
+        self.objects.removeAll()
         self.objects.append(link)
         self.objects.append(info)
         self.objects.append(episodeVo)
@@ -98,5 +103,18 @@ extension StreamingMovieScreenViewController: StreamingMovieScreenViewProtocol {
             self.objects.append(item)
         }
         self.adapter.performUpdates(animated: true)
+    }
+}
+
+//MARK: - onSelectAnotherMediaProtocol
+extension StreamingMovieScreenViewController: onSelectAnotherMediaProtocol {
+    func onDidSelect(with dataItem: DataModel) {
+        self.viewModel.onGetMovieDetail(with: dataItem)
+    }
+}
+
+extension StreamingMovieScreenViewController: onSelectEpisodeProtocols {
+    func didSelect(with data: EpisodeVo?) {
+        self.viewModel.onLoadEpisode(with: data!)
     }
 }

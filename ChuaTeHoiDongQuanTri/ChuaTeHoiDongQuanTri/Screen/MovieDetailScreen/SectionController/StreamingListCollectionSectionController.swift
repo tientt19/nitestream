@@ -8,8 +8,13 @@
 import Foundation
 import IGListKit
 
+protocol onSelectAnotherMediaProtocol: AnyObject {
+    func onDidSelect(with dataItem: DataModel)
+}
+
 class StreamingListCollectionSectionController: ListSectionController {
     var currentIem: Section?
+    var onHandleDelegate: onSelectAnotherMediaProtocol?
     
     override init() {
         super.init()
@@ -46,7 +51,7 @@ class StreamingListCollectionSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        dLogDebug(index)
+        self.onHandleDelegate?.onDidSelect(with: (self.currentIem?.data[index])!)
     }
 }
 

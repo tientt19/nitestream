@@ -25,4 +25,8 @@ class CellCollectionStreaming: UICollectionViewCell {
             self.moviePlayer.streaming(with: linkMedia, subRemote: subLink)
         }
     }
+    
+    func stopPlayingMedia() {
+        self.moviePlayer.pause()
+    }
 }
