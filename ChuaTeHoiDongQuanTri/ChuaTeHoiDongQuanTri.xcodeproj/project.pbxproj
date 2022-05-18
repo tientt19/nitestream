@@ -44,6 +44,12 @@
 		5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292B27CB949300C9FFB2 /* ListInfoCell.swift */; };
 		5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292C27CB949300C9FFB2 /* ListInfoCell.xib */; };
 		522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CC27CC989A00CDFDDA /* LinkMedia.swift */; };
+		522ACEBC2834FC7100443757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */; };
+		522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEBE2834FCF500443757 /* SplashScreenRouter.swift */; };
+		522ACEC42834FCF500443757 /* SplashScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEBF2834FCF500443757 /* SplashScreenInteractorInput.swift */; };
+		522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEC02834FCF500443757 /* SplashScreenViewController.swift */; };
+		522ACEC62834FCF500443757 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEC12834FCF500443757 /* SplashScreenViewModel.swift */; };
+		522ACEC72834FCF500443757 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ACEC22834FCF500443757 /* SplashScreenViewController.xib */; };
 		522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3B627C0FD0900E4900A /* AppDelegate.swift */; };
 		522CF3B927C0FD0900E4900A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522CF3B827C0FD0900E4900A /* SceneDelegate.swift */; };
 		522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522CF3BC27C0FD0900E4900A /* Main.storyboard */; };
@@ -81,6 +87,7 @@
 		52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52754E7727FB3F2900968694 /* MainTabBarController.swift */; };
 		52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52754E7827FB3F2900968694 /* MainTabBarController.xib */; };
 		52754E7C27FB483C00968694 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52754E7B27FB483C00968694 /* UIImage.swift */; };
+		5279A2BC2835015E00229979 /* streaming.json in Resources */ = {isa = PBXBuildFile; fileRef = 5279A2BB2835015E00229979 /* streaming.json */; };
 		527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF99E27F3F1CC008A42DC /* UIImageView.swift */; };
 		527AF9A127F3F20A008A42DC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A027F3F20A008A42DC /* Collection.swift */; };
 		527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A227F3F22F008A42DC /* UIViewController.swift */; };
@@ -255,6 +262,11 @@
 		5221292B27CB949300C9FFB2 /* ListInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCell.swift; sourceTree = "<group>"; };
 		5221292C27CB949300C9FFB2 /* ListInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoCell.xib; sourceTree = "<group>"; };
 		522184CC27CC989A00CDFDDA /* LinkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkMedia.swift; sourceTree = "<group>"; };
+		522ACEBE2834FCF500443757 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
+		522ACEBF2834FCF500443757 /* SplashScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractorInput.swift; sourceTree = "<group>"; };
+		522ACEC02834FCF500443757 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		522ACEC12834FCF500443757 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
+		522ACEC22834FCF500443757 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		522CF3B327C0FD0900E4900A /* ChuTeHoiDongQuanTri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuTeHoiDongQuanTri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522CF3B627C0FD0900E4900A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		522CF3B827C0FD0900E4900A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +307,7 @@
 		52754E7727FB3F2900968694 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52754E7827FB3F2900968694 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
 		52754E7B27FB483C00968694 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5279A2BB2835015E00229979 /* streaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streaming.json; sourceTree = "<group>"; };
 		527AF99E27F3F1CC008A42DC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		527AF9A027F3F20A008A42DC /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		527AF9A227F3F22F008A42DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -662,6 +675,18 @@
 			path = LinkMedia;
 			sourceTree = "<group>";
 		};
+		522ACEBD2834FCD000443757 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				522ACEBE2834FCF500443757 /* SplashScreenRouter.swift */,
+				522ACEBF2834FCF500443757 /* SplashScreenInteractorInput.swift */,
+				522ACEC02834FCF500443757 /* SplashScreenViewController.swift */,
+				522ACEC12834FCF500443757 /* SplashScreenViewModel.swift */,
+				522ACEC22834FCF500443757 /* SplashScreenViewController.xib */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		522CF3AA27C0FD0800E4900A = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +721,7 @@
 				52E6E62A27C20C4F00CD80D0 /* App&&SceneDelegate */,
 				52E6E62927C20C4600CD80D0 /* View */,
 				522CF3BF27C0FD0B00E4900A /* Assets.xcassets */,
+				5279A2BB2835015E00229979 /* streaming.json */,
 				522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */,
 				522CF3C427C0FD0B00E4900A /* Info.plist */,
 				5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */,
@@ -878,6 +904,7 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				522ACEBD2834FCD000443757 /* SplashScreen */,
 				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52E6E63227C20E8400CD80D0 /* Cell */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
@@ -1267,6 +1294,7 @@
 				52412C9727F2FF3C00896AF0 /* ExpandScreen.storyboard in Resources */,
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
 				52159E7D2824CE3C00081FA9 /* CellSeachingCollectionView.xib in Resources */,
+				522ACEBC2834FC7100443757 /* GoogleService-Info.plist in Resources */,
 				521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */,
 				523E04E92824FE9E005E55A4 /* TopSearchTableViewCell.xib in Resources */,
 				52B1FEFA282B7056004DB9E9 /* CellCollectionMovieInfo.xib in Resources */,
@@ -1279,12 +1307,14 @@
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
 				5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */,
+				5279A2BC2835015E00229979 /* streaming.json in Resources */,
 				523E04EA2824FE9E005E55A4 /* SearchingCell.xib in Resources */,
 				52F9A2AD27C7C7BF00EC01A0 /* BannerCell.xib in Resources */,
 				52A7A7EA27EDA68C006F79DC /* MovieCell.xib in Resources */,
 				52E6E63727C2109400CD80D0 /* MainHeader.xib in Resources */,
 				52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */,
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
+				522ACEC72834FCF500443757 /* SplashScreenViewController.xib in Resources */,
 				523E04EE2824FE9E005E55A4 /* SearchingViewController.xib in Resources */,
 				52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */,
 				843DD6A927FC47E4000C3554 /* DiscoveryScreenViewController.xib in Resources */,
@@ -1383,6 +1413,7 @@
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
 				52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */,
+				522ACEC62834FCF500443757 /* SplashScreenViewModel.swift in Sources */,
 				527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */,
 				523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */,
 				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
@@ -1419,9 +1450,11 @@
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
+				522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
 				52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */,
+				522ACEC42834FCF500443757 /* SplashScreenInteractorInput.swift in Sources */,
 				5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */,
 				521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */,
 				52B6C8E328001EDB00F180AB /* DramaType.swift in Sources */,
@@ -1508,6 +1541,7 @@
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
+				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
 				52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,
 				52B6C8E528001EDB00F180AB /* SearchResult.swift in Sources */,

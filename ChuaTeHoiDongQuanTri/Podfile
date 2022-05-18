@@ -6,17 +6,22 @@ target 'ChuTeHoiDongQuanTri' do
   use_frameworks!
 
   # Pods for ChuTeHoiDongQuanTri
+  
+  # Networking
   pod 'Alamofire'
   pod 'Kingfisher'
-  pod 'SnapKit'
-  pod 'IGListKit'
-  pod "SkeletonView"
   pod 'ReachabilitySwift'
   
   # Firebase SDK
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
-
+  
+  # Support
+  pod 'lottie-ios'
+  pod 'SnapKit'
+  pod 'IGListKit'
+  pod 'SkeletonView'
+  
 end
 
 target 'StreamingTienPro' do
