@@ -4,12 +4,16 @@ PODS:
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - Kingfisher (7.1.2)
+  - ReachabilitySwift (5.0.0)
+  - SkeletonView (1.29.2)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - IGListKit
   - Kingfisher
+  - ReachabilitySwift
+  - SkeletonView
   - SnapKit
 
 SPEC REPOS:
@@ -18,6 +22,8 @@ SPEC REPOS:
     - IGListDiffKit
     - IGListKit
     - Kingfisher
+    - ReachabilitySwift
+    - SkeletonView
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -25,8 +31,10 @@ SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 350f9924a53125deaa1ead88bcb499b7dbc32ac5
+PODFILE CHECKSUM: ba8b9acc43c55889d58dab0d9753f527cd9ae585
 
 COCOAPODS: 1.11.3

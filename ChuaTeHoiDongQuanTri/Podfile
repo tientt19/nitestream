@@ -10,6 +10,8 @@ target 'ChuTeHoiDongQuanTri' do
   pod 'Kingfisher'
   pod 'SnapKit'
   pod 'IGListKit'
+  pod "SkeletonView"
+  pod 'ReachabilitySwift'
 
 end
 
