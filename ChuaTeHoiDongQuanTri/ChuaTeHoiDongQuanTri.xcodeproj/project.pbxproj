@@ -290,6 +290,7 @@
 		5263516A282381DB00093D80 /* SearchingIGListKitSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitSectionController.swift; sourceTree = "<group>"; };
 		5263516D282388B900093D80 /* SearchingIGListKitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitCell.swift; sourceTree = "<group>"; };
 		5263516E282388B900093D80 /* SearchingIGListKitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingIGListKitCell.xib; sourceTree = "<group>"; };
+		5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52754E7427FB3EAB00968694 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = ChuaTeHoiDongQuanTri/Extension/UIColor.swift; sourceTree = SOURCE_ROOT; };
 		52754E7727FB3F2900968694 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		52754E7827FB3F2900968694 /* MainTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
@@ -697,6 +698,7 @@
 				522CF3BF27C0FD0B00E4900A /* Assets.xcassets */,
 				522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */,
 				522CF3C427C0FD0B00E4900A /* Info.plist */,
+				5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */,
 			);
 			path = ChuaTeHoiDongQuanTri;
 			sourceTree = "<group>";
@@ -1687,7 +1689,7 @@
 				DEVELOPMENT_TEAM = 699J3RXKFC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Do An ";
+				INFOPLIST_KEY_CFBundleDisplayName = nitestream;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1707,7 +1709,7 @@
 					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.MovieStreaming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.nitestream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
@@ -1733,7 +1735,7 @@
 				DEVELOPMENT_TEAM = 699J3RXKFC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Do An ";
+				INFOPLIST_KEY_CFBundleDisplayName = nitestream;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1753,7 +1755,7 @@
 					"$(PROJECT_DIR)/ChuaTeHoiDongQuanTri",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.MovieStreaming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tientran.nitestream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;

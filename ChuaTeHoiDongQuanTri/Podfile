@@ -12,6 +12,10 @@ target 'ChuTeHoiDongQuanTri' do
   pod 'IGListKit'
   pod "SkeletonView"
   pod 'ReachabilitySwift'
+  
+  # Firebase SDK
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
 
 end
 
