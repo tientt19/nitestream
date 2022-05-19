@@ -37,7 +37,7 @@ class SplashScreenViewController: BaseViewController {
         self.splashView.play()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.router.goToHomeScreen()
+            self.router.goToLoginScreen()
         }
     }
     

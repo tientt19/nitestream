@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - RouterProtocol
 protocol SplashScreenRouterProtocol {
-    func goToHomeScreen()
+    func goToLoginScreen()
 }
 
 // MARK: - SplashScreen Router
@@ -36,8 +36,8 @@ class SplashScreenRouter {
 
 // MARK: - SplashScreen RouterProtocol
 extension SplashScreenRouter: SplashScreenRouterProtocol {
-    func goToHomeScreen() {
-        let controller = MainTabBarController()
+    func goToLoginScreen() {
+        let controller = LoginScreenRouter.setupModule()
         controller.modalPresentationStyle = .fullScreen
         self.viewController?.present(controller, animated: true)
     }
