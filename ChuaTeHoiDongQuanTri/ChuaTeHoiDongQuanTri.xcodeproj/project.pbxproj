@@ -720,11 +720,7 @@
 				52B8BBFC27FBE25100EDE659 /* Document */,
 				52E6E62A27C20C4F00CD80D0 /* App&&SceneDelegate */,
 				52E6E62927C20C4600CD80D0 /* View */,
-				522CF3BF27C0FD0B00E4900A /* Assets.xcassets */,
-				5279A2BB2835015E00229979 /* streaming.json */,
-				522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */,
-				522CF3C427C0FD0B00E4900A /* Info.plist */,
-				5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */,
+				527AF6A52836453C0089D58B /* Assets */,
 			);
 			path = ChuaTeHoiDongQuanTri;
 			sourceTree = "<group>";
@@ -777,6 +773,17 @@
 				52754E7827FB3F2900968694 /* MainTabBarController.xib */,
 			);
 			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		527AF6A52836453C0089D58B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				522CF3BF27C0FD0B00E4900A /* Assets.xcassets */,
+				5279A2BB2835015E00229979 /* streaming.json */,
+				522CF3C427C0FD0B00E4900A /* Info.plist */,
+				5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		5287BEF227CF83210030A534 /* HorizontallyCell */ = {
@@ -1062,6 +1069,7 @@
 		52E6E62927C20C4600CD80D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */,
 				522CF3BC27C0FD0900E4900A /* Main.storyboard */,
 			);
 			path = View;
@@ -1722,7 +1730,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 699J3RXKFC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
+				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Assets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = nitestream;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1768,7 +1776,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 699J3RXKFC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Info.plist;
+				INFOPLIST_FILE = ChuaTeHoiDongQuanTri/Assets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = nitestream;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

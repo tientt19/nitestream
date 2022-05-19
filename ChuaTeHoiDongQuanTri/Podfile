@@ -16,6 +16,9 @@ target 'ChuTeHoiDongQuanTri' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   
+  # Google SDK
+  pod 'GoogleSignIn'
+  
   # Support
   pod 'lottie-ios'
   pod 'SnapKit'

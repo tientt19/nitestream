@@ -36,7 +36,7 @@ class SplashScreenViewController: BaseViewController {
         self.splashView.animationSpeed = 2
         self.splashView.play()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             self.router.goToHomeScreen()
         }
     }
