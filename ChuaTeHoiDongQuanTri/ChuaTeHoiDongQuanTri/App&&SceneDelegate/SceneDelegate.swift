@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let frame = windowScene.coordinateSpace.bounds
         let windowSize = CGSize(width: min(frame.width, frame.height), height: max(frame.width, frame.height))
         window = UIWindow(frame: CGRect(origin: .zero, size: windowSize))
-        let rootController = MainTabBarController()
+        let rootController = SplashScreenRouter.setupModule()
         window?.rootViewController = rootController
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
