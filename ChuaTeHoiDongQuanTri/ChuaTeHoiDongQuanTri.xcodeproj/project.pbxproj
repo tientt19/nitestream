@@ -93,6 +93,11 @@
 		527AF6AE28364CE50089D58B /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6A928364CE50089D58B /* LoginScreenViewController.swift */; };
 		527AF6AF28364CE50089D58B /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6AA28364CE50089D58B /* LoginScreenViewModel.swift */; };
 		527AF6B028364CE50089D58B /* LoginScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AF6AB28364CE50089D58B /* LoginScreenViewController.xib */; };
+		527AF6B7283658F70089D58B /* ProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6B2283658F70089D58B /* ProfileScreenRouter.swift */; };
+		527AF6B8283658F70089D58B /* ProfileScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6B3283658F70089D58B /* ProfileScreenInteractorInput.swift */; };
+		527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6B4283658F70089D58B /* ProfileScreenViewController.swift */; };
+		527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF6B5283658F70089D58B /* ProfileScreenViewModel.swift */; };
+		527AF6BB283658F70089D58B /* ProfileScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527AF6B6283658F70089D58B /* ProfileScreenViewController.xib */; };
 		527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF99E27F3F1CC008A42DC /* UIImageView.swift */; };
 		527AF9A127F3F20A008A42DC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A027F3F20A008A42DC /* Collection.swift */; };
 		527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A227F3F22F008A42DC /* UIViewController.swift */; };
@@ -318,6 +323,11 @@
 		527AF6A928364CE50089D58B /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		527AF6AA28364CE50089D58B /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
 		527AF6AB28364CE50089D58B /* LoginScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreenViewController.xib; sourceTree = "<group>"; };
+		527AF6B2283658F70089D58B /* ProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenRouter.swift; sourceTree = "<group>"; };
+		527AF6B3283658F70089D58B /* ProfileScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenInteractorInput.swift; sourceTree = "<group>"; };
+		527AF6B4283658F70089D58B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
+		527AF6B5283658F70089D58B /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
+		527AF6B6283658F70089D58B /* ProfileScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileScreenViewController.xib; sourceTree = "<group>"; };
 		527AF99E27F3F1CC008A42DC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		527AF9A027F3F20A008A42DC /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		527AF9A227F3F22F008A42DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -808,6 +818,18 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		527AF6B1283658C80089D58B /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				527AF6B2283658F70089D58B /* ProfileScreenRouter.swift */,
+				527AF6B3283658F70089D58B /* ProfileScreenInteractorInput.swift */,
+				527AF6B4283658F70089D58B /* ProfileScreenViewController.swift */,
+				527AF6B5283658F70089D58B /* ProfileScreenViewModel.swift */,
+				527AF6B6283658F70089D58B /* ProfileScreenViewController.xib */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
 		5287BEF227CF83210030A534 /* HorizontallyCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,6 +963,7 @@
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
+				527AF6B1283658C80089D58B /* ProfileScreen */,
 				52064A7027EF5EDE007E48A6 /* ProfileView */,
 			);
 			path = Screen;
@@ -1346,6 +1369,7 @@
 				52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */,
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
 				522ACEC72834FCF500443757 /* SplashScreenViewController.xib in Resources */,
+				527AF6BB283658F70089D58B /* ProfileScreenViewController.xib in Resources */,
 				523E04EE2824FE9E005E55A4 /* SearchingViewController.xib in Resources */,
 				527AF6B028364CE50089D58B /* LoginScreenViewController.xib in Resources */,
 				52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */,
@@ -1470,6 +1494,8 @@
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
+				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
+				527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */,
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
@@ -1480,6 +1506,7 @@
 				52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */,
 				52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
+				527AF6B7283658F70089D58B /* ProfileScreenRouter.swift in Sources */,
 				52A204AF27FADA95006DEF8E /* TikTokScreenViewController.swift in Sources */,
 				523E04F02824FE9E005E55A4 /* TopSearchTableViewCell.swift in Sources */,
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
@@ -1512,6 +1539,7 @@
 				523E04EF2824FE9E005E55A4 /* SearchingViewProtocols.swift in Sources */,
 				523E04EC2824FE9E005E55A4 /* SearchingPresenter.swift in Sources */,
 				521CD1A8280AA1B400D114A7 /* PageAnimeViewController.swift in Sources */,
+				527AF6B8283658F70089D58B /* ProfileScreenInteractorInput.swift in Sources */,
 				52E6E63627C2109400CD80D0 /* MainHeader.swift in Sources */,
 				521CD1A9280AA1B400D114A7 /* PageAnimeViewModel.swift in Sources */,
 				52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */,

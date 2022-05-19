@@ -9,6 +9,8 @@
 
 import UIKit
 import Lottie
+import FirebaseAuth
+import GoogleSignIn
 
 // MARK: - ViewProtocol
 protocol SplashScreenViewProtocol: AnyObject {
@@ -37,12 +39,18 @@ class SplashScreenViewController: BaseViewController {
         self.splashView.play()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.router.goToLoginScreen()
+            self.onCheckAutoLogin()
         }
     }
     
     // MARK: - Action
-    
+    func onCheckAutoLogin() {
+        if Auth.auth().currentUser != nil {
+            self.router.goToHomeScreen()
+        } else {
+            self.router.goToLoginScreen()
+        }
+    }
 }
 
 // MARK: - SplashScreen ViewProtocol

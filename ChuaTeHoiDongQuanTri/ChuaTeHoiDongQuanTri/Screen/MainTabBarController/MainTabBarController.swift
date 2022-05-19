@@ -78,11 +78,25 @@ class MainTabBarController: UITabBarController {
         let disCoveryNavController = BaseNavigationViewController(rootViewController: discoveryController)
         disCoveryNavController.setHiddenNavigationBarViewControllers([])
         
+        //Profile
+        //Discorver
+        let profileViewcontroller = ProfileScreenRouter.setupModule()
+
+        profileViewcontroller.tabBarItem.tag = 0
+        profileViewcontroller.tabBarItem.title  = "Cá nhân"
+        profileViewcontroller.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
+        profileViewcontroller.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        profileViewcontroller.tabBarItem.image = UIImage(systemName: "tshirt")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        profileViewcontroller.tabBarItem.selectedImage = UIImage(named: "tshirt")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
+        let profileNavController = BaseNavigationViewController(rootViewController: profileViewcontroller)
+        profileNavController.setHiddenNavigationBarViewControllers([])
+        
         // MARK:  Add Tabbar
         self.viewControllers = [
             homeNavController,
             tiktokController,
             discoveryController,
+            profileViewcontroller
         ]
     }
 }

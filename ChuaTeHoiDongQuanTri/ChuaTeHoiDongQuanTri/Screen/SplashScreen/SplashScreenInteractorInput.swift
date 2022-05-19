@@ -9,14 +9,13 @@
 
 import UIKit
 
+
 // MARK: - Interactor Input Protocol
 protocol SplashScreenInteractorInputProtocol {
-
 }
 
 // MARK: - Interactor Output Protocol
 protocol SplashScreenInteractorOutputProtocol: AnyObject {
-    
 }
 
 // MARK: - SplashScreen InteractorInput
