@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import IGListKit
 
 class HomePageViewViewController: BaseViewController {
     // MARK: - Properties
-    @IBOutlet weak var HomePageCLV: UICollectionView!
+    //    @IBOutlet weak var HomePageCLV: UICollectionView!
     @IBOutlet weak var viewCanMove: UIView!
     @IBOutlet weak var limitView: UIView!
     
@@ -19,40 +20,51 @@ class HomePageViewViewController: BaseViewController {
     
     var presenter: HomePageViewPresenterProtocol?
     var dataSource : HomePageViewDataSourceProtocol?
+    var loading = false
     var index = 0
+    var objects = [ListDiffable]()
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    }()
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpBaseView()
-        register()
-        presenter?.getHomePageData(index)
+        self.register()
+        self.presentLockScreen()
+        self.presenter?.getHomePageData(index)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        unlockScreen()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.collectionView.frame = self.view.bounds
     }
-        
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.unlockScreen()
+    }
+    
     func register() {
-        navigationItem.titleView = textFieldView
+        self.setUpBaseView()
+        navigationItem.titleView = self.searchView
         
-        //CELL
-        HomePageCLV.registerCell(nibName: BannerCell.self)
-        HomePageCLV.registerCell(nibName: CategoryCell.self)
-        HomePageCLV.registerCellForHeader(nibName: MainHeader.self)
-        HomePageCLV.registerCellForFooter(nibName: MainFooter.self)
+        self.textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
+        self.viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
         
-        textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))
-        viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
-        
+        self.view.addSubview(self.collectionView)
+        self.adapter.collectionView = collectionView
+        self.adapter.dataSource = self
+        self.adapter.scrollViewDelegate = self
     }
     
     @IBAction func handleCloseViewCanMove(_ sender: UIButton) {
         self.viewCanMove.isHidden = true
     }
     @objc func textFieldTap() {
-        let searchingVC = SearchingRouter.createSearchingModule()
+        let searchingVC = SearchingIGListKitScreenRouter.setupModule()
         searchingVC.hidesBottomBarWhenPushed = true
         searchingVC.navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(searchingVC, animated: true)
@@ -63,7 +75,7 @@ class HomePageViewViewController: BaseViewController {
         guard gesture.view != nil else {return}
         //
         let translation = gesture.translation(in: self.limitView)
-
+        
         let bounds = UIScreen.main.bounds
         
         // 50 = viewWidth / 2
@@ -76,89 +88,57 @@ class HomePageViewViewController: BaseViewController {
         }
         
         gesture.setTranslation(.zero, in: self.limitView)
-//        print("x: \( self.trailingViewConMoveConstraint.constant)")
-//        print("y: \(self.bottomViewConMoveConstraint.constant)")
-//        print("----------")
+        //        print("x: \( self.trailingViewConMoveConstraint.constant)")
+        //        print("y: \(self.bottomViewConMoveConstraint.constant)")
+        //        print("----------")
         self.view.layoutIfNeeded()
     }
-    
-    //MARK: - Handle when tap collecion view header
-    @objc func didSelectSection(gesture: UITapGestureRecognizer) {
-        let indexPaths = self.HomePageCLV?.indexPathsForVisibleSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader)
-        for indexPath in indexPaths! {
-            if (gesture.view as! MainHeader) == HomePageCLV?.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: indexPath){
-                if let sendDataToExpand = dataSource?.listData().recommendItems[indexPath.section] {
-                    let expandVC = ExpandScreenRouter.createModule(with: sendDataToExpand)
-                    expandVC.hidesBottomBarWhenPushed = true
-                    self.navigationController?.pushViewController(expandVC, animated: true)
+}
+
+// MARK: - UIScrollViewDelegate
+extension HomePageViewViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+        if !loading && distance < 200 {
+            loading = true
+            adapter.performUpdates(animated: true, completion: nil)
+            DispatchQueue.global(qos: .default).async {
+                // fake background loading task
+                DispatchQueue.main.async {
+                    self.presentLockScreen()
+                    self.loading = false
+                    self.index += 1
+                    self.dataSource?.loadMore(self.index)
                 }
-                break
             }
         }
     }
 }
 
-//MARK: - UICollectionViewDelegate
-extension HomePageViewViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.section == 0 {
-            // handle item in section = 0
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.section == dataSource!.numberOfItems - 2 {
-            index += 1
-            // Load More
-            dataSource?.loadMore(index)
-        } 
+extension HomePageViewViewController: passDataPickDelegate {
+    func openDetailView(_ data: RecommendContentVOList) {
+        self.presentLockScreen()
+        self.presenter?.onGetMovieDetail(data.id, data.category)
     }
 }
 
-//MARK: - UICollectionViewDataSource
-extension HomePageViewViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dataSource?.numberOfItems ?? 0
+//MARK: - ListAdapterDataSource
+extension HomePageViewViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return self.objects
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        let sectionController = BannerSectionController()
+        sectionController.controller = self
+        sectionController.openExpandViewDelegate = self
+        return sectionController
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return (dataSource?.itemCell(collectionView: collectionView, indexPath: indexPath))!
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = dataSource?.itemHeaderCell(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
-        let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didSelectSection(gesture:)))
-        header!.addGestureRecognizer(gestureRecognizer)
-        return header!
-    }
-}
-
-//MARK: - UICollectionViewDelegateFlowLayout
-extension HomePageViewViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat { return 10 }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat { return 10 }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if dataSource?.listData().recommendItems[section].homeSectionType == "BANNER" {
-            return CGSize(width: HomePageCLV.frame.width, height: 0)
-        }
-        return CGSize(width: HomePageCLV.frame.width, height: 50)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: HomePageCLV.frame.width, height: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: HomePageCLV.frame.width, height: (HomePageCLV.frame.width * 9) / 16)
-    }
+    func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
 }
 
 //MARK: - HomePageViewViewProtocol
@@ -166,12 +146,23 @@ extension HomePageViewViewController: HomePageViewViewProtocol{
     
     // TODO: Implement View Output Methods
     func reloadData(_ data: HomePageModel) {
-        stopLoadingAnimate()
-        dataSource = HomePageViewDataSource(entities: data, with: presenter!)
-        HomePageCLV.reloadData()
+        self.dataSource = HomePageViewDataSource(entities: data, with: presenter!)
+        self.unlockScreen()
+        self.objects.removeAll()
+        for item in data.recommendItems {
+            self.objects.append(item)
+        }
+        self.adapter.performUpdates(animated: true, completion: nil)
     }
     
     func lockView() {
-        presentLockScreen()
+        self.presentLockScreen()
+    }
+}
+
+//MARK: - HandleExpandViewOpenProtocols
+extension HomePageViewViewController: HandleExpandViewOpenProtocols {
+    func onOpenExpand(with data: RecommendItem) {
+        self.presenter?.openExpandView(with: data)
     }
 }

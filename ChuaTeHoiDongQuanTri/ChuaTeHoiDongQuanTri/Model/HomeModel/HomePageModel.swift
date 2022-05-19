@@ -1,8 +1,9 @@
 
 import Foundation
+import IGListKit
 
-
-class HomePageModel {
+class HomePageModel: ListDiffable {
+    private var identifier: String = UUID().uuidString
 
 	var page : Int!
 	var recommendItems : [RecommendItem]!
@@ -75,5 +76,16 @@ class HomePageModel {
 		}
 
 	}
-
+    
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? HomePageModel else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 }

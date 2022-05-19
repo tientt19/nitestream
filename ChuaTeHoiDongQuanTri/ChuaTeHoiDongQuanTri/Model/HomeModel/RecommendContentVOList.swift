@@ -1,9 +1,11 @@
 
 
 import Foundation
+import IGListKit
 
+class RecommendContentVOList: ListDiffable {
 
-class RecommendContentVOList{
+    private var identifier: String = UUID().uuidString
 
 	var category : Int!
 	var contentType : String!
@@ -77,66 +79,16 @@ class RecommendContentVOList{
 		return dictionary
 	}
 
-//    /**
-//    * NSCoding required initializer.
-//    * Fills the data from the passed decoder
-//    */
-//    @objc required init(coder aDecoder: NSCoder)
-//	{
-//         category = aDecoder.decodeObject(forKey: "category") as? Int
-//         contentType = aDecoder.decodeObject(forKey: "contentType") as? String
-//         id = aDecoder.decodeObject(forKey: "id") as? Int
-//         imageUrl = aDecoder.decodeObject(forKey: "imageUrl") as? String
-//         jumpAddress = aDecoder.decodeObject(forKey: "jumpAddress") as? String
-//         jumpType = aDecoder.decodeObject(forKey: "jumpType") as? String
-//         needLogin = aDecoder.decodeObject(forKey: "needLogin") as? Bool
-//         resourceNum = aDecoder.decodeObject(forKey: "resourceNum") as? Int
-//         resourceStatus = aDecoder.decodeObject(forKey: "resourceStatus") as? Int
-//         showMark = aDecoder.decodeObject(forKey: "showMark") as? Bool
-//         title = aDecoder.decodeObject(forKey: "title") as? String
-//
-//	}
-//
-//    /**
-//    * NSCoding required method.
-//    * Encodes mode properties into the decoder
-//    */
-//    @objc func encode(with aCoder: NSCoder)
-//	{
-//		if category != nil{
-//			aCoder.encode(category, forKey: "category")
-//		}
-//		if contentType != nil{
-//			aCoder.encode(contentType, forKey: "contentType")
-//		}
-//		if id != nil{
-//			aCoder.encode(id, forKey: "id")
-//		}
-//		if imageUrl != nil{
-//			aCoder.encode(imageUrl, forKey: "imageUrl")
-//		}
-//		if jumpAddress != nil{
-//			aCoder.encode(jumpAddress, forKey: "jumpAddress")
-//		}
-//		if jumpType != nil{
-//			aCoder.encode(jumpType, forKey: "jumpType")
-//		}
-//		if needLogin != nil{
-//			aCoder.encode(needLogin, forKey: "needLogin")
-//		}
-//		if resourceNum != nil{
-//			aCoder.encode(resourceNum, forKey: "resourceNum")
-//		}
-//		if resourceStatus != nil{
-//			aCoder.encode(resourceStatus, forKey: "resourceStatus")
-//		}
-//		if showMark != nil{
-//			aCoder.encode(showMark, forKey: "showMark")
-//		}
-//		if title != nil{
-//			aCoder.encode(title, forKey: "title")
-//		}
-//
-//	}
+    func diffIdentifier() -> NSObjectProtocol {
+        return identifier as NSString
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? RecommendContentVOList else {
+            return false
+        }
+        
+        return self.identifier == object.identifier
+    }
 
 }

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,9 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setInitRootViewController()
+        self.setInitFirebase()
+        self.setInitRootViewController()
         return true
     }
+    // MARK: - Firebase
+    func setInitFirebase() {
+        FirebaseApp.configure()
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
+    }
+    
     // MARK: ViewController
     func setInitRootViewController() {
         let iOSVersion = ProcessInfo().operatingSystemVersion.majorVersion
@@ -25,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let windowSize = CGSize(width: min(frame.width, frame.height), height: max(frame.width, frame.height))
             window = UIWindow(frame: CGRect(origin: .zero, size: windowSize))
             window?.overrideUserInterfaceStyle = .light
-            let rootController = MainTabBarController()
+            let rootController = SplashScreenRouter.setupModule()
             window?.rootViewController = rootController
             window?.makeKeyAndVisible()
         }

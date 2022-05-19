@@ -32,8 +32,8 @@ class ExpandCollectionViewDataSource : CollectionviewDataSource {
         return UICollectionViewCell()
     }
     
-    func didSelect(collectionView: UICollectionView, indexPath: IndexPath) {
-        presenter?.openDetailView(id: entities.recommendContentVOList[indexPath.row].id, category: entities.recommendContentVOList[indexPath.row].category)
+    func didSelect(indexPath: Int) {
+        presenter?.openDetailView(id: entities.recommendContentVOList[indexPath].id, category: entities.recommendContentVOList[indexPath].category)
     }
     
     func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
