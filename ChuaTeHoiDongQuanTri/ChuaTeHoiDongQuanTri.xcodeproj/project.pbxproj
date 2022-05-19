@@ -955,10 +955,10 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				527AF6A628364CD00089D58B /* LoginScreen */,
-				522ACEBD2834FCD000443757 /* SplashScreen */,
-				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52E6E63227C20E8400CD80D0 /* Cell */,
+				522ACEBD2834FCD000443757 /* SplashScreen */,
+				527AF6A628364CD00089D58B /* LoginScreen */,
+				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,

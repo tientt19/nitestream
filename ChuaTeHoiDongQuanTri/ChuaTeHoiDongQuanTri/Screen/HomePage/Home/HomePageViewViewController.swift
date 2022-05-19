@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import IGListKit
 
 class HomePageViewViewController: BaseViewController {
@@ -49,6 +50,9 @@ class HomePageViewViewController: BaseViewController {
     
     func register() {
         self.setUpBaseView()
+        if let avatarImage = Auth.auth().currentUser?.photoURL {
+            self.setAvatarImage(with: avatarImage)
+        }
         navigationItem.titleView = self.searchView
         
         self.textFieldView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFieldTap)))

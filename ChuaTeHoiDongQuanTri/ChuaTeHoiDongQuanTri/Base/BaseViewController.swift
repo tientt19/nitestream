@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class BaseViewController: UIViewController {
     
@@ -82,6 +83,14 @@ class BaseViewController: UIViewController {
         self.coverTextFieldView.anchor(top: self.searchView.topAnchor, left: self.appIcon.rightAnchor, bottom: self.searchView.bottomAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, width: (self.searchView.frame.width*2) / 3, height: 30)
         
         self.textFieldView.anchor(top: self.coverTextFieldView.topAnchor, left: self.coverTextFieldView.leftAnchor, bottom: self.coverTextFieldView.bottomAnchor, right: self.coverTextFieldView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 5)
+    }
+    
+    func setAvatarImage(with userImage: URL) {
+        let imageView = UIImageView()
+        self.appIcon.addSubview(imageView)
+        self.appIcon.clipsToBounds = true
+        imageView.addConstraintsToFillView(self.appIcon)
+        imageView.setImage(targetImageView: imageView, with: userImage)
     }
     
     func baseViewShowHud() {
