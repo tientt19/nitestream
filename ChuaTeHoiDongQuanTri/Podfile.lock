@@ -738,6 +738,7 @@ PODS:
   - ReachabilitySwift (5.0.0)
   - SkeletonView (1.29.2)
   - SnapKit (5.6.0)
+  - VersaPlayer (3.0.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -750,6 +751,7 @@ DEPENDENCIES:
   - ReachabilitySwift
   - SkeletonView
   - SnapKit
+  - VersaPlayer
 
 SPEC REPOS:
   trunk:
@@ -780,6 +782,7 @@ SPEC REPOS:
     - ReachabilitySwift
     - SkeletonView
     - SnapKit
+    - VersaPlayer
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
@@ -809,7 +812,8 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: 6e586530a46890fa7054e1088a83ba71b9827767
+PODFILE CHECKSUM: 3e94826ef2e1261158b20ea20001d4e831def0a3
 
 COCOAPODS: 1.11.3

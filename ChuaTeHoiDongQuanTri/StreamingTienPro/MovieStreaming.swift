@@ -11,23 +11,20 @@ import AVFoundation
 
 public class MovieStreaming {
     
-    private let playVideoViewController = AVPlayerViewController()
-    
-    private let avPlayer = AVPlayer()
-    
-    private lazy var activityIndicatorView : UIActivityIndicatorView = {
-        let loading = UIActivityIndicatorView()
-        loading.hidesWhenStopped = true
-        loading.style = .large
-        loading.color = .white
-        return loading
+    private let playVideoViewController: AVPlayerViewController = {
+        let controller = AVPlayerViewController()
+        controller.showsPlaybackControls = true
+        controller.showsTimecodes = true
+        return controller
     }()
     
-    private lazy var playerView : UIView = {
+    private lazy var playerView: UIView = {
         let view = playVideoViewController.view!
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private let avPlayer = AVPlayer()
     
     public init() { }
     
@@ -35,47 +32,46 @@ public class MovieStreaming {
     
     public func configure(in view : UIView) {
         view.addSubview(playerView)
-        playerView.addSubview(activityIndicatorView)
-        NSLayoutConstraint.activate([
-            playerView.topAnchor.constraint(equalTo: view.topAnchor),
-            playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
-            activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
-
-        ])
-        
-        activityIndicatorView.startAnimating()
     }
     
     public func streaming(with movieURL : URL, subRemote : String) {
         let asset = AVAsset(url: movieURL)
         let playerItem = AVPlayerItem(asset: asset)
-        avPlayer.replaceCurrentItem(with: playerItem)
+        self.avPlayer.replaceCurrentItem(with: playerItem)
+        self.avPlayer.appliesMediaSelectionCriteriaAutomatically = false
+        
+        for characteristic in asset.availableMediaCharacteristicsWithMediaSelectionOptions {
+            print("\(characteristic)")
+
+            // Retrieve the AVMediaSelectionGroup for the specified characteristic.
+            if let group = asset.mediaSelectionGroup(forMediaCharacteristic: characteristic) {
+                // Print its options.
+                for option in group.options {
+                    print("  Option: \(option.displayName)")
+                }
+            }
+        }
         
         if subRemote != "" {
             addSubIfNeeded(subRemote: subRemote)
         }
-        if subRemote == "okokok" {
-            playVideoViewController.showsPlaybackControls = false
-        }
-        playVideoViewController.player = avPlayer
-        playVideoViewController.player?.play()
-        activityIndicatorView.stopAnimating()
+        self.playVideoViewController.player = avPlayer
     }
     
+    public func play() {
+        self.playVideoViewController.player?.play()
+    }
+        
     public func pause() {
-        avPlayer.pause()
+        self.avPlayer.pause()
     }
     
     private func addSubIfNeeded(subRemote : String) {
         let subtitleRemoteUrl = URL(string: subRemote)
         if let repsoneSub = subtitleRemoteUrl {
-            playVideoViewController.addSubtitles()
-            playVideoViewController.open(fileFromRemote: repsoneSub)
-            playVideoViewController.subtitleLabel?.textColor = UIColor.white
+            self.playVideoViewController.addSubtitles()
+            self.playVideoViewController.open(fileFromRemote: repsoneSub)
+            self.playVideoViewController.subtitleLabel?.textColor = UIColor.white
         }
     }
 }

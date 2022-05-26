@@ -22,23 +22,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="321" height="128"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJA-g9-B57">
+                        <rect key="frame" x="0.0" y="0.0" width="321" height="128"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-4f-p02">
+                                <rect key="frame" x="135.5" y="39" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iDb-Of-tSg"/>
+                                    <constraint firstAttribute="height" constant="50" id="oc6-ZT-1Ae"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="n8K-4f-p02" firstAttribute="centerX" secondItem="dJA-g9-B57" secondAttribute="centerX" id="0nb-nN-66i"/>
+                            <constraint firstItem="n8K-4f-p02" firstAttribute="centerY" secondItem="dJA-g9-B57" secondAttribute="centerY" id="9Tt-Mp-4rO"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="dJA-g9-B57" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7iY-nv-0Jv"/>
+                <constraint firstAttribute="bottom" secondItem="dJA-g9-B57" secondAttribute="bottom" id="CxD-Gu-TOg"/>
                 <constraint firstAttribute="trailing" secondItem="qG3-Co-zbV" secondAttribute="trailing" id="WxM-Uz-lNx"/>
+                <constraint firstItem="dJA-g9-B57" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZBe-jf-zBb"/>
                 <constraint firstAttribute="bottom" secondItem="qG3-Co-zbV" secondAttribute="bottom" id="ZSN-wJ-jwD"/>
                 <constraint firstItem="qG3-Co-zbV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eZ8-lh-ctL"/>
+                <constraint firstAttribute="trailing" secondItem="dJA-g9-B57" secondAttribute="trailing" id="g4j-NL-PJb"/>
                 <constraint firstItem="qG3-Co-zbV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yE5-8b-IFa"/>
             </constraints>
             <size key="customSize" width="321" height="128"/>
             <connections>
+                <outlet property="img_controllMedia" destination="n8K-4f-p02" id="Fos-K5-8BB"/>
                 <outlet property="mediaPlayerView" destination="qG3-Co-zbV" id="4rC-eS-bh1"/>
+                <outlet property="view_controllMedia" destination="dJA-g9-B57" id="Wfg-1a-cnP"/>
             </connections>
-            <point key="canvasLocation" x="40" y="-127"/>
+            <point key="canvasLocation" x="150" y="-218"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic_play" width="28" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

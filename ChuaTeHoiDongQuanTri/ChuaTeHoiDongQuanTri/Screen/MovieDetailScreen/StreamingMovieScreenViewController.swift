@@ -27,7 +27,9 @@ class StreamingMovieScreenViewController: BaseViewController {
     var objects = [ListDiffable]()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+        return ListAdapter(updater: ListAdapterUpdater(),
+                           viewController: self,
+                           workingRangeSize: 2)
     }()
     
     // MARK: - LifeCycle
