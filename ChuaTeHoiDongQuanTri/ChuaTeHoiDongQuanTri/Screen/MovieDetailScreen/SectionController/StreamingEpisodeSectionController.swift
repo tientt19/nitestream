@@ -56,6 +56,7 @@ class StreamingEpisodeSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
+        NotificationCenter.default.post(name: .stopPlayingMedia, object: nil)
         self.onHandleDelegate?.didSelect(with: self.currentIem?.listEpisode[index])
     }
 }

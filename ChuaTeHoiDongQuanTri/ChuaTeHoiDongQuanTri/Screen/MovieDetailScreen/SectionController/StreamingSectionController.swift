@@ -35,7 +35,7 @@ class StreamingSectionController: ListSectionController {
         let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! CellCollectionStreaming
         if self.mediaIsPlaying == false {
             self.mediaIsPlaying.toggle()
-            cell.playMedia(link: self.currentIem!, and: self.getLinkSub(0))
+            cell.playMedia(link: self.currentIem!, and: self.getLinkSub(self.movieDetail?.seriesNo ?? 0))
         }
         return cell
     }

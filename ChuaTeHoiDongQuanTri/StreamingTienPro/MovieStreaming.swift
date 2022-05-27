@@ -18,6 +18,14 @@ public class MovieStreaming {
         return controller
     }()
     
+    private lazy var activityIndicatorView : UIActivityIndicatorView = {
+           let loading = UIActivityIndicatorView()
+           loading.hidesWhenStopped = true
+           loading.style = .large
+           loading.color = .white
+           return loading
+       }()
+    
     private lazy var playerView: UIView = {
         let view = playVideoViewController.view!
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -32,34 +40,34 @@ public class MovieStreaming {
     
     public func configure(in view : UIView) {
         view.addSubview(playerView)
+        playerView.addSubview(activityIndicatorView)
+          NSLayoutConstraint.activate([
+              playerView.topAnchor.constraint(equalTo: view.topAnchor),
+              playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+              playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+              playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+              
+              activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
+              activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
+
+          ])
+          activityIndicatorView.startAnimating()
     }
     
     public func streaming(with movieURL : URL, subRemote : String) {
         let asset = AVAsset(url: movieURL)
         let playerItem = AVPlayerItem(asset: asset)
-        self.avPlayer.replaceCurrentItem(with: playerItem)
-        self.avPlayer.appliesMediaSelectionCriteriaAutomatically = false
-        
-        for characteristic in asset.availableMediaCharacteristicsWithMediaSelectionOptions {
-            print("\(characteristic)")
-
-            // Retrieve the AVMediaSelectionGroup for the specified characteristic.
-            if let group = asset.mediaSelectionGroup(forMediaCharacteristic: characteristic) {
-                // Print its options.
-                for option in group.options {
-                    print("  Option: \(option.displayName)")
-                }
-            }
-        }
+        avPlayer.replaceCurrentItem(with: playerItem)
         
         if subRemote != "" {
             addSubIfNeeded(subRemote: subRemote)
         }
-        self.playVideoViewController.player = avPlayer
-    }
-    
-    public func play() {
-        self.playVideoViewController.player?.play()
+        if subRemote == "okokok" {
+            playVideoViewController.showsPlaybackControls = false
+        }
+        playVideoViewController.player = avPlayer
+        playVideoViewController.player?.play()
+        activityIndicatorView.stopAnimating()
     }
         
     public func pause() {

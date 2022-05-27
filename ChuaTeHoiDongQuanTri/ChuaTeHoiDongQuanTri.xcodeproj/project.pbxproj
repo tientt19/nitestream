@@ -125,6 +125,7 @@
 		528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CBF8827CA56B200541EF7 /* EpisodeVo.swift */; };
 		528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CBF8927CA56B200541EF7 /* LikeList.swift */; };
 		528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D8AD627CA1C5600A98B8B /* TopSearchData.swift */; };
+		528E4597284085EB007DA38D /* NotifcationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E4596284085EB007DA38D /* NotifcationName.swift */; };
 		528E4C4A2808133B001438BF /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E4C492808133B001438BF /* UILabel.swift */; };
 		5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295CD86280AE46E0064EFBB /* ListSearchResultTableViewCell.swift */; };
 		5295CD89280AE46E0064EFBB /* ListSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5295CD87280AE46E0064EFBB /* ListSearchResultTableViewCell.xib */; };
@@ -354,6 +355,7 @@
 		528CBF8827CA56B200541EF7 /* EpisodeVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeVo.swift; sourceTree = "<group>"; };
 		528CBF8927CA56B200541EF7 /* LikeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeList.swift; sourceTree = "<group>"; };
 		528D8AD627CA1C5600A98B8B /* TopSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSearchData.swift; sourceTree = "<group>"; };
+		528E4596284085EB007DA38D /* NotifcationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationName.swift; sourceTree = "<group>"; };
 		528E4C492808133B001438BF /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5295CD86280AE46E0064EFBB /* ListSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		5295CD87280AE46E0064EFBB /* ListSearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSearchResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -1082,6 +1084,7 @@
 				52DAD6092805395200E27111 /* String.swift */,
 				528E4C492808133B001438BF /* UILabel.swift */,
 				52159E812824DC1E00081FA9 /* TextSize.swift */,
+				528E4596284085EB007DA38D /* NotifcationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1501,6 +1504,7 @@
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
 				527AF6AE28364CE50089D58B /* LoginScreenViewController.swift in Sources */,
 				52C424F12828E0BA00CF899A /* BannerSectionController.swift in Sources */,
+				528E4597284085EB007DA38D /* NotifcationName.swift in Sources */,
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
 				841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */,
 				52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */,

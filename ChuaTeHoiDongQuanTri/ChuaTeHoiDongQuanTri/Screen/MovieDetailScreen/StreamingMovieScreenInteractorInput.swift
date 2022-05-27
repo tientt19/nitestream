@@ -26,7 +26,7 @@ protocol StreamingMovieScreenInteractorOutputProtocol: AnyObject {
 class StreamingMovieScreenInteractorInput {
     weak var output: StreamingMovieScreenInteractorOutputProtocol?
     var sections = [Section]()
-    var episodeVo = [EpisodeVo]()
+    var episodeVo: EpisodeVo?
     var movieDetail: MovieDetail?
     var listCollection: ListCollection?
     var listEspisode: EpisodeCollection?
@@ -35,6 +35,7 @@ class StreamingMovieScreenInteractorInput {
 // MARK: - StreamingMovieScreen InteractorInputProtocol
 extension StreamingMovieScreenInteractorInput: StreamingMovieScreenInteractorInputProtocol {
     func onHandleEpisodeLoaded(with data: EpisodeVo) {
+        self.episodeVo = data
         var linkMedia = LinkMedia(fromDictionary: ["":""])
         let movieInfo = MovieInfo(from: self.movieDetail!)
         if let episodeID = data.id,
@@ -54,6 +55,7 @@ extension StreamingMovieScreenInteractorInput: StreamingMovieScreenInteractorInp
         guard let definition = data.episodeVo[0].definitionList[0].code else { return }
         let movieInfo = MovieInfo(from: data)
         self.movieDetail = data
+        self.movieDetail?.seriesNo = self.episodeVo?.seriesNo
         var linkMedia = LinkMedia(fromDictionary: ["":""])
         self.configureSection(with: data)
         
