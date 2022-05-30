@@ -55,7 +55,7 @@ class MainTabBarController: UITabBarController {
         homeNavController.setHiddenNavigationBarViewControllers([])
         
         //MESSAGES
-        let tiktokController = TikTokScreenRouter.createModule()
+        let tiktokController = VideoShortRouter.setupModule()
         
         tiktokController.tabBarItem.tag = 0
         tiktokController.tabBarItem.title  = "Wow"

@@ -77,6 +77,12 @@
 		523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */; };
 		523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE112844C3A500B99F6C /* VideoShortModel.swift */; };
 		523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE142844D23D00B99F6C /* BaseModel.swift */; };
+		523EBE172844E9FE00B99F6C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE162844E9FE00B99F6C /* BaseService.swift */; };
+		523EBE192844EAF300B99F6C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE182844EAF300B99F6C /* APIError.swift */; };
+		523EBE1B2844EBC100B99F6C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE1A2844EBC100B99F6C /* Log.swift */; };
+		523EBE1E2844ED1D00B99F6C /* URLTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE1D2844ED1D00B99F6C /* URLTypes.swift */; };
+		523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE202844F24D00B99F6C /* ShortVideoService.swift */; };
+		523EBE232844F58D00B99F6C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE222844F58D00B99F6C /* Result.swift */; };
 		52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */; };
 		52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */; };
 		52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */; };
@@ -315,6 +321,12 @@
 		523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortSection.swift; sourceTree = "<group>"; };
 		523EBE112844C3A500B99F6C /* VideoShortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortModel.swift; sourceTree = "<group>"; };
 		523EBE142844D23D00B99F6C /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		523EBE162844E9FE00B99F6C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		523EBE182844EAF300B99F6C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		523EBE1A2844EBC100B99F6C /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		523EBE1D2844ED1D00B99F6C /* URLTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTypes.swift; sourceTree = "<group>"; };
+		523EBE202844F24D00B99F6C /* ShortVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortVideoService.swift; sourceTree = "<group>"; };
+		523EBE222844F58D00B99F6C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenPresenter.swift; sourceTree = "<group>"; };
 		52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenRouter.swift; sourceTree = "<group>"; };
 		52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenViewController.swift; sourceTree = "<group>"; };
@@ -758,6 +770,7 @@
 				521E70CF27FD374600620DA1 /* Lib */,
 				52D8ECE427C6179A001B8A2B /* Base */,
 				52E6E61B27C20ADE00CD80D0 /* Extension */,
+				523EBE1C2844ECFE00B99F6C /* Enum */,
 				52E6E62827C20C3B00CD80D0 /* Service */,
 				52E6E62627C20C1C00CD80D0 /* Model */,
 				52A7A7C727ED91DD006F79DC /* Screen */,
@@ -801,6 +814,26 @@
 				523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */,
 			);
 			path = "Section Controller";
+			sourceTree = "<group>";
+		};
+		523EBE1C2844ECFE00B99F6C /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE1D2844ED1D00B99F6C /* URLTypes.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		523EBE1F2844F1D000B99F6C /* Base Service */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE162844E9FE00B99F6C /* BaseService.swift */,
+				522CF3CA27C0FE1900E4900A /* APIService.swift */,
+				523EBE182844EAF300B99F6C /* APIError.swift */,
+				523EBE1A2844EBC100B99F6C /* Log.swift */,
+				523EBE222844F58D00B99F6C /* Result.swift */,
+			);
+			path = "Base Service";
 			sourceTree = "<group>";
 		};
 		5263515F28237F8800093D80 /* SearchingIGListKit */ = {
@@ -1149,8 +1182,9 @@
 		52E6E62827C20C3B00CD80D0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				522CF3CA27C0FE1900E4900A /* APIService.swift */,
+				523EBE1F2844F1D000B99F6C /* Base Service */,
 				52B4F29627F3F6D700B0CFEB /* DataManager.swift */,
+				523EBE202844F24D00B99F6C /* ShortVideoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1512,6 +1546,7 @@
 				52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */,
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
+				523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
 				52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */,
 				522ACEC62834FCF500443757 /* SplashScreenViewModel.swift in Sources */,
@@ -1530,6 +1565,7 @@
 				527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */,
 				523EBE092844C28C00B99F6C /* VideoShortInteractorInput.swift in Sources */,
 				5296332027C91254007F3335 /* ChildCell.swift in Sources */,
+				523EBE172844E9FE00B99F6C /* BaseService.swift in Sources */,
 				5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */,
 				5263516828237FD600093D80 /* SearchingIGListKitScreenViewModel.swift in Sources */,
 				5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */,
@@ -1599,15 +1635,18 @@
 				5287C5BA282A5650003C6A8A /* StreamingMovieScreenViewController.swift in Sources */,
 				528E4C4A2808133B001438BF /* UILabel.swift in Sources */,
 				5263516528237FD600093D80 /* SearchingIGListKitScreenRouter.swift in Sources */,
+				523EBE192844EAF300B99F6C /* APIError.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
 				523E04EB2824FE9E005E55A4 /* SearchingTableViewDatasource.swift in Sources */,
 				849560A227FFE58C004A8A74 /* DiscoveryItem.swift in Sources */,
 				523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */,
 				5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */,
+				523EBE232844F58D00B99F6C /* Result.swift in Sources */,
 				52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				52B1FEF9282B7056004DB9E9 /* CellCollectionMovieInfo.swift in Sources */,
 				52159E7C2824CE3C00081FA9 /* CellSeachingCollectionView.swift in Sources */,
+				523EBE1E2844ED1D00B99F6C /* URLTypes.swift in Sources */,
 				52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */,
 				52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
@@ -1618,6 +1657,7 @@
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				5263516B282381DB00093D80 /* SearchingIGListKitSectionController.swift in Sources */,
+				523EBE1B2844EBC100B99F6C /* Log.swift in Sources */,
 				52B6C8E128001EDB00F180AB /* SearchingUpInfo.swift in Sources */,
 				52B1FEF5282B6EEF004DB9E9 /* StreamingInfoSectionController.swift in Sources */,
 				521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */,

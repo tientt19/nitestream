@@ -28,11 +28,18 @@ class VideoShortViewModel {
 // MARK: - VideoShort ViewModelProtocol
 extension VideoShortViewModel: VideoShortViewModelProtocol {
     func onViewDidLoad() {
-        
+        self.interactor.onGetData()
     }
 }
 
 // MARK: - VideoShort InteractorOutputProtocol
 extension VideoShortViewModel: VideoShortInteractorOutputProtocol {
-
+    func didGetDataFinished(with result: Result<ReviewShortVideoModel, APIError>) {
+        switch result {
+        case .success(let model):
+            dLogDebug(model)
+        case .failure:
+            dLogDebug("Failed")
+        }
+    }
 }
