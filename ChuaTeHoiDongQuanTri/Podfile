@@ -20,7 +20,6 @@ target 'ChuTeHoiDongQuanTri' do
   pod 'GoogleSignIn'
   
   # Support
-  pod 'VersaPlayer'
   pod 'lottie-ios'
   pod 'SnapKit'
   pod 'IGListKit'

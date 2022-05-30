@@ -69,6 +69,14 @@
 		523E04F02824FE9E005E55A4 /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E32824FE9E005E55A4 /* TopSearchTableViewCell.swift */; };
 		523E04F12824FE9E005E55A4 /* SearchingInterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E42824FE9E005E55A4 /* SearchingInterator.swift */; };
 		523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E62824FE9E005E55A4 /* SearchingCell.swift */; };
+		523EBE092844C28C00B99F6C /* VideoShortInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */; };
+		523EBE0A2844C28C00B99F6C /* VideoShortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */; };
+		523EBE0B2844C28C00B99F6C /* VideoShortRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE062844C28C00B99F6C /* VideoShortRouter.swift */; };
+		523EBE0C2844C28C00B99F6C /* VideoShortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523EBE072844C28C00B99F6C /* VideoShortViewController.xib */; };
+		523EBE0D2844C28C00B99F6C /* VideoShortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE082844C28C00B99F6C /* VideoShortViewController.swift */; };
+		523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */; };
+		523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE112844C3A500B99F6C /* VideoShortModel.swift */; };
+		523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE142844D23D00B99F6C /* BaseModel.swift */; };
 		52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */; };
 		52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */; };
 		52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */; };
@@ -299,6 +307,14 @@
 		523E04E32824FE9E005E55A4 /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
 		523E04E42824FE9E005E55A4 /* SearchingInterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingInterator.swift; sourceTree = "<group>"; };
 		523E04E62824FE9E005E55A4 /* SearchingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingCell.swift; sourceTree = "<group>"; };
+		523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortInteractorInput.swift; sourceTree = "<group>"; };
+		523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortViewModel.swift; sourceTree = "<group>"; };
+		523EBE062844C28C00B99F6C /* VideoShortRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortRouter.swift; sourceTree = "<group>"; };
+		523EBE072844C28C00B99F6C /* VideoShortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoShortViewController.xib; sourceTree = "<group>"; };
+		523EBE082844C28C00B99F6C /* VideoShortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortViewController.swift; sourceTree = "<group>"; };
+		523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortSection.swift; sourceTree = "<group>"; };
+		523EBE112844C3A500B99F6C /* VideoShortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortModel.swift; sourceTree = "<group>"; };
+		523EBE142844D23D00B99F6C /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenPresenter.swift; sourceTree = "<group>"; };
 		52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenRouter.swift; sourceTree = "<group>"; };
 		52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +509,12 @@
 		52064A6E27EF5ECB007E48A6 /* TikTokView */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE132844D21A00B99F6C /* Section Controller */,
+				523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */,
+				523EBE062844C28C00B99F6C /* VideoShortRouter.swift */,
+				523EBE082844C28C00B99F6C /* VideoShortViewController.swift */,
+				523EBE072844C28C00B99F6C /* VideoShortViewController.xib */,
+				523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */,
 				52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */,
 				52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */,
 				52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */,
@@ -763,6 +785,22 @@
 				523E04E62824FE9E005E55A4 /* SearchingCell.swift */,
 			);
 			path = Searching;
+			sourceTree = "<group>";
+		};
+		523EBE102844C39500B99F6C /* VideoShort */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE112844C3A500B99F6C /* VideoShortModel.swift */,
+			);
+			path = VideoShort;
+			sourceTree = "<group>";
+		};
+		523EBE132844D21A00B99F6C /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */,
+			);
+			path = "Section Controller";
 			sourceTree = "<group>";
 		};
 		5263515F28237F8800093D80 /* SearchingIGListKit */ = {
@@ -1052,6 +1090,7 @@
 		52D8ECE427C6179A001B8A2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE142844D23D00B99F6C /* BaseModel.swift */,
 				52D8ECE527C617B1001B8A2B /* BaseViewController.swift */,
 				52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */,
 			);
@@ -1092,6 +1131,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE102844C39500B99F6C /* VideoShort */,
 				52159E7E2824D04600081FA9 /* SearchingModelIG */,
 				52B6C8DA28001EC900F180AB /* Searching Model */,
 				8495609A27FFDD96004A8A74 /* Discovery Model */,
@@ -1357,6 +1397,7 @@
 				52B1FEFA282B7056004DB9E9 /* CellCollectionMovieInfo.xib in Resources */,
 				5263516928237FD600093D80 /* SearchingIGListKitScreenViewController.xib in Resources */,
 				5295CD89280AE46E0064EFBB /* ListSearchResultTableViewCell.xib in Resources */,
+				523EBE0C2844C28C00B99F6C /* VideoShortViewController.xib in Resources */,
 				8495609427FFD7AF004A8A74 /* DiscoveryTableViewCell.xib in Resources */,
 				521CD1AA280AA1B400D114A7 /* PageAnimeViewController.xib in Resources */,
 				5287C5BC282A5650003C6A8A /* StreamingMovieScreenViewController.xib in Resources */,
@@ -1487,6 +1528,7 @@
 				521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */,
 				528CBF9027CA56B200541EF7 /* UpInfo.swift in Sources */,
 				527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */,
+				523EBE092844C28C00B99F6C /* VideoShortInteractorInput.swift in Sources */,
 				5296332027C91254007F3335 /* ChildCell.swift in Sources */,
 				5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */,
 				5263516828237FD600093D80 /* SearchingIGListKitScreenViewModel.swift in Sources */,
@@ -1560,6 +1602,7 @@
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
 				523E04EB2824FE9E005E55A4 /* SearchingTableViewDatasource.swift in Sources */,
 				849560A227FFE58C004A8A74 /* DiscoveryItem.swift in Sources */,
+				523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */,
 				5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */,
 				52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
@@ -1579,6 +1622,7 @@
 				52B1FEF5282B6EEF004DB9E9 /* StreamingInfoSectionController.swift in Sources */,
 				521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */,
 				5263516628237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift in Sources */,
+				523EBE0A2844C28C00B99F6C /* VideoShortViewModel.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
 				5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */,
@@ -1589,9 +1633,12 @@
 				528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */,
 				528CBF8A27CA56B200541EF7 /* RefList.swift in Sources */,
 				52159E822824DC1E00081FA9 /* TextSize.swift in Sources */,
+				523EBE0B2844C28C00B99F6C /* VideoShortRouter.swift in Sources */,
 				8495609327FFD7AF004A8A74 /* DiscoveryTableViewCell.swift in Sources */,
 				849560A027FFE565004A8A74 /* ScreeningItems.swift in Sources */,
+				523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */,
 				845B3130280D5099002D67E9 /* UICollectionView.swift in Sources */,
+				523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */,
 				52A204B727FAF715006DEF8E /* tiktokTableViewCell.swift in Sources */,
 				52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */,
 				52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */,
@@ -1617,6 +1664,7 @@
 				522CF3B927C0FD0900E4900A /* SceneDelegate.swift in Sources */,
 				52B8BC0027FBE25200EDE659 /* IBOutlet_Name.swift in Sources */,
 				52F9A2AC27C7C7BF00EC01A0 /* BannerCell.swift in Sources */,
+				523EBE0D2844C28C00B99F6C /* VideoShortViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
