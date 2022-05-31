@@ -69,6 +69,20 @@
 		523E04F02824FE9E005E55A4 /* TopSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E32824FE9E005E55A4 /* TopSearchTableViewCell.swift */; };
 		523E04F12824FE9E005E55A4 /* SearchingInterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E42824FE9E005E55A4 /* SearchingInterator.swift */; };
 		523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E04E62824FE9E005E55A4 /* SearchingCell.swift */; };
+		523EBE092844C28C00B99F6C /* VideoShortInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */; };
+		523EBE0A2844C28C00B99F6C /* VideoShortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */; };
+		523EBE0B2844C28C00B99F6C /* VideoShortRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE062844C28C00B99F6C /* VideoShortRouter.swift */; };
+		523EBE0C2844C28C00B99F6C /* VideoShortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523EBE072844C28C00B99F6C /* VideoShortViewController.xib */; };
+		523EBE0D2844C28C00B99F6C /* VideoShortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE082844C28C00B99F6C /* VideoShortViewController.swift */; };
+		523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */; };
+		523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE112844C3A500B99F6C /* VideoShortModel.swift */; };
+		523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE142844D23D00B99F6C /* BaseModel.swift */; };
+		523EBE172844E9FE00B99F6C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE162844E9FE00B99F6C /* BaseService.swift */; };
+		523EBE192844EAF300B99F6C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE182844EAF300B99F6C /* APIError.swift */; };
+		523EBE1B2844EBC100B99F6C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE1A2844EBC100B99F6C /* Log.swift */; };
+		523EBE1E2844ED1D00B99F6C /* URLTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE1D2844ED1D00B99F6C /* URLTypes.swift */; };
+		523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE202844F24D00B99F6C /* ShortVideoService.swift */; };
+		523EBE232844F58D00B99F6C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EBE222844F58D00B99F6C /* Result.swift */; };
 		52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */; };
 		52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */; };
 		52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */; };
@@ -125,6 +139,7 @@
 		528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CBF8827CA56B200541EF7 /* EpisodeVo.swift */; };
 		528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CBF8927CA56B200541EF7 /* LikeList.swift */; };
 		528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D8AD627CA1C5600A98B8B /* TopSearchData.swift */; };
+		528E4597284085EB007DA38D /* NotifcationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E4596284085EB007DA38D /* NotifcationName.swift */; };
 		528E4C4A2808133B001438BF /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E4C492808133B001438BF /* UILabel.swift */; };
 		5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295CD86280AE46E0064EFBB /* ListSearchResultTableViewCell.swift */; };
 		5295CD89280AE46E0064EFBB /* ListSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5295CD87280AE46E0064EFBB /* ListSearchResultTableViewCell.xib */; };
@@ -135,13 +150,6 @@
 		52A1508727E0F3290050BD12 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508627E0F3290050BD12 /* Section.swift */; };
 		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
 		52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A627FAD5ED006DEF8E /* TikTokModel.swift */; };
-		52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */; };
-		52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */; };
-		52A204AF27FADA95006DEF8E /* TikTokScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */; };
-		52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */; };
-		52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */; };
-		52A204B727FAF715006DEF8E /* tiktokTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */; };
-		52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */; };
 		52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */; };
 		52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */; };
 		52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E727EDA68C006F79DC /* MovieCell.swift */; };
@@ -160,7 +168,6 @@
 		52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6C8E028001EDB00F180AB /* SearchingRootClass.swift */; };
 		52B8BBFF27FBE25200EDE659 /* Format_Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BBFD27FBE25100EDE659 /* Format_Name.swift */; };
 		52B8BC0027FBE25200EDE659 /* IBOutlet_Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BBFE27FBE25100EDE659 /* IBOutlet_Name.swift */; };
-		52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */; };
 		52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0427FBF5BC00EDE659 /* TagView.swift */; };
 		52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */; };
 		52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0627FBF5BC00EDE659 /* TagListView.swift */; };
@@ -171,6 +178,8 @@
 		52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */; };
 		52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */; };
 		52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */; };
+		52D8AA022845FE180010D494 /* ShortVideoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8AA002845FE180010D494 /* ShortVideoCollectionCell.swift */; };
+		52D8AA032845FE180010D494 /* ShortVideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D8AA012845FE180010D494 /* ShortVideoCollectionCell.xib */; };
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
 		52DAD60A2805395200E27111 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAD6092805395200E27111 /* String.swift */; };
@@ -298,6 +307,20 @@
 		523E04E32824FE9E005E55A4 /* TopSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSearchTableViewCell.swift; sourceTree = "<group>"; };
 		523E04E42824FE9E005E55A4 /* SearchingInterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingInterator.swift; sourceTree = "<group>"; };
 		523E04E62824FE9E005E55A4 /* SearchingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingCell.swift; sourceTree = "<group>"; };
+		523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortInteractorInput.swift; sourceTree = "<group>"; };
+		523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortViewModel.swift; sourceTree = "<group>"; };
+		523EBE062844C28C00B99F6C /* VideoShortRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortRouter.swift; sourceTree = "<group>"; };
+		523EBE072844C28C00B99F6C /* VideoShortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoShortViewController.xib; sourceTree = "<group>"; };
+		523EBE082844C28C00B99F6C /* VideoShortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortViewController.swift; sourceTree = "<group>"; };
+		523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoShortSection.swift; sourceTree = "<group>"; };
+		523EBE112844C3A500B99F6C /* VideoShortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoShortModel.swift; sourceTree = "<group>"; };
+		523EBE142844D23D00B99F6C /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		523EBE162844E9FE00B99F6C /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		523EBE182844EAF300B99F6C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		523EBE1A2844EBC100B99F6C /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		523EBE1D2844ED1D00B99F6C /* URLTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTypes.swift; sourceTree = "<group>"; };
+		523EBE202844F24D00B99F6C /* ShortVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortVideoService.swift; sourceTree = "<group>"; };
+		523EBE222844F58D00B99F6C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		52412C8C27F2FF2500896AF0 /* ExpandScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenPresenter.swift; sourceTree = "<group>"; };
 		52412C8D27F2FF2500896AF0 /* ExpandScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenRouter.swift; sourceTree = "<group>"; };
 		52412C8E27F2FF2500896AF0 /* ExpandScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenViewController.swift; sourceTree = "<group>"; };
@@ -354,6 +377,7 @@
 		528CBF8827CA56B200541EF7 /* EpisodeVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeVo.swift; sourceTree = "<group>"; };
 		528CBF8927CA56B200541EF7 /* LikeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeList.swift; sourceTree = "<group>"; };
 		528D8AD627CA1C5600A98B8B /* TopSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSearchData.swift; sourceTree = "<group>"; };
+		528E4596284085EB007DA38D /* NotifcationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationName.swift; sourceTree = "<group>"; };
 		528E4C492808133B001438BF /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5295CD86280AE46E0064EFBB /* ListSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		5295CD87280AE46E0064EFBB /* ListSearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSearchResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -364,13 +388,6 @@
 		52A1508627E0F3290050BD12 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52A204A627FAD5ED006DEF8E /* TikTokModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokModel.swift; sourceTree = "<group>"; };
-		52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenPresenter.swift; sourceTree = "<group>"; };
-		52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenRouter.swift; sourceTree = "<group>"; };
-		52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenViewController.swift; sourceTree = "<group>"; };
-		52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenProtocols.swift; sourceTree = "<group>"; };
-		52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenInteractor.swift; sourceTree = "<group>"; };
-		52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tiktokTableViewCell.swift; sourceTree = "<group>"; };
-		52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tiktokTableViewCell.xib; sourceTree = "<group>"; };
 		52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A7A7E727EDA68C006F79DC /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -389,7 +406,6 @@
 		52B6C8E028001EDB00F180AB /* SearchingRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingRootClass.swift; sourceTree = "<group>"; };
 		52B8BBFD27FBE25100EDE659 /* Format_Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Format_Name.swift; sourceTree = "<group>"; };
 		52B8BBFE27FBE25100EDE659 /* IBOutlet_Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutlet_Name.swift; sourceTree = "<group>"; };
-		52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokTableViewDataSource.swift; sourceTree = "<group>"; };
 		52B8BC0427FBF5BC00EDE659 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		52B8BC0627FBF5BC00EDE659 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
@@ -400,6 +416,8 @@
 		52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewProtocols.swift; sourceTree = "<group>"; };
 		52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewInteractor.swift; sourceTree = "<group>"; };
 		52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewDataSource.swift; sourceTree = "<group>"; };
+		52D8AA002845FE180010D494 /* ShortVideoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortVideoCollectionCell.swift; sourceTree = "<group>"; };
+		52D8AA012845FE180010D494 /* ShortVideoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortVideoCollectionCell.xib; sourceTree = "<group>"; };
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		52DAD6092805395200E27111 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -491,13 +509,13 @@
 		52064A6E27EF5ECB007E48A6 /* TikTokView */ = {
 			isa = PBXGroup;
 			children = (
-				52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */,
-				52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */,
-				52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */,
-				52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */,
-				52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */,
-				52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */,
-				52A204B427FAF6FC006DEF8E /* TikTokTableViewCell */,
+				523EBE042844C28B00B99F6C /* VideoShortInteractorInput.swift */,
+				523EBE062844C28C00B99F6C /* VideoShortRouter.swift */,
+				523EBE082844C28C00B99F6C /* VideoShortViewController.swift */,
+				523EBE072844C28C00B99F6C /* VideoShortViewController.xib */,
+				523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */,
+				523EBE132844D21A00B99F6C /* Section Controller */,
+				52D8A9FF2845FDAC0010D494 /* Cell */,
 			);
 			path = TikTokView;
 			sourceTree = "<group>";
@@ -734,6 +752,7 @@
 				521E70CF27FD374600620DA1 /* Lib */,
 				52D8ECE427C6179A001B8A2B /* Base */,
 				52E6E61B27C20ADE00CD80D0 /* Extension */,
+				523EBE1C2844ECFE00B99F6C /* Enum */,
 				52E6E62827C20C3B00CD80D0 /* Service */,
 				52E6E62627C20C1C00CD80D0 /* Model */,
 				52A7A7C727ED91DD006F79DC /* Screen */,
@@ -761,6 +780,42 @@
 				523E04E62824FE9E005E55A4 /* SearchingCell.swift */,
 			);
 			path = Searching;
+			sourceTree = "<group>";
+		};
+		523EBE102844C39500B99F6C /* VideoShort */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE112844C3A500B99F6C /* VideoShortModel.swift */,
+			);
+			path = VideoShort;
+			sourceTree = "<group>";
+		};
+		523EBE132844D21A00B99F6C /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE0E2844C2F200B99F6C /* VideoShortSection.swift */,
+			);
+			path = "Section Controller";
+			sourceTree = "<group>";
+		};
+		523EBE1C2844ECFE00B99F6C /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE1D2844ED1D00B99F6C /* URLTypes.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		523EBE1F2844F1D000B99F6C /* Base Service */ = {
+			isa = PBXGroup;
+			children = (
+				523EBE162844E9FE00B99F6C /* BaseService.swift */,
+				522CF3CA27C0FE1900E4900A /* APIService.swift */,
+				523EBE182844EAF300B99F6C /* APIError.swift */,
+				523EBE1A2844EBC100B99F6C /* Log.swift */,
+				523EBE222844F58D00B99F6C /* Result.swift */,
+			);
+			path = "Base Service";
 			sourceTree = "<group>";
 		};
 		5263515F28237F8800093D80 /* SearchingIGListKit */ = {
@@ -943,22 +998,13 @@
 			path = "Tik Tok Model";
 			sourceTree = "<group>";
 		};
-		52A204B427FAF6FC006DEF8E /* TikTokTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */,
-				52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */,
-			);
-			path = TikTokTableViewCell;
-			sourceTree = "<group>";
-		};
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				527AF6A628364CD00089D58B /* LoginScreen */,
-				522ACEBD2834FCD000443757 /* SplashScreen */,
-				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52E6E63227C20E8400CD80D0 /* Cell */,
+				522ACEBD2834FCD000443757 /* SplashScreen */,
+				527AF6A628364CD00089D58B /* LoginScreen */,
+				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
@@ -1047,9 +1093,19 @@
 			path = "Section Controller";
 			sourceTree = "<group>";
 		};
+		52D8A9FF2845FDAC0010D494 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				52D8AA002845FE180010D494 /* ShortVideoCollectionCell.swift */,
+				52D8AA012845FE180010D494 /* ShortVideoCollectionCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		52D8ECE427C6179A001B8A2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE142844D23D00B99F6C /* BaseModel.swift */,
 				52D8ECE527C617B1001B8A2B /* BaseViewController.swift */,
 				52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */,
 			);
@@ -1082,6 +1138,7 @@
 				52DAD6092805395200E27111 /* String.swift */,
 				528E4C492808133B001438BF /* UILabel.swift */,
 				52159E812824DC1E00081FA9 /* TextSize.swift */,
+				528E4596284085EB007DA38D /* NotifcationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1089,6 +1146,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE102844C39500B99F6C /* VideoShort */,
 				52159E7E2824D04600081FA9 /* SearchingModelIG */,
 				52B6C8DA28001EC900F180AB /* Searching Model */,
 				8495609A27FFDD96004A8A74 /* Discovery Model */,
@@ -1106,8 +1164,9 @@
 		52E6E62827C20C3B00CD80D0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				522CF3CA27C0FE1900E4900A /* APIService.swift */,
+				523EBE1F2844F1D000B99F6C /* Base Service */,
 				52B4F29627F3F6D700B0CFEB /* DataManager.swift */,
+				523EBE202844F24D00B99F6C /* ShortVideoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1349,11 +1408,13 @@
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
 				52159E7D2824CE3C00081FA9 /* CellSeachingCollectionView.xib in Resources */,
 				522ACEBC2834FC7100443757 /* GoogleService-Info.plist in Resources */,
+				52D8AA032845FE180010D494 /* ShortVideoCollectionCell.xib in Resources */,
 				521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */,
 				523E04E92824FE9E005E55A4 /* TopSearchTableViewCell.xib in Resources */,
 				52B1FEFA282B7056004DB9E9 /* CellCollectionMovieInfo.xib in Resources */,
 				5263516928237FD600093D80 /* SearchingIGListKitScreenViewController.xib in Resources */,
 				5295CD89280AE46E0064EFBB /* ListSearchResultTableViewCell.xib in Resources */,
+				523EBE0C2844C28C00B99F6C /* VideoShortViewController.xib in Resources */,
 				8495609427FFD7AF004A8A74 /* DiscoveryTableViewCell.xib in Resources */,
 				521CD1AA280AA1B400D114A7 /* PageAnimeViewController.xib in Resources */,
 				5287C5BC282A5650003C6A8A /* StreamingMovieScreenViewController.xib in Resources */,
@@ -1374,7 +1435,6 @@
 				527AF6B028364CE50089D58B /* LoginScreenViewController.xib in Resources */,
 				52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */,
 				843DD6A927FC47E4000C3554 /* DiscoveryScreenViewController.xib in Resources */,
-				52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */,
 				522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */,
 				52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */,
 			);
@@ -1468,6 +1528,7 @@
 				52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */,
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
+				523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
 				52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */,
 				522ACEC62834FCF500443757 /* SplashScreenViewModel.swift in Sources */,
@@ -1484,7 +1545,9 @@
 				521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */,
 				528CBF9027CA56B200541EF7 /* UpInfo.swift in Sources */,
 				527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */,
+				523EBE092844C28C00B99F6C /* VideoShortInteractorInput.swift in Sources */,
 				5296332027C91254007F3335 /* ChildCell.swift in Sources */,
+				523EBE172844E9FE00B99F6C /* BaseService.swift in Sources */,
 				5295CD88280AE46E0064EFBB /* ListSearchResultTableViewCell.swift in Sources */,
 				5263516828237FD600093D80 /* SearchingIGListKitScreenViewModel.swift in Sources */,
 				5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */,
@@ -1493,7 +1556,6 @@
 				52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */,
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
-				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
 				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
 				527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */,
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,
@@ -1501,13 +1563,13 @@
 				8495609827FFDA09004A8A74 /* DiscoveryCatagoryCLVCell.swift in Sources */,
 				527AF6AE28364CE50089D58B /* LoginScreenViewController.swift in Sources */,
 				52C424F12828E0BA00CF899A /* BannerSectionController.swift in Sources */,
+				528E4597284085EB007DA38D /* NotifcationName.swift in Sources */,
 				52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */,
 				841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */,
 				52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */,
 				52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
 				527AF6B7283658F70089D58B /* ProfileScreenRouter.swift in Sources */,
-				52A204AF27FADA95006DEF8E /* TikTokScreenViewController.swift in Sources */,
 				523E04F02824FE9E005E55A4 /* TopSearchTableViewCell.swift in Sources */,
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
@@ -1515,7 +1577,6 @@
 				522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
-				52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */,
 				522ACEC42834FCF500443757 /* SplashScreenInteractorInput.swift in Sources */,
 				5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */,
 				521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */,
@@ -1553,14 +1614,19 @@
 				5287C5BA282A5650003C6A8A /* StreamingMovieScreenViewController.swift in Sources */,
 				528E4C4A2808133B001438BF /* UILabel.swift in Sources */,
 				5263516528237FD600093D80 /* SearchingIGListKitScreenRouter.swift in Sources */,
+				523EBE192844EAF300B99F6C /* APIError.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
 				523E04EB2824FE9E005E55A4 /* SearchingTableViewDatasource.swift in Sources */,
 				849560A227FFE58C004A8A74 /* DiscoveryItem.swift in Sources */,
+				523EBE122844C3A500B99F6C /* VideoShortModel.swift in Sources */,
 				5214F1EB27FC3DE000A9E16B /* UITableViewCell.swift in Sources */,
+				523EBE232844F58D00B99F6C /* Result.swift in Sources */,
 				52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */,
 				521B0FE927EC49B800D411EB /* MediaInfo.swift in Sources */,
 				52B1FEF9282B7056004DB9E9 /* CellCollectionMovieInfo.swift in Sources */,
 				52159E7C2824CE3C00081FA9 /* CellSeachingCollectionView.swift in Sources */,
+				52D8AA022845FE180010D494 /* ShortVideoCollectionCell.swift in Sources */,
+				523EBE1E2844ED1D00B99F6C /* URLTypes.swift in Sources */,
 				52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */,
 				52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
@@ -1571,10 +1637,12 @@
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				5263516B282381DB00093D80 /* SearchingIGListKitSectionController.swift in Sources */,
+				523EBE1B2844EBC100B99F6C /* Log.swift in Sources */,
 				52B6C8E128001EDB00F180AB /* SearchingUpInfo.swift in Sources */,
 				52B1FEF5282B6EEF004DB9E9 /* StreamingInfoSectionController.swift in Sources */,
 				521CD1B0280AA1CE00D114A7 /* PageMovieRouter.swift in Sources */,
 				5263516628237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift in Sources */,
+				523EBE0A2844C28C00B99F6C /* VideoShortViewModel.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
 				5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */,
@@ -1585,34 +1653,34 @@
 				528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */,
 				528CBF8A27CA56B200541EF7 /* RefList.swift in Sources */,
 				52159E822824DC1E00081FA9 /* TextSize.swift in Sources */,
+				523EBE0B2844C28C00B99F6C /* VideoShortRouter.swift in Sources */,
 				8495609327FFD7AF004A8A74 /* DiscoveryTableViewCell.swift in Sources */,
 				849560A027FFE565004A8A74 /* ScreeningItems.swift in Sources */,
+				523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */,
 				845B3130280D5099002D67E9 /* UICollectionView.swift in Sources */,
-				52A204B727FAF715006DEF8E /* tiktokTableViewCell.swift in Sources */,
+				523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */,
 				52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */,
 				52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */,
 				52754E7C27FB483C00968694 /* UIImage.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
 				52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */,
 				523E04F12824FE9E005E55A4 /* SearchingInterator.swift in Sources */,
-				52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */,
 				5263516F282388B900093D80 /* SearchingIGListKitCell.swift in Sources */,
 				5287C5B9282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
-				52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */,
 				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
 				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
-				52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,
 				52B6C8E528001EDB00F180AB /* SearchResult.swift in Sources */,
 				52E6E62327C20ADE00CD80D0 /* Contants.swift in Sources */,
 				522CF3B927C0FD0900E4900A /* SceneDelegate.swift in Sources */,
 				52B8BC0027FBE25200EDE659 /* IBOutlet_Name.swift in Sources */,
 				52F9A2AC27C7C7BF00EC01A0 /* BannerCell.swift in Sources */,
+				523EBE0D2844C28C00B99F6C /* VideoShortViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

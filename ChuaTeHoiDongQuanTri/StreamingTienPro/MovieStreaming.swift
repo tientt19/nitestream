@@ -11,23 +11,28 @@ import AVFoundation
 
 public class MovieStreaming {
     
-    private let playVideoViewController = AVPlayerViewController()
-    
-    private let avPlayer = AVPlayer()
-    
-    private lazy var activityIndicatorView : UIActivityIndicatorView = {
-        let loading = UIActivityIndicatorView()
-        loading.hidesWhenStopped = true
-        loading.style = .large
-        loading.color = .white
-        return loading
+    private let playVideoViewController: AVPlayerViewController = {
+        let controller = AVPlayerViewController()
+        controller.showsPlaybackControls = true
+        controller.showsTimecodes = true
+        return controller
     }()
     
-    private lazy var playerView : UIView = {
+    private lazy var activityIndicatorView : UIActivityIndicatorView = {
+           let loading = UIActivityIndicatorView()
+           loading.hidesWhenStopped = true
+           loading.style = .large
+           loading.color = .white
+           return loading
+       }()
+    
+    private lazy var playerView: UIView = {
         let view = playVideoViewController.view!
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private let avPlayer = AVPlayer()
     
     public init() { }
     
@@ -36,18 +41,17 @@ public class MovieStreaming {
     public func configure(in view : UIView) {
         view.addSubview(playerView)
         playerView.addSubview(activityIndicatorView)
-        NSLayoutConstraint.activate([
-            playerView.topAnchor.constraint(equalTo: view.topAnchor),
-            playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+          NSLayoutConstraint.activate([
+            self.playerView.topAnchor.constraint(equalTo: view.topAnchor),
+            self.playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            self.playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            self.playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
-            activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
+            self.activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
+            self.activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
 
-        ])
-        
-        activityIndicatorView.startAnimating()
+          ])
+          activityIndicatorView.startAnimating()
     }
     
     public func streaming(with movieURL : URL, subRemote : String) {
@@ -61,21 +65,31 @@ public class MovieStreaming {
         if subRemote == "okokok" {
             playVideoViewController.showsPlaybackControls = false
         }
-        playVideoViewController.player = avPlayer
-        playVideoViewController.player?.play()
-        activityIndicatorView.stopAnimating()
+        self.playVideoViewController.player = avPlayer
+        self.playVideoViewController.player?.play()
+        self.activityIndicatorView.stopAnimating()
     }
     
+    public func streamingShortVideo(with movieURL : URL) {
+        let asset = AVAsset(url: movieURL)
+        let playerItem = AVPlayerItem(asset: asset)
+        self.avPlayer.replaceCurrentItem(with: playerItem)
+        self.playVideoViewController.player = avPlayer
+        self.playVideoViewController.showsPlaybackControls = false
+        self.playVideoViewController.player?.play()
+        self.activityIndicatorView.stopAnimating()
+    }
+        
     public func pause() {
-        avPlayer.pause()
+        self.avPlayer.pause()
     }
     
     private func addSubIfNeeded(subRemote : String) {
         let subtitleRemoteUrl = URL(string: subRemote)
         if let repsoneSub = subtitleRemoteUrl {
-            playVideoViewController.addSubtitles()
-            playVideoViewController.open(fileFromRemote: repsoneSub)
-            playVideoViewController.subtitleLabel?.textColor = UIColor.white
+            self.playVideoViewController.addSubtitles()
+            self.playVideoViewController.open(fileFromRemote: repsoneSub)
+            self.playVideoViewController.subtitleLabel?.textColor = UIColor.white
         }
     }
 }

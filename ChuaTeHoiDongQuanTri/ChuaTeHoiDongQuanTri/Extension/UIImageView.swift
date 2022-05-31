@@ -35,6 +35,9 @@ extension UIImageView {
         let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         targetImageView.kf.setImage(with: url)
     }
+    func setImage(targetImageView : UIImageView ,with imageURL : URL) {
+        targetImageView.kf.setImage(with: imageURL)
+    }
     
     func setImageCaching(targetImageView : UIImageView ,with imageURL : String) {
         let url = URL(string: imageURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)

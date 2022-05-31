@@ -35,7 +35,7 @@
             <connections>
                 <outlet property="mediaPlayerView" destination="qG3-Co-zbV" id="4rC-eS-bh1"/>
             </connections>
-            <point key="canvasLocation" x="40" y="-127"/>
+            <point key="canvasLocation" x="-1" y="-304"/>
         </collectionViewCell>
     </objects>
     <resources>
