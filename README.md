@@ -1,17 +1,20 @@
+  # --nitestream-- 
+  Stream the whole world with nitestream <br />
+  
   # Networking
-  pod 'Alamofire'
-  pod 'Kingfisher'
-  pod 'ReachabilitySwift'
+  pod 'Alamofire' <br />
+  pod 'Kingfisher' <br />
+  pod 'ReachabilitySwift' <br />
   
   # Firebase SDK
-  pod 'FirebaseAuth'
-  pod 'FirebaseFirestore'
+  pod 'FirebaseAuth' <br />
+  pod 'FirebaseFirestore' <br />
   
   # Google SDK
-  pod 'GoogleSignIn'
+  pod 'GoogleSignIn' <br />
   
   # Support
-  pod 'lottie-ios'
-  pod 'SnapKit'
-  pod 'IGListKit'
-  pod 'SkeletonView'
+  pod 'lottie-ios' <br />
+  pod 'SnapKit' <br />
+  pod 'IGListKit' <br />
+  pod 'SkeletonView' <br />

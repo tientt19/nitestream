@@ -16,6 +16,7 @@ class CellCollectionStreaming: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        NotificationCenter.default.addObserver(self, selector: #selector(stopPlayingMedia), name: .stopPlayingMedia, object: nil)
     }
 
     // TODO: Implement View Output Methods
@@ -26,7 +27,7 @@ class CellCollectionStreaming: UICollectionViewCell {
         }
     }
     
-    func stopPlayingMedia() {
+    @objc func stopPlayingMedia() {
         self.moviePlayer.pause()
     }
 }

@@ -25,9 +25,12 @@ class StreamingMovieScreenViewController: BaseViewController {
     var viewModel: StreamingMovieScreenViewModelProtocol!
     var movieDetail: MovieDetail?
     var objects = [ListDiffable]()
+    var currentEpisode: Int? = 0
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+        return ListAdapter(updater: ListAdapterUpdater(),
+                           viewController: self,
+                           workingRangeSize: 2)
     }()
     
     // MARK: - LifeCycle
@@ -41,6 +44,16 @@ class StreamingMovieScreenViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         self.collectionView.frame = self.view.bounds
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: .stopPlayingMedia, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .stopPlayingMedia, object: nil)
+    }
+    
     // MARK: - Init
     private func setupInit() {
         self.title = self.movieDetail?.name
@@ -66,6 +79,7 @@ extension StreamingMovieScreenViewController: ListAdapterDataSource {
         case is LinkMedia:
             let controller = StreamingSectionController()
             controller.movieDetail = self.movieDetail
+            controller.movieDetail?.seriesNo = self.currentEpisode
             return controller
         case is MovieInfo:
             return StreamingInfoSectionController()
@@ -115,6 +129,7 @@ extension StreamingMovieScreenViewController: onSelectAnotherMediaProtocol {
 
 extension StreamingMovieScreenViewController: onSelectEpisodeProtocols {
     func didSelect(with data: EpisodeVo?) {
+        self.currentEpisode = data?.seriesNo
         self.viewModel.onLoadEpisode(with: data!)
     }
 }

@@ -51,6 +51,7 @@ class StreamingListCollectionSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
+        NotificationCenter.default.post(name: .stopPlayingMedia, object: nil)
         self.onHandleDelegate?.onDidSelect(with: (self.currentIem?.data[index])!)
     }
 }
