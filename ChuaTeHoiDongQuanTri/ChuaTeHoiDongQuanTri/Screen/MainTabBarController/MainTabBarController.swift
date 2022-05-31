@@ -54,7 +54,7 @@ class MainTabBarController: UITabBarController {
         homeController.navigationItem.backBarButtonItem = UIBarButtonItem(title: String(), style: .plain, target: nil, action: nil)
         homeNavController.setHiddenNavigationBarViewControllers([])
         
-        //MESSAGES
+        //Video Short
         let tiktokController = VideoShortRouter.setupModule()
         
         tiktokController.tabBarItem.tag = 0
@@ -66,11 +66,22 @@ class MainTabBarController: UITabBarController {
         let tiktokNavController = BaseNavigationViewController(rootViewController: tiktokController)
         tiktokNavController.setHiddenNavigationBarViewControllers([VideoShortViewController.self])
         
+        //Daily news
+        let dailyNewsController = DailyNewsRouter.setupModule()
+        dailyNewsController.tabBarItem.tag = 0
+        dailyNewsController.tabBarItem.title  = "News"
+        dailyNewsController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
+        dailyNewsController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        dailyNewsController.tabBarItem.image = UIImage(systemName: "newspaper.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        dailyNewsController.tabBarItem.selectedImage = UIImage(named: "newspaper.fill")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate).withTintColor(.systemIndigo)
+        let newsNavController = BaseNavigationViewController(rootViewController: dailyNewsController)
+        newsNavController.setHiddenNavigationBarViewControllers([])
+        
         //Discorver
         let discoveryController = DiscoveryScreenRouter.setupModule()
 
         discoveryController.tabBarItem.tag = 0
-        discoveryController.tabBarItem.title  = "Discovery"
+        discoveryController.tabBarItem.title  = "Khám phá"
         discoveryController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: verticalSize)
         discoveryController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         discoveryController.tabBarItem.image = UIImage(systemName: "beats.fit.pro")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
@@ -95,6 +106,7 @@ class MainTabBarController: UITabBarController {
         self.viewControllers = [
             homeNavController,
             tiktokController,
+            dailyNewsController,
             discoveryController,
             profileViewcontroller
         ]

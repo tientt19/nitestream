@@ -183,6 +183,11 @@
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
 		52DAD60A2805395200E27111 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAD6092805395200E27111 /* String.swift */; };
+		52DE0971284656BC00385C09 /* DailyNewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096C284656BC00385C09 /* DailyNewsRouter.swift */; };
+		52DE0972284656BC00385C09 /* DailyNewsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */; };
+		52DE0973284656BC00385C09 /* DailyNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096E284656BC00385C09 /* DailyNewsViewController.swift */; };
+		52DE0974284656BC00385C09 /* DailyNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */; };
+		52DE0975284656BC00385C09 /* DailyNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DE0970284656BC00385C09 /* DailyNewsViewController.xib */; };
 		52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61C27C20ADE00CD80D0 /* UIView.swift */; };
 		52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61D27C20ADE00CD80D0 /* Dlog.swift */; };
 		52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61E27C20ADE00CD80D0 /* UITableView.swift */; };
@@ -421,6 +426,11 @@
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		52DAD6092805395200E27111 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		52DE096C284656BC00385C09 /* DailyNewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsRouter.swift; sourceTree = "<group>"; };
+		52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsInteractorInput.swift; sourceTree = "<group>"; };
+		52DE096E284656BC00385C09 /* DailyNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsViewController.swift; sourceTree = "<group>"; };
+		52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsViewModel.swift; sourceTree = "<group>"; };
+		52DE0970284656BC00385C09 /* DailyNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNewsViewController.xib; sourceTree = "<group>"; };
 		52E6E61C27C20ADE00CD80D0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		52E6E61D27C20ADE00CD80D0 /* Dlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dlog.swift; sourceTree = "<group>"; };
 		52E6E61E27C20ADE00CD80D0 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -1002,15 +1012,16 @@
 			isa = PBXGroup;
 			children = (
 				52E6E63227C20E8400CD80D0 /* Cell */,
+				52754E7627FB3EF700968694 /* MainTabBarController */,
 				522ACEBD2834FCD000443757 /* SplashScreen */,
 				527AF6A628364CD00089D58B /* LoginScreen */,
 				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
-				52754E7627FB3EF700968694 /* MainTabBarController */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
 				527AF6B1283658C80089D58B /* ProfileScreen */,
 				52064A7027EF5EDE007E48A6 /* ProfileView */,
+				52DE096B2846569D00385C09 /* News */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1118,6 +1129,18 @@
 				52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */,
 			);
 			path = CalculateToDynamicCell;
+			sourceTree = "<group>";
+		};
+		52DE096B2846569D00385C09 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				52DE096C284656BC00385C09 /* DailyNewsRouter.swift */,
+				52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */,
+				52DE096E284656BC00385C09 /* DailyNewsViewController.swift */,
+				52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */,
+				52DE0970284656BC00385C09 /* DailyNewsViewController.xib */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		52E6E61B27C20ADE00CD80D0 /* Extension */ = {
@@ -1401,6 +1424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521CD1B4280AA1CE00D114A7 /* PageMovieViewController.xib in Resources */,
+				52DE0975284656BC00385C09 /* DailyNewsViewController.xib in Resources */,
 				5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */,
 				522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */,
 				52635170282388B900093D80 /* SearchingIGListKitCell.xib in Resources */,
@@ -1527,6 +1551,7 @@
 				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
 				52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */,
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
+				52DE0971284656BC00385C09 /* DailyNewsRouter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
 				523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
@@ -1540,6 +1565,7 @@
 				527AF6AD28364CE50089D58B /* LoginScreenInteractorInput.swift in Sources */,
 				523E04E82824FE9E005E55A4 /* SearchingRouter.swift in Sources */,
 				521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */,
+				52DE0973284656BC00385C09 /* DailyNewsViewController.swift in Sources */,
 				521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */,
 				521E70D527FD38B100620DA1 /* ASVideoLayerObject.swift in Sources */,
 				521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */,
@@ -1574,6 +1600,7 @@
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
+				52DE0972284656BC00385C09 /* DailyNewsInteractorInput.swift in Sources */,
 				522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
@@ -1671,6 +1698,7 @@
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
 				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
+				52DE0974284656BC00385C09 /* DailyNewsViewModel.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
 				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
