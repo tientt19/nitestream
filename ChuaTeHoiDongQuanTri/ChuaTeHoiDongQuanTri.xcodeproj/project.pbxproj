@@ -150,13 +150,6 @@
 		52A1508727E0F3290050BD12 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508627E0F3290050BD12 /* Section.swift */; };
 		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
 		52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A627FAD5ED006DEF8E /* TikTokModel.swift */; };
-		52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */; };
-		52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */; };
-		52A204AF27FADA95006DEF8E /* TikTokScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */; };
-		52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */; };
-		52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */; };
-		52A204B727FAF715006DEF8E /* tiktokTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */; };
-		52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */; };
 		52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */; };
 		52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */; };
 		52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E727EDA68C006F79DC /* MovieCell.swift */; };
@@ -175,7 +168,6 @@
 		52B6C8E628001EDB00F180AB /* SearchingRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6C8E028001EDB00F180AB /* SearchingRootClass.swift */; };
 		52B8BBFF27FBE25200EDE659 /* Format_Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BBFD27FBE25100EDE659 /* Format_Name.swift */; };
 		52B8BC0027FBE25200EDE659 /* IBOutlet_Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BBFE27FBE25100EDE659 /* IBOutlet_Name.swift */; };
-		52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */; };
 		52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0427FBF5BC00EDE659 /* TagView.swift */; };
 		52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */; };
 		52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0627FBF5BC00EDE659 /* TagListView.swift */; };
@@ -396,13 +388,6 @@
 		52A1508627E0F3290050BD12 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52A204A627FAD5ED006DEF8E /* TikTokModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokModel.swift; sourceTree = "<group>"; };
-		52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenPresenter.swift; sourceTree = "<group>"; };
-		52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenRouter.swift; sourceTree = "<group>"; };
-		52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenViewController.swift; sourceTree = "<group>"; };
-		52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenProtocols.swift; sourceTree = "<group>"; };
-		52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokScreenInteractor.swift; sourceTree = "<group>"; };
-		52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tiktokTableViewCell.swift; sourceTree = "<group>"; };
-		52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tiktokTableViewCell.xib; sourceTree = "<group>"; };
 		52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A7A7E727EDA68C006F79DC /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -421,7 +406,6 @@
 		52B6C8E028001EDB00F180AB /* SearchingRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingRootClass.swift; sourceTree = "<group>"; };
 		52B8BBFD27FBE25100EDE659 /* Format_Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Format_Name.swift; sourceTree = "<group>"; };
 		52B8BBFE27FBE25100EDE659 /* IBOutlet_Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutlet_Name.swift; sourceTree = "<group>"; };
-		52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokTableViewDataSource.swift; sourceTree = "<group>"; };
 		52B8BC0427FBF5BC00EDE659 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		52B8BC0627FBF5BC00EDE659 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
@@ -532,7 +516,6 @@
 				523EBE052844C28B00B99F6C /* VideoShortViewModel.swift */,
 				523EBE132844D21A00B99F6C /* Section Controller */,
 				52D8A9FF2845FDAC0010D494 /* Cell */,
-				52D8AA04284604DF0010D494 /* Old */,
 			);
 			path = TikTokView;
 			sourceTree = "<group>";
@@ -1015,15 +998,6 @@
 			path = "Tik Tok Model";
 			sourceTree = "<group>";
 		};
-		52A204B427FAF6FC006DEF8E /* TikTokTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				52A204B527FAF715006DEF8E /* tiktokTableViewCell.swift */,
-				52A204B627FAF715006DEF8E /* tiktokTableViewCell.xib */,
-			);
-			path = TikTokTableViewCell;
-			sourceTree = "<group>";
-		};
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,20 +1100,6 @@
 				52D8AA012845FE180010D494 /* ShortVideoCollectionCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		52D8AA04284604DF0010D494 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				52A204A827FADA95006DEF8E /* TikTokScreenPresenter.swift */,
-				52A204A927FADA95006DEF8E /* TikTokScreenRouter.swift */,
-				52A204AA27FADA95006DEF8E /* TikTokScreenViewController.swift */,
-				52A204AB27FADA95006DEF8E /* TikTokScreenProtocols.swift */,
-				52A204AC27FADA95006DEF8E /* TikTokScreenInteractor.swift */,
-				52B8BC0127FBEA9E00EDE659 /* TikTokTableViewDataSource.swift */,
-				52A204B427FAF6FC006DEF8E /* TikTokTableViewCell */,
-			);
-			path = Old;
 			sourceTree = "<group>";
 		};
 		52D8ECE427C6179A001B8A2B /* Base */ = {
@@ -1475,7 +1435,6 @@
 				527AF6B028364CE50089D58B /* LoginScreenViewController.xib in Resources */,
 				52B1FEF2282B56CC004DB9E9 /* CellCollectionStreaming.xib in Resources */,
 				843DD6A927FC47E4000C3554 /* DiscoveryScreenViewController.xib in Resources */,
-				52A204B827FAF715006DEF8E /* tiktokTableViewCell.xib in Resources */,
 				522CF3BE27C0FD0900E4900A /* Main.storyboard in Resources */,
 				52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */,
 			);
@@ -1597,7 +1556,6 @@
 				52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */,
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
-				52A204B127FADA95006DEF8E /* TikTokScreenInteractor.swift in Sources */,
 				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
 				527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */,
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,
@@ -1612,7 +1570,6 @@
 				52CB4D3527F6BE9300BACAFD /* HomePageViewViewController.swift in Sources */,
 				528CBF9127CA56B200541EF7 /* SubtitlingList.swift in Sources */,
 				527AF6B7283658F70089D58B /* ProfileScreenRouter.swift in Sources */,
-				52A204AF27FADA95006DEF8E /* TikTokScreenViewController.swift in Sources */,
 				523E04F02824FE9E005E55A4 /* TopSearchTableViewCell.swift in Sources */,
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
@@ -1620,7 +1577,6 @@
 				522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
-				52A204B027FADA95006DEF8E /* TikTokScreenProtocols.swift in Sources */,
 				522ACEC42834FCF500443757 /* SplashScreenInteractorInput.swift in Sources */,
 				5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */,
 				521CD1BB280AA1E300D114A7 /* PageTVSeriesInteractorInput.swift in Sources */,
@@ -1703,25 +1659,21 @@
 				523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */,
 				845B3130280D5099002D67E9 /* UICollectionView.swift in Sources */,
 				523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */,
-				52A204B727FAF715006DEF8E /* tiktokTableViewCell.swift in Sources */,
 				52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */,
 				52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */,
 				52754E7C27FB483C00968694 /* UIImage.swift in Sources */,
 				52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */,
 				52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */,
 				523E04F12824FE9E005E55A4 /* SearchingInterator.swift in Sources */,
-				52B8BC0227FBEA9E00EDE659 /* TikTokTableViewDataSource.swift in Sources */,
 				5263516F282388B900093D80 /* SearchingIGListKitCell.swift in Sources */,
 				5287C5B9282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
-				52A204AD27FADA95006DEF8E /* TikTokScreenPresenter.swift in Sources */,
 				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
 				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
-				52A204AE27FADA95006DEF8E /* TikTokScreenRouter.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,
 				52B6C8E528001EDB00F180AB /* SearchResult.swift in Sources */,
 				52E6E62327C20ADE00CD80D0 /* Contants.swift in Sources */,
