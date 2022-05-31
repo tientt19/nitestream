@@ -33,18 +33,14 @@ class BaseService {
     // MARK: - GET
     func GET<T: Codable>(url: String,
                          param: [String: Any]?,
-                         completion: @escaping ((Result<BaseModel<[T]>, APIError>) -> Void)) {
+                         completion: @escaping ((Result<BaseModel<T>, APIError>) -> Void)) {
         let request = AF.request(url,
                                  method: .get,
                                  parameters: param,
                                  headers: self.headers)
-        request.validate().responseDecodable(of: BaseModel<[T]>.self, decoder: self.jsonDecoder) { [weak self] (response: DataResponse<BaseModel<[T]>, AFError>) in
-                        
-            guard let `self` = self else {
-                return
-            }
-            
-            
+        request.validate().responseDecodable(of: BaseModel<T>.self, decoder: self.jsonDecoder) { [weak self] (response: DataResponse<BaseModel<T>, AFError>) in
+                      
+            guard let `self` = self else { return }
             
             completion(self.handleResponse(response))
         }
@@ -61,9 +57,6 @@ class BaseService {
                                  encoding: encoding,
                                  headers: headers)
         request.validate().responseDecodable(of: BaseModel<T>.self, decoder: self.jsonDecoder) { [weak self] (response: DataResponse<BaseModel<T>, AFError>) in
-            
-//            Log.shared.logApiRequest(url: url, method: "POST", parameters: param, result: response.data)
-            
             guard let `self` = self else {
                 return
             }

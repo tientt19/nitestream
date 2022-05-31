@@ -26,8 +26,14 @@ class HomePageViewViewController: BaseViewController {
     var objects = [ListDiffable]()
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    
+    lazy var adapter: ListAdapter =  {
+        let updater = ListAdapterUpdater()
+        let adapter = ListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+        adapter.scrollViewDelegate = self
+        return adapter
     }()
     
     // MARK: - Lifecycle Methods
@@ -59,9 +65,7 @@ class HomePageViewViewController: BaseViewController {
         self.viewCanMove.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleViewCanMove)))
         
         self.view.addSubview(self.collectionView)
-        self.adapter.collectionView = collectionView
-        self.adapter.dataSource = self
-        self.adapter.scrollViewDelegate = self
+        _ = adapter
     }
     
     @IBAction func handleCloseViewCanMove(_ sender: UIButton) {

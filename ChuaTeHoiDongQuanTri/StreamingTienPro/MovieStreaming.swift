@@ -42,13 +42,13 @@ public class MovieStreaming {
         view.addSubview(playerView)
         playerView.addSubview(activityIndicatorView)
           NSLayoutConstraint.activate([
-              playerView.topAnchor.constraint(equalTo: view.topAnchor),
-              playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-              playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-              playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-              
-              activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
-              activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
+            self.playerView.topAnchor.constraint(equalTo: view.topAnchor),
+            self.playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            self.playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            self.playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            self.activityIndicatorView.centerXAnchor.constraint(equalTo: playerView.centerXAnchor),
+            self.activityIndicatorView.centerYAnchor.constraint(equalTo: playerView.centerYAnchor),
 
           ])
           activityIndicatorView.startAnimating()
@@ -65,9 +65,19 @@ public class MovieStreaming {
         if subRemote == "okokok" {
             playVideoViewController.showsPlaybackControls = false
         }
-        playVideoViewController.player = avPlayer
-        playVideoViewController.player?.play()
-        activityIndicatorView.stopAnimating()
+        self.playVideoViewController.player = avPlayer
+        self.playVideoViewController.player?.play()
+        self.activityIndicatorView.stopAnimating()
+    }
+    
+    public func streamingShortVideo(with movieURL : URL) {
+        let asset = AVAsset(url: movieURL)
+        let playerItem = AVPlayerItem(asset: asset)
+        self.avPlayer.replaceCurrentItem(with: playerItem)
+        self.playVideoViewController.player = avPlayer
+        self.playVideoViewController.showsPlaybackControls = false
+        self.playVideoViewController.player?.play()
+        self.activityIndicatorView.stopAnimating()
     }
         
     public func pause() {

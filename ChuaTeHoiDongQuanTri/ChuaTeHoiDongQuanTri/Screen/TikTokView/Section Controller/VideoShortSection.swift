@@ -10,6 +10,7 @@ import IGListKit
 
 class VideoShortSectionController: ListSectionController {
     var currentIem: VideoShortModel?
+    var mediaIsPlaying = false
 
     override init() {
         super.init()
@@ -28,26 +29,18 @@ class VideoShortSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        var cell: UICollectionViewCell = UICollectionViewCell()
-        
-//        if let sectionType = currentIem?.homeSectionType {
-//            if sectionType == "BANNER" {
-//                cell = getDataForCell(with: BannerCell.self, at: index) ?? UICollectionViewCell()
-//            } else {
-//                cell = getDataForCell(with: CategoryCell.self, at: index) ?? UICollectionViewCell()
-//            }
-//        }
-//
-//        if let ad = currentIem {
-//            (cell as? UpdateBannerCellProtocol)?.update(with: ad.recommendContentVOList, homeController: self.controller!)
-//        }
-//
+        let nibName = String(describing: ShortVideoCollectionCell.self)
+        let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! ShortVideoCollectionCell
+        if self.mediaIsPlaying == false {
+            self.mediaIsPlaying.toggle()
+            cell.configure(link: (self.currentIem?.videoShortData?.mediaUrl)!, data: (self.currentIem?.reviewData)!)
+        }
         return cell
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
         let collectionViewWidth = ((collectionContext?.containerSize.width)! - 10)
-        let collectionViewHeight = collectionContext?.containerSize.height ?? 0        
+        let collectionViewHeight = ((collectionContext?.containerSize.height)! - 10)
         return CGSize(width: collectionViewWidth, height: collectionViewHeight)
     }
     

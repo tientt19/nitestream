@@ -12,11 +12,14 @@ import UIKit
 // MARK: - Interactor Input Protocol
 protocol VideoShortInteractorInputProtocol {
     func onGetData()
+    func onLoadMore(with page: Int)
+    func onGetShortVideoData(with rawBody: [ReviewShortVideoModel])
 }
 
 // MARK: - Interactor Output Protocol
 protocol VideoShortInteractorOutputProtocol: AnyObject {
-    func didGetDataFinished(with result: Result<ReviewShortVideoModel, APIError>)
+    func didGetDataFinished(with result: Result<[ReviewShortVideoModel], APIError>)
+    func didGetShortVideoFinish(with result: [ShortVideoModel])
 }
 
 // MARK: - VideoShort InteractorInput
@@ -29,8 +32,22 @@ class VideoShortInteractorInput {
 extension VideoShortInteractorInput: VideoShortInteractorInputProtocol {
     func onGetData() {
         self.service.onGetReviewShortVideo(with: 0) { [weak self] result in
-            dLogDebug(result)
-//            self?.output?.didGetDataFinished(with: result.unwrapSuccessModel())
+            self?.output?.didGetDataFinished(with: result.unwrapSuccessModel())
+        }
+    }
+    
+    func onLoadMore(with page: Int) {
+        self.service.onGetReviewShortVideo(with: page) { [weak self] result in
+            self?.output?.didGetDataFinished(with: result.unwrapSuccessModel())
+        }
+    }
+    
+    func onGetShortVideoData(with rawBody: [ReviewShortVideoModel]) {
+        let params = self.service.onGetRawBody(with: rawBody)
+        self.service.onGetShortVideo(with: params) { [weak self] result, error in
+            if let `result` = result {
+                self?.output?.didGetShortVideoFinish(with: result)
+            }
         }
     }
 }
