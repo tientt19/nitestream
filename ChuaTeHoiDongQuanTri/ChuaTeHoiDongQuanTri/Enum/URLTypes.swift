@@ -27,7 +27,7 @@ enum URLTypes: ApiUrlProtocol {
         case .niteStreamNew(let page):
             return "https://web-api.netpop.app/cms/web/pc/news/list?page=\(page ?? 0)&size=9"
         case .niteStreamArticle(let id):
-            return "https://loklok.com/article/\(id ?? 0)"
+            return "https://loklok.com/vi/article/\(id ?? 0)"
         }
     }
 }

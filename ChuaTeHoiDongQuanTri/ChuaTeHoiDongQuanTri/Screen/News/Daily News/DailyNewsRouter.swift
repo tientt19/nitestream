@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - RouterProtocol
 protocol DailyNewsRouterProtocol {
-
+    func onOpenWebView(with model: NewsModel?)
 }
 
 // MARK: - DailyNews Router
@@ -36,5 +36,9 @@ class DailyNewsRouter {
 
 // MARK: - DailyNews RouterProtocol
 extension DailyNewsRouter: DailyNewsRouterProtocol {
-    
+    func onOpenWebView(with model: NewsModel?) {
+        let controller = DailyNewsWebViewRouter.setupModule(with: model)
+        controller.modalTransitionStyle = .coverVertical
+        self.viewController?.present(controller, animated: true)
+    }
 }

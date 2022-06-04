@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyNewsViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
+            <connections>
+                <outlet property="clv_niteStreamNews" destination="CCc-W2-l0Q" id="rJr-kG-tvZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjO-qf-AAB">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nitestream News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA8-cj-NNQ">
+                            <rect key="frame" x="16" y="60" width="178.5" height="27"/>
+                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="23"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstItem="uA8-cj-NNQ" firstAttribute="leading" secondItem="VjO-qf-AAB" secondAttribute="leading" constant="16" id="L3w-yq-LFX"/>
+                        <constraint firstAttribute="height" constant="100" id="agy-v4-ENk"/>
+                        <constraint firstItem="uA8-cj-NNQ" firstAttribute="top" secondItem="VjO-qf-AAB" secondAttribute="top" constant="60" id="kdd-X3-jbZ"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CCc-W2-l0Q">
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jju-C3-0dU">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="KlH-tW-6zV"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KlH-tW-6zV" firstAttribute="trailing" secondItem="VjO-qf-AAB" secondAttribute="trailing" id="20m-T3-zvO"/>
+                <constraint firstItem="CCc-W2-l0Q" firstAttribute="leading" secondItem="KlH-tW-6zV" secondAttribute="leading" id="5Ql-6W-XVX"/>
+                <constraint firstItem="KlH-tW-6zV" firstAttribute="bottom" secondItem="CCc-W2-l0Q" secondAttribute="bottom" id="FHY-4m-ive"/>
+                <constraint firstItem="VjO-qf-AAB" firstAttribute="leading" secondItem="KlH-tW-6zV" secondAttribute="leading" id="JaN-ox-vb4"/>
+                <constraint firstItem="CCc-W2-l0Q" firstAttribute="top" secondItem="VjO-qf-AAB" secondAttribute="bottom" id="Rab-5o-eiS"/>
+                <constraint firstItem="VjO-qf-AAB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WOW-1N-HbW"/>
+                <constraint firstItem="KlH-tW-6zV" firstAttribute="trailing" secondItem="CCc-W2-l0Q" secondAttribute="trailing" id="gje-gp-TcE"/>
+            </constraints>
+            <point key="canvasLocation" x="245" y="-98"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

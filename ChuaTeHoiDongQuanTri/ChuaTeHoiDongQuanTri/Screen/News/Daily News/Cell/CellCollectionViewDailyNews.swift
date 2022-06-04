@@ -11,8 +11,8 @@ class CellCollectionViewDailyNews: UICollectionViewCell {
     
     @IBOutlet weak var lbl_title: UILabel!
     @IBOutlet weak var lbl_recommendation: UILabel!
+    @IBOutlet weak var lbl_createdAt: UILabel!
     @IBOutlet weak var img_coverImage: UIImageView!
-    @IBOutlet weak var view_TagListView: TagListView!
     
     var model: NewsModel? {
         didSet {
@@ -30,7 +30,11 @@ class CellCollectionViewDailyNews: UICollectionViewCell {
     func config(with data: NewsModel) {
         self.img_coverImage.setImageCachingv2(targetImageView: self.img_coverImage, with: data.coverImg ?? "")
         self.lbl_title.text = data.title
-        self.view_TagListView.addTags(data.keyword ?? [""])
+        let dateFormatter = DateFormatter()
+        let epochTime = TimeInterval(data.createTime ?? 0) / 1000
+        let date = Date(timeIntervalSince1970: epochTime)
+        dateFormatter.dateFormat = "yyyy-MM-dd" //Specify your format that you want
+        self.lbl_createdAt.text = dateFormatter.string(from: date)
         self.lbl_recommendation.text = data.introduction
     }
 }

@@ -11,13 +11,10 @@ class BaseService {
     static let shared = BaseService()
     
     private var headers : HTTPHeaders = [
-        "lang" : "en",
+        "lang" : "vi",
         "versioncode" : "11",
         "clienttype" : "ios_jike_default",
         "deviceid": ""
-//        "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8",
-//        "Content-Type" : "application/json",
-//        "Accept" : "application/json"
     ]
     
     // MARK: - JSONDecoder

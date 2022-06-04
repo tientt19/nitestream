@@ -25,14 +25,6 @@ class BaseViewController: UIViewController {
         return view
     }()
     
-    lazy var dailyNewslabel: UILabel = {
-        let label = UILabel()
-        label.text = "NiteStream News"
-        label.font = UIFont(name: "Roboto-Bold", size: 18)
-        label.textColor = .white
-        return label
-    }()
-    
     lazy var searchView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)! , height: 30))
         view.backgroundColor = .clear
@@ -91,12 +83,6 @@ class BaseViewController: UIViewController {
         self.coverTextFieldView.anchor(top: self.searchView.topAnchor, left: self.appIcon.rightAnchor, bottom: self.searchView.bottomAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, width: (self.searchView.frame.width*2) / 3, height: 30)
         
         self.textFieldView.anchor(top: self.coverTextFieldView.topAnchor, left: self.coverTextFieldView.leftAnchor, bottom: self.coverTextFieldView.bottomAnchor, right: self.coverTextFieldView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 5)
-    }
-    
-    func createDailyNewNavBar() {
-        self.searchView.addSubview(self.dailyNewslabel)
-        self.dailyNewslabel.anchor(left: self.searchView.leadingAnchor, paddingLeft: 16)
-        self.dailyNewslabel.centerX(inView: self.searchView)
     }
     
     func setAvatarImage(with userImage: URL) {

@@ -8,8 +8,13 @@
 import Foundation
 import IGListKit
 
+protocol DailyNewsSectionDelegate: AnyObject {
+    func onGetDataPass(with model: NewsModel?)
+}
+
 class DailyNewsSectionController: ListSectionController {
     var currentIem: DailyNewsModel?
+    var delegate: DailyNewsSectionDelegate?
     
     override init() {
         super.init()
@@ -36,13 +41,26 @@ class DailyNewsSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
+        let data = self.currentIem?.list?[index]
         let collectionViewWidth = ((collectionContext?.containerSize.width)! - 32)
-        let collectionViewHeight = ((collectionContext?.containerSize.height)! - 20) / 1.5
+        let collectionViewHeight = estimateFrameForText(text: data?.title ?? "" , width: collectionViewWidth).height +
+        estimateFrameForText(text: "\(String(describing: data?.createTime))" , width: collectionViewWidth).height +
+        estimateFrameForText(text: data?.introduction ?? "", width: collectionViewWidth).height +
+        (collectionViewWidth * 380/677) + 30
         return CGSize(width: collectionViewWidth, height: collectionViewHeight)
     }
     
     override func didSelectItem(at index: Int) {
-        dLogDebug(index)
+        self.delegate?.onGetDataPass(with: self.currentIem?.list?[index])
     }
-    
+}
+
+extension DailyNewsSectionController {
+    private func estimateFrameForText(text: String, width: CGFloat) -> CGRect {
+        let height: CGFloat = 999
+        let size = CGSize(width: width, height: height)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)]
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: attributes, context: nil)
+    }
 }

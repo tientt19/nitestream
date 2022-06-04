@@ -17,13 +17,15 @@ protocol DailyNewsViewProtocol: AnyObject {
 
 // MARK: - DailyNews ViewController
 class DailyNewsViewController: BaseViewController {
+    
+    @IBOutlet weak var clv_niteStreamNews: UICollectionView!
+    
     var objects = [ListDiffable]()
     var router: DailyNewsRouterProtocol!
     var viewModel: DailyNewsViewModelProtocol!
     var index = 0
     var loading = false
     
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
@@ -35,24 +37,15 @@ class DailyNewsViewController: BaseViewController {
         self.viewModel.onViewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.collectionView.frame = self.view.bounds
-    }
-    
     // MARK: - Init
-    private func setupInit() {
-//        self.createDailyNewNavBar()
-//        self.navigationItem.titleView = self.searchView
-        
-        self.view.addSubview(self.collectionView)
-        self.adapter.collectionView = self.collectionView
+    private func setupInit() {        
+        self.view.addSubview(self.clv_niteStreamNews)
+        self.adapter.collectionView = self.clv_niteStreamNews
         self.adapter.dataSource = self
         self.adapter.scrollViewDelegate = self
     }
     
     // MARK: - Action
-    
 }
 
 // MARK: - UIScrollViewDelegate
@@ -85,6 +78,7 @@ extension DailyNewsViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let sectionController = DailyNewsSectionController()
+        sectionController.delegate = self
         return sectionController
     }
     
@@ -96,5 +90,12 @@ extension DailyNewsViewController: DailyNewsViewProtocol {
     func onReceiveDaiyNewsData(with source: DailyNewsModel?) {
         self.objects.append(source!)
         self.adapter.performUpdates(animated: true, completion: nil)
+    }
+}
+
+//MARK: - DailyNewsSectionDelegate
+extension DailyNewsViewController: DailyNewsSectionDelegate {
+    func onGetDataPass(with model: NewsModel?) {
+        self.router.onOpenWebView(with: model)
     }
 }
