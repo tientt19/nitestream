@@ -44,6 +44,11 @@
 		5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292B27CB949300C9FFB2 /* ListInfoCell.swift */; };
 		5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292C27CB949300C9FFB2 /* ListInfoCell.xib */; };
 		522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CC27CC989A00CDFDDA /* LinkMedia.swift */; };
+		5222803A284BA93F00FC824A /* HomePageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52228039284BA93F00FC824A /* HomePageModels.swift */; };
+		5222803C284BAD3200FC824A /* HomePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222803B284BAD3200FC824A /* HomePageService.swift */; };
+		5222803E284BAE0A00FC824A /* HomeBannerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222803D284BAE0A00FC824A /* HomeBannerModels.swift */; };
+		52228040284BBA2100FC824A /* HomePageBannerSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222803F284BBA2000FC824A /* HomePageBannerSectionController.swift */; };
+		52228042284BC49600FC824A /* HomePageAlbumsSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52228041284BC49600FC824A /* HomePageAlbumsSectionController.swift */; };
 		522ACEBC2834FC7100443757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */; };
 		522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEBE2834FCF500443757 /* SplashScreenRouter.swift */; };
 		522ACEC42834FCF500443757 /* SplashScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522ACEBF2834FCF500443757 /* SplashScreenInteractorInput.swift */; };
@@ -156,7 +161,6 @@
 		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
 		52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A627FAD5ED006DEF8E /* TikTokModel.swift */; };
 		52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */; };
-		52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */; };
 		52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E727EDA68C006F79DC /* MovieCell.swift */; };
 		52A7A7EA27EDA68C006F79DC /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A7A7E827EDA68C006F79DC /* MovieCell.xib */; };
 		52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1FEEF282B56CC004DB9E9 /* CellCollectionStreaming.swift */; };
@@ -296,6 +300,11 @@
 		5221292B27CB949300C9FFB2 /* ListInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCell.swift; sourceTree = "<group>"; };
 		5221292C27CB949300C9FFB2 /* ListInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoCell.xib; sourceTree = "<group>"; };
 		522184CC27CC989A00CDFDDA /* LinkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkMedia.swift; sourceTree = "<group>"; };
+		52228039284BA93F00FC824A /* HomePageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModels.swift; sourceTree = "<group>"; };
+		5222803B284BAD3200FC824A /* HomePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageService.swift; sourceTree = "<group>"; };
+		5222803D284BAE0A00FC824A /* HomeBannerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerModels.swift; sourceTree = "<group>"; };
+		5222803F284BBA2000FC824A /* HomePageBannerSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageBannerSectionController.swift; sourceTree = "<group>"; };
+		52228041284BC49600FC824A /* HomePageAlbumsSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageAlbumsSectionController.swift; sourceTree = "<group>"; };
 		522ACEBE2834FCF500443757 /* SplashScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenRouter.swift; sourceTree = "<group>"; };
 		522ACEBF2834FCF500443757 /* SplashScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenInteractorInput.swift; sourceTree = "<group>"; };
 		522ACEC02834FCF500443757 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -409,7 +418,6 @@
 		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52A204A627FAD5ED006DEF8E /* TikTokModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokModel.swift; sourceTree = "<group>"; };
 		52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
-		52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52A7A7E727EDA68C006F79DC /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		52A7A7E827EDA68C006F79DC /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		52B1FEEF282B56CC004DB9E9 /* CellCollectionStreaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionStreaming.swift; sourceTree = "<group>"; };
@@ -561,14 +569,6 @@
 			path = DiscoverScreen;
 			sourceTree = "<group>";
 		};
-		52064A7027EF5EDE007E48A6 /* ProfileView */ = {
-			isa = PBXGroup;
-			children = (
-				52A7A7E227ED9FD0006F79DC /* ProfileViewController.swift */,
-			);
-			path = ProfileView;
-			sourceTree = "<group>";
-		};
 		5206FF482824CAA1000226FC /* Section Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +654,7 @@
 				52CB4D3127F6BE9300BACAFD /* HomePageViewProtocols.swift */,
 				52CB4D3227F6BE9300BACAFD /* HomePageViewInteractor.swift */,
 				52CB4D3D27F6C2F000BACAFD /* HomePageViewDataSource.swift */,
+				522CF3BC27C0FD0900E4900A /* Main.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -741,6 +742,25 @@
 				522184CC27CC989A00CDFDDA /* LinkMedia.swift */,
 			);
 			path = LinkMedia;
+			sourceTree = "<group>";
+		};
+		52228037284BA71100FC824A /* NewCodeVersion */ = {
+			isa = PBXGroup;
+			children = (
+				52228038284BA92200FC824A /* HomePage */,
+				523EBE102844C39500B99F6C /* VideoShort */,
+				52BF9DBB284B1EAA00F881F7 /* DailyNewsModel */,
+			);
+			path = NewCodeVersion;
+			sourceTree = "<group>";
+		};
+		52228038284BA92200FC824A /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				52228039284BA93F00FC824A /* HomePageModels.swift */,
+				5222803D284BAE0A00FC824A /* HomeBannerModels.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		522ACEBD2834FCD000443757 /* SplashScreen */ = {
@@ -1062,12 +1082,11 @@
 				52754E7627FB3EF700968694 /* MainTabBarController */,
 				522ACEBD2834FCD000443757 /* SplashScreen */,
 				527AF6A628364CD00089D58B /* LoginScreen */,
-				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
+				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
 				527AF6B1283658C80089D58B /* ProfileScreen */,
-				52064A7027EF5EDE007E48A6 /* ProfileView */,
 				52DE096B2846569D00385C09 /* News */,
 			);
 			path = Screen;
@@ -1172,6 +1191,8 @@
 			isa = PBXGroup;
 			children = (
 				52C424F02828E0BA00CF899A /* BannerSectionController.swift */,
+				5222803F284BBA2000FC824A /* HomePageBannerSectionController.swift */,
+				52228041284BC49600FC824A /* HomePageAlbumsSectionController.swift */,
 			);
 			path = "Section Controller";
 			sourceTree = "<group>";
@@ -1237,8 +1258,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52BF9DBB284B1EAA00F881F7 /* DailyNewsModel */,
-				523EBE102844C39500B99F6C /* VideoShort */,
+				52228037284BA71100FC824A /* NewCodeVersion */,
 				52159E7E2824D04600081FA9 /* SearchingModelIG */,
 				52B6C8DA28001EC900F180AB /* Searching Model */,
 				8495609A27FFDD96004A8A74 /* Discovery Model */,
@@ -1260,6 +1280,7 @@
 				52B4F29627F3F6D700B0CFEB /* DataManager.swift */,
 				523EBE202844F24D00B99F6C /* ShortVideoService.swift */,
 				52BF9DBE284B26A300F881F7 /* DailyNewService.swift */,
+				5222803B284BAD3200FC824A /* HomePageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1268,7 +1289,6 @@
 			isa = PBXGroup;
 			children = (
 				522CF3C127C0FD0B00E4900A /* LaunchScreen.storyboard */,
-				522CF3BC27C0FD0900E4900A /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1631,12 +1651,13 @@
 				522ACEC62834FCF500443757 /* SplashScreenViewModel.swift in Sources */,
 				527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */,
 				523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */,
-				52A7A7E327ED9FD0006F79DC /* ProfileViewController.swift in Sources */,
+				5222803E284BAE0A00FC824A /* HomeBannerModels.swift in Sources */,
 				52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
 				527AF6AD28364CE50089D58B /* LoginScreenInteractorInput.swift in Sources */,
 				523E04E82824FE9E005E55A4 /* SearchingRouter.swift in Sources */,
 				521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */,
+				52228042284BC49600FC824A /* HomePageAlbumsSectionController.swift in Sources */,
 				525703CA284B912A00660BF2 /* DailyNewsWebViewViewController.swift in Sources */,
 				52DE0973284656BC00385C09 /* DailyNewsViewController.swift in Sources */,
 				521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */,
@@ -1699,6 +1720,7 @@
 				52B6C8E228001EDB00F180AB /* Area.swift in Sources */,
 				521CD1B1280AA1CE00D114A7 /* PageMovieInteractorInput.swift in Sources */,
 				528CBF8D27CA56B200541EF7 /* DrameTypeVo.swift in Sources */,
+				5222803A284BA93F00FC824A /* HomePageModels.swift in Sources */,
 				528CBF8C27CA56B200541EF7 /* AreaList.swift in Sources */,
 				523E04EF2824FE9E005E55A4 /* SearchingViewProtocols.swift in Sources */,
 				523E04EC2824FE9E005E55A4 /* SearchingPresenter.swift in Sources */,
@@ -1781,6 +1803,7 @@
 				52DE0974284656BC00385C09 /* DailyNewsViewModel.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
+				52228040284BBA2100FC824A /* HomePageBannerSectionController.swift in Sources */,
 				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
 				52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */,
 				52B6C8E528001EDB00F180AB /* SearchResult.swift in Sources */,
@@ -1789,6 +1812,7 @@
 				52B8BC0027FBE25200EDE659 /* IBOutlet_Name.swift in Sources */,
 				52F9A2AC27C7C7BF00EC01A0 /* BannerCell.swift in Sources */,
 				523EBE0D2844C28C00B99F6C /* VideoShortViewController.swift in Sources */,
+				5222803C284BAD3200FC824A /* HomePageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

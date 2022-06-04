@@ -31,8 +31,8 @@ class HomePageViewDataSource : HomePageViewDataSourceProtocol {
         
         let cell = collectionView.dequeue(cellClass: CategoryCell.self, forIndexPath: indexPath)
         cell.sendDelegate = presenter as? passDataPickDelegate
-        cell.configure(data: entities.recommendItems[indexPath.section].recommendContentVOList)
-        if entities.recommendItems[indexPath.section].homeSectionType == "BLOCK_GROUP" { cell.isGroupBlock = true }
+//        cell.configure(data: entities.recommendItems[indexPath.section].recommendContentVOList)
+//        if entities.recommendItems[indexPath.section].homeSectionType == "BLOCK_GROUP" { cell.isGroupBlock = true }
         return cell
     }
     

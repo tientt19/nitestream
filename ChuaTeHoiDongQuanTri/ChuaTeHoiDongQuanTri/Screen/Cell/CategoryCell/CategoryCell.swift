@@ -8,12 +8,14 @@
 import UIKit
 
 protocol passDataPickDelegate: AnyObject {
-    func openDetailView(_ data: RecommendContentVOList)
+    func openDetailView(_ data: RecommendContentVOListModel)
 }
-class CategoryCell: UICollectionViewCell, UpdateBannerCellProtocol {
+class CategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var CategoryCollectionView : UICollectionView!
-    var listDataCall = [RecommendContentVOList]()
+    @IBOutlet weak var lbl_header: UILabel!
+    
+    var listDataCall = [RecommendContentVOListModel]()
     var isGroupBlock = false
     
     var sendDelegate : passDataPickDelegate!
@@ -25,15 +27,9 @@ class CategoryCell: UICollectionViewCell, UpdateBannerCellProtocol {
         CategoryCollectionView.dataSource = self
     }
     
-    func configure(data : [RecommendContentVOList]) {
+    func configure(data : [RecommendContentVOListModel]) {
         listDataCall = data
         CategoryCollectionView.reloadData()
-    }
-    
-    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController) {
-        self.sendDelegate = homeController
-        self.listDataCall = data
-        self.CategoryCollectionView.reloadData()
     }
 }
 

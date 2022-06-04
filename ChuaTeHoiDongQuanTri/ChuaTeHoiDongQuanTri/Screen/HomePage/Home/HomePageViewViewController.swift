@@ -12,7 +12,6 @@ import IGListKit
 
 class HomePageViewViewController: BaseViewController {
     // MARK: - Properties
-    //    @IBOutlet weak var HomePageCLV: UICollectionView!
     @IBOutlet weak var viewCanMove: UIView!
     @IBOutlet weak var limitView: UIView!
     
@@ -40,8 +39,11 @@ class HomePageViewViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.register()
-        self.presentLockScreen()
-        self.presenter?.getHomePageData(index)
+//        self.presentLockScreen()
+//        self.presenter?.getHomePageData(index)
+        
+        //new
+        self.presenter?.onGetHomeAlbums(with: self.index)
     }
     
     override func viewDidLayoutSubviews() {
@@ -116,10 +118,11 @@ extension HomePageViewViewController: UIScrollViewDelegate {
             DispatchQueue.global(qos: .default).async {
                 // fake background loading task
                 DispatchQueue.main.async {
-                    self.presentLockScreen()
+//                    self.presentLockScreen()
                     self.loading = false
                     self.index += 1
-                    self.dataSource?.loadMore(self.index)
+                    self.presenter?.onGetHomeAlbums(with: self.index)
+//                    self.dataSource?.loadMore(self.index)
                 }
             }
         }
@@ -127,9 +130,9 @@ extension HomePageViewViewController: UIScrollViewDelegate {
 }
 
 extension HomePageViewViewController: passDataPickDelegate {
-    func openDetailView(_ data: RecommendContentVOList) {
+    func openDetailView(_ data: RecommendContentVOListModel) {
         self.presentLockScreen()
-        self.presenter?.onGetMovieDetail(data.id, data.category)
+//        self.presenter?.onGetMovieDetail(data.id, data.category)
     }
 }
 
@@ -140,10 +143,11 @@ extension HomePageViewViewController: ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let sectionController = BannerSectionController()
-        sectionController.controller = self
-        sectionController.openExpandViewDelegate = self
-        return sectionController
+        if object is HomeListBannerModel {
+            return HomePageBannerSectionController()
+        } else {
+            return HomePageAlbumsSectionController()
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
@@ -154,23 +158,34 @@ extension HomePageViewViewController: HomePageViewViewProtocol{
     
     // TODO: Implement View Output Methods
     func reloadData(_ data: HomePageModel) {
-        self.dataSource = HomePageViewDataSource(entities: data, with: presenter!)
-        self.unlockScreen()
-        self.objects.removeAll()
-        for item in data.recommendItems {
-            self.objects.append(item)
-        }
-        self.adapter.performUpdates(animated: true, completion: nil)
+//        self.dataSource = HomePageViewDataSource(entities: data, with: presenter!)
+//        self.unlockScreen()
+//        self.objects.removeAll()
+//        for item in data.recommendItems {
+//            self.objects.append(item)
+//        }
+//        self.adapter.performUpdates(animated: true, completion: nil)
     }
     
     func lockView() {
         self.presentLockScreen()
     }
-}
-
-//MARK: - HandleExpandViewOpenProtocols
-extension HomePageViewViewController: HandleExpandViewOpenProtocols {
-    func onOpenExpand(with data: RecommendItem) {
-        self.presenter?.openExpandView(with: data)
+    
+    //new
+    func didGetHomePageFinish(with albums: HomePageModels, listBanners: [HomeBannerModels]) {
+        if self.index == 0 {
+            let listBanner = HomeListBannerModel(banners: listBanners)
+            self.objects.append(listBanner)
+        }
+        self.objects.append(albums)
+        dLogDebug(self.objects)
+        self.adapter.performUpdates(animated: true, completion: nil)
     }
 }
+
+////MARK: - HandleExpandViewOpenProtocols
+//extension HomePageViewViewController: HandleExpandViewOpenProtocols {
+//    func onOpenExpand(with data: RecommendItem) {
+//        self.presenter?.openExpandView(with: data)
+//    }
+//}

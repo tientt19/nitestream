@@ -13,6 +13,8 @@ protocol ApiUrlProtocol {
 }
 
 enum URLTypes: ApiUrlProtocol {
+    case bannerHomePage
+    case homePage(Int?)
     case shortVideoURL
     case reviewShortVideo(Int?)
     case niteStreamNew(Int?)
@@ -20,6 +22,10 @@ enum URLTypes: ApiUrlProtocol {
     
     var path: String {
         switch self {
+        case .homePage(let page):
+            return "https://web-api.netpop.app/cms/web/pc/homePage/singleAlbums?page=\(page ?? 0)&size=6"
+        case .bannerHomePage:
+            return "https://web-api.netpop.app/cms/web/pc/homePage/banners?size=10"
         case .shortVideoURL:
             return "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo"
         case .reviewShortVideo(let page):

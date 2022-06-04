@@ -12,7 +12,9 @@ class HomePageViewInteractor: HomePageViewInteractorInputProtocol {
 
     // MARK: Properties
     var presenter: HomePageViewPresenterOutputProtocol?
+    let homePageService = HomePageService()
     
+    // old
     func getHomeData(_ page: Int) {
         DataManager.shared.getHomeData(page: page) { [weak self] response in
             guard let `self` = self else { return }
@@ -21,7 +23,7 @@ class HomePageViewInteractor: HomePageViewInteractorInputProtocol {
             }
         }
     }
-
+    
     func getMovieDetail(_ id: Int, _ category: Int) {
         DataManager.shared.getDetailMovieData(id, category) {[weak self] response in
             guard let `self` = self else { return }
@@ -47,6 +49,19 @@ class HomePageViewInteractor: HomePageViewInteractorInputProtocol {
                 }
                 self.presenter?.didLoad(oldDAO)
             }
+        }
+    }
+    
+    // new
+    func onGetHomeAlbums(with page: Int) {
+        self.homePageService.onGetSingleAlbums(with: page) { [weak self] result in
+            self?.presenter?.didGetHomePageAlbumsFinish(with: result.unwrapSuccessModel())
+        }
+    }
+    
+    func onGetHomeBanner() {
+        self.homePageService.onGetHomeBanner { [weak self] result in
+            self?.presenter?.didGetHomeBannerFinish(with: result.unwrapSuccessModel())
         }
     }
 }

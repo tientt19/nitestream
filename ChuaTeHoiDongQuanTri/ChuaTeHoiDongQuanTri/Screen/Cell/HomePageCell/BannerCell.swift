@@ -8,18 +8,23 @@
 import UIKit
 import Kingfisher
 
-protocol UpdateBannerCellProtocol: AnyObject {
-    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController)
-}
 
-class BannerCell: UICollectionViewCell, UpdateBannerCellProtocol{
+class BannerCell: UICollectionViewCell{
   
     @IBOutlet weak var bannerCLV: UICollectionView!
     @IBOutlet weak var pageView : UIPageControl!
     
-    var listDataCall = [RecommendContentVOList]()
+    var listDataCall = [HomeBannerModels]()
     var timer = Timer()
     var counter = 0
+    
+    var model: [HomeBannerModels]? {
+        didSet {
+            if let data = model {
+                self.config(with: data)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,15 +35,15 @@ class BannerCell: UICollectionViewCell, UpdateBannerCellProtocol{
     }
     
     func configure(data : [RecommendContentVOList]) {
-        listDataCall = data
+//        listDataCall = data
         pageView.numberOfPages = listDataCall.count
         pageView.currentPage = 0
         bannerCLV.reloadData()
     }
     
-    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController) {
+    func config(with data: [HomeBannerModels]) {
         self.listDataCall = data
-        self.pageView.numberOfPages = listDataCall.count
+        self.pageView.numberOfPages = self.listDataCall.count
         self.pageView.currentPage = 0
         self.bannerCLV.reloadData()
     }
@@ -64,8 +69,9 @@ extension BannerCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imageUrl = listDataCall[indexPath.row].imageUrl ?? ""
+        let imageUrl = listDataCall[indexPath.row].imgUrl ?? ""
         let titleLabel = listDataCall[indexPath.row].title ?? ""
+        
         let cell = collectionView.dequeue(cellClass: ChildCell.self, forIndexPath: indexPath)
         cell.configure(imageUrl, titleLabel)
         return cell
