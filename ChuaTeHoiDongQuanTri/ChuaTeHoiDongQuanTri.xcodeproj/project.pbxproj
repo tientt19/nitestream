@@ -89,6 +89,11 @@
 		52412C9427F2FF2500896AF0 /* ExpandScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C8F27F2FF2500896AF0 /* ExpandScreenProtocols.swift */; };
 		52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412C9027F2FF2500896AF0 /* ExpandScreenInteractor.swift */; };
 		52412C9727F2FF3C00896AF0 /* ExpandScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52412C9627F2FF3C00896AF0 /* ExpandScreen.storyboard */; };
+		525703C8284B912A00660BF2 /* DailyNewsWebViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525703C3284B912A00660BF2 /* DailyNewsWebViewRouter.swift */; };
+		525703C9284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525703C4284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift */; };
+		525703CA284B912A00660BF2 /* DailyNewsWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525703C5284B912A00660BF2 /* DailyNewsWebViewViewController.swift */; };
+		525703CB284B912A00660BF2 /* DailyNewsWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525703C6284B912A00660BF2 /* DailyNewsWebViewViewModel.swift */; };
+		525703CC284B912A00660BF2 /* DailyNewsWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525703C7284B912A00660BF2 /* DailyNewsWebViewViewController.xib */; };
 		5263516528237FD600093D80 /* SearchingIGListKitScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263516028237FD600093D80 /* SearchingIGListKitScreenRouter.swift */; };
 		5263516628237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263516128237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift */; };
 		5263516728237FD600093D80 /* SearchingIGListKitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263516228237FD600093D80 /* SearchingIGListKitScreenViewController.swift */; };
@@ -171,6 +176,11 @@
 		52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0427FBF5BC00EDE659 /* TagView.swift */; };
 		52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */; };
 		52B8BC0927FBF5BC00EDE659 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8BC0627FBF5BC00EDE659 /* TagListView.swift */; };
+		52BF9DBD284B1ED000F881F7 /* DailyNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF9DBC284B1ED000F881F7 /* DailyNewsModel.swift */; };
+		52BF9DBF284B26A300F881F7 /* DailyNewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF9DBE284B26A300F881F7 /* DailyNewService.swift */; };
+		52BF9DC2284B2C1100F881F7 /* DailyNewSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF9DC1284B2C1000F881F7 /* DailyNewSectionController.swift */; };
+		52BF9DC6284B2CA800F881F7 /* CellCollectionViewDailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BF9DC4284B2CA800F881F7 /* CellCollectionViewDailyNews.swift */; };
+		52BF9DC7284B2CA800F881F7 /* CellCollectionViewDailyNews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BF9DC5284B2CA800F881F7 /* CellCollectionViewDailyNews.xib */; };
 		52C424F12828E0BA00CF899A /* BannerSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C424F02828E0BA00CF899A /* BannerSectionController.swift */; };
 		52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */; };
 		52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */; };
@@ -183,6 +193,11 @@
 		52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECE527C617B1001B8A2B /* BaseViewController.swift */; };
 		52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */; };
 		52DAD60A2805395200E27111 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAD6092805395200E27111 /* String.swift */; };
+		52DE0971284656BC00385C09 /* DailyNewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096C284656BC00385C09 /* DailyNewsRouter.swift */; };
+		52DE0972284656BC00385C09 /* DailyNewsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */; };
+		52DE0973284656BC00385C09 /* DailyNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096E284656BC00385C09 /* DailyNewsViewController.swift */; };
+		52DE0974284656BC00385C09 /* DailyNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */; };
+		52DE0975284656BC00385C09 /* DailyNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DE0970284656BC00385C09 /* DailyNewsViewController.xib */; };
 		52E6E62027C20ADE00CD80D0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61C27C20ADE00CD80D0 /* UIView.swift */; };
 		52E6E62127C20ADE00CD80D0 /* Dlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61D27C20ADE00CD80D0 /* Dlog.swift */; };
 		52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6E61E27C20ADE00CD80D0 /* UITableView.swift */; };
@@ -327,6 +342,11 @@
 		52412C8F27F2FF2500896AF0 /* ExpandScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenProtocols.swift; sourceTree = "<group>"; };
 		52412C9027F2FF2500896AF0 /* ExpandScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandScreenInteractor.swift; sourceTree = "<group>"; };
 		52412C9627F2FF3C00896AF0 /* ExpandScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpandScreen.storyboard; sourceTree = "<group>"; };
+		525703C3284B912A00660BF2 /* DailyNewsWebViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsWebViewRouter.swift; sourceTree = "<group>"; };
+		525703C4284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsWebViewInteractorInput.swift; sourceTree = "<group>"; };
+		525703C5284B912A00660BF2 /* DailyNewsWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsWebViewViewController.swift; sourceTree = "<group>"; };
+		525703C6284B912A00660BF2 /* DailyNewsWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsWebViewViewModel.swift; sourceTree = "<group>"; };
+		525703C7284B912A00660BF2 /* DailyNewsWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNewsWebViewViewController.xib; sourceTree = "<group>"; };
 		5263516028237FD600093D80 /* SearchingIGListKitScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitScreenRouter.swift; sourceTree = "<group>"; };
 		5263516128237FD600093D80 /* SearchingIGListKitScreenInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitScreenInteractorInput.swift; sourceTree = "<group>"; };
 		5263516228237FD600093D80 /* SearchingIGListKitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitScreenViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +429,11 @@
 		52B8BC0427FBF5BC00EDE659 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		52B8BC0527FBF5BC00EDE659 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		52B8BC0627FBF5BC00EDE659 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		52BF9DBC284B1ED000F881F7 /* DailyNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsModel.swift; sourceTree = "<group>"; };
+		52BF9DBE284B26A300F881F7 /* DailyNewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewService.swift; sourceTree = "<group>"; };
+		52BF9DC1284B2C1000F881F7 /* DailyNewSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewSectionController.swift; sourceTree = "<group>"; };
+		52BF9DC4284B2CA800F881F7 /* CellCollectionViewDailyNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewDailyNews.swift; sourceTree = "<group>"; };
+		52BF9DC5284B2CA800F881F7 /* CellCollectionViewDailyNews.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCollectionViewDailyNews.xib; sourceTree = "<group>"; };
 		52C424F02828E0BA00CF899A /* BannerSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerSectionController.swift; sourceTree = "<group>"; };
 		52CB4D2E27F6BE9300BACAFD /* HomePageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewPresenter.swift; sourceTree = "<group>"; };
 		52CB4D2F27F6BE9300BACAFD /* HomePageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewRouter.swift; sourceTree = "<group>"; };
@@ -421,6 +446,11 @@
 		52D8ECE527C617B1001B8A2B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		52DAD6092805395200E27111 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		52DE096C284656BC00385C09 /* DailyNewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsRouter.swift; sourceTree = "<group>"; };
+		52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsInteractorInput.swift; sourceTree = "<group>"; };
+		52DE096E284656BC00385C09 /* DailyNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsViewController.swift; sourceTree = "<group>"; };
+		52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNewsViewModel.swift; sourceTree = "<group>"; };
+		52DE0970284656BC00385C09 /* DailyNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNewsViewController.xib; sourceTree = "<group>"; };
 		52E6E61C27C20ADE00CD80D0 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		52E6E61D27C20ADE00CD80D0 /* Dlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dlog.swift; sourceTree = "<group>"; };
 		52E6E61E27C20ADE00CD80D0 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -809,6 +839,7 @@
 		523EBE1F2844F1D000B99F6C /* Base Service */ = {
 			isa = PBXGroup;
 			children = (
+				523EBE142844D23D00B99F6C /* BaseModel.swift */,
 				523EBE162844E9FE00B99F6C /* BaseService.swift */,
 				522CF3CA27C0FE1900E4900A /* APIService.swift */,
 				523EBE182844EAF300B99F6C /* APIError.swift */,
@@ -816,6 +847,32 @@
 				523EBE222844F58D00B99F6C /* Result.swift */,
 			);
 			path = "Base Service";
+			sourceTree = "<group>";
+		};
+		525703C1284B90DE00660BF2 /* Daily News */ = {
+			isa = PBXGroup;
+			children = (
+				52BF9DC3284B2C8700F881F7 /* Cell */,
+				52BF9DC0284B2BFC00F881F7 /* Section Controller */,
+				52DE096C284656BC00385C09 /* DailyNewsRouter.swift */,
+				52DE096D284656BC00385C09 /* DailyNewsInteractorInput.swift */,
+				52DE096E284656BC00385C09 /* DailyNewsViewController.swift */,
+				52DE096F284656BC00385C09 /* DailyNewsViewModel.swift */,
+				52DE0970284656BC00385C09 /* DailyNewsViewController.xib */,
+			);
+			path = "Daily News";
+			sourceTree = "<group>";
+		};
+		525703C2284B90EC00660BF2 /* Web View */ = {
+			isa = PBXGroup;
+			children = (
+				525703C3284B912A00660BF2 /* DailyNewsWebViewRouter.swift */,
+				525703C4284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift */,
+				525703C5284B912A00660BF2 /* DailyNewsWebViewViewController.swift */,
+				525703C6284B912A00660BF2 /* DailyNewsWebViewViewModel.swift */,
+				525703C7284B912A00660BF2 /* DailyNewsWebViewViewController.xib */,
+			);
+			path = "Web View";
 			sourceTree = "<group>";
 		};
 		5263515F28237F8800093D80 /* SearchingIGListKit */ = {
@@ -1002,15 +1059,16 @@
 			isa = PBXGroup;
 			children = (
 				52E6E63227C20E8400CD80D0 /* Cell */,
+				52754E7627FB3EF700968694 /* MainTabBarController */,
 				522ACEBD2834FCD000443757 /* SplashScreen */,
 				527AF6A628364CD00089D58B /* LoginScreen */,
 				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
-				52754E7627FB3EF700968694 /* MainTabBarController */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
 				52064A6F27EF5ED3007E48A6 /* DiscoverScreen */,
 				527AF6B1283658C80089D58B /* ProfileScreen */,
 				52064A7027EF5EDE007E48A6 /* ProfileView */,
+				52DE096B2846569D00385C09 /* News */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1085,6 +1143,31 @@
 			path = TagListView;
 			sourceTree = "<group>";
 		};
+		52BF9DBB284B1EAA00F881F7 /* DailyNewsModel */ = {
+			isa = PBXGroup;
+			children = (
+				52BF9DBC284B1ED000F881F7 /* DailyNewsModel.swift */,
+			);
+			path = DailyNewsModel;
+			sourceTree = "<group>";
+		};
+		52BF9DC0284B2BFC00F881F7 /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52BF9DC1284B2C1000F881F7 /* DailyNewSectionController.swift */,
+			);
+			path = "Section Controller";
+			sourceTree = "<group>";
+		};
+		52BF9DC3284B2C8700F881F7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				52BF9DC4284B2CA800F881F7 /* CellCollectionViewDailyNews.swift */,
+				52BF9DC5284B2CA800F881F7 /* CellCollectionViewDailyNews.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		52C424EF2828E0A000CF899A /* Section Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,7 +1188,6 @@
 		52D8ECE427C6179A001B8A2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				523EBE142844D23D00B99F6C /* BaseModel.swift */,
 				52D8ECE527C617B1001B8A2B /* BaseViewController.swift */,
 				52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */,
 			);
@@ -1118,6 +1200,15 @@
 				52D8ECED27C6279F001B8A2B /* PinterestLayout.swift */,
 			);
 			path = CalculateToDynamicCell;
+			sourceTree = "<group>";
+		};
+		52DE096B2846569D00385C09 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				525703C1284B90DE00660BF2 /* Daily News */,
+				525703C2284B90EC00660BF2 /* Web View */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		52E6E61B27C20ADE00CD80D0 /* Extension */ = {
@@ -1146,6 +1237,7 @@
 		52E6E62627C20C1C00CD80D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52BF9DBB284B1EAA00F881F7 /* DailyNewsModel */,
 				523EBE102844C39500B99F6C /* VideoShort */,
 				52159E7E2824D04600081FA9 /* SearchingModelIG */,
 				52B6C8DA28001EC900F180AB /* Searching Model */,
@@ -1167,6 +1259,7 @@
 				523EBE1F2844F1D000B99F6C /* Base Service */,
 				52B4F29627F3F6D700B0CFEB /* DataManager.swift */,
 				523EBE202844F24D00B99F6C /* ShortVideoService.swift */,
+				52BF9DBE284B26A300F881F7 /* DailyNewService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1401,6 +1494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521CD1B4280AA1CE00D114A7 /* PageMovieViewController.xib in Resources */,
+				52DE0975284656BC00385C09 /* DailyNewsViewController.xib in Resources */,
 				5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */,
 				522CF3C327C0FD0B00E4900A /* LaunchScreen.storyboard in Resources */,
 				52635170282388B900093D80 /* SearchingIGListKitCell.xib in Resources */,
@@ -1422,12 +1516,14 @@
 				52E6E63C27C2119500CD80D0 /* MainFooter.xib in Resources */,
 				522CF3C027C0FD0B00E4900A /* Assets.xcassets in Resources */,
 				5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */,
+				525703CC284B912A00660BF2 /* DailyNewsWebViewViewController.xib in Resources */,
 				5279A2BC2835015E00229979 /* streaming.json in Resources */,
 				523E04EA2824FE9E005E55A4 /* SearchingCell.xib in Resources */,
 				52F9A2AD27C7C7BF00EC01A0 /* BannerCell.xib in Resources */,
 				52A7A7EA27EDA68C006F79DC /* MovieCell.xib in Resources */,
 				52E6E63727C2109400CD80D0 /* MainHeader.xib in Resources */,
 				52754E7A27FB3F2900968694 /* MainTabBarController.xib in Resources */,
+				52BF9DC7284B2CA800F881F7 /* CellCollectionViewDailyNews.xib in Resources */,
 				5296332D27C94357007F3335 /* TopSearchCell.xib in Resources */,
 				522ACEC72834FCF500443757 /* SplashScreenViewController.xib in Resources */,
 				527AF6BB283658F70089D58B /* ProfileScreenViewController.xib in Resources */,
@@ -1527,6 +1623,7 @@
 				52A1508727E0F3290050BD12 /* Section.swift in Sources */,
 				52358A1627F54218002C883F /* ExpandCollectionViewDataSource.swift in Sources */,
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
+				52DE0971284656BC00385C09 /* DailyNewsRouter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
 				523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
@@ -1540,6 +1637,8 @@
 				527AF6AD28364CE50089D58B /* LoginScreenInteractorInput.swift in Sources */,
 				523E04E82824FE9E005E55A4 /* SearchingRouter.swift in Sources */,
 				521CD1BA280AA1E300D114A7 /* PageTVSeriesRouter.swift in Sources */,
+				525703CA284B912A00660BF2 /* DailyNewsWebViewViewController.swift in Sources */,
+				52DE0973284656BC00385C09 /* DailyNewsViewController.swift in Sources */,
 				521CD19A280A969F00D114A7 /* VXPageBar.swift in Sources */,
 				521E70D527FD38B100620DA1 /* ASVideoLayerObject.swift in Sources */,
 				521CD1B3280AA1CE00D114A7 /* PageMovieViewModel.swift in Sources */,
@@ -1557,6 +1656,7 @@
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
+				525703C9284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift in Sources */,
 				527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */,
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,
 				52412C9327F2FF2500896AF0 /* ExpandScreenViewController.swift in Sources */,
@@ -1574,6 +1674,7 @@
 				52412C9527F2FF2500896AF0 /* ExpandScreenInteractor.swift in Sources */,
 				52D8ECE627C617B1001B8A2B /* BaseViewController.swift in Sources */,
 				528CBF9227CA56B200541EF7 /* EpisodeVo.swift in Sources */,
+				52DE0972284656BC00385C09 /* DailyNewsInteractorInput.swift in Sources */,
 				522ACEC32834FCF500443757 /* SplashScreenRouter.swift in Sources */,
 				522CF3B727C0FD0900E4900A /* AppDelegate.swift in Sources */,
 				843DD6A527FC47E4000C3554 /* DiscoveryScreenPresenter.swift in Sources */,
@@ -1589,8 +1690,10 @@
 				5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */,
 				52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */,
 				52B8BBFF27FBE25200EDE659 /* Format_Name.swift in Sources */,
+				52BF9DC2284B2C1100F881F7 /* DailyNewSectionController.swift in Sources */,
 				527AF6AC28364CE50089D58B /* LoginScreenRouter.swift in Sources */,
 				52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */,
+				525703C8284B912A00660BF2 /* DailyNewsWebViewRouter.swift in Sources */,
 				843DD6AA27FC47E4000C3554 /* DiscoveryScreenConstract.swift in Sources */,
 				52DAD60A2805395200E27111 /* String.swift in Sources */,
 				52B6C8E228001EDB00F180AB /* Area.swift in Sources */,
@@ -1600,6 +1703,7 @@
 				523E04EF2824FE9E005E55A4 /* SearchingViewProtocols.swift in Sources */,
 				523E04EC2824FE9E005E55A4 /* SearchingPresenter.swift in Sources */,
 				521CD1A8280AA1B400D114A7 /* PageAnimeViewController.swift in Sources */,
+				52BF9DBF284B26A300F881F7 /* DailyNewService.swift in Sources */,
 				527AF6B8283658F70089D58B /* ProfileScreenInteractorInput.swift in Sources */,
 				52E6E63627C2109400CD80D0 /* MainHeader.swift in Sources */,
 				521CD1A9280AA1B400D114A7 /* PageAnimeViewModel.swift in Sources */,
@@ -1628,12 +1732,14 @@
 				52D8AA022845FE180010D494 /* ShortVideoCollectionCell.swift in Sources */,
 				523EBE1E2844ED1D00B99F6C /* URLTypes.swift in Sources */,
 				52B8BC0827FBF5BC00EDE659 /* CloseButton.swift in Sources */,
+				52BF9DBD284B1ED000F881F7 /* DailyNewsModel.swift in Sources */,
 				52EECC4F28222D0800FF0478 /* ExpandSectionController.swift in Sources */,
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
 				5287C5BB282A5650003C6A8A /* StreamingMovieScreenViewModel.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
 				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
 				5209F94C282CB1290062982E /* LabelCell.swift in Sources */,
+				525703CB284B912A00660BF2 /* DailyNewsWebViewViewModel.swift in Sources */,
 				52B8BC0727FBF5BC00EDE659 /* TagView.swift in Sources */,
 				52CB4D3627F6BE9300BACAFD /* HomePageViewProtocols.swift in Sources */,
 				5263516B282381DB00093D80 /* SearchingIGListKitSectionController.swift in Sources */,
@@ -1658,6 +1764,7 @@
 				849560A027FFE565004A8A74 /* ScreeningItems.swift in Sources */,
 				523EBE0F2844C2F200B99F6C /* VideoShortSection.swift in Sources */,
 				845B3130280D5099002D67E9 /* UICollectionView.swift in Sources */,
+				52BF9DC6284B2CA800F881F7 /* CellCollectionViewDailyNews.swift in Sources */,
 				523EBE152844D23D00B99F6C /* BaseModel.swift in Sources */,
 				52CB4D3727F6BE9300BACAFD /* HomePageViewInteractor.swift in Sources */,
 				52CB4D3E27F6C2F000BACAFD /* HomePageViewDataSource.swift in Sources */,
@@ -1671,6 +1778,7 @@
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
 				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
+				52DE0974284656BC00385C09 /* DailyNewsViewModel.swift in Sources */,
 				843DD6A627FC47E4000C3554 /* DiscoveryScreenRouter.swift in Sources */,
 				521CD1B2280AA1CE00D114A7 /* PageMovieViewController.swift in Sources */,
 				522ACEC52834FCF500443757 /* SplashScreenViewController.swift in Sources */,
