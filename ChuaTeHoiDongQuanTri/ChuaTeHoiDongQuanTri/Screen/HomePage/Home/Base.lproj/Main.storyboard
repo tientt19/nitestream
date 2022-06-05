@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Je2-oj-TwW">
+    <device id="retina6_7" orientation="portrait" appearance="light">
+        <simulatedSceneSize key="mac" width="902" height="841"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wow-->
+        <scene sceneID="cA2-Ey-oTy">
+            <objects>
+                <viewController storyboardIdentifier="TikTokScreenViewController" id="WoH-o9-Lhb" customClass="TikTokScreenViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uX3-ND-cB5">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFk-eZ-tuS">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-Ib-pYd">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="WoH-o9-Lhb" id="NHn-1L-HzJ"/>
+                                            <outlet property="delegate" destination="WoH-o9-Lhb" id="Oz8-4F-ykt"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9kS-Ib-pYd" firstAttribute="leading" secondItem="DFk-eZ-tuS" secondAttribute="leading" id="F8L-ve-5H8"/>
+                                    <constraint firstAttribute="trailing" secondItem="9kS-Ib-pYd" secondAttribute="trailing" id="aGk-Z8-fPy"/>
+                                    <constraint firstItem="9kS-Ib-pYd" firstAttribute="top" secondItem="DFk-eZ-tuS" secondAttribute="top" id="bMU-h3-Yag"/>
+                                    <constraint firstAttribute="bottom" secondItem="9kS-Ib-pYd" secondAttribute="bottom" id="eA4-s9-Yyh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="daT-fr-Ssm"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DFk-eZ-tuS" firstAttribute="top" secondItem="uX3-ND-cB5" secondAttribute="top" id="6Cy-3Y-9J9"/>
+                            <constraint firstItem="DFk-eZ-tuS" firstAttribute="leading" secondItem="uX3-ND-cB5" secondAttribute="leading" id="7bb-n6-r9p"/>
+                            <constraint firstAttribute="bottom" secondItem="DFk-eZ-tuS" secondAttribute="bottom" id="WbP-y1-iFu"/>
+                            <constraint firstAttribute="trailing" secondItem="DFk-eZ-tuS" secondAttribute="trailing" id="jJw-cz-PVG"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wow" image="infinity" catalog="system" id="ZYz-5J-3Dd"/>
+                    <connections>
+                        <outlet property="tiktokTableView" destination="9kS-Ib-pYd" id="fOs-Rz-PD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUR-a2-7Bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1657" y="-1093"/>
+        </scene>
+        <!--Của tôi-->
+        <scene sceneID="8U8-hf-PUq">
+            <objects>
+                <viewController id="buu-qC-ZZb" customClass="ProfileViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d1n-bS-opW">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Evn-g0-Nnx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Của tôi" image="person.circle" catalog="system" id="hqv-vc-pS1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXT-2X-3zz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1657" y="-441"/>
+        </scene>
+        <!--Khám phá-->
+        <scene sceneID="c18-7S-nrC">
+            <objects>
+                <viewController id="3EI-SZ-7yK" customClass="DiscoverViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5QR-zm-4LS">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3Ud-WR-Q47"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Khám phá" image="circle.grid.hex" catalog="system" id="Z8u-jm-OQW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYO-D4-Fcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="-1143"/>
+        </scene>
+        <!--Home Page View View Controller-->
+        <scene sceneID="gdE-iu-6sX">
+            <objects>
+                <viewController storyboardIdentifier="HomePageViewViewController" id="Je2-oj-TwW" customClass="HomePageViewViewController" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Voq-LV-21u">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jzw-g9-YKe"/>
+                        <color key="backgroundColor" white="0.91164403383423687" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="51B-YC-0t4">
+                        <nil key="title"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2j-2L-K6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-929" y="-441"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle.grid.hex" catalog="system" width="128" height="112"/>
+        <image name="infinity" catalog="system" width="128" height="61"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

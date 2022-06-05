@@ -32,9 +32,9 @@
                         </connections>
                     </collectionView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="IbJ-wQ-Ago">
-                        <rect key="frame" x="193" y="163" width="180" height="26"/>
+                        <rect key="frame" x="123" y="163" width="250" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="180" id="xtr-Xo-iFp"/>
+                            <constraint firstAttribute="width" constant="250" id="xtr-Xo-iFp"/>
                         </constraints>
                         <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </pageControl>

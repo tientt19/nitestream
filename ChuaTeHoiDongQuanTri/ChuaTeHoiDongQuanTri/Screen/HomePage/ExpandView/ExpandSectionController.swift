@@ -9,11 +9,11 @@ import Foundation
 import IGListKit
 
 protocol HandleTapProtocol: AnyObject {
-    func didSelect(with index: Int)
+    func ondidSelect(with model: ContentModels)
 }
 
 class ExpandSectionController: ListSectionController {
-    var currentIem: RecommendItem?
+    var currentIem: HomeAlbumsDetailModels?
     var handleTapDelegate: HandleTapProtocol?
     
     override init() {
@@ -22,14 +22,14 @@ class ExpandSectionController: ListSectionController {
     }
     
     override func didUpdate(to object: Any) {
-        guard let superHero = object as? RecommendItem else {
+        guard let superHero = object as? HomeAlbumsDetailModels else {
             return
         }
         currentIem = superHero
     }
     
     override func numberOfItems() -> Int {
-        return currentIem?.recommendContentVOList.count ?? 0
+        return currentIem?.content?.count ?? 0
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -46,7 +46,7 @@ class ExpandSectionController: ListSectionController {
             return cell
         }
         
-        superHeroCell.updateWith(item.recommendContentVOList[index].imageUrl, item.recommendContentVOList[index].title)
+        superHeroCell.updateWith(item.content?[index].image ?? "", item.content?[index].name ?? "")
         
         return cell
     }
@@ -59,7 +59,7 @@ class ExpandSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        handleTapDelegate?.didSelect(with: index)
+        self.handleTapDelegate?.ondidSelect(with: (self.currentIem?.content?[index])!)
     }
 }
 
