@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HomePageViewRouter: HomePageViewRouterProtocol {
-    
+
     static var storyboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
@@ -44,7 +44,7 @@ class HomePageViewRouter: HomePageViewRouterProtocol {
         viewVC.navigationController?.pushViewController(detailScreen, animated: true)
     }
     
-    func openExpandView(from view: HomePageViewViewProtocol, with data: RecommendItem) {
+    func openExpandView(from view: HomePageViewViewProtocol, with data: HomeAlbumsDetailModels) {
         let expandVC = ExpandScreenRouter.createModule(with: data)
         expandVC.hidesBottomBarWhenPushed = true
         guard let viewVC = view as? UIViewController else {

@@ -8,15 +8,18 @@
 import UIKit
 
 protocol passDataPickDelegate: AnyObject {
-    func openDetailView(_ data: RecommendContentVOList)
+    func openDetailView(_ data: RecommendContentVOListModel)
+    func openAlmbumDetaik(with refID: Int?)
 }
-class CategoryCell: UICollectionViewCell, UpdateBannerCellProtocol {
+class CategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var CategoryCollectionView : UICollectionView!
-    var listDataCall = [RecommendContentVOList]()
-    var isGroupBlock = false
+    @IBOutlet weak var lbl_header: UILabel!
     
+    var isGroupBlock = false
+    var listDataCall = [RecommendContentVOListModel]()
     var sendDelegate : passDataPickDelegate!
+    var model: RecommendItemModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,15 +28,13 @@ class CategoryCell: UICollectionViewCell, UpdateBannerCellProtocol {
         CategoryCollectionView.dataSource = self
     }
     
-    func configure(data : [RecommendContentVOList]) {
+    func configure(data : [RecommendContentVOListModel]) {
         listDataCall = data
         CategoryCollectionView.reloadData()
     }
     
-    func update(with data: [RecommendContentVOList], homeController: HomePageViewViewController) {
-        self.sendDelegate = homeController
-        self.listDataCall = data
-        self.CategoryCollectionView.reloadData()
+    @IBAction func onExpandTap(_ sender: UIButton) {
+        self.sendDelegate.openAlmbumDetaik(with: self.model?.refID)
     }
 }
 

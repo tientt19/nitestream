@@ -15,7 +15,7 @@ class ExpandScreenRouter: ExpandScreenRouterProtocol {
         return UIStoryboard(name: "ExpandScreen", bundle: Bundle.main)
     }
     // MARK: Static methods
-    static func createModule(with data : RecommendItem) -> UIViewController {
+    static func createModule(with data : HomeAlbumsDetailModels) -> UIViewController {
         
         let viewController = storyboard.instantiateViewController(withIdentifier: "ExpandScreenViewController") as! ExpandScreenViewController
         viewController.listMoviePassed = data
