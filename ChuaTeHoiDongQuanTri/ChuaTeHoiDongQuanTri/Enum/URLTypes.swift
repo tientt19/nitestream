@@ -15,6 +15,7 @@ protocol ApiUrlProtocol {
 enum URLTypes: ApiUrlProtocol {
     case bannerHomePage
     case homePage(Int?)
+    case albumDetail(Int?,Int?)
     case shortVideoURL
     case reviewShortVideo(Int?)
     case niteStreamNew(Int?)
@@ -26,6 +27,8 @@ enum URLTypes: ApiUrlProtocol {
             return "https://web-api.netpop.app/cms/web/pc/homePage/singleAlbums?page=\(page ?? 0)&size=6"
         case .bannerHomePage:
             return "https://web-api.netpop.app/cms/web/pc/homePage/banners?size=10"
+        case .albumDetail(let id, let page):
+            return "https://web-api.netpop.app/cms/web/pc/album/detail?id=\(id ?? 0)&page=\(page ?? 0)&size=18"
         case .shortVideoURL:
             return "https://ga-mobile-api.loklok.tv/cms/app/media/bathGetplayInfo"
         case .reviewShortVideo(let page):

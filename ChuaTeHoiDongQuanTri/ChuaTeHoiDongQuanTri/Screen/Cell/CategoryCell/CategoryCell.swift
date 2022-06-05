@@ -9,16 +9,17 @@ import UIKit
 
 protocol passDataPickDelegate: AnyObject {
     func openDetailView(_ data: RecommendContentVOListModel)
+    func openAlmbumDetaik(with refID: Int?)
 }
 class CategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var CategoryCollectionView : UICollectionView!
     @IBOutlet weak var lbl_header: UILabel!
     
-    var listDataCall = [RecommendContentVOListModel]()
     var isGroupBlock = false
-    
+    var listDataCall = [RecommendContentVOListModel]()
     var sendDelegate : passDataPickDelegate!
+    var model: RecommendItemModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,10 @@ class CategoryCell: UICollectionViewCell {
     func configure(data : [RecommendContentVOListModel]) {
         listDataCall = data
         CategoryCollectionView.reloadData()
+    }
+    
+    @IBAction func onExpandTap(_ sender: UIButton) {
+        self.sendDelegate.openAlmbumDetaik(with: self.model?.refID)
     }
 }
 

@@ -10,9 +10,11 @@ import IGListKit
 
 class HomePageAlbumsSectionController: ListSectionController {
     var currentIem: HomePageModels?
+    var controller: HomePageViewViewController?
     
     override init() {
         super.init()
+        minimumLineSpacing = 10
         self.inset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
@@ -32,6 +34,8 @@ class HomePageAlbumsSectionController: ListSectionController {
         let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! CategoryCell
         if let model = self.currentIem?.recommendItems {
             cell.lbl_header.text = model[index].homeSectionName
+            cell.sendDelegate = self.controller
+            cell.model = self.currentIem?.recommendItems?[index]
             cell.configure(data: model[index].recommendContentVOList!)
         }
         return cell
@@ -39,8 +43,9 @@ class HomePageAlbumsSectionController: ListSectionController {
     
     override func sizeForItem(at index: Int) -> CGSize {
         let collectionViewWidth = ((collectionContext?.containerSize.width)! - 10)
-        let collectionViewHeight = (collectionViewWidth * 9) / 16
-        return CGSize(width: collectionViewWidth, height: collectionViewHeight + 30)
+        let collectionViewHeight = ((collectionViewWidth * 9) / 16) +
+        estimateFrameForText(text: (self.currentIem?.recommendItems?[index].homeSectionName)!, width: collectionViewWidth - 90).height
+        return CGSize(width: collectionViewWidth, height: collectionViewHeight + 15)
     }
     
     override func didSelectItem(at index: Int) {
@@ -48,50 +53,12 @@ class HomePageAlbumsSectionController: ListSectionController {
     }
 }
 
-////MARK: - ListSupplementaryViewSource -- HEADER
-//extension HomePageAlbumsSectionController: ListSupplementaryViewSource {
-//    func supportedElementKinds() -> [String] {
-//        return [UICollectionView.elementKindSectionHeader]
-//    }
-//
-//    func viewForSupplementaryElement(ofKind elementKind: String, at index: Int) -> UICollectionReusableView {
-//        switch elementKind {
-//        case UICollectionView.elementKindSectionHeader:
-//            return headerView(atIndex: index)
-//        default:
-//            fatalError()
-//        }
-//    }
-//
-//    func sizeForSupplementaryView(ofKind elementKind: String, at index: Int) -> CGSize {
-//        return CGSize(width: collectionContext!.containerSize.width, height: 30)
-//    }
-//
-//    // MARK: Private
-//    private func headerView(atIndex index: Int) -> UICollectionReusableView {
-//        let nibName = String(describing: MainHeader.self)
-//
-//        let headerView: MainHeader = collectionContext?.dequeueReusableSupplementaryView(
-//            ofKind: UICollectionView.elementKindSectionHeader,
-//            for: self,
-//            nibName: nibName,
-//            bundle: nil,
-//            at: index) as! MainHeader
-//
-//        let sectionName = currentIem?.recommendItems?[index].homeSectionName
-//
-////        headerView.tapDelegate = self
-//        headerView.configure(sectionName ?? "")
-//        headerView.expandButton.isHidden = false
-//        return headerView
-//    }
-//}
-
-////MARK: - HandleTapHeaderProtocol
-//extension HomePageAlbumsSectionController: HandleTapHeaderProtocol {
-//    func tap() {
-//        if currentIem?.homeSectionType != "BLOCK_GROUP" {
-//            self.openExpandViewDelegate?.onOpenExpand(with: currentIem!)
-//        }
-//    }
-//}
+extension HomePageAlbumsSectionController {
+    private func estimateFrameForText(text: String, width: CGFloat) -> CGRect {
+        let height: CGFloat = 999
+        let size = CGSize(width: width, height: height)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.bold)]
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: attributes, context: nil)
+    }
+}

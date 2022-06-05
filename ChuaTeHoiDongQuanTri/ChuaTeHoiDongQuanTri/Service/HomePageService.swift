@@ -10,6 +10,7 @@ import Foundation
 protocol HomePageServiceProtocols: AnyObject {
     func onGetSingleAlbums(with page: Int?, completion: @escaping ((Result<BaseModel<HomePageModels>, APIError>) -> Void))
     func onGetHomeBanner(completion: @escaping ((Result<BaseModel<[HomeBannerModels]>, APIError>) -> Void))
+    func onGetALbumsDetail(with refID: Int?, loadOn Page: Int, completion: @escaping ((Result<BaseModel<HomeAlbumsDetailModels>, APIError>) -> Void))
 }
 
 //MARK: - HomePageServiceProtocols
@@ -22,6 +23,7 @@ class HomePageService: HomePageServiceProtocols {
                          param: nil,
                          completion: completion)
     }
+    
     func onGetHomeBanner(completion: @escaping ((Result<BaseModel<[HomeBannerModels]>, APIError>) -> Void)) {
         let urlString = URLTypes.bannerHomePage.path
         self.service.GET(url: urlString,
@@ -29,4 +31,10 @@ class HomePageService: HomePageServiceProtocols {
                          completion: completion)
     }
     
+    func onGetALbumsDetail(with refID: Int?, loadOn Page: Int, completion: @escaping ((Result<BaseModel<HomeAlbumsDetailModels>, APIError>) -> Void)) {
+        let urlString = URLTypes.albumDetail(refID, Page).path
+        self.service.GET(url: urlString,
+                         param: nil,
+                         completion: completion)
+    }
 }

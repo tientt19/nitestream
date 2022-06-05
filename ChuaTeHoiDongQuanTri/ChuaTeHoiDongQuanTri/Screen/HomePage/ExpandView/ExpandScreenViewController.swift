@@ -13,8 +13,11 @@ import IGListKit
 class ExpandScreenViewController: BaseViewController {
     // MARK: - Properties
     var presenter: ExpandScreenPresenterProtocol?
-    var listMoviePassed = RecommendItem(fromDictionary: ["" : ""])
-    internal var collectionViewDatasource : CollectionviewDataSource?
+    var listMoviePassed: HomeAlbumsDetailModels?
+    var objects = [ListDiffable]()
+    var index = 0
+    var loading = false
+
     @IBOutlet weak var expandCollectionView : UICollectionView!
     
     lazy var adapter: ListAdapter =  {
@@ -28,20 +31,40 @@ class ExpandScreenViewController: BaseViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        self.setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        unlockScreen()
+        self.unlockScreen()
     }
 }
-
+// MARK: - UIScrollViewDelegate
+extension ExpandScreenViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+        if !loading && distance < 200 {
+            loading = true
+            adapter.performUpdates(animated: true, completion: nil)
+            DispatchQueue.global(qos: .default).async {
+                // fake background loading task
+                DispatchQueue.main.async {
+                    self.loading = false
+                    self.index += 1
+                    self.presenter?.onGetAlbumsDetail(with: self.listMoviePassed?.id ?? 0, loadOn: self.index)
+                }
+            }
+        }
+    }
+}
 
 //MARK: - set up IGListKit
 extension ExpandScreenViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [listMoviePassed]
+        return objects
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -57,9 +80,9 @@ extension ExpandScreenViewController: ListAdapterDataSource {
 
 //MARK: - Handle user tap to go to detail
 extension ExpandScreenViewController: HandleTapProtocol {
-    func didSelect(with index: Int) {
+    func ondidSelect(with model: ContentModels) {
         self.presentLockScreen()
-        self.collectionViewDatasource?.didSelect(indexPath: index)
+        self.presenter?.openDetailView(id: Int(model.contentId!)!, category: model.domainType!)
     }
 }
 
@@ -68,53 +91,23 @@ extension ExpandScreenViewController {
     //MARK: - set up view
     func setupView() {
         _ = adapter
-        navigationItem.title = listMoviePassed.homeSectionName
-        collectionViewDatasource = ExpandCollectionViewDataSource(entities: listMoviePassed, with: presenter!)
-//        expandCollectionView.registerCell(nibName: MovieCell.self)
-//        expandCollectionView.reloadData()
+        adapter.scrollViewDelegate = self
+        navigationItem.title = listMoviePassed?.name
+        if let data = self.listMoviePassed {
+            self.objects.append(data)
+            self.adapter.performUpdates(animated: true, completion: nil)
+        }
     }
 }
 
 //MARK: - ExpandScreenViewProtocol
 extension ExpandScreenViewController: ExpandScreenViewProtocol{
     // TODO: Implement View Output Methods
+    
+    func didGetAlbumsDetailFinish(with list: HomeAlbumsDetailModels) {
+        self.objects.append(list)
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
 }
-
-
-////MARK: - UICollectionViewDataSourcePrefetching
-//extension ExpandScreenViewController : UICollectionViewDataSourcePrefetching {
-//    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-//        collectionViewDatasource?.prefetchingData(collectionView, prefetchItemsAt: indexPaths)
-//    }
-//}
-
-////MARK: - UICollectionViewDelegate
-//extension ExpandScreenViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        presentLockScreen()
-//        collectionViewDatasource?.didSelect(collectionView: collectionView, indexPath: indexPath)
-//    }
-//}
-//
-////MARK: - UICollectionViewDataSource
-//extension ExpandScreenViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return listMoviePassed.recommendContentVOList.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        return collectionViewDatasource?.itemCell(collectionView: collectionView, indexPath: indexPath) ?? UICollectionViewCell()
-//    }
-//}
-////MARK: - UICollectionViewDelegateFlowLayout
-//extension ExpandScreenViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat { return 5 }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat { return 5 }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return collectionViewDatasource?.sizeForItem(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath) ?? CGSize(width: 0, height: 0)
-//    }
-//}
 
 

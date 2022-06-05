@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCell" customModule="ChuTeHoiDongQuanTri" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="527" height="347"/>
+            <rect key="frame" x="0.0" y="0.0" width="527" height="398"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="527" height="347"/>
+                <rect key="frame" x="0.0" y="0.0" width="527" height="398"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Qtg-Uo-k2x">
-                        <rect key="frame" x="0.0" y="30" width="527" height="317"/>
+                        <rect key="frame" x="0.0" y="35.5" width="527" height="362.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y2P-Fx-Ikz">
                             <size key="itemSize" width="128" height="128"/>
@@ -34,16 +34,16 @@
                         </userDefinedRuntimeAttributes>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYH-IS-yM1">
-                        <rect key="frame" x="0.0" y="0.0" width="527" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="527" height="35.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frT-O6-K2g">
-                                <rect key="frame" x="0.0" y="2.5" width="437" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frT-O6-K2g">
+                                <rect key="frame" x="0.0" y="5" width="437" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="how-1e-w18">
-                                <rect key="frame" x="447" y="0.0" width="80" height="30"/>
+                                <rect key="frame" x="447" y="0.0" width="80" height="35.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="kaB-Qp-yDf"/>
                                 </constraints>
@@ -52,6 +52,9 @@
                                 <state key="normal" title="Xem thêm">
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onExpandTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SIK-x8-7Hw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,6 +65,7 @@
                             <constraint firstItem="how-1e-w18" firstAttribute="top" secondItem="cYH-IS-yM1" secondAttribute="top" id="fqS-aq-Qud"/>
                             <constraint firstItem="frT-O6-K2g" firstAttribute="leading" secondItem="cYH-IS-yM1" secondAttribute="leading" id="fwr-7q-XxD"/>
                             <constraint firstItem="how-1e-w18" firstAttribute="leading" secondItem="frT-O6-K2g" secondAttribute="trailing" constant="10" id="laA-tI-v4G"/>
+                            <constraint firstItem="frT-O6-K2g" firstAttribute="top" secondItem="cYH-IS-yM1" secondAttribute="top" constant="5" id="lrW-LC-Z6H"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,11 +77,11 @@
                 <constraint firstItem="Qtg-Uo-k2x" firstAttribute="top" secondItem="cYH-IS-yM1" secondAttribute="bottom" id="Qc7-if-9Be"/>
                 <constraint firstAttribute="bottom" secondItem="Qtg-Uo-k2x" secondAttribute="bottom" id="cwt-ko-r99"/>
                 <constraint firstAttribute="trailing" secondItem="cYH-IS-yM1" secondAttribute="trailing" id="hec-Qt-8MJ"/>
-                <constraint firstItem="Qtg-Uo-k2x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="htO-wI-TUZ"/>
+                <constraint firstItem="Qtg-Uo-k2x" firstAttribute="top" secondItem="cYH-IS-yM1" secondAttribute="bottom" id="htO-wI-TUZ"/>
                 <constraint firstItem="cYH-IS-yM1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="siv-V5-UTV"/>
                 <constraint firstItem="cYH-IS-yM1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tmd-xo-zc2"/>
             </constraints>
-            <size key="customSize" width="527" height="347"/>
+            <size key="customSize" width="527" height="398"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                     <real key="value" value="12"/>
@@ -87,7 +91,7 @@
                 <outlet property="CategoryCollectionView" destination="Qtg-Uo-k2x" id="QfA-N0-2zq"/>
                 <outlet property="lbl_header" destination="frT-O6-K2g" id="dtp-TB-aCH"/>
             </connections>
-            <point key="canvasLocation" x="42.753623188405797" y="102.79017857142857"/>
+            <point key="canvasLocation" x="125" y="-25"/>
         </collectionViewCell>
     </objects>
     <resources>

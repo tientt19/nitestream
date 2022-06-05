@@ -14,40 +14,11 @@ class HomePageViewInteractor: HomePageViewInteractorInputProtocol {
     var presenter: HomePageViewPresenterOutputProtocol?
     let homePageService = HomePageService()
     
-    // old
-    func getHomeData(_ page: Int) {
-        DataManager.shared.getHomeData(page: page) { [weak self] response in
-            guard let `self` = self else { return }
-            if let data = response {
-                self.presenter?.didGetHomeData(data)
-            }
-        }
-    }
-    
     func getMovieDetail(_ id: Int, _ category: Int) {
         DataManager.shared.getDetailMovieData(id, category) {[weak self] response in
             guard let `self` = self else { return }
             if let data = response {
                 self.presenter?.didGetMovieDetail(data)
-            }
-        }
-    }
-    
-    func loadMore(_ page: Int, _ oldDAO: HomePageModel) {
-        DataManager.shared.getHomeData(page: page) { [weak self] response in
-            guard let `self` = self else { return }
-            if let data = response {
-                if page > 0 {
-                    let dataRespone = data.recommendItems.filter { $0.recommendContentVOList.count > 1 }
-                    data.recommendItems = dataRespone
-                    oldDAO.recommendItems += data.recommendItems
-                } else {
-                    data.recommendItems.remove(at: 0)
-                    let dataRespone = data.recommendItems.filter { $0.recommendContentVOList.count > 1 }
-                    data.recommendItems = dataRespone
-                    oldDAO.recommendItems += data.recommendItems
-                }
-                self.presenter?.didLoad(oldDAO)
             }
         }
     }
@@ -62,6 +33,12 @@ class HomePageViewInteractor: HomePageViewInteractorInputProtocol {
     func onGetHomeBanner() {
         self.homePageService.onGetHomeBanner { [weak self] result in
             self?.presenter?.didGetHomeBannerFinish(with: result.unwrapSuccessModel())
+        }
+    }
+    
+    func onGetAlbumsDetail(with refID: Int, loadOn page: Int) {
+        self.homePageService.onGetALbumsDetail(with: refID, loadOn: page) { [weak self] result in
+            self?.presenter?.didGetAlbumsDetailFinish(with: result.unwrapSuccessModel())
         }
     }
 }

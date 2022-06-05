@@ -8,11 +8,15 @@
 import UIKit
 import Kingfisher
 
+protocol BannerTapDelegate: AnyObject {
+    func onDidselect(with model: HomeBannerModels)
+}
 
 class BannerCell: UICollectionViewCell{
   
     @IBOutlet weak var bannerCLV: UICollectionView!
     @IBOutlet weak var pageView : UIPageControl!
+    var delegate: BannerTapDelegate?
     
     var listDataCall = [HomeBannerModels]()
     var timer = Timer()
@@ -50,7 +54,9 @@ class BannerCell: UICollectionViewCell{
 }
 
 extension BannerCell : UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.onDidselect(with: self.listDataCall[indexPath.row])
+    }
 }
 
 extension BannerCell: UICollectionViewDelegateFlowLayout {

@@ -10,6 +10,7 @@ import IGListKit
 
 class HomePageBannerSectionController: ListSectionController {
     var currentIem: HomeListBannerModel?
+    var controller: HomePageViewViewController?
     
     override init() {
         super.init()
@@ -31,6 +32,7 @@ class HomePageBannerSectionController: ListSectionController {
         let nibName = String(describing: BannerCell.self)
         let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! BannerCell
         cell.model = self.currentIem?.listBanner
+        cell.delegate = self.controller as? BannerTapDelegate
         return cell
     }
     
@@ -41,6 +43,8 @@ class HomePageBannerSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        dLogDebug(self.currentIem?.listBanner?[index].title!)
+//        dLogDebug(self.currentIem?.listBanner?[index].title!)
     }
 }
+
+

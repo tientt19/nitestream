@@ -15,6 +15,7 @@ protocol ExpandScreenViewProtocol : AnyObject {
     var presenter : ExpandScreenPresenterProtocol? { get set }
 
     // PRESENTER -> VIEW
+    func didGetAlbumsDetailFinish(with list: HomeAlbumsDetailModels)
 }
 
 // MARK: -View Input (View -> Presenter)
@@ -27,6 +28,7 @@ protocol ExpandScreenPresenterProtocol : AnyObject  {
     // VIEW -> PRESENTER
     func onViewDidLoad()
     func openDetailView(id : Int, category : Int)
+    func onGetAlbumsDetail(with refID: Int, loadOn page: Int)
 }
 
 // MARK: -Interactor Input (Presenter -> Interactor)
@@ -35,6 +37,7 @@ protocol ExpandScreenInteractorInputProtocol : AnyObject  {
 
     var presenter: ExpandScreenPresenterOutputProtocol? { get set }
     func handleGetDetailMovie(id: Int, category: Int)
+    func onGetAlbumsDetail(with refID: Int, loadOn page: Int)
 }
 
 
@@ -43,24 +46,15 @@ protocol ExpandScreenPresenterOutputProtocol : AnyObject  {
     // INTERACTOR -> PRESENTER
     
     func didGetMovieDetail(_ data : MovieDetail)
+    func didGetAlbumsDetailFinish(with result: Result<HomeAlbumsDetailModels, APIError>)
 }
 
 
 // MARK: -Router Input (Presenter -> Router)
 protocol ExpandScreenRouterProtocol : AnyObject  {
-    static func createModule(with data : RecommendItem) -> UIViewController
+    static func createModule(with data : HomeAlbumsDetailModels) -> UIViewController
 
     // PRESENTER -> ROUTER
     func openDetailMovie(from view : ExpandScreenViewProtocol, for data : MovieDetail )
-}
-
-//MARK: - Collectionview Datasource
-protocol CollectionviewDataSource : AnyObject {
-    var numberOfItems: Int { get }
-    
-    func itemCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
-    func didSelect(indexPath: Int)
-    func sizeForItem(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    func prefetchingData(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath])
 }
 
