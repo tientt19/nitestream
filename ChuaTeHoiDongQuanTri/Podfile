@@ -13,8 +13,10 @@ target 'ChuTeHoiDongQuanTri' do
   pod 'ReachabilitySwift'
   
   # Firebase SDK
-  pod 'FirebaseAuth'
-  pod 'FirebaseFirestore'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
   
   # Google SDK
   pod 'GoogleSignIn'

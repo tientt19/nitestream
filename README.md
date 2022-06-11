@@ -7,8 +7,10 @@
   pod 'ReachabilitySwift' <br />
   
   # Firebase SDK
-  pod 'FirebaseAuth' <br />
-  pod 'FirebaseFirestore' <br />
+  pod 'Firebase/Analytics' <br />
+  pod 'Firebase/Crashlytics' <br />
+  pod 'Firebase/Auth' <br />
+  pod 'Firebase/Core' <br />
   
   # Google SDK
   pod 'GoogleSignIn' <br />
