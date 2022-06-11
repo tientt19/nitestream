@@ -133,7 +133,7 @@ extension DiscoveryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = acollectionView.dequeue(cellClass: DiscoveryCatagoryCLVCell.self, forIndexPath: indexPath)
         guard let data = self.model?.items else { return cell }
-        cell.item = data[indexPath.row]
+//        cell.item = data[indexPath.row]
         return cell
     }
 }

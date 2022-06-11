@@ -28,11 +28,18 @@ class TVSeriesViewModel {
 // MARK: - TVSeries ViewModelProtocol
 extension TVSeriesViewModel: TVSeriesViewModelProtocol {
     func onViewDidLoad() {
-        
+        self.interactor.onGetListSearch()
     }
 }
 
 // MARK: - TVSeries InteractorOutputProtocol
 extension TVSeriesViewModel: TVSeriesInteractorOutputProtocol {
-
+    func didGetListSearchFinished(with result: Result<[SearchListModel], APIError>) {
+        switch result {
+        case .success(let model):
+            self.view?.didGetSearchListFinished(with: model)
+        case .failure(let error):
+            dLogDebug(error.message)
+        }
+    }
 }

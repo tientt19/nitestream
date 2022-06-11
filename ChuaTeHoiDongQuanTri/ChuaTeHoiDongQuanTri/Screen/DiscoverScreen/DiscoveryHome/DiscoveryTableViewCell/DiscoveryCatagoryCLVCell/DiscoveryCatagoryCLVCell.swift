@@ -11,7 +11,8 @@ class DiscoveryCatagoryCLVCell: UICollectionViewCell {
 
     @IBOutlet weak var chooseView: UIView!
     @IBOutlet weak var catagoryLabel: UILabel!
-    var item : DiscoveryItem? {
+    
+    var item : Item? {
         didSet {
             guard let data = item else { return }
             self.config(with: data)
@@ -23,7 +24,7 @@ class DiscoveryCatagoryCLVCell: UICollectionViewCell {
         self.catagoryLabel.text = "abc"
     }
     
-    private func config(with data: DiscoveryItem) {
+    private func config(with data: Item) {
         self.catagoryLabel.text = data.name
         if data.isSelected {
             self.chooseView.backgroundColor = .lightGray

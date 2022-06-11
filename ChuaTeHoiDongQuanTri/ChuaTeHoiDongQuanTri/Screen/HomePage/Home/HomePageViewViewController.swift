@@ -146,7 +146,6 @@ extension HomePageViewViewController: HomePageViewViewProtocol{
             self.objects.append(listBanner)
         }
         self.objects.append(albums)
-        dLogDebug(self.objects)
         self.adapter.performUpdates(animated: true, completion: nil)
     }
 }
