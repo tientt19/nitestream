@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-               BuildableName = "ChuTeHoiDongQuanTri.app"
-               BlueprintName = "ChuTeHoiDongQuanTri"
-               ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
+               BuildableName = "nitestream.app"
+               BlueprintName = "nitestream"
+               ReferencedContainer = "container:nitestream.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-            BuildableName = "ChuTeHoiDongQuanTri.app"
-            BlueprintName = "ChuTeHoiDongQuanTri"
-            ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
+            BuildableName = "nitestream.app"
+            BlueprintName = "nitestream"
+            ReferencedContainer = "container:nitestream.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "522CF3B227C0FD0900E4900A"
-            BuildableName = "ChuTeHoiDongQuanTri.app"
-            BlueprintName = "ChuTeHoiDongQuanTri"
-            ReferencedContainer = "container:ChuaTeHoiDongQuanTri.xcodeproj">
+            BuildableName = "nitestream.app"
+            BlueprintName = "nitestream"
+            ReferencedContainer = "container:nitestream.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
