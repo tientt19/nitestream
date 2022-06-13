@@ -12,11 +12,13 @@ import UIKit
 // MARK: - Interactor Input Protocol
 protocol TVSeriesInteractorInputProtocol {
     func onGetListSearch()
+    func onGetSearhResult(with params: String)
 }
 
 // MARK: - Interactor Output Protocol
 protocol TVSeriesInteractorOutputProtocol: AnyObject {
     func didGetListSearchFinished(with result: Result<[SearchListModel], APIError>)
+    func didGetSearchResultFinished(with result: Result<SearchResultModel, APIError>)
 }
 
 // MARK: - TVSeries InteractorInput
@@ -32,4 +34,13 @@ extension TVSeriesInteractorInput: TVSeriesInteractorInputProtocol {
             self?.output?.didGetListSearchFinished(with: result.unwrapSuccessModel())
         }
     }
+    
+    
+    func onGetSearhResult(with params: String) {
+        self.service.onGetSearchResult(with: params) { [weak self] result in
+            dLogDebug(result)
+            self?.output?.didGetSearchResultFinished(with: result.unwrapSuccessModel())
+        }
+    }
+
 }

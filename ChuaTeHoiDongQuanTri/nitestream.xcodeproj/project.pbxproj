@@ -184,6 +184,7 @@
 		52A1508727E0F3290050BD12 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508627E0F3290050BD12 /* Section.swift */; };
 		52A1508927E0F3480050BD12 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1508827E0F3480050BD12 /* DataModel.swift */; };
 		52A204A727FAD5ED006DEF8E /* TikTokModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A204A627FAD5ED006DEF8E /* TikTokModel.swift */; };
+		52A5FFB528573BE2009CC345 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FFB428573BE2009CC345 /* SearchResultModel.swift */; };
 		52A7A7DD27ED9B88006F79DC /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */; };
 		52A7A7E927EDA68C006F79DC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7A7E727EDA68C006F79DC /* MovieCell.swift */; };
 		52A7A7EA27EDA68C006F79DC /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A7A7E827EDA68C006F79DC /* MovieCell.xib */; };
@@ -463,6 +464,7 @@
 		52A1508627E0F3290050BD12 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		52A1508827E0F3480050BD12 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52A204A627FAD5ED006DEF8E /* TikTokModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokModel.swift; sourceTree = "<group>"; };
+		52A5FFB428573BE2009CC345 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 		52A7A7DC27ED9B88006F79DC /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		52A7A7E727EDA68C006F79DC /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		52A7A7E827EDA68C006F79DC /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
@@ -994,6 +996,7 @@
 			isa = PBXGroup;
 			children = (
 				52628A6D2854E16300FC6026 /* SearchListModel.swift */,
+				52A5FFB428573BE2009CC345 /* SearchResultModel.swift */,
 			);
 			path = AdvancedSearch;
 			sourceTree = "<group>";
@@ -1905,6 +1908,7 @@
 				523EBE0A2844C28C00B99F6C /* VideoShortViewModel.swift in Sources */,
 				522CF3CB27C0FE1900E4900A /* APIService.swift in Sources */,
 				5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */,
+				52A5FFB528573BE2009CC345 /* SearchResultModel.swift in Sources */,
 				5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */,
 				52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */,
 				52628A722854E74B00FC6026 /* TVSeriesSectionController.swift in Sources */,
@@ -2244,7 +2248,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 97MV55V5HU;
+				DEVELOPMENT_TEAM = 699J3RXKFC;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

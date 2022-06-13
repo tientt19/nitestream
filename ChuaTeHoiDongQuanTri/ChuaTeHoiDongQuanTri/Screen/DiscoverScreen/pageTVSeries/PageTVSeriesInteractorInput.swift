@@ -42,7 +42,7 @@ class PageTVSeriesInteractorInput {
                                  year : String,
                                  subtitles : String,
                                  order : String) {
-        APIService.shared.getAdvancedSearching(params: DiscoveryParams.TVSeries.rawValue, area: area, category: category, year: year, subtitles: subtitles, order: order) { [weak self] response, error in
+        APIService.shared.getAdvancedSearching(params: DiscoveryParams.TVSeries.toString, area: area, category: category, year: year, subtitles: subtitles, order: order) { [weak self] response, error in
             guard let `self` = self, let unwrappedData = response else { return }
             self.output?.getData(with: unwrappedData)
         }

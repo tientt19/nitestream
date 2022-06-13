@@ -12,6 +12,7 @@ import UIKit
 // MARK: - ViewModelProtocol
 protocol TVSeriesViewModelProtocol {
     func onViewDidLoad()
+    func onGetSearchResult(with params: String)
 }
 
 // MARK: - TVSeries ViewModel
@@ -30,6 +31,12 @@ extension TVSeriesViewModel: TVSeriesViewModelProtocol {
     func onViewDidLoad() {
         self.interactor.onGetListSearch()
     }
+    
+    func onGetSearchResult(with params: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.interactor.onGetSearhResult(with: params)
+        }
+    }
 }
 
 // MARK: - TVSeries InteractorOutputProtocol
@@ -42,4 +49,14 @@ extension TVSeriesViewModel: TVSeriesInteractorOutputProtocol {
             dLogDebug(error.message)
         }
     }
+    
+    func didGetSearchResultFinished(with result: Result<SearchResultModel, APIError>) {
+        switch result {
+        case .success(let model):
+            dLogDebug(model.searchResults?.first?.name as Any)
+        case .failure(let error):
+            dLogDebug(error.message)
+        }
+    }
+
 }
