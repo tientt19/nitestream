@@ -38,9 +38,7 @@ extension TVSeriesInteractorInput: TVSeriesInteractorInputProtocol {
     
     func onGetSearhResult(with params: String) {
         self.service.onGetSearchResult(with: params) { [weak self] result in
-            dLogDebug(result)
             self?.output?.didGetSearchResultFinished(with: result.unwrapSuccessModel())
         }
     }
-
 }

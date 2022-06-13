@@ -44,9 +44,10 @@ class BaseService {
     }
     
     // MARK: - POST
+    
     func POST<T: Codable>(url: String,
                           param: [String: Any]?,
-                          encoding: ParameterEncoding = URLEncoding.default,
+                          encoding: ParameterEncoding = JSONEncoding.prettyPrinted,
                           completion: @escaping ((Result<BaseModel<T>, APIError>) -> Void)) {
         let request = AF.request(url,
                                  method: .post,
