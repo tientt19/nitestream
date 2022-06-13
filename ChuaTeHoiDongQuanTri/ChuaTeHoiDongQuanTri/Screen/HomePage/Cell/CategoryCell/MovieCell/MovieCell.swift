@@ -18,6 +18,12 @@ class MovieCell: UICollectionViewCell, ExpandModelUpdatable {
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var blurImageView : UIImageView!
     
+    var model: SearchResults? {
+        didSet {
+            self.blurImageView.isHidden = true
+            self.posterImage.setImageCachingv2(targetImageView: self.posterImage, with: model?.coverVerticalUrl ?? "")
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

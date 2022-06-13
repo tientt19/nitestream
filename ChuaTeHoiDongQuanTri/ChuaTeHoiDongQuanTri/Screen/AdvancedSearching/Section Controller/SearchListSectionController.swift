@@ -8,12 +8,12 @@
 import Foundation
 import IGListKit
 
-class TVSeriesSectionControler: ListSectionController{
+class SearchListSectionController: ListSectionController{
     var currentIem: ScreeningItem?
     
     override init() {
         super.init()
-        self.inset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        self.inset = UIEdgeInsets(top: 0, left: 5, bottom: 5, right: 5)
     }
     
     override func didUpdate(to object: Any) {

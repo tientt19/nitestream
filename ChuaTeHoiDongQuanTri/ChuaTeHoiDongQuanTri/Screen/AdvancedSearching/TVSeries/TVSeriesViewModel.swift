@@ -33,7 +33,7 @@ extension TVSeriesViewModel: TVSeriesViewModelProtocol {
     }
     
     func onGetSearchResult(with params: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.interactor.onGetSearhResult(with: params)
         }
     }
@@ -53,10 +53,9 @@ extension TVSeriesViewModel: TVSeriesInteractorOutputProtocol {
     func didGetSearchResultFinished(with result: Result<SearchResultModel, APIError>) {
         switch result {
         case .success(let model):
-            dLogDebug(model.searchResults?.first?.name as Any)
+            self.view?.didGetAdvancedSearchResult(with: model)
         case .failure(let error):
             dLogDebug(error.message)
         }
     }
-
 }

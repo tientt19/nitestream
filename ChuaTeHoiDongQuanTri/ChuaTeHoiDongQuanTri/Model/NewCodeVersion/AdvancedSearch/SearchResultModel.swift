@@ -40,18 +40,18 @@ class SearchResultModel: Codable, ListDiffable {
 
 // MARK: - SearchResultContentModel
 class SearchResults: Codable{
-    var coverVerticalURL: String?
+    var coverVerticalUrl: String?
     var domainType: Int?
     var id, name, score, sort: String?
     
     enum CodingKeys: String, CodingKey {
-        case coverVerticalURL
+        case coverVerticalUrl
         case domainType, id, name, score, sort
     }
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.coverVerticalURL = try? container.decodeIfPresent(String.self, forKey: .coverVerticalURL)
+        self.coverVerticalUrl = try? container.decodeIfPresent(String.self, forKey: .coverVerticalUrl)
         self.domainType = try? container.decodeIfPresent(Int.self, forKey: .domainType)
         self.id = try? container.decodeIfPresent(String.self, forKey: .id)
         self.name = try? container.decodeIfPresent(String.self, forKey: .name)

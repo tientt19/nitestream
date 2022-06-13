@@ -13,6 +13,7 @@ import IGListKit
 // MARK: - ViewProtocol
 protocol TVSeriesViewProtocol: AnyObject {
     func didGetSearchListFinished(with model: [SearchListModel])
+    func didGetAdvancedSearchResult(with model: SearchResultModel)
 }
 
 // MARK: - TVSeries ViewController
@@ -62,8 +63,11 @@ extension TVSeriesViewController: ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let sectionController = TVSeriesSectionControler()
-        return sectionController
+        if object is SearchResultModel {
+            return SearchResultSectionController()
+        } else {
+            return SearchListSectionController()
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
@@ -73,6 +77,11 @@ extension TVSeriesViewController: ListAdapterDataSource {
 extension TVSeriesViewController: TVSeriesViewProtocol {
     func didGetSearchListFinished(with model: [SearchListModel]) {
         self.objects.append(contentsOf: model[0].screeningItems!)
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
+    
+    func didGetAdvancedSearchResult(with model: SearchResultModel) {
+        self.objects.append(model)
         self.adapter.performUpdates(animated: true, completion: nil)
     }
 }
