@@ -28,11 +28,26 @@ class SplashScreenViewModel {
 // MARK: - SplashScreen ViewModelProtocol
 extension SplashScreenViewModel: SplashScreenViewModelProtocol {
     func onViewDidLoad() {
-        
+        self.setInitHandleNetwork()
+    }
+    
+    func setInitHandleNetwork() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onInternetConnectionAvailable), name: .connectionAvailable, object: nil)
+    }
+    
+    @objc func onInternetConnectionAvailable() {
+        self.view?.onCheckAutoLogin()
     }
 }
 
 // MARK: - SplashScreen InteractorOutputProtocol
 extension SplashScreenViewModel: SplashScreenInteractorOutputProtocol {
 
+}
+
+//MARK: - ErrorViewDelegate
+extension SplashScreenViewModel: ErrorViewDelegate {
+    func onRetryButtonDidTapped(_ errorView: UIView) {
+        self.setInitHandleNetwork()
+    }
 }

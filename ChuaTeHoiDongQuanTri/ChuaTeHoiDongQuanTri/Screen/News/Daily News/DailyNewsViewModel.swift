@@ -48,3 +48,10 @@ extension DailyNewsViewModel: DailyNewsInteractorOutputProtocol {
         }
     }
 }
+
+//MARK: - ErrorViewDelegate
+extension DailyNewsViewModel: ErrorViewDelegate {
+    func onRetryButtonDidTapped(_ errorView: UIView) {
+        self.interactor.onGetDailyNewsData(with: 0)
+    }
+}

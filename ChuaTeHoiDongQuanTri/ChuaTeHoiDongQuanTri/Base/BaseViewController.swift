@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 import FirebaseAuth
 
 class BaseViewController: UIViewController {
+    
+    var viewError: ErrorView?
+    private var viewNoInternetConnection = UIView()
+    private var constraint_height_ViewNoInternetConnection: Constraint?
+    var gIsHaveInternetConnected = true
     
     lazy var activityIndicatorView : UIActivityIndicatorView = {
         let loading = UIActivityIndicatorView()
@@ -58,6 +64,9 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // checking internet
+        self.viewNoInternetConnection = self.createNoInternetConnectionView()
+        self.setObserverInternetConnection()
     }
     
     func setUpBaseView() {
@@ -130,5 +139,240 @@ class BaseViewController: UIViewController {
         self.emptyView.addSubview(emptyLabel)
         emptyLabel.center(inView: self.emptyView)
         return self.emptyView
+    }
+}
+
+// MARK: - Internet Connection
+extension BaseViewController {
+    @discardableResult private func createNoInternetConnectionView() -> UIView {
+        let noInternetView = UIView()
+        noInternetView.alpha = 0
+        noInternetView.backgroundColor = .white
+        self.view.addSubview(noInternetView)
+        noInternetView.snp.makeConstraints { (make) in
+            make.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            self.constraint_height_ViewNoInternetConnection = make.height.equalTo(0).constraint
+        }
+        let wifiImageView = UIImageView(image: UIImage(named: "ic_wifi"))
+        noInternetView.addSubview(wifiImageView)
+        wifiImageView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(17)
+            make.leading.equalToSuperview().offset(16)
+        }
+        let contentLabel = createNoInternetViewContentLabel()
+        noInternetView.addSubview(contentLabel)
+        contentLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(12)
+            make.leading.equalTo(wifiImageView.snp.trailing).offset(18)
+            make.trailing.equalToSuperview().offset(-16)
+        }
+        let closeButton = createNoInternetViewCloseButton()
+        noInternetView.addSubview(closeButton)
+        closeButton.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLabel.snp.bottom).offset(12)
+            make.leading.equalTo(wifiImageView.snp.leading)
+            make.height.equalTo(35)
+        }
+        let retryButton = createNoInternetViewRetryButton()
+        noInternetView.addSubview(retryButton)
+        retryButton.snp.makeConstraints { (make) in
+            make.centerY.height.width.equalTo(closeButton)
+            make.leading.equalTo(closeButton.snp.trailing).offset(27)
+            make.trailing.equalTo(contentLabel)
+        }
+        return noInternetView
+    }
+
+    private func createNoInternetViewContentLabel() -> UILabel {
+        
+        ///////////////////////////////
+        
+        let contentLabel = UILabel()
+        contentLabel.text = "Không có kết nối mạng.\nVui lòng kiểm tra kết nối mạng của bạn."
+        contentLabel.font = UIFont.systemFont(ofSize: 14)
+        contentLabel.textColor = UIColor.darkText
+        contentLabel.numberOfLines = 0
+        contentLabel.lineBreakMode = .byWordWrapping
+        return contentLabel
+    }
+
+    private func createNoInternetViewCloseButton() -> UIButton {
+        let closeButton = UIButton()
+        closeButton.setTitle("Đóng", for: .normal)
+        closeButton.setTitleColor(.white, for: .normal)
+        closeButton.backgroundColor = .systemIndigo
+        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        closeButton.addTarget(self, action: #selector(self.buttonCloseNoInternetConnectionViewDidTapped), for: .touchUpInside)
+        closeButton.cornerRadius = 4
+        return closeButton
+    }
+
+    private func createNoInternetViewRetryButton() -> UIButton {
+        let retryButton = UIButton()
+        retryButton.setTitle("Thử lại", for: .normal)
+        retryButton.setTitleColor(.white, for: .normal)
+        retryButton.backgroundColor = .systemIndigo
+        retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        retryButton.addTarget(self, action: #selector(self.buttonRetryInternetConnectionDidTapped), for: .touchUpInside)
+        retryButton.cornerRadius = 4
+        return retryButton
+    }
+
+    private func setObserverInternetConnection() {
+        print("BaseViewController setObserverInternetConnection")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onInternetConnectionAvailable), name: .connectionAvailable, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onInternetConnectionUnavailable), name: .connectionUnavailable, object: nil)
+    }
+
+    @objc func onInternetConnectionAvailable() {
+        print("BaseViewController onInternetConnectionAvailable")
+        gIsHaveInternetConnected = true
+        self.hideNoInternetConnectionView()
+    }
+
+    @objc func onInternetConnectionUnavailable() {
+        print("BaseViewController onInternetConnectionUnavailable")
+        gIsHaveInternetConnected = false
+        guard self.viewError == nil, !self.isKind(of: LoginScreenViewController.self), !self.isKind(of: HomePageViewViewController.self) else {
+            return
+        }
+        self.showNoInternetConnectionView()
+    }
+
+    @objc func buttonCloseNoInternetConnectionViewDidTapped() {
+        self.hideNoInternetConnectionView()
+    }
+
+    @objc func buttonRetryInternetConnectionDidTapped() {
+        if InternetConnection.shared.isAvailable() {
+            self.hideNoInternetConnectionView()
+        }
+    }
+
+    private func showNoInternetConnectionView() {
+        self.viewNoInternetConnection.alpha = 1
+        self.view.bringSubviewToFront(self.viewNoInternetConnection)
+        self.constraint_height_ViewNoInternetConnection?.update(offset: 107)
+        UIView.animate(withDuration: Contants.Number.animationTime) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func hideNoInternetConnectionView() {
+        self.constraint_height_ViewNoInternetConnection?.update(offset: 0)
+        UIView.animate(withDuration: Contants.Number.animationTime, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: { _ in
+            self.viewNoInternetConnection.alpha = 0
+        })
+    }
+
+//    private func setUpdateInteractivePopGesture() {
+//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = self.isInteractivePopGestureEnable
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//    }
+}
+
+
+protocol ErrorViewDelegate: AnyObject {
+    func onRetryButtonDidTapped(_ errorView: UIView)
+}
+
+
+class ErrorView: UIView {
+
+    private var errorMessage: String = ""
+    weak var delegate: ErrorViewDelegate?
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupDefatults()
+    }
+
+    convenience init(message: String) {
+        self.init(frame: .zero)
+        errorMessage = message
+        setupDefatults()
+    }
+
+    private func setupDefatults() {
+        backgroundColor = .white
+        let view = UIView()
+        addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.leading.equalToSuperview().offset(51)
+        }
+        let imageView = UIImageView(image: UIImage(named: "error"))
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.top.centerX.equalToSuperview()
+            make.width.equalTo(147)
+            make.height.equalTo(98)
+        }
+        // Title Label
+        let titleLabel = createTitleLabel()
+
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(imageView.snp.bottom).offset(33)
+            make.centerX.equalToSuperview()
+        }
+        // Content Label
+        let contentLabel = createContentLabel()
+        view.addSubview(contentLabel)
+
+        contentLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            make.leading.centerX.equalToSuperview()
+            make.height.greaterThanOrEqualTo(0)
+        }
+
+        let retryButton = createRetryButton()
+        view.addSubview(retryButton)
+
+        retryButton.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLabel.snp.bottom).offset(19)
+            make.centerX.bottom.equalToSuperview()
+            make.width.equalTo(146)
+            make.height.equalTo(36)
+        }
+    }
+
+    private func createTitleLabel() -> UILabel {
+        let titleLabel = UILabel()
+        titleLabel.text = "Đã có lỗi xảy ra"
+        titleLabel.font = UIFont.systemFont(ofSize: 16)
+        titleLabel.textColor = .darkText
+        titleLabel.textAlignment = .center
+        return titleLabel
+    }
+
+    private func createContentLabel() -> UILabel {
+        let contentLabel = UILabel()
+        contentLabel.font = UIFont.systemFont(ofSize: 14)
+        contentLabel.textColor = .lightText
+        contentLabel.textAlignment = .center
+        contentLabel.text = errorMessage
+        return contentLabel
+    }
+
+    private func createRetryButton() -> UIButton {
+        let retryButton = UIButton()
+        retryButton.backgroundColor = .systemIndigo
+        retryButton.setTitle("Thử lại", for: .normal)
+        retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        retryButton.cornerRadius = 18
+        retryButton.setTitleColor(.white, for: .normal)
+        retryButton.addTarget(self, action: #selector(buttonRetryDidTapped), for: .touchUpInside)
+        return retryButton
+    }
+
+    @objc func buttonRetryDidTapped() {
+        delegate?.onRetryButtonDidTapped(self)
     }
 }

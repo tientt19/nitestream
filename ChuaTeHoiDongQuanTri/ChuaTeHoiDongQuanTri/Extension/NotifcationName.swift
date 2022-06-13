@@ -9,4 +9,6 @@ import Foundation
 
 extension Notification.Name {
     static let stopPlayingMedia = Notification.Name("StopPlayingMedia")
+    static let connectionAvailable = Notification.Name("ConnectionAvailable")
+    static let connectionUnavailable = Notification.Name("ConnectionNotAvailable")
 }

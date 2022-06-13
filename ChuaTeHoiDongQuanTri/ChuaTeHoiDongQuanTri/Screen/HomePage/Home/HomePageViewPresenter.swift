@@ -79,3 +79,9 @@ extension HomePageViewPresenter : HomePageViewPresenterOutputProtocol {
     }
 }
 
+//MARK: - ErrorViewDelegate
+extension HomePageViewPresenter: ErrorViewDelegate {
+    func onRetryButtonDidTapped(_ errorView: UIView) {
+        self.interactor?.onGetHomeAlbums(with: 1)
+    }
+}

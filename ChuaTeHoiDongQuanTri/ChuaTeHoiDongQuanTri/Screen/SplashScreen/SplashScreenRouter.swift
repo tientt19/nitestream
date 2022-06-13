@@ -49,3 +49,4 @@ extension SplashScreenRouter: SplashScreenRouterProtocol {
         self.viewController?.present(controller, animated: true)
     }
 }
+
