@@ -21,7 +21,6 @@ enum URLTypes: ApiUrlProtocol {
     case niteStreamNew(Int?)
     case niteStreamArticle(Int?)
     case listAdvancedSearch
-    case listAdvancedSearchResult
     
     var path: String {
         switch self {
@@ -41,8 +40,6 @@ enum URLTypes: ApiUrlProtocol {
             return "https://loklok.com/vi/article/\(id ?? 0)"
         case .listAdvancedSearch:
             return "https://web-api.netpop.app/cms/web/pc/search/list"
-        case .listAdvancedSearchResult:
-            return "https://web-api.netpop.app/cms/web/pc/search/search"
         }
     }
 }

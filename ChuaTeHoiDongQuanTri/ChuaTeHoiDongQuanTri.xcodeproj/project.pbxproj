@@ -39,19 +39,7 @@
 		521CD1BC280AA1E300D114A7 /* PageTVSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B7280AA1E300D114A7 /* PageTVSeriesViewController.swift */; };
 		521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */; };
 		521CD1BE280AA1E300D114A7 /* PageTVSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */; };
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		521CEC442856EBBD00797919 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CEC432856EBBD00797919 /* InternetConnection.swift */; };
-=======
-		521DD99328559F81009604C6 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DD99228559F80009604C6 /* SearchResultModel.swift */; };
->>>>>>> Stashed changes
-=======
-		521DD99328559F81009604C6 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DD99228559F80009604C6 /* SearchResultModel.swift */; };
->>>>>>> Stashed changes
-=======
-		521DD99328559F81009604C6 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DD99228559F80009604C6 /* SearchResultModel.swift */; };
->>>>>>> Stashed changes
 		5221292D27CB949300C9FFB2 /* ListInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221292B27CB949300C9FFB2 /* ListInfoCell.swift */; };
 		5221292E27CB949300C9FFB2 /* ListInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5221292C27CB949300C9FFB2 /* ListInfoCell.xib */; };
 		522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522184CC27CC989A00CDFDDA /* LinkMedia.swift */; };
@@ -328,19 +316,7 @@
 		521CD1B7280AA1E300D114A7 /* PageTVSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesViewController.swift; sourceTree = "<group>"; };
 		521CD1B8280AA1E300D114A7 /* PageTVSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTVSeriesViewModel.swift; sourceTree = "<group>"; };
 		521CD1B9280AA1E300D114A7 /* PageTVSeriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageTVSeriesViewController.xib; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		521CEC432856EBBD00797919 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
-=======
-		521DD99228559F80009604C6 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
-=======
-		521DD99228559F80009604C6 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
-=======
-		521DD99228559F80009604C6 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		5221292B27CB949300C9FFB2 /* ListInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCell.swift; sourceTree = "<group>"; };
 		5221292C27CB949300C9FFB2 /* ListInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListInfoCell.xib; sourceTree = "<group>"; };
 		522184CC27CC989A00CDFDDA /* LinkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkMedia.swift; sourceTree = "<group>"; };
@@ -773,14 +749,6 @@
 			path = DiscoveryHome;
 			sourceTree = "<group>";
 		};
-		521DD9942855AB1F009604C6 /* Section Controller */ = {
-			isa = PBXGroup;
-			children = (
-				52628A712854E74B00FC6026 /* TVSeriesSectionController.swift */,
-			);
-			path = "Section Controller";
-			sourceTree = "<group>";
-		};
 		521E70CF27FD374600620DA1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -988,7 +956,7 @@
 		52628A4B2854BD4C00FC6026 /* TVSeries */ = {
 			isa = PBXGroup;
 			children = (
-				521DD9942855AB1F009604C6 /* Section Controller */,
+				52628A712854E74B00FC6026 /* TVSeriesSectionController.swift */,
 				52628A4E2854BD9600FC6026 /* TVSeriesRouter.swift */,
 				52628A4F2854BD9600FC6026 /* TVSeriesInteractorInput.swift */,
 				52628A502854BD9600FC6026 /* TVSeriesViewController.swift */,
@@ -1026,7 +994,6 @@
 			isa = PBXGroup;
 			children = (
 				52628A6D2854E16300FC6026 /* SearchListModel.swift */,
-				521DD99228559F80009604C6 /* SearchResultModel.swift */,
 			);
 			path = AdvancedSearch;
 			sourceTree = "<group>";
@@ -1923,7 +1890,6 @@
 				521CD19C280A969F00D114A7 /* VXPageViewController.swift in Sources */,
 				5287C5BB282A5650003C6A8A /* StreamingMovieScreenViewModel.swift in Sources */,
 				8495609E27FFE507004A8A74 /* DiscoveryModel.swift in Sources */,
-				521DD99328559F81009604C6 /* SearchResultModel.swift in Sources */,
 				521CD1A7280AA1B400D114A7 /* PageAnimeInteractorInput.swift in Sources */,
 				5209F94C282CB1290062982E /* LabelCell.swift in Sources */,
 				525703CB284B912A00660BF2 /* DailyNewsWebViewViewModel.swift in Sources */,

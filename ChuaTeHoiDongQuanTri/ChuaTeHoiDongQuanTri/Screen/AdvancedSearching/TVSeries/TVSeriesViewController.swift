@@ -38,7 +38,6 @@ class TVSeriesViewController: BaseViewController {
         super.viewDidLoad()
         self.setupInit()
         self.viewModel.onViewDidLoad()
-        self.viewModel.onGetSearchResult(with: DiscoveryParams.TVSeries.params)
     }
     
     override func viewDidLayoutSubviews() {
