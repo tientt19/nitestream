@@ -33,7 +33,7 @@ class PageAnimeInteractorInput {
     }
     
     private func getSearchResult() {
-        APIService.shared.getAdvancedSearching(params: DiscoveryParams.Anime.rawValue, area: "", category: "", year: "", subtitles: "") { [weak self] response, error in
+        APIService.shared.getAdvancedSearching(params: DiscoveryParams.Anime.params, area: "", category: "", year: "", subtitles: "") { [weak self] response, error in
             guard let `self` = self, let unwrappedData = response else { return }
             self.output?.getData(with: unwrappedData)
         }
