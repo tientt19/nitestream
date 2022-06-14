@@ -8,9 +8,14 @@
 import Foundation
 import IGListKit
 
+protocol onGetAdvancedSearching: AnyObject {
+    func onGetSearchResultWithParams(with params: [String:Any])
+}
+
 class SearchListSectionController: ListSectionController{
     var currentIem: ScreeningItem?
-    
+    var delegate: onGetAdvancedSearching?
+        
     override init() {
         super.init()
         self.inset = UIEdgeInsets(top: 0, left: 5, bottom: 5, right: 5)
@@ -31,6 +36,7 @@ class SearchListSectionController: ListSectionController{
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let nibName = String(describing: CellCollectionViewSearchParams.self)
         let cell = collectionContext?.dequeueReusableCell(withNibName: nibName, bundle: nil, for: self, at: index) as! CellCollectionViewSearchParams
+        cell.delegate = self
         cell.model = self.currentIem
         return cell
     }
@@ -41,6 +47,13 @@ class SearchListSectionController: ListSectionController{
     }
     
     override func didSelectItem(at index: Int) {
-//        dLogDebug(self.currentIem?.listBanner?[index].title!)
+//        dLogDebug(self.currentIem?.name)
+    }
+}
+
+//MARK: - onSendParmasToSearchProtocols
+extension SearchListSectionController: onSendParmasToSearchProtocols {
+    func onSendParams(with params: [String : Any]?) {
+        self.delegate?.onGetSearchResultWithParams(with: params!)
     }
 }

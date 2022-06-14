@@ -13,6 +13,7 @@ import UIKit
 protocol AnimeViewModelProtocol {
     func onViewDidLoad()
     func onGetSearchResult(with params: String)
+    func onGetSearchResultWithParams(with params: [String:Any])
 }
 
 // MARK: - Anime ViewModel
@@ -36,6 +37,10 @@ extension AnimeViewModel: AnimeViewModelProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.interactor.onGetSearhResult(with: params)
         }
+    }
+    
+    func onGetSearchResultWithParams(with params: [String : Any]) {
+        self.interactor.onGetSearchResultWithParams(with: params)
     }
 }
 

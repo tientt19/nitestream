@@ -1006,6 +1006,7 @@
 			children = (
 				52628A6D2854E16300FC6026 /* SearchListModel.swift */,
 				52A5FFB428573BE2009CC345 /* SearchResultModel.swift */,
+				841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */,
 			);
 			path = AdvancedSearch;
 			sourceTree = "<group>";
@@ -1552,7 +1553,6 @@
 				8495609D27FFE507004A8A74 /* DiscoveryModel.swift */,
 				8495609F27FFE565004A8A74 /* ScreeningItems.swift */,
 				849560A127FFE58C004A8A74 /* DiscoveryItem.swift */,
-				841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */,
 			);
 			path = "Discovery Model";
 			sourceTree = "<group>";

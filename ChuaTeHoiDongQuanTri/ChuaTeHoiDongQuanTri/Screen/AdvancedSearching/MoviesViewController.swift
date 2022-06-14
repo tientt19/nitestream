@@ -67,7 +67,9 @@ extension MoviesViewController: ListAdapterDataSource {
         if object is SearchResultModel {
             return SearchResultSectionController()
         } else {
-            return SearchListSectionController()
+            let sectionController = SearchListSectionController()
+            sectionController.delegate = self
+            return sectionController
         }
     }
     
@@ -82,7 +84,19 @@ extension MoviesViewController: MoviesViewProtocol {
     }
     
     func didGetAdvancedSearchResult(with model: SearchResultModel) {
-        self.objects.append(model)
+        if self.objects.count == 6 {
+            self.objects.remove(at: 5)
+            self.objects.append(model)
+        } else {
+            self.objects.append(model)
+        }
         self.adapter.performUpdates(animated: true, completion: nil)
+    }
+}
+
+//MARK: - onGetAdvancedSearching
+extension MoviesViewController: onGetAdvancedSearching {
+    func onGetSearchResultWithParams(with params: [String : Any]) {
+        self.viewModel.onGetSearchResultWithParams(with: params)
     }
 }

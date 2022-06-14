@@ -42,6 +42,7 @@ class SearchResultSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-//        dLogDebug(self.currentIem?.listBanner?[index].title!)
+//        self.currentIem?.searchResults?[index].name
     }
 }
+

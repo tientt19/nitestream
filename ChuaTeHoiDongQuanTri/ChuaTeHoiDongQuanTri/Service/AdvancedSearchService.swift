@@ -10,6 +10,7 @@ import Foundation
 protocol AdvancedSearchServiceProtocols: AnyObject {
     func onGetListSearch(completion: @escaping ((Result<BaseModel<[SearchListModel]>, APIError>) -> Void))
     func onGetSearchResult(with params: String,completion: @escaping ((Result<BaseModel<SearchResultModel>, APIError>) -> Void))
+    func onGetSearchResultWithParams(with params: [String:Any], completion: @escaping ((Result<BaseModel<SearchResultModel>, APIError>) -> Void))
 }
 
 class AdvancedSearchService: AdvancedSearchServiceProtocols {
@@ -36,4 +37,12 @@ class AdvancedSearchService: AdvancedSearchServiceProtocols {
                           param: paramsBody,
                           completion: completion)
     }
+    
+    func onGetSearchResultWithParams(with params: [String : Any], completion: @escaping ((Result<BaseModel<SearchResultModel>, APIError>) -> Void)) {
+        let urlString = URLTypes.listAdvancedSearchResult.path
+        self.service.POST(url: urlString,
+                          param: params,
+                          completion: completion)
+    }
+    
 }

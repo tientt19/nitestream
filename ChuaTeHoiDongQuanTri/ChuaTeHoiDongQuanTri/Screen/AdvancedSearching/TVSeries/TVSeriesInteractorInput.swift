@@ -13,6 +13,7 @@ import UIKit
 protocol TVSeriesInteractorInputProtocol {
     func onGetListSearch()
     func onGetSearhResult(with params: String)
+    func onGetSearchResultWithParams(with params: [String:Any])
 }
 
 // MARK: - Interactor Output Protocol
@@ -35,9 +36,14 @@ extension TVSeriesInteractorInput: TVSeriesInteractorInputProtocol {
         }
     }
     
-    
     func onGetSearhResult(with params: String) {
         self.service.onGetSearchResult(with: params) { [weak self] result in
+            self?.output?.didGetSearchResultFinished(with: result.unwrapSuccessModel())
+        }
+    }
+    
+    func onGetSearchResultWithParams(with params: [String : Any]) {
+        self.service.onGetSearchResultWithParams(with: params) { [weak self] result in
             self?.output?.didGetSearchResultFinished(with: result.unwrapSuccessModel())
         }
     }

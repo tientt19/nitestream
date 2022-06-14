@@ -23,3 +23,26 @@ enum DiscoveryParams: Int {
         }
     }
 }
+
+enum DiscoveryCategoryParams: Int {
+    case area
+    case cate
+    case year
+    case sub
+    case order
+    
+    var toString: String {
+        switch self {
+        case .area:
+            return "Khu vực"
+        case .cate:
+            return "Thể loại"
+        case .year:
+            return "Các thời kỳ"
+        case .sub:
+            return "Tất cả phụ đề"
+        case .order:
+            return "Mới nhất"
+        }
+    }
+}

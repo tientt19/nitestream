@@ -52,7 +52,7 @@ class PageTVSeriesInteractorInput {
 // MARK: - PageTVSeries InteractorInputProtocol
 extension PageTVSeriesInteractorInput: PageTVSeriesInteractorInputProtocol {
     func fetchSearchResults(searchingModel: DiscoverySearchingModel) {
-        self.getSearchResult(area: searchingModel.area, category: searchingModel.cate, year: searchingModel.year, subtitles: searchingModel.sub, order: searchingModel.order)
+//        self.getSearchResult(area: searchingModel.area, category: searchingModel.cate, year: searchingModel.year, subtitles: searchingModel.sub, order: searchingModel.order)
     }
     
     

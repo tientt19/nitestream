@@ -30,7 +30,6 @@ class TVSeriesViewController: BaseViewController {
         let adapter = ListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
         adapter.collectionView = collectionView
         adapter.dataSource = self
-//        adapter.scrollViewDelegate = self
         return adapter
     }()
     
@@ -66,6 +65,8 @@ extension TVSeriesViewController: ListAdapterDataSource {
         if object is SearchResultModel {
             return SearchResultSectionController()
         } else {
+            let sectionController = SearchListSectionController()
+            sectionController.delegate = self
             return SearchListSectionController()
         }
     }
@@ -81,7 +82,19 @@ extension TVSeriesViewController: TVSeriesViewProtocol {
     }
     
     func didGetAdvancedSearchResult(with model: SearchResultModel) {
-        self.objects.append(model)
+        if self.objects.count == 6 {
+            self.objects.remove(at: 5)
+            self.objects.append(model)
+        } else {
+            self.objects.append(model)
+        }
         self.adapter.performUpdates(animated: true, completion: nil)
+    }
+}
+
+//MARK: - onGetAdvancedSearching
+extension TVSeriesViewController: onGetAdvancedSearching {
+    func onGetSearchResultWithParams(with params: [String : Any]) {
+        self.viewModel.onGetSearchResultWithParams(with: params)
     }
 }

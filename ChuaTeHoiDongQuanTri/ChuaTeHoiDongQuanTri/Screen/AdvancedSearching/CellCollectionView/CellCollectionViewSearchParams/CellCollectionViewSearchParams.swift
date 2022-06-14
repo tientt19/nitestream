@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol onSendParmasToSearchProtocols: AnyObject {
+    func onSendParams(with params: [String:Any]?)
+}
+
 class CellCollectionViewSearchParams: UICollectionViewCell {
     
     @IBOutlet weak var acollectionView: UICollectionView!
+    var delegate: onSendParmasToSearchProtocols!
     
     var model: ScreeningItem? {
         didSet {
@@ -45,23 +50,33 @@ extension CellCollectionViewSearchParams: UICollectionViewDelegate {
             self.acollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.acollectionView.reloadData()
         }
+                    
+        switch self.model?.name {
+        case DiscoveryCategoryParams.area.toString:
+            DiscoverySearchingUtility.share.discoverySearchingModel.area = data[indexPath.row].params ?? ""
+        case DiscoveryCategoryParams.cate.toString:
+            DiscoverySearchingUtility.share.discoverySearchingModel.category = data[indexPath.row].params ?? ""
+        case DiscoveryCategoryParams.year.toString:
+            DiscoverySearchingUtility.share.discoverySearchingModel.year = data[indexPath.row].params ?? ""
+        case DiscoveryCategoryParams.sub.toString:
+            DiscoverySearchingUtility.share.discoverySearchingModel.subtitles = data[indexPath.row].params ?? ""
+        case DiscoveryCategoryParams.order.toString:
+            DiscoverySearchingUtility.share.discoverySearchingModel.order = data[indexPath.row].params ?? "up"
+        default:
+            break
+        }
         
+        switch self.model?.id {
+        case 4,5,6:
+            self.delegate.onSendParams(with: DiscoverySearchingUtility.share.discoverySearchingModel.toDictionary(type: DiscoveryParams.TVSeries.toString))
+        case 1,2,3:
+            self.delegate.onSendParams(with: DiscoverySearchingUtility.share.discoverySearchingModel.toDictionary(type: DiscoveryParams.Movie.toString))
+        case 7,8,9:
+            self.delegate.onSendParams(with: DiscoverySearchingUtility.share.discoverySearchingModel.toDictionary(type: DiscoveryParams.Anime.toString))
+        default:
+            break
+        }
         
-//        switch data[indexPath.row].screeningType {
-//        case SearchParams.area.rawValue:
-//            DiscoverySearchingUtility.share.discoverySearchingModel.area = data[indexPath.row].params ?? ""
-//        case SearchParams.category.rawValue:
-//            DiscoverySearchingUtility.share.discoverySearchingModel.cate = data[indexPath.row].params ?? ""
-//        case SearchParams.year.rawValue:
-//            DiscoverySearchingUtility.share.discoverySearchingModel.year = data[indexPath.row].params ?? ""
-//        case SearchParams.subtitles.rawValue:
-//            DiscoverySearchingUtility.share.discoverySearchingModel.sub = data[indexPath.row].params ?? ""
-//        case SearchParams.order.rawValue:
-//            DiscoverySearchingUtility.share.discoverySearchingModel.order = data[indexPath.row].params ?? ""
-//        default:
-//            break
-//        }
-//        self.handleAdvanceSearch(with: DiscoverySearchingUtility.share.discoverySearchingModel)
     }
 }
 
