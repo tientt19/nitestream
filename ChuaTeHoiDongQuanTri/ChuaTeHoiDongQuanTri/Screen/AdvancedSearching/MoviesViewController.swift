@@ -20,7 +20,6 @@ protocol MoviesViewProtocol: AnyObject {
 class MoviesViewController: BaseViewController {
     var router: MoviesRouterProtocol!
     var viewModel: MoviesViewModelProtocol!
-    
     var objects = [ListDiffable]()
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -65,9 +64,9 @@ extension MoviesViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is SearchResultModel {
-            return SearchResultSectionController()
+            return MovieResultSectionController()
         } else {
-            let sectionController = SearchListSectionController()
+            let sectionController = MovieSearchListSectionController()
             sectionController.delegate = self
             return sectionController
         }

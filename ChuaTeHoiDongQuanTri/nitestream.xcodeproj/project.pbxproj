@@ -149,6 +149,10 @@
 		527AF99F27F3F1CC008A42DC /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF99E27F3F1CC008A42DC /* UIImageView.swift */; };
 		527AF9A127F3F20A008A42DC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A027F3F20A008A42DC /* Collection.swift */; };
 		527AF9A327F3F22F008A42DC /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AF9A227F3F22F008A42DC /* UIViewController.swift */; };
+		528619C2285B2B0500DEB3A1 /* MovieSearchListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528619C1285B2B0400DEB3A1 /* MovieSearchListSectionController.swift */; };
+		528619C4285B2B5600DEB3A1 /* MovieResultSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528619C3285B2B5600DEB3A1 /* MovieResultSectionController.swift */; };
+		528619C7285B2BEC00DEB3A1 /* AnimeSearchListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528619C6285B2BEC00DEB3A1 /* AnimeSearchListSectionController.swift */; };
+		528619C9285B2C1500DEB3A1 /* AnimeResultSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528619C8285B2C1500DEB3A1 /* AnimeResultSectionController.swift */; };
 		5287BEF527CF83500030A534 /* HorizontallyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287BEF327CF83500030A534 /* HorizontallyCell.swift */; };
 		5287BEF627CF83500030A534 /* HorizontallyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5287BEF427CF83500030A534 /* HorizontallyCell.xib */; };
 		5287C5B8282A5650003C6A8A /* StreamingMovieScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287C5B3282A5650003C6A8A /* StreamingMovieScreenRouter.swift */; };
@@ -434,6 +438,10 @@
 		527AF99E27F3F1CC008A42DC /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		527AF9A027F3F20A008A42DC /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		527AF9A227F3F22F008A42DC /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		528619C1285B2B0400DEB3A1 /* MovieSearchListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchListSectionController.swift; sourceTree = "<group>"; };
+		528619C3285B2B5600DEB3A1 /* MovieResultSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultSectionController.swift; sourceTree = "<group>"; };
+		528619C6285B2BEC00DEB3A1 /* AnimeSearchListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSearchListSectionController.swift; sourceTree = "<group>"; };
+		528619C8285B2C1500DEB3A1 /* AnimeResultSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeResultSectionController.swift; sourceTree = "<group>"; };
 		5287BEF327CF83500030A534 /* HorizontallyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallyCell.swift; sourceTree = "<group>"; };
 		5287BEF427CF83500030A534 /* HorizontallyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontallyCell.xib; sourceTree = "<group>"; };
 		5287C5B3282A5650003C6A8A /* StreamingMovieScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingMovieScreenRouter.swift; sourceTree = "<group>"; };
@@ -944,7 +952,6 @@
 			isa = PBXGroup;
 			children = (
 				52C8A4C128578119006EE0F9 /* CellCollectionView */,
-				52C8A4B9285774A5006EE0F9 /* Section Controller */,
 				52628A4A2854BD1600FC6026 /* Home */,
 				52628A4B2854BD4C00FC6026 /* TVSeries */,
 				52628A4C2854BD6A00FC6026 /* Movies */,
@@ -968,6 +975,7 @@
 		52628A4B2854BD4C00FC6026 /* TVSeries */ = {
 			isa = PBXGroup;
 			children = (
+				52C8A4B9285774A5006EE0F9 /* Section Controller */,
 				52628A4E2854BD9600FC6026 /* TVSeriesRouter.swift */,
 				52628A4F2854BD9600FC6026 /* TVSeriesInteractorInput.swift */,
 				52628A502854BD9600FC6026 /* TVSeriesViewController.swift */,
@@ -980,6 +988,7 @@
 		52628A4C2854BD6A00FC6026 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				528619C0285B2ADF00DEB3A1 /* Section Controller */,
 				52628A582854BDB100FC6026 /* MoviesRouter.swift */,
 				52628A592854BDB100FC6026 /* MoviesInteractorInput.swift */,
 				52628A5A2854BDB100FC6026 /* MoviesViewController.swift */,
@@ -992,6 +1001,7 @@
 		52628A4D2854BD7200FC6026 /* Anime */ = {
 			isa = PBXGroup;
 			children = (
+				528619C5285B2BD100DEB3A1 /* Section Controller */,
 				52628A622854BDC700FC6026 /* AnimeRouter.swift */,
 				52628A632854BDC700FC6026 /* AnimeInteractorInput.swift */,
 				52628A642854BDC700FC6026 /* AnimeViewController.swift */,
@@ -1085,6 +1095,24 @@
 				527AF6B6283658F70089D58B /* ProfileScreenViewController.xib */,
 			);
 			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		528619C0285B2ADF00DEB3A1 /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				528619C1285B2B0400DEB3A1 /* MovieSearchListSectionController.swift */,
+				528619C3285B2B5600DEB3A1 /* MovieResultSectionController.swift */,
+			);
+			name = "Section Controller";
+			sourceTree = "<group>";
+		};
+		528619C5285B2BD100DEB3A1 /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				528619C6285B2BEC00DEB3A1 /* AnimeSearchListSectionController.swift */,
+				528619C8285B2C1500DEB3A1 /* AnimeResultSectionController.swift */,
+			);
+			path = "Section Controller";
 			sourceTree = "<group>";
 		};
 		5287BEF227CF83210030A534 /* HorizontallyCell */ = {
@@ -1803,6 +1831,7 @@
 				527AF9A127F3F20A008A42DC /* Collection.swift in Sources */,
 				52DE0971284656BC00385C09 /* DailyNewsRouter.swift in Sources */,
 				522184CD27CC989A00CDFDDA /* LinkMedia.swift in Sources */,
+				528619C2285B2B0500DEB3A1 /* MovieSearchListSectionController.swift in Sources */,
 				523EBE212844F24D00B99F6C /* ShortVideoService.swift in Sources */,
 				5206FF472824CA93000226FC /* SearchingListSectionController.swift in Sources */,
 				52386493282DF6EA001090BB /* StreamingEpisodeSectionController.swift in Sources */,
@@ -1812,6 +1841,7 @@
 				523E04F22824FE9E005E55A4 /* SearchingCell.swift in Sources */,
 				5222803E284BAE0A00FC824A /* HomeBannerModels.swift in Sources */,
 				52CB4D3327F6BE9300BACAFD /* HomePageViewPresenter.swift in Sources */,
+				528619C7285B2BEC00DEB3A1 /* AnimeSearchListSectionController.swift in Sources */,
 				52628A6E2854E16300FC6026 /* SearchListModel.swift in Sources */,
 				52E6E63B27C2119500CD80D0 /* MainFooter.swift in Sources */,
 				527AF6AD28364CE50089D58B /* LoginScreenInteractorInput.swift in Sources */,
@@ -1834,11 +1864,13 @@
 				5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */,
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */,
+				528619C9285B2C1500DEB3A1 /* AnimeResultSectionController.swift in Sources */,
 				52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */,
 				52134BB8280B16A00089D145 /* DiscoveryParams.swift in Sources */,
 				521CD1BD280AA1E300D114A7 /* PageTVSeriesViewModel.swift in Sources */,
 				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
 				525703C9284B912A00660BF2 /* DailyNewsWebViewInteractorInput.swift in Sources */,
+				528619C4285B2B5600DEB3A1 /* MovieResultSectionController.swift in Sources */,
 				52628A562854BD9600FC6026 /* TVSeriesViewModel.swift in Sources */,
 				527AF6BA283658F70089D58B /* ProfileScreenViewModel.swift in Sources */,
 				52159E802824D06300081FA9 /* SearchingModelIG.swift in Sources */,

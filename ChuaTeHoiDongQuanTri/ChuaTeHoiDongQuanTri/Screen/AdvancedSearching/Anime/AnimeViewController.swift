@@ -30,7 +30,6 @@ class AnimeViewController: BaseViewController {
         let adapter = ListAdapter(updater: updater, viewController: self, workingRangeSize: 0)
         adapter.collectionView = collectionView
         adapter.dataSource = self
-//        adapter.scrollViewDelegate = self
         return adapter
     }()
     
@@ -65,9 +64,9 @@ extension AnimeViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is SearchResultModel {
-            return SearchResultSectionController()
+            return AnimeResultSectionController()
         } else {
-            let sectionController = SearchListSectionController()
+            let sectionController = AnimeSearchListSectionController()
             sectionController.delegate = self
             return sectionController
         }

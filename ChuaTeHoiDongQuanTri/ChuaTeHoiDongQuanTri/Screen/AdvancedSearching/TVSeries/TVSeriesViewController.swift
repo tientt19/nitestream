@@ -67,7 +67,7 @@ extension TVSeriesViewController: ListAdapterDataSource {
         } else {
             let sectionController = SearchListSectionController()
             sectionController.delegate = self
-            return SearchListSectionController()
+            return sectionController
         }
     }
     
