@@ -14,6 +14,7 @@ import IGListKit
 protocol TVSeriesViewProtocol: AnyObject {
     func didGetSearchListFinished(with model: [SearchListModel])
     func didGetAdvancedSearchResult(with model: SearchResultModel)
+    func onOpenStreamingView(with model: MovieDetail)
 }
 
 // MARK: - TVSeries ViewController
@@ -63,7 +64,9 @@ extension TVSeriesViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is SearchResultModel {
-            return SearchResultSectionController()
+            let sectionController = SearchResultSectionController()
+            sectionController.delegate = self
+            return sectionController
         } else {
             let sectionController = SearchListSectionController()
             sectionController.delegate = self
@@ -90,11 +93,24 @@ extension TVSeriesViewController: TVSeriesViewProtocol {
         }
         self.adapter.performUpdates(animated: true, completion: nil)
     }
+    
+    func onOpenStreamingView(with model: MovieDetail) {
+        DispatchQueue.main.async {
+            self.router.openDetailView(data: model)
+        }
+    }
 }
 
 //MARK: - onGetAdvancedSearching
 extension TVSeriesViewController: onGetAdvancedSearching {
     func onGetSearchResultWithParams(with params: [String : Any]) {
         self.viewModel.onGetSearchResultWithParams(with: params)
+    }
+}
+
+//MARK: - onOpenMovieDetailProtocols
+extension TVSeriesViewController: onOpenMovieDetailProtocols {
+    func onOpenMovieDetail(with model: SearchResults) {
+        self.viewModel.onGetMovieDetail(with: model)
     }
 }

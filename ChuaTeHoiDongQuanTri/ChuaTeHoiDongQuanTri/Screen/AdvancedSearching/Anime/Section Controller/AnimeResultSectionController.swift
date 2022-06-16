@@ -10,6 +10,7 @@ import IGListKit
 
 class AnimeResultSectionController: ListSectionController {
     var currentIem: SearchResultModel?
+    var delegate: onOpenMovieDetailProtocols?
     
     override init() {
         super.init()
@@ -42,6 +43,6 @@ class AnimeResultSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-//        self.currentIem?.searchResults?[index].name
+        self.delegate?.onOpenMovieDetail(with: (self.currentIem?.searchResults?[index])!)
     }
 }

@@ -14,6 +14,7 @@ protocol TVSeriesViewModelProtocol {
     func onViewDidLoad()
     func onGetSearchResult(with params: String)
     func onGetSearchResultWithParams(with params: [String:Any])
+    func onGetMovieDetail(with model: SearchResults)
 }
 
 // MARK: - TVSeries ViewModel
@@ -34,13 +35,17 @@ extension TVSeriesViewModel: TVSeriesViewModelProtocol {
     }
     
     func onGetSearchResult(with params: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.interactor.onGetSearhResult(with: params)
         }
     }
     
     func onGetSearchResultWithParams(with params: [String : Any]) {
         self.interactor.onGetSearchResultWithParams(with: params)
+    }
+    
+    func onGetMovieDetail(with model: SearchResults) {
+        self.interactor.onGetMovieDetail(with: model)
     }
 }
 
@@ -62,5 +67,9 @@ extension TVSeriesViewModel: TVSeriesInteractorOutputProtocol {
         case .failure(let error):
             dLogDebug(error.message)
         }
+    }
+    
+    func didGetAlbumsDetailFinish(with result: MovieDetail) {
+        self.view?.onOpenStreamingView(with: result)
     }
 }

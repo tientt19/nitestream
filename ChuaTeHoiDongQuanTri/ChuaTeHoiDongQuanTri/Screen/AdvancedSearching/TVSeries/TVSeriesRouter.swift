@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - RouterProtocol
 protocol TVSeriesRouterProtocol {
-
+    func openDetailView(data : MovieDetail)
 }
 
 // MARK: - TVSeries Router
@@ -36,5 +36,10 @@ class TVSeriesRouter {
 
 // MARK: - TVSeries RouterProtocol
 extension TVSeriesRouter: TVSeriesRouterProtocol {
-    
+    func openDetailView(data : MovieDetail) {
+        let detailScreen = StreamingMovieScreenRouter.setupModule(with: data)
+        
+        detailScreen.hidesBottomBarWhenPushed = true
+        self.viewController?.present(detailScreen, animated: true)
+    }
 }

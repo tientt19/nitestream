@@ -8,8 +8,13 @@
 import Foundation
 import IGListKit
 
+protocol onOpenMovieDetailProtocols: AnyObject {
+    func onOpenMovieDetail(with model: SearchResults)
+}
+
 class SearchResultSectionController: ListSectionController {
     var currentIem: SearchResultModel?
+    var delegate: onOpenMovieDetailProtocols?
     
     override init() {
         super.init()
@@ -42,7 +47,7 @@ class SearchResultSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-//        self.currentIem?.searchResults?[index].name
+        self.delegate?.onOpenMovieDetail(with: (self.currentIem?.searchResults?[index])!)
     }
 }
 

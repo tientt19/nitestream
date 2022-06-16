@@ -14,6 +14,7 @@ import IGListKit
 protocol AnimeViewProtocol: AnyObject {
     func didGetSearchListFinished(with model: [SearchListModel])
     func didGetAdvancedSearchResult(with model: SearchResultModel)
+    func onOpenStreamingView(with model: MovieDetail)
 }
 
 // MARK: - Anime ViewController
@@ -64,7 +65,9 @@ extension AnimeViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is SearchResultModel {
-            return AnimeResultSectionController()
+            let sectionController = SearchResultSectionController()
+            sectionController.delegate = self
+            return sectionController
         } else {
             let sectionController = AnimeSearchListSectionController()
             sectionController.delegate = self
@@ -91,11 +94,24 @@ extension AnimeViewController: AnimeViewProtocol {
         }
         self.adapter.performUpdates(animated: true, completion: nil)
     }
+    
+    func onOpenStreamingView(with model: MovieDetail) {
+        DispatchQueue.main.async {
+            self.router.openDetailView(data: model)
+        }
+    }
 }
 
 //MARK: - onGetAdvancedSearching
 extension AnimeViewController: onGetAdvancedSearching {
     func onGetSearchResultWithParams(with params: [String : Any]) {
         self.viewModel.onGetSearchResultWithParams(with: params)
+    }
+}
+
+//MARK: - onOpenMovieDetailProtocols
+extension AnimeViewController: onOpenMovieDetailProtocols {
+    func onOpenMovieDetail(with model: SearchResults) {
+        self.viewModel.onGetMovieDetail(with: model)
     }
 }
