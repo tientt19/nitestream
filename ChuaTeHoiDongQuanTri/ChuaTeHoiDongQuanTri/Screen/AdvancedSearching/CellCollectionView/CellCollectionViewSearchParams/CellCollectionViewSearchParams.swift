@@ -28,7 +28,7 @@ class CellCollectionViewSearchParams: UICollectionViewCell {
     }
     
     private func registerCell() {
-        self.acollectionView.registerCell(nibName: DiscoveryCatagoryCLVCell.self)
+        self.acollectionView.registerNib(ofType: DiscoveryCatagoryCLVCell.self)
         self.acollectionView.delegate = self
         self.acollectionView.dataSource = self
     }
@@ -91,7 +91,7 @@ extension CellCollectionViewSearchParams: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = acollectionView.dequeue(cellClass: DiscoveryCatagoryCLVCell.self, forIndexPath: indexPath)
+        let cell = acollectionView.dequeuCell(ofType: DiscoveryCatagoryCLVCell.self, for: indexPath)
         guard let data = self.model?.items else { return cell }
         cell.item = data[indexPath.row]
         return cell

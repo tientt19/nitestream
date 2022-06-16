@@ -23,7 +23,7 @@ class CategoryCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        CategoryCollectionView.registerCell(nibName: MovieCell.self)
+        CategoryCollectionView.registerNib(ofType: MovieCell.self)
         CategoryCollectionView.delegate = self
         CategoryCollectionView.dataSource = self
     }
@@ -66,7 +66,7 @@ extension CategoryCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let imageUrl = listDataCall[indexPath.row].imageUrl, let titleLabel = listDataCall[indexPath.row].title {
-            let cell = collectionView.dequeue(cellClass: MovieCell.self, forIndexPath: indexPath)
+            let cell = collectionView.dequeuCell(ofType: MovieCell.self, for: indexPath)
             cell.configure(imageUrl, titleLabel)
             if isGroupBlock { cell.configureForGroupBlock() }
             return cell

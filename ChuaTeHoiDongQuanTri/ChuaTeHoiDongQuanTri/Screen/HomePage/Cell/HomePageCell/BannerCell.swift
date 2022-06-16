@@ -32,7 +32,7 @@ class BannerCell: UICollectionViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        bannerCLV.registerCell(nibName: ChildCell.self)
+        bannerCLV.registerNib(ofType: ChildCell.self)
         bannerCLV.delegate = self
         bannerCLV.dataSource = self
         configAutoscrollTimer()
@@ -77,8 +77,7 @@ extension BannerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let imageUrl = listDataCall[indexPath.row].imgUrl ?? ""
         let titleLabel = listDataCall[indexPath.row].title ?? ""
-        
-        let cell = collectionView.dequeue(cellClass: ChildCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeuCell(ofType: ChildCell.self, for: indexPath)
         cell.configure(imageUrl, titleLabel)
         return cell
     }

@@ -20,7 +20,7 @@ class HorizontallyCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        childCLV.registerCell(nibName: ChildCell.self)
+        childCLV.registerNib(ofType: ChildCell.self)
         childCLV.delegate = self
         childCLV.dataSource = self
     }
@@ -55,7 +55,7 @@ extension HorizontallyCell: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeue(cellClass: ChildCell.self, forIndexPath: indexPath)
+        let cell = collectionView.dequeuCell(ofType: ChildCell.self, for: indexPath)
         cell.configure(data: data[indexPath.row])
         return cell
     }
