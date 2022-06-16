@@ -54,3 +54,10 @@ extension VideoShortViewModel: VideoShortInteractorOutputProtocol {
         self.view?.onReceiveShortVideoData(with: result.first, info: self.listItems)
     }
 }
+
+//MARK: - ErrorViewDelegate
+extension VideoShortViewModel: ErrorViewDelegate {
+    func onRetryButtonDidTapped(_ errorView: UIView) {
+        self.interactor.onGetData()
+    }
+}

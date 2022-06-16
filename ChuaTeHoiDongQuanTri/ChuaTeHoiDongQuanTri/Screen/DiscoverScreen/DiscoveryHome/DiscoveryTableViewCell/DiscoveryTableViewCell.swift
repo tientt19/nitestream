@@ -61,16 +61,16 @@ class DiscoveryTableViewCell: UITableViewCell {
     
     private func handleAdvanceSearch(with searchingModel: DiscoverySearchingModel) {
         searchDelegate?.doDeepSearch(searchingModel: searchingModel)
-        print(searchingModel.area)
-        print("---")
-        print(searchingModel.cate)
-        print("---")
-        print(searchingModel.year)
-        print("---")
-        print(searchingModel.sub)
-        print("---")
-        print(searchingModel.order)
-        print("---")
+//        print(searchingModel.area)
+//        print("---")
+//        print(searchingModel.cate)
+//        print("---")
+//        print(searchingModel.year)
+//        print("---")
+//        print(searchingModel.sub)
+//        print("---")
+//        print(searchingModel.order)
+//        print("---")
         
 //        searchDelegateMovie?.doDeepSearch(area: area,
 //                                           category: cate,
@@ -102,20 +102,20 @@ extension DiscoveryTableViewCell: UICollectionViewDelegate {
         }
         
         
-        switch data[indexPath.row].screeningType {
-        case SearchParams.area.rawValue:
-            DiscoverySearchingUtility.share.discoverySearchingModel.area = data[indexPath.row].params ?? ""
-        case SearchParams.category.rawValue:
-            DiscoverySearchingUtility.share.discoverySearchingModel.cate = data[indexPath.row].params ?? ""
-        case SearchParams.year.rawValue:
-            DiscoverySearchingUtility.share.discoverySearchingModel.year = data[indexPath.row].params ?? ""
-        case SearchParams.subtitles.rawValue:
-            DiscoverySearchingUtility.share.discoverySearchingModel.sub = data[indexPath.row].params ?? ""
-        case SearchParams.order.rawValue:
-            DiscoverySearchingUtility.share.discoverySearchingModel.order = data[indexPath.row].params ?? ""
-        default:
-            break
-        }
+//        switch data[indexPath.row].screeningType {
+//        case SearchParams.area.rawValue:
+//            DiscoverySearchingUtility.share.discoverySearchingModel.area = data[indexPath.row].params ?? ""
+//        case SearchParams.category.rawValue:
+//            DiscoverySearchingUtility.share.discoverySearchingModel.cate = data[indexPath.row].params ?? ""
+//        case SearchParams.year.rawValue:
+//            DiscoverySearchingUtility.share.discoverySearchingModel.year = data[indexPath.row].params ?? ""
+//        case SearchParams.subtitles.rawValue:
+//            DiscoverySearchingUtility.share.discoverySearchingModel.sub = data[indexPath.row].params ?? ""
+//        case SearchParams.order.rawValue:
+//            DiscoverySearchingUtility.share.discoverySearchingModel.order = data[indexPath.row].params ?? ""
+//        default:
+//            break
+//        }
         self.handleAdvanceSearch(with: DiscoverySearchingUtility.share.discoverySearchingModel)
     }
 }
@@ -133,7 +133,7 @@ extension DiscoveryTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = acollectionView.dequeue(cellClass: DiscoveryCatagoryCLVCell.self, forIndexPath: indexPath)
         guard let data = self.model?.items else { return cell }
-        cell.item = data[indexPath.row]
+//        cell.item = data[indexPath.row]
         return cell
     }
 }

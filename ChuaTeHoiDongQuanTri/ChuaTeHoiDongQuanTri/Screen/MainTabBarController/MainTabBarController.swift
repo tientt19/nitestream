@@ -78,7 +78,7 @@ class MainTabBarController: UITabBarController {
         newsNavController.setHiddenNavigationBarViewControllers([])
         
         //Discorver
-        let discoveryController = DiscoveryScreenRouter.setupModule()
+        let discoveryController = AdvancedSearchingRouter.setupModule()
 
         discoveryController.tabBarItem.tag = 0
         discoveryController.tabBarItem.title  = "Khám phá"

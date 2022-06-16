@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseCore
-import FirebaseFirestore
 import FirebaseAuth
 import GoogleSignIn
 
@@ -17,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.setInitReachabilityInternet()
         self.setInitFirebase()
         self.setInitRootViewController()
         return true
@@ -46,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = rootController
             window?.makeKeyAndVisible()
         }
+    }
+    
+    func setInitReachabilityInternet() {
+        InternetConnection.shared.startNotifier()
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {

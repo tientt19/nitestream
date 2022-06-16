@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum DiscoveryParams: String {
-    case TVSeries = "TV,SETI,MINISERIES,VARIETY,TALK,COMIC,DOCUMENTARY"
-    case Movie = "MOVIE,TVSPECIAL"
-    case Anime = "COMIC"
-}
+//enum DiscoveryParams: String {
+//    case TVSeries = "TV,SETI,MINISERIES,VARIETY,TALK,COMIC,DOCUMENTARY"
+//    case Movie = "MOVIE,TVSPECIAL"
+//    case Anime = "COMIC"
+//}

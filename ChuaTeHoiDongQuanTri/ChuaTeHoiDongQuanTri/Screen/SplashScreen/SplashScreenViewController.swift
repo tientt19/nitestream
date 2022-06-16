@@ -14,7 +14,7 @@ import GoogleSignIn
 
 // MARK: - ViewProtocol
 protocol SplashScreenViewProtocol: AnyObject {
- 
+    func onCheckAutoLogin()
 }
 
 // MARK: - SplashScreen ViewController
@@ -37,23 +37,20 @@ class SplashScreenViewController: BaseViewController {
         self.splashView.loopMode = .loop
         self.splashView.animationSpeed = 2
         self.splashView.play()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.onCheckAutoLogin()
-        }
     }
     
     // MARK: - Action
-    func onCheckAutoLogin() {
-        if Auth.auth().currentUser != nil {
-            self.router.goToHomeScreen()
-        } else {
-            self.router.goToLoginScreen()
-        }
-    }
 }
 
 // MARK: - SplashScreen ViewProtocol
 extension SplashScreenViewController: SplashScreenViewProtocol {
-
+    func onCheckAutoLogin() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            if Auth.auth().currentUser != nil {
+                self.router.goToHomeScreen()
+            } else {
+                self.router.goToLoginScreen()
+            }
+        }
+    }
 }
