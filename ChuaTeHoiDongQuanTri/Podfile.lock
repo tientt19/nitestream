@@ -19,6 +19,9 @@ PODS:
   - Firebase/Crashlytics (9.1.0):
     - Firebase/CoreOnly
     - FirebaseCrashlytics (~> 9.1.0)
+  - Firebase/Database (9.1.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 9.1.0)
   - FirebaseAnalytics (9.1.0):
     - FirebaseAnalytics/AdIdSupport (= 9.1.0)
     - FirebaseCore (~> 9.0)
@@ -61,6 +64,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (~> 2.1)
+  - FirebaseDatabase (9.1.0):
+    - FirebaseCore (~> 9.0)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (9.1.0):
     - FirebaseCore (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
@@ -121,6 +127,7 @@ PODS:
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - Kingfisher (7.2.3)
+  - leveldb-library (1.22.1)
   - lottie-ios (3.3.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
@@ -138,6 +145,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crashlytics
+  - Firebase/Database
   - GoogleSignIn
   - IGListKit
   - Kingfisher
@@ -157,6 +165,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreInternal
     - FirebaseCrashlytics
+    - FirebaseDatabase
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -167,6 +176,7 @@ SPEC REPOS:
     - IGListDiffKit
     - IGListKit
     - Kingfisher
+    - leveldb-library
     - lottie-ios
     - nanopb
     - PromisesObjC
@@ -184,6 +194,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 2dabba3412b23b524823325739f45e520f67d1e7
   FirebaseCoreInternal: f3c838ae0b41cd840bbf34f90debfede78d352e5
   FirebaseCrashlytics: 8e21736dcf15d814b79229eb7e79ba3a5eec5f30
+  FirebaseDatabase: 6308b36dbc7725204a32f1ac638e730a9aabf5bc
   FirebaseInstallations: a91c74276b544524ce144c8315d8cdbce2dbe30b
   GoogleAppMeasurement: 8ecc717f2abe3f9ee95a5d38db08827852894acc
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
@@ -194,6 +205,7 @@ SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Kingfisher: 8c2cbe0c11ea4d481542895112682a99e058468e
+  leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
@@ -201,6 +213,6 @@ SPEC CHECKSUMS:
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 4923b0bb516cdb07d69ab0715d117624c2a49a67
+PODFILE CHECKSUM: 89eb4dd970fe14a0764b568b67d8e5ba619d36a9
 
 COCOAPODS: 1.11.3

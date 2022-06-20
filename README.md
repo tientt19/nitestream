@@ -10,6 +10,7 @@
   pod 'Firebase/Analytics' <br />
   pod 'Firebase/Crashlytics' <br />
   pod 'Firebase/Auth' <br />
+  pod 'Firebase/Database' <br />
   pod 'Firebase/Core' <br />
   
   # Google SDK
