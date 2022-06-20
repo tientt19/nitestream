@@ -20,8 +20,6 @@ class LoginScreenViewController: BaseViewController {
     var router: LoginScreenRouterProtocol!
     var viewModel: LoginScreenViewModelProtocol!
     
-    @IBOutlet weak var signInButton: GIDSignInButton!
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

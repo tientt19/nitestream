@@ -105,7 +105,7 @@ class MainTabBarController: UITabBarController {
         // MARK:  Add Tabbar
         self.viewControllers = [
             homeNavController,
-            tiktokController,
+//            tiktokController,
             dailyNewsController,
             discoveryController,
             profileViewcontroller

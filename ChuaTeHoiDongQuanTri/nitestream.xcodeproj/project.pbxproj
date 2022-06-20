@@ -231,6 +231,11 @@
 		52FA99CA27C73B2E0093FC14 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA99C827C73B120093FC14 /* HomePageModel.swift */; };
 		52FA99CB27C73B300093FC14 /* RecommendContentVOList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA99C727C73B110093FC14 /* RecommendContentVOList.swift */; };
 		52FA99CC27C73B330093FC14 /* RecommendItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA99C927C73B120093FC14 /* RecommendItem.swift */; };
+		52FAE34028606F9100B7BBE7 /* ChattingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAE33B28606F9100B7BBE7 /* ChattingRouter.swift */; };
+		52FAE34128606F9100B7BBE7 /* ChattingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAE33C28606F9100B7BBE7 /* ChattingInteractorInput.swift */; };
+		52FAE34228606F9100B7BBE7 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAE33D28606F9100B7BBE7 /* ChattingViewController.swift */; };
+		52FAE34328606F9100B7BBE7 /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAE33E28606F9100B7BBE7 /* ChattingViewModel.swift */; };
+		52FAE34428606F9100B7BBE7 /* ChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FAE33F28606F9100B7BBE7 /* ChattingViewController.xib */; };
 		52FEE78827C8850200B7588E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FEE78627C8850200B7588E /* CategoryCell.swift */; };
 		52FEE78927C8850200B7588E /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FEE78727C8850200B7588E /* CategoryCell.xib */; };
 		841D47E8280EBE2800830133 /* DiscoverySearchingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */; };
@@ -494,6 +499,11 @@
 		52FA99C727C73B110093FC14 /* RecommendContentVOList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendContentVOList.swift; sourceTree = "<group>"; };
 		52FA99C827C73B120093FC14 /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
 		52FA99C927C73B120093FC14 /* RecommendItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendItem.swift; sourceTree = "<group>"; };
+		52FAE33B28606F9100B7BBE7 /* ChattingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRouter.swift; sourceTree = "<group>"; };
+		52FAE33C28606F9100B7BBE7 /* ChattingInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingInteractorInput.swift; sourceTree = "<group>"; };
+		52FAE33D28606F9100B7BBE7 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		52FAE33E28606F9100B7BBE7 /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
+		52FAE33F28606F9100B7BBE7 /* ChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingViewController.xib; sourceTree = "<group>"; };
 		52FEE78627C8850200B7588E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		52FEE78727C8850200B7588E /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		841D47E7280EBE2800830133 /* DiscoverySearchingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverySearchingUtility.swift; sourceTree = "<group>"; };
@@ -1099,6 +1109,7 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52FAE33A28606F7500B7BBE7 /* Chatting */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
 				522ACEBD2834FCD000443757 /* SplashScreen */,
 				527AF6A628364CD00089D58B /* LoginScreen */,
@@ -1404,6 +1415,18 @@
 			path = HomeModel;
 			sourceTree = "<group>";
 		};
+		52FAE33A28606F7500B7BBE7 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				52FAE33B28606F9100B7BBE7 /* ChattingRouter.swift */,
+				52FAE33C28606F9100B7BBE7 /* ChattingInteractorInput.swift */,
+				52FAE33D28606F9100B7BBE7 /* ChattingViewController.swift */,
+				52FAE33E28606F9100B7BBE7 /* ChattingViewModel.swift */,
+				52FAE33F28606F9100B7BBE7 /* ChattingViewController.xib */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
 		52FEE78527C884DA00B7588E /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1553,6 +1576,7 @@
 				5296332127C91254007F3335 /* ChildCell.xib in Resources */,
 				52159E7D2824CE3C00081FA9 /* CellSeachingCollectionView.xib in Resources */,
 				52628A572854BD9600FC6026 /* TVSeriesViewController.xib in Resources */,
+				52FAE34428606F9100B7BBE7 /* ChattingViewController.xib in Resources */,
 				522ACEBC2834FC7100443757 /* GoogleService-Info.plist in Resources */,
 				52D8AA032845FE180010D494 /* ShortVideoCollectionCell.xib in Resources */,
 				523E04E92824FE9E005E55A4 /* TopSearchTableViewCell.xib in Resources */,
@@ -1739,6 +1763,7 @@
 				52C8A4BF28577F37006EE0F9 /* CellCollectionViewAdvancedSearch.swift in Sources */,
 				528CBF8E27CA56B200541EF7 /* DefinitionList.swift in Sources */,
 				5214F1ED27FC3E1A00A9E16B /* UIResponder.swift in Sources */,
+				52FAE34328606F9100B7BBE7 /* ChattingViewModel.swift in Sources */,
 				52412C9227F2FF2500896AF0 /* ExpandScreenRouter.swift in Sources */,
 				52628A682854BDC700FC6026 /* AnimeInteractorInput.swift in Sources */,
 				52B8BBFF27FBE25200EDE659 /* Format_Name.swift in Sources */,
@@ -1746,6 +1771,7 @@
 				527AF6AC28364CE50089D58B /* LoginScreenRouter.swift in Sources */,
 				52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */,
 				525703C8284B912A00660BF2 /* DailyNewsWebViewRouter.swift in Sources */,
+				52FAE34128606F9100B7BBE7 /* ChattingInteractorInput.swift in Sources */,
 				52DAD60A2805395200E27111 /* String.swift in Sources */,
 				52B6C8E228001EDB00F180AB /* Area.swift in Sources */,
 				528CBF8D27CA56B200541EF7 /* DrameTypeVo.swift in Sources */,
@@ -1770,6 +1796,7 @@
 				528E4C4A2808133B001438BF /* UILabel.swift in Sources */,
 				5263516528237FD600093D80 /* SearchingIGListKitScreenRouter.swift in Sources */,
 				523EBE192844EAF300B99F6C /* APIError.swift in Sources */,
+				52FAE34228606F9100B7BBE7 /* ChattingViewController.swift in Sources */,
 				52E6E62227C20ADE00CD80D0 /* UITableView.swift in Sources */,
 				52628A7A2854E91200FC6026 /* CellCollectionViewSearchParams.swift in Sources */,
 				523E04EB2824FE9E005E55A4 /* SearchingTableViewDatasource.swift in Sources */,
@@ -1808,6 +1835,7 @@
 				52A5FFB528573BE2009CC345 /* SearchResultModel.swift in Sources */,
 				5296332C27C94357007F3335 /* TopSearchCell.swift in Sources */,
 				52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */,
+				52FAE34028606F9100B7BBE7 /* ChattingRouter.swift in Sources */,
 				52628A722854E74B00FC6026 /* SearchListSectionController.swift in Sources */,
 				52B4F29727F3F6D700B0CFEB /* DataManager.swift in Sources */,
 				523E04ED2824FE9E005E55A4 /* SearchingViewController.swift in Sources */,
