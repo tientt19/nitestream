@@ -14,7 +14,6 @@ class BaseService {
         "lang" : "vi",
         "versioncode" : "11",
         "clienttype" : "ios_jike_default",
-        "deviceid": ""
     ]
     
     // MARK: - JSONDecoder

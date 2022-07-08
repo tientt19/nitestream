@@ -984,6 +984,22 @@
 			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
+		5280884928781C410064E8E5 /* Version1.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				52FAE33A28606F7500B7BBE7 /* Chatting */,
+				522ACEBD2834FCD000443757 /* SplashScreen */,
+				527AF6A628364CD00089D58B /* LoginScreen */,
+				52064A6C27EF5E96007E48A6 /* HomePage */,
+				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
+				52064A6E27EF5ECB007E48A6 /* TikTokView */,
+				52628A3F2854BB3A00FC6026 /* AdvancedSearching */,
+				52DE096B2846569D00385C09 /* News */,
+				527AF6B1283658C80089D58B /* ProfileScreen */,
+			);
+			path = Version1.0.0;
+			sourceTree = "<group>";
+		};
 		528619C0285B2ADF00DEB3A1 /* Section Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,16 +1125,8 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				52FAE33A28606F7500B7BBE7 /* Chatting */,
 				52754E7627FB3EF700968694 /* MainTabBarController */,
-				522ACEBD2834FCD000443757 /* SplashScreen */,
-				527AF6A628364CD00089D58B /* LoginScreen */,
-				52064A6C27EF5E96007E48A6 /* HomePage */,
-				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
-				52064A6E27EF5ECB007E48A6 /* TikTokView */,
-				52628A3F2854BB3A00FC6026 /* AdvancedSearching */,
-				52DE096B2846569D00385C09 /* News */,
-				527AF6B1283658C80089D58B /* ProfileScreen */,
+				5280884928781C410064E8E5 /* Version1.0.0 */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
