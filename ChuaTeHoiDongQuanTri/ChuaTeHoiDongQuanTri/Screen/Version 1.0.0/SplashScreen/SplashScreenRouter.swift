@@ -44,7 +44,11 @@ extension SplashScreenRouter: SplashScreenRouterProtocol {
     }
     
     func goToHomeScreen() {
-        let controller = MainTabBarController()
+//        let controller = MainTabBarController()
+//        controller.modalPresentationStyle = .fullScreen
+//        self.viewController?.present(controller, animated: true)
+        
+        let controller = SHCircleBarController()
         controller.modalPresentationStyle = .fullScreen
         self.viewController?.present(controller, animated: true)
     }
