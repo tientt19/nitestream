@@ -48,7 +48,8 @@ extension SplashScreenRouter: SplashScreenRouterProtocol {
 //        controller.modalPresentationStyle = .fullScreen
 //        self.viewController?.present(controller, animated: true)
         
-        let controller = SHCircleBarController()
+        let storyboard = UIStoryboard(name: "CircleTabbar", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "myCircleTabbar")
         controller.modalPresentationStyle = .fullScreen
         self.viewController?.present(controller, animated: true)
     }
