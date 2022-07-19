@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Contants {
+struct Constant {
     static let discoverySearch = "https://ga-mobile-api.loklok.tv/cms/app/search/list"
     static let advancedSearch = "https://ga-mobile-api.loklok.tv/cms/app/search/v1/search"
     static let searchlenovo = "https://ga-mobile-api.loklok.tv/cms/app/search/searchLenovo"
@@ -50,7 +50,7 @@ struct Contants {
     }
 }
 
-extension Contants {
+extension Constant {
     struct Number {
         static let animationTime = 0.3
         static let roundCornerRadius: CGFloat = 30

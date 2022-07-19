@@ -127,7 +127,7 @@ class VXPageBar: UIView {
         self.items = items
         self.createBarItemView()
         self.setSelectedIndex(self.selectedIndex)
-        let fullWidth = Contants.Screen.width / CGFloat(self.numberOfPage)
+        let fullWidth = Constant.Screen.width / CGFloat(self.numberOfPage)
         let underLineViewWidth = self.config.underLineWidth != nil ? self.config.underLineWidth! : fullWidth
         self.underLineViewWidthConstraint.constant = underLineViewWidth
         self.underLineViewLeadingConstraint.constant = fullWidth * CGFloat(self.selectedIndex) + (fullWidth - (self.config.underLineWidth ?? fullWidth)) / 2
@@ -149,7 +149,7 @@ class VXPageBar: UIView {
     }
 
     func updateUnderlineLeadingConstraint(with constant: CGFloat) {
-        let fullWidth = Contants.Screen.width / CGFloat(self.numberOfPage)
+        let fullWidth = Constant.Screen.width / CGFloat(self.numberOfPage)
         let underLineViewWidth = self.config.underLineWidth != nil ? self.config.underLineWidth! : fullWidth
         self.underLineViewWidthConstraint?.constant = underLineViewWidth
         let offset = (fullWidth - (self.config.underLineWidth ?? fullWidth)) / 2
@@ -173,7 +173,7 @@ class VXPageBar: UIView {
         guard self.numberOfPage != 0 else {
             return
         }
-        let fullWidth = Contants.Screen.width / CGFloat(self.numberOfPage)
+        let fullWidth = Constant.Screen.width / CGFloat(self.numberOfPage)
         let underLineViewWidth = self.config.underLineWidth != nil ? self.config.underLineWidth! : fullWidth
         self.underLineViewWidthConstraint?.constant = underLineViewWidth
         self.underLineViewLeadingConstraint?.constant = fullWidth * CGFloat(self.selectedIndex) + (fullWidth - (self.config.underLineWidth ?? fullWidth)) / 2

@@ -32,7 +32,7 @@ class APIService:NSObject {
     
     func getHomeData(numberOfPage : Int, closure: @escaping (_ response: HomePageModel?, _ error: Error?) -> Void) {
         var listDataHome : HomePageModel = HomePageModel(fromDictionary: ["" : ""])
-        AF.request(Contants.getDataHomeHTTPs(numberOfPage), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+        AF.request(Constant.getDataHomeHTTPs(numberOfPage), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [String:Any] {
                     let item = HomePageModel(fromDictionary: dataItem)
@@ -45,7 +45,7 @@ class APIService:NSObject {
     
     func getTopSearchData(closure: @escaping (_ response: [TopSearchData]?, _ error: Error?) -> Void) {
         var listTopSearch : [TopSearchData] = [TopSearchData]()
-        AF.request(Contants.getDataTopSearchHTTPS(), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+        AF.request(Constant.getDataTopSearchHTTPS(), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [String:Any] {
                     if let list = dataItem["list"] as? [[String: Any]] {
@@ -66,7 +66,7 @@ class APIService:NSObject {
 extension APIService {
     func getMovieDetail(id : Int, category : Int, closure: @escaping (_ response: MovieDetail?, _ error: Error?) -> Void) {
         var movieDetail = MovieDetail(fromDictionary: ["" : ""])
-        AF.request(Contants.getMovieDetail(id, category), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+        AF.request(Constant.getMovieDetail(id, category), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [String:Any] {
                     movieDetail = MovieDetail(fromDictionary: dataItem)
@@ -82,7 +82,7 @@ extension APIService {
 extension APIService {
     func getLinkMedia(contentId : String, categoty : Int, episodeId : Int, definition : String, closure: @escaping (_ response: LinkMedia?, _ error: Error?) -> Void) {
         var linkMedia = LinkMedia(fromDictionary: ["" : ""])
-        AF.request(Contants.getLinkMedia(categoty, contentId, episodeId, definition), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+        AF.request(Constant.getLinkMedia(categoty, contentId, episodeId, definition), method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [String:Any] {
                     linkMedia = LinkMedia(fromDictionary: dataItem)
@@ -99,7 +99,7 @@ extension APIService {
 extension APIService {
     func getReviewMedia(by page: Int, closure: @escaping (_ response: [ReviewMedia]?, _ error: Error?) -> Void) {
         var mediaInfo = [ReviewMedia]()
-        AF.request(Contants.getReviewMedia(with: page), method: .get, headers: HTTPAdditionalHeadersReviewMedia).responseJSON { response in
+        AF.request(Constant.getReviewMedia(with: page), method: .get, headers: HTTPAdditionalHeadersReviewMedia).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [[String:Any]] {
                     for item in dataItem {
@@ -120,7 +120,7 @@ extension APIService {
         
         let postData = parameters.data(using: .utf8)
         
-        var request = URLRequest(url: URL(string: Contants.getReviewMedia())!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: Constant.getReviewMedia())!,timeoutInterval: Double.infinity)
         
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
@@ -164,7 +164,7 @@ extension APIService {
 extension APIService {
     func getDiscoveryItem(closure: @escaping (_ response: [DiscoveryModel]?, _ error: Error?) -> Void) {
         var discoveryData = [DiscoveryModel]()
-        AF.request(Contants.discoverySearch, method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
+        AF.request(Constant.discoverySearch, method: .get, headers: HTTPAdditionalHeaders).responseJSON { response in
             if let result = response.value as? [String:Any] {
                 if let dataItem = result["data"] as? [[String:Any]] {
                     for item in dataItem {
@@ -187,7 +187,7 @@ extension APIService {
         let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 20\n}"
         let postData = parameters.data(using: .utf8)
         
-        var request = URLRequest(url: URL(string: Contants.searchlenovo)!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: Constant.searchlenovo)!,timeoutInterval: Double.infinity)
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
         request.httpBody = postData
@@ -223,7 +223,7 @@ extension APIService {
         let parameters = "{\n    \"searchKeyWord\": \"\(keyWord)\",\n    \"size\": 50,\n    \"sort\": \"\",\n    \"searchType\": \"\"\n}"
         let postData = parameters.data(using: .utf8)
         
-        var request = URLRequest(url: URL(string: Contants.getSearchingData())!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: Constant.getSearchingData())!,timeoutInterval: Double.infinity)
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
         request.httpBody = postData
@@ -269,7 +269,7 @@ extension APIService {
         
         let postData = parameters.data(using: .utf8)
         
-        var request = URLRequest(url: URL(string: Contants.advancedSearch)!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: Constant.advancedSearch)!,timeoutInterval: Double.infinity)
         request.headers = HTTPAdditionalHeaders
         request.httpMethod = "POST"
         request.httpBody = postData

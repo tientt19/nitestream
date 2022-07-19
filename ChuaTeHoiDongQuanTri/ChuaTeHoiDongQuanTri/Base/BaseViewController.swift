@@ -12,6 +12,8 @@ import FirebaseAuth
 class BaseViewController: UIViewController {
     
     var viewError: ErrorView?
+    private var progressHub: UIActivityIndicatorView?
+    private var viewProgressHub: UIView?
     private var viewNoInternetConnection = UIView()
     private var constraint_height_ViewNoInternetConnection: Constraint?
     var gIsHaveInternetConnected = true
@@ -267,27 +269,23 @@ extension BaseViewController {
     }
 
     private func showNoInternetConnectionView() {
-        self.viewNoInternetConnection.alpha = 1
-        self.view.bringSubviewToFront(self.viewNoInternetConnection)
-        self.constraint_height_ViewNoInternetConnection?.update(offset: 107)
-        UIView.animate(withDuration: Contants.Number.animationTime) {
-            self.view.layoutIfNeeded()
-        }
+        self.showAlert(title: "Lỗi kết nối", message: "Không có kết nối mạng.\nVui lòng kiểm tra kết nối mạng của bạn.")
+//        self.viewNoInternetConnection.alpha = 1
+//        self.view.bringSubviewToFront(self.viewNoInternetConnection)
+//        self.constraint_height_ViewNoInternetConnection?.update(offset: 107)
+//        UIView.animate(withDuration: Contants.Number.animationTime) {
+//            self.view.layoutIfNeeded()
+//        }
     }
 
     private func hideNoInternetConnectionView() {
         self.constraint_height_ViewNoInternetConnection?.update(offset: 0)
-        UIView.animate(withDuration: Contants.Number.animationTime, animations: {
+        UIView.animate(withDuration: Constant.Number.animationTime, animations: {
             self.view.layoutIfNeeded()
         }, completion: { _ in
             self.viewNoInternetConnection.alpha = 0
         })
     }
-
-//    private func setUpdateInteractivePopGesture() {
-//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = self.isInteractivePopGestureEnable
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-//    }
 }
 
 
@@ -391,5 +389,76 @@ class ErrorView: UIView {
 
     @objc func buttonRetryDidTapped() {
         delegate?.onRetryButtonDidTapped(self)
+    }
+}
+
+extension BaseViewController {
+    
+    func showProgressHud(offsetTop: CGFloat = 0, offsetBottom: CGFloat = 0, position: ProgressPosition = .full, backgroundColor: UIColor = .clear) {
+        self.viewProgressHub?.backgroundColor = backgroundColor
+        self.view.bringSubviewToFront(self.viewProgressHub!)
+        let navigationBarHeight = navigationController?.navigationBar.height ?? 0
+        let tabbarHeight = tabBarController?.tabBar.height ?? 0
+        var statusBarHeight = UIApplication.shared.statusBarFrame.height
+        if #available(iOS 13, *) {
+            statusBarHeight = UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        }
+        var topMargin: CGFloat = 0
+        var bottomMargin: CGFloat = 0
+        switch position {
+        case .full:
+            topMargin = offsetTop
+            bottomMargin = offsetBottom
+        case .underStatusBar:
+            topMargin = statusBarHeight + offsetTop
+            bottomMargin = offsetBottom
+        case .aboveTabbar:
+            topMargin = offsetTop
+            bottomMargin = tabbarHeight + offsetBottom
+        case .underNavigationBar:
+            topMargin = statusBarHeight + navigationBarHeight + offsetTop
+            bottomMargin = offsetBottom
+        case .aboveTabbarAndUnderNavigationBar:
+            topMargin = statusBarHeight + navigationBarHeight + offsetTop
+            bottomMargin = offsetBottom + tabbarHeight
+        case .aboveTabbarAndUnderStatusBar:
+            topMargin = statusBarHeight + offsetTop
+            bottomMargin = offsetBottom + tabbarHeight
+        }
+
+        self.viewProgressHub?.snp.remakeConstraints { (make) in
+            make.top.equalToSuperview().offset(topMargin)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-bottomMargin)
+        }
+        self.progressHub?.startAnimating()
+        self.viewProgressHub?.isHidden = false
+            self.viewProgressHub?.alpha = 1
+            self.view.layoutIfNeeded()
+    }
+
+    func hideProgressHud() {
+        self.progressHub?.stopAnimating()
+        UIView.animate(withDuration: Constant.Number.animationTime, animations: {
+            self.viewProgressHub?.alpha = 0
+        }, completion: { _ in
+            self.viewProgressHub?.isHidden = true
+        })
+    }
+    
+    func showAlert(title:String, message:String) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Close App",
+                                      style: UIAlertAction.Style.destructive,
+                                      handler: {(_: UIAlertAction!) in
+                let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                    exit(0)
+                }
+        }))
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true, completion: nil)
+        }
     }
 }

@@ -117,6 +117,11 @@
 		5263516F282388B900093D80 /* SearchingIGListKitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263516D282388B900093D80 /* SearchingIGListKitCell.swift */; };
 		52635170282388B900093D80 /* SearchingIGListKitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5263516E282388B900093D80 /* SearchingIGListKitCell.xib */; };
 		5265B26028853CD400DB492B /* CircleTabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5265B25F28853CD400DB492B /* CircleTabbar.storyboard */; };
+		5265B27128854B2000DB492B /* TMBDHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B26C28854B2000DB492B /* TMBDHomeRouter.swift */; };
+		5265B27228854B2000DB492B /* TMBDHomeInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B26D28854B2000DB492B /* TMBDHomeInteractorInput.swift */; };
+		5265B27328854B2000DB492B /* TMBDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B26E28854B2000DB492B /* TMBDHomeViewController.swift */; };
+		5265B27428854B2000DB492B /* TMBDHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B26F28854B2000DB492B /* TMBDHomeViewModel.swift */; };
+		5265B27728854CDE00DB492B /* ProgressPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B27628854CDE00DB492B /* ProgressPosition.swift */; };
 		526E9333284CE8E90062376C /* HomeAlbumsDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E9332284CE8E90062376C /* HomeAlbumsDetailModels.swift */; };
 		52754E7527FB3EAB00968694 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52754E7427FB3EAB00968694 /* UIColor.swift */; };
 		52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52754E7727FB3F2900968694 /* MainTabBarController.swift */; };
@@ -387,6 +392,11 @@
 		5263516D282388B900093D80 /* SearchingIGListKitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIGListKitCell.swift; sourceTree = "<group>"; };
 		5263516E282388B900093D80 /* SearchingIGListKitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingIGListKitCell.xib; sourceTree = "<group>"; };
 		5265B25F28853CD400DB492B /* CircleTabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleTabbar.storyboard; sourceTree = "<group>"; };
+		5265B26C28854B2000DB492B /* TMBDHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBDHomeRouter.swift; sourceTree = "<group>"; };
+		5265B26D28854B2000DB492B /* TMBDHomeInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBDHomeInteractorInput.swift; sourceTree = "<group>"; };
+		5265B26E28854B2000DB492B /* TMBDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBDHomeViewController.swift; sourceTree = "<group>"; };
+		5265B26F28854B2000DB492B /* TMBDHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBDHomeViewModel.swift; sourceTree = "<group>"; };
+		5265B27628854CDE00DB492B /* ProgressPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPosition.swift; sourceTree = "<group>"; };
 		526E9332284CE8E90062376C /* HomeAlbumsDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlbumsDetailModels.swift; sourceTree = "<group>"; };
 		5272B78D2834B2C40082F0AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52754E7427FB3EAB00968694 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = ChuaTeHoiDongQuanTri/Extension/UIColor.swift; sourceTree = SOURCE_ROOT; };
@@ -790,6 +800,7 @@
 			children = (
 				523EBE1D2844ED1D00B99F6C /* URLTypes.swift */,
 				52C8A4C228578193006EE0F9 /* DiscoveryParamsEnum.swift */,
+				5265B27628854CDE00DB492B /* ProgressPosition.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -945,6 +956,17 @@
 				52159E782824CDF400081FA9 /* Top Search Cell */,
 			);
 			path = "Cell CollectionView";
+			sourceTree = "<group>";
+		};
+		5265B26128854A5400DB492B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5265B26C28854B2000DB492B /* TMBDHomeRouter.swift */,
+				5265B26D28854B2000DB492B /* TMBDHomeInteractorInput.swift */,
+				5265B26E28854B2000DB492B /* TMBDHomeViewController.swift */,
+				5265B26F28854B2000DB492B /* TMBDHomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		52754E7627FB3EF700968694 /* MainTabBarController */ = {
@@ -1423,6 +1445,7 @@
 		52EED9EA28851E7A0060F56B /* Version 2.0.0 */ = {
 			isa = PBXGroup;
 			children = (
+				5265B26128854A5400DB492B /* Home */,
 				52EED9EB28851EA40060F56B /* Circle Tabbar */,
 			);
 			path = "Version 2.0.0";
@@ -1769,6 +1792,7 @@
 				5287C5BF282A5973003C6A8A /* StreamingSectionController.swift in Sources */,
 				528CBF8B27CA56B200541EF7 /* MovieDetail.swift in Sources */,
 				52754E7927FB3F2900968694 /* MainTabBarController.swift in Sources */,
+				5265B27428854B2000DB492B /* TMBDHomeViewModel.swift in Sources */,
 				528619C9285B2C1500DEB3A1 /* AnimeResultSectionController.swift in Sources */,
 				52B1FEF1282B56CC004DB9E9 /* CellCollectionStreaming.swift in Sources */,
 				527AF6B9283658F70089D58B /* ProfileScreenViewController.swift in Sources */,
@@ -1812,6 +1836,7 @@
 				52EED9E928851D320060F56B /* SHCircleBarController.swift in Sources */,
 				52B8BBFF27FBE25200EDE659 /* Format_Name.swift in Sources */,
 				52BF9DC2284B2C1100F881F7 /* DailyNewSectionController.swift in Sources */,
+				5265B27228854B2000DB492B /* TMBDHomeInteractorInput.swift in Sources */,
 				527AF6AC28364CE50089D58B /* LoginScreenRouter.swift in Sources */,
 				52CB4D3427F6BE9300BACAFD /* HomePageViewRouter.swift in Sources */,
 				525703C8284B912A00660BF2 /* DailyNewsWebViewRouter.swift in Sources */,
@@ -1881,7 +1906,9 @@
 				52412C9127F2FF2500896AF0 /* ExpandScreenPresenter.swift in Sources */,
 				52FAE34028606F9100B7BBE7 /* ChattingRouter.swift in Sources */,
 				52628A722854E74B00FC6026 /* SearchListSectionController.swift in Sources */,
+				5265B27328854B2000DB492B /* TMBDHomeViewController.swift in Sources */,
 				52B4F29727F3F6D700B0CFEB /* DataManager.swift in Sources */,
+				5265B27728854CDE00DB492B /* ProgressPosition.swift in Sources */,
 				523E04ED2824FE9E005E55A4 /* SearchingViewController.swift in Sources */,
 				52628A692854BDC700FC6026 /* AnimeViewController.swift in Sources */,
 				528D8AD727CA1C5700A98B8B /* TopSearchData.swift in Sources */,
@@ -1902,6 +1929,7 @@
 				5287C5B9282A5650003C6A8A /* StreamingMovieScreenInteractorInput.swift in Sources */,
 				52D8ECEE27C6279F001B8A2B /* PinterestLayout.swift in Sources */,
 				52754E7527FB3EAB00968694 /* UIColor.swift in Sources */,
+				5265B27128854B2000DB492B /* TMBDHomeRouter.swift in Sources */,
 				52628A5F2854BDB100FC6026 /* MoviesViewController.swift in Sources */,
 				5209F94E282CC3070062982E /* StreamingListCollectionSectionController.swift in Sources */,
 				528CBF9327CA56B200541EF7 /* LikeList.swift in Sources */,
