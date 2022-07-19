@@ -94,6 +94,9 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-V7-FmD">
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="44"/>
+                                            <connections>
+                                                <action selector="facebookSignInButtonTap:" destination="-1" eventType="touchUpInside" id="eki-Lb-eLz"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

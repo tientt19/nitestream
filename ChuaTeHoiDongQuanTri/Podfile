@@ -21,6 +21,10 @@ target 'nitestream' do
   
   # Google SDK
   pod 'GoogleSignIn'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
   
   # Support
   pod 'lottie-ios'

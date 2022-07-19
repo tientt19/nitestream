@@ -1016,10 +1016,7 @@
 		5280884928781C410064E8E5 /* Version 1.0.0 */ = {
 			isa = PBXGroup;
 			children = (
-				52754E7627FB3EF700968694 /* MainTabBarController */,
 				52FAE33A28606F7500B7BBE7 /* Chatting */,
-				522ACEBD2834FCD000443757 /* SplashScreen */,
-				527AF6A628364CD00089D58B /* LoginScreen */,
 				52064A6C27EF5E96007E48A6 /* HomePage */,
 				5287C5A8282A5557003C6A8A /* MovieDetailScreen */,
 				52064A6E27EF5ECB007E48A6 /* TikTokView */,
@@ -1155,6 +1152,9 @@
 		52A7A7C727ED91DD006F79DC /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				52754E7627FB3EF700968694 /* MainTabBarController */,
+				522ACEBD2834FCD000443757 /* SplashScreen */,
+				527AF6A628364CD00089D58B /* LoginScreen */,
 				5280884928781C410064E8E5 /* Version 1.0.0 */,
 				52EED9EA28851E7A0060F56B /* Version 2.0.0 */,
 			);

@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.549015890710-9jaqe6deubrd8b3fc51qqnpc5p5f1d5v</string>
-			</array>
-		</dict>
-	</array>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>NSAppTransportSecurity</key>
-		<dict>
-			<key>Allows Arbitrary Loads</key>
-			<true/>
-		</dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UIApplicationSupportsTabbedSceneCollection</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
-</dict>
+    <dict>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>fb563055562203780</string>
+                    <string>com.googleusercontent.apps.549015890710-9jaqe6deubrd8b3fc51qqnpc5p5f1d5v</string>
+                </array>
+            </dict>
+        </array>
+        <key>FacebookAppID</key>
+        <string>563055562203780</string>
+        <key>FacebookClientToken</key>
+        <string>95bfc5fe6fbd41dae876c7f470515921</string>
+        <key>FacebookDisplayName</key>
+        <string>nitestream</string>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>fbauth2</string>
+        </array>
+        <key>UIApplicationSceneManifest</key>
+        <dict>
+            <key>NSAppTransportSecurity</key>
+            <dict>
+                <key>Allows Arbitrary Loads</key>
+                <true/>
+            </dict>
+            <key>UIApplicationSupportsMultipleScenes</key>
+            <false/>
+            <key>UIApplicationSupportsTabbedSceneCollection</key>
+            <false/>
+            <key>UISceneConfigurations</key>
+            <dict>
+                <key>UIWindowSceneSessionRoleApplication</key>
+                <array>
+                    <dict>
+                        <key>UISceneConfigurationName</key>
+                        <string>Default Configuration</string>
+                        <key>UISceneDelegateClassName</key>
+                        <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                        <key>UISceneStoryboardFile</key>
+                        <string>Main</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </dict>
 </plist>

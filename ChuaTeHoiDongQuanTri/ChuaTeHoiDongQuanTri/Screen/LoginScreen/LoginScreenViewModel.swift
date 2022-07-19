@@ -14,6 +14,7 @@ import UIKit
 protocol LoginScreenViewModelProtocol {
     func onViewDidLoad()
     func onLoginWithGoogle(with vc: UIViewController)
+    func onLoginWithFacebook(viewController: UIViewController)
 }
 
 // MARK: - LoginScreen ViewModel
@@ -28,18 +29,26 @@ class LoginScreenViewModel {
 
 // MARK: - LoginScreen ViewModelProtocol
 extension LoginScreenViewModel: LoginScreenViewModelProtocol {
+    func onViewDidLoad() {
+        
+    }
+    
     func onLoginWithGoogle(with vc: UIViewController) {
         self.interactor.handleLoginWithGoogle(with: vc)
     }
     
-    func onViewDidLoad() {
-        
+    func onLoginWithFacebook(viewController: UIViewController) {
+        self.interactor.handleLoginwithFacebook(viewController: viewController)
     }
 }
 
 // MARK: - LoginScreen InteractorOutputProtocol
 extension LoginScreenViewModel: LoginScreenInteractorOutputProtocol {
     func didSigninByGoogle() {
+        self.view?.goToHomeScreen()
+    }
+    
+    func didSigninByFacebook() {
         self.view?.goToHomeScreen()
     }
 }

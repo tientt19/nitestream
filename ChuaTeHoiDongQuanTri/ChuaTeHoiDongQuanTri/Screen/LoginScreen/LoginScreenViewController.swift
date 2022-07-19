@@ -36,6 +36,10 @@ class LoginScreenViewController: BaseViewController {
     @IBAction func googleSignInButtonTap(_ sender: Any) {
         self.viewModel.onLoginWithGoogle(with: self)
     }
+    
+    @IBAction func facebookSignInButtonTap(_ sender: Any) {
+        self.viewModel.onLoginWithFacebook(viewController: self)
+    }
 }
 
 // MARK: - LoginScreen ViewProtocol
